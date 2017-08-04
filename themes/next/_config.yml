@@ -14,7 +14,7 @@ keywords: "Hexo, NexT"
 rss:
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2017
 
 # icon between year and author @Footer
 authoricon: heart
@@ -90,13 +90,10 @@ scheme: Pisces
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  GitHub: https://github.com/catalinaX
-  Twitter: https://twitter.com/your-user-name
+  GitHub: https://github.com/catalinaLi
   Weibo: http://weibo.com/your-user-name
-  豆瓣: http://douban.com/people/your-user-name
-  知乎: http://www.zhihu.com/people/your-user-name
-  QQ: http://www.zhihu.com/people/your-user-name
-  空间: http://www.zhihu.com/people/your-user-name
+  简书: http://www.jianshu.com/users/3413cfc7da01
+  知乎: https://www.zhihu.com/people/CatalinaLi
 # Social Links Icons
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
@@ -107,20 +104,18 @@ social_icons:
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
-  Twitter: twitter
   Weibo: weibo
-  豆瓣: douban
-  知乎: zhihu
-  QQ: qq
-  空间: kongjian
+  简书: edit
+  知乎: money
   
 
 # Blog rolls
-#links_title: Links
+links_title: 友情链接
 #links_layout: block
 #links_layout: inline
-#links:
-  #Title: http://example.com/
+links:
+  玉面小飞龙: https://halomelody.github.io/
+  mini: https://minigoooo.github.io/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
