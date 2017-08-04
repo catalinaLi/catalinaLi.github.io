@@ -120,7 +120,7 @@ links:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-#avatar:
+avatar: http://ou3np1yz4.bkt.clouddn.com/avatar.jpg
 
 # Table Of Contents in the Sidebar
 toc:
@@ -325,7 +325,7 @@ changyan:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+livere_uid: MTAyMC8yOTk4MC82NTQ1
 
 # Baidu Share
 # Available value:
