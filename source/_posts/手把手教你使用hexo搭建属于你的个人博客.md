@@ -1,7 +1,7 @@
 ---
 title: 手把手教你使用hexo搭建属于你的个人博客
 date: 2017-08-06 14:15:15
-tags: [hexo,git,github]
+tags: hexo
 categories: hexo
 ---
 ![front-pic-1](http://ou3np1yz4.bkt.clouddn.com/front-pic1.jpg)
