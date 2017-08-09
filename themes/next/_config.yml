@@ -114,7 +114,7 @@ links_title: 友情链接
 #links_layout: block
 #links_layout: inline
 links:
-  玉面小飞龙: https://halomelody.github.io/
+  玉面小二龙: https://halomelody.github.io/
   mini: https://minigoooo.github.io/
 
 # Sidebar Avatar
@@ -315,9 +315,9 @@ disqus:
 
 # changyan
 changyan:
-  enable: false
-  appid:
-  appkey:
+  enable: true
+  appid: cyt9trSeT
+  appkey: 90f344394566ccdbd9a5b2b7f22f1dc7
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
@@ -325,7 +325,7 @@ changyan:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: MTAyMC8yOTk4MC82NTQ1
+livere_uid: #MTAyMC8yOTk4MC82NTQ1
 
 # Baidu Share
 # Available value:
