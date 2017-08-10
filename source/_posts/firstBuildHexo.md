@@ -1,5 +1,5 @@
 ---
-title: 手把手教你使用hexo搭建属于你的个人博客
+title: 手把手教你使用hexo搭建属于你的个人博客 
 date: 2017-08-06 14:15:15
 tags: hexo
 categories: hexo
@@ -28,9 +28,9 @@ git是最流行的分布式版本控制系统，我们使用它主要是与githu
 环境都准备好后，我们就可以开始安装博客了:
 **1.创建文件夹**
     在本地新建一个文件夹用于存放我们的博客，并且右键菜单选择Git Bash Here,然后在Git Bash里输入：
-
+```
     npm install hexo
-
+```
 然后回车，如图：
 
 ![buildHexo_1](http://ou3np1yz4.bkt.clouddn.com/buildHexo_1.png)
@@ -41,12 +41,12 @@ git是最流行的分布式版本控制系统，我们使用它主要是与githu
 
 **2.执行hexo命令**
 依次执行以下3个命令:
-
+```
     hexo init  --初始化hexo环境,这时会在目录下自动生成hexo的文件
     npm install --安装npm依赖包
     hexo generate --生成静态页面
     hexo server --生成本地服务
-    
+```
 好了，这时候我们打开浏览器输入[http://localhost:4000](http://localhost:4000)看看可不可以访问。如果默认的hexo博客出现，那么恭喜你，你已经搭建好了自己的博客，接下来我们就要将它发布到网上。
 ![buildHexo_11](http://ou3np1yz4.bkt.clouddn.com/buildHexo_11.png)
 **3.可能遇到的报错**:
@@ -77,60 +77,60 @@ git是最流行的分布式版本控制系统，我们使用它主要是与githu
 打开本地博客的文件夹，打开**_config.yml**进行编辑
 ![buildHexo_4](http://ou3np1yz4.bkt.clouddn.com/buildHexo_4.png)
 翻到文件最下方，将deploy的选项改成以下的形式，并将yournmae修改为你自己的名称：
-    
+```
     deploy:
     type: git
     repo: git@github.com:yourname/yourname.github.io.git
     branch: master 
-    
+```
 然后在GitBash中执行
-
+```
     npm install hexo-deployer-git --save
-    
+```
 这时候，我们再最后执行一句
-
+```
     hexo deploy
-
+```
 就可以在浏览器中访问http://yourname.github.io/来进入你的博客啦
 大功告成！！
 ## 四、一鼓作气：详细了解Hexo
 博客已经可以访问了，但我相信大家对Hexo还是一头雾水，现在我们来深入学习一下Hexo:
 **1.Hexo的基本命令**
-
+```
     hexo generate --生成个人博客所需的静态页面
     hexo server --本地预览
     hexo deploy --部署我们的个人博客
     hexo clean --清除缓存
-    
+```
 这几个命令都能用首字母缩写完成
-
+```
     hexo g --generate 
     hexo s --server 
     hexo d --deploy 
-
+```
 **2.写文章的需要用到下面的命令**
-
+```
     hexo new "postName" --新建文章
     hexo new page "pageName" --新建页面
-
+```
 编辑我们的博客的时候可以使用
-    
+```
     hexo s --debug
-
+```
 然后访问[http://localhost:4000/](http://localhost:4000/)来进入调试模式，更改了配置或文章后随时刷新页面来查看效果。
 Hexo的文章支持的是`MarkDown`语法。网上有很多资料，这里提供一个[传送门](https://www.zybuluo.com/mdeditor)。
 
 **3.我们每次部署的步骤是**
-    
+```   
     hexo clean 
     hexo generate 
     hexo deploy
-
+```
 后两步可以简写为`hexo g -d`，另外我们也可以使用`hexo help`来查看hexo命令帮助
 
 **4.目录结构说明**
 hexo init 出来的文件各自的作用如下:
-   
+```   
       `-----------
       |  +-- .deploy       #hexo deploy生成的文件
       |  +-- node_modules  #npm组件
@@ -141,9 +141,87 @@ hexo init 出来的文件各自的作用如下:
       |  +-- themes        #主题
       |  +-- _config.yml   #全局配置文件
       |  `-- package.json  #定义了hexo所需要的各种模块
-
+```
 **5.配置文件**
-有时候我们部署了以后自己博客的链接打不开,查看生成的静态文件也没有index.html,或者是各种奇怪的报错。这时候有可能是我们的配置文件`_config.yml`格式出现了问题。这时候不妨去一些YAML格式检测网站去检测一下格式是否正确:[传送门](http://www.yamllint.com/)。
+搭建好博客后，我们的各种细节配置基本都是在配置文件中完成的，Hexo中的配置文件一共分2中，在文件夹跟目录下的`_config.yml`叫做**站点配置文件**,同样的文件名我们可以在`theme`文件夹下的主题文件夹里面也找的。而主题文件夹下的`_config.yml`叫做主题配置文件。这里说明一下站点配置文件：
+```
+# Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+# Site #站点信息
+title:  #标题
+subtitle:  #副标题
+description:  #站点描述，给搜索引擎看的
+author:  #作者
+email:  #电子邮箱
+language: zh-CN #语言
+# URL #链接格式
+url:  #网址
+root: / #根目录
+permalink: :year/:month/:day/:title/ #文章的链接格式
+tag_dir: tags #标签目录
+archive_dir: archives #存档目录
+category_dir: categories #分类目录
+code_dir: downloads/code
+permalink_defaults:
+# Directory #目录
+source_dir: source #源文件目录
+public_dir: public #生成的网页文件目录
+# Writing #写作
+new_post_name: :title.md #新文章标题
+default_layout: post #默认的模板，包括 post、page、photo、draft（文章、页面、照片、草稿）
+titlecase: false #标题转换成大写
+external_link: true #在新选项卡中打开连接
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+highlight: #语法高亮
+  enable: true #是否启用
+  line_number: true #显示行号
+  tab_replace:
+# Category & Tag #分类和标签
+default_category: uncategorized #默认分类
+category_map:
+tag_map:
+# Archives
+2: 开启分页
+1: 禁用分页
+0: 全部禁用
+archive: 2
+category: 2
+tag: 2
+# Server #本地服务器
+port: 4000 #端口号
+server_ip: localhost #IP 地址
+logger: false
+logger_format: dev
+# Date / Time format #日期时间格式
+date_format: YYYY-MM-DD #参考http://momentjs.com/docs/#/displaying/format/
+time_format: H:mm:ss
+# Pagination #分页
+per_page: 10 #每页文章数，设置成 0 禁用分页
+pagination_dir: page
+# Disqus #Disqus评论，替换为多说
+disqus_shortname:
+# Extensions #拓展插件
+theme: landscape-plus #主题
+exclude_generator:
+plugins: #插件，例如生成 RSS 和站点地图的
+- hexo-generator-feed
+- hexo-generator-sitemap
+# Deployment #部署，将 lmintlcx 改成用户名
+deploy:
+  type: git
+  repo: github创库地址.git
+  branch: master
+```
+有时候我们部署了以后自己博客的链接打不开,查看生成的静态文件也没有index.html,或者是各种奇怪的报错。这时候有可能是我们的站点配置文件`_config.yml`格式出现了问题。这时候不妨去一些YAML格式检测网站去检测一下格式是否正确:[传送门](http://www.yamllint.com/)。
 ## 五、结语
->完成上面的操作,你就已经一只脚踏进了`hexo`的大门,这时的你肯定还有很多疑问,比如博客的头像怎么更换，博客的主题怎么配置等等等等。这里先留下一个悬念,有兴趣的同学可以先行查询一些资料^_^
-    
+完成上面的操作,你就已经一只脚踏进了`hexo`的大门,这时的你肯定还有很多疑问,比如博客的头像怎么更换，博客的主题怎么配置等等等等。这里先留下一个悬念,有兴趣的同学可以先行查询一些资料^_^
+
+---
+
+>本文作者： catalinaLi
+本文链接： http://catalinali.top/2017/firstBuildHexo/
+版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。

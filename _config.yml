@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: catalina's blog
+title: catalinaLi's blog
 subtitle: Roookie
 description: 我希望我的朋友们都能挣大钱</br>然后养我
 author: 从不装逼夫斯基
@@ -15,7 +15,7 @@ timezone: Asia/shanghai
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://catalinali.top/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:title/
 permalink_defaults:
 
 # Directory
