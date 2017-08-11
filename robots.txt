@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: http://catalinali.top/sitemap.xml
-Sitemap: http://catalinali.top/baidusitemap.xml
