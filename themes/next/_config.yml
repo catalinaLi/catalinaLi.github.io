@@ -91,9 +91,9 @@ scheme: Pisces
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   GitHub: https://github.com/catalinaLi
-  Weibo: http://weibo.com/your-user-name
   简书: http://www.jianshu.com/users/3413cfc7da01
   知乎: https://www.zhihu.com/people/CatalinaLi
+  CSDN: http://blog.csdn.net/a3212
 # Social Links Icons
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
@@ -104,9 +104,9 @@ social_icons:
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
-  Weibo: weibo
   简书: edit
   知乎: money
+  CSDN: book
   
 
 # Blog rolls
