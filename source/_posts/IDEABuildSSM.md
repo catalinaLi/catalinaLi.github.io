@@ -2,7 +2,7 @@
 title: 记录：使用IDEA搭建Maven+SSM的过程
 date: 2017-08-15 15:51:18
 tags: [SSM,IDEA]
-categories: [SSM,IDEA]
+categories: [IDEA,SSM]
 keywords: [SSM,IDEA] 
 ---
 ![hellossm_15](http://ou3np1yz4.bkt.clouddn.com/hellossm_15.jpg)
@@ -49,6 +49,7 @@ IDEA里的java文件只能在Source Boot类型的文件夹下创建,所以我们
 
 # 随便说说
 IntelliJ IDEA现在已经被基本被认为是当前 Java 开发效率最快的 IDE 工具。对于用惯了Eclipse的我来说显然快要跟不上时代了,这篇文章只是简单的记录了一下搭建的过程,目的是快速熟悉一下IDEA的运行方式。然而关于SSM配置内容却只字未提。一个是因为关于SSM整合的文章现在网上多的是,大家只要一搜就好了。再一个是因为配置都是一大段一大段的,全部粘上来未免太占篇幅。
+最后贴一个IDEA的[教程](https://youmeek.gitbooks.io/intellij-idea-tutorial/content/)
 
 ---
 
