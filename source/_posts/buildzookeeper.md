@@ -19,8 +19,11 @@ keywords: zookeeper搭建
 - Xftp
 
 ## 搭建linux环境
-1.linux安装过程就不赘述了,网上有很多。可以参考[这一篇](http://blog.csdn.net/lzwglory/article/details/53468199)。需要注意的是:
-安装过程中我们最好配置一下网络。可以参考[这一篇](https://jingyan.baidu.com/article/fc07f9891d186512ffe51935.html)。里面的ip最好前三段跟我们的本机一样,最后一段就随便取啦。DNS服务器这一栏可以填跟网关一样的内容。我安装的也是minimal模式。
+1.linux安装过程就不赘述了,网上有很多。可以参考[这一篇](http://blog.csdn.net/lzwglory/article/details/53468199)。需要注意的是安装过程中我们最好配置一下网络:
+![buildzk_8](http://ou3np1yz4.bkt.clouddn.com/buildzk_8.png)
+![buildzk_9](http://ou3np1yz4.bkt.clouddn.com/buildzk_9.png)
+![buildzk_10](http://ou3np1yz4.bkt.clouddn.com/buildzk_10.png)
+最后一步中红色方框的一样就好了,ip只需要最后一段不一样即可。另外我安装的也是minimal模式。
 2.安装好centos以后我们要更改一下网络连接方式。如图:
 ![buildzk_1](http://ou3np1yz4.bkt.clouddn.com/buildzk_1.png)
 3.这样我们就安装好了一台linux,由于我们要搭建集群,所以我们再克隆2台linux:
