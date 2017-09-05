@@ -92,7 +92,7 @@ scheme: Pisces
 social:
   GitHub: https://github.com/catalinaLi
   简书: http://www.jianshu.com/users/3413cfc7da01
-  知乎: https://www.zhihu.com/people/CatalinaLi
+  segmentF: https://segmentfault.com/u/shehuili
   CSDN: http://blog.csdn.net/a3212
 # Social Links Icons
 # Icon Mapping:
@@ -105,7 +105,7 @@ social_icons:
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
   简书: edit
-  知乎: money
+  segmentF: object-group
   CSDN: book
   
 
