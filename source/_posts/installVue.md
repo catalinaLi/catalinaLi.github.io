@@ -11,7 +11,7 @@ keywords: vue.js
 ---
 <!--more-->
 
-## 一、环境准备
+## 环境准备
 - Node.js Javascript的运行时环境
 - npm Node.js下的包管理工具
 - webpack 前端资源模块化管理和打包工具
