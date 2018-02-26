@@ -105,5 +105,5 @@ public class WeixinController {
 
 ---
 >本文作者： catalinaLi
-本文链接： http://catalinali.top/2017/wechatOAuth/
+本文链接： http://catalinali.top/2018/wechatOAuth/
 版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。
