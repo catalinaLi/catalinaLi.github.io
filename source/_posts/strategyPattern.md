@@ -31,8 +31,8 @@ public interface Strategy {
 ``` java
 /**
  * Description: 实现类A
- * Author:		lllx
- * Created at:	2017/12/18
+ * Author: lllx
+ * Created at: 2017/12/18
  */
 public class StrategyA implements Strategy {
     @Override
@@ -43,8 +43,8 @@ public class StrategyA implements Strategy {
 
 /**
  * Description: 实现类B
- * Author:		lllx
- * Created at:	2017/12/18
+ * Author: lllx
+ * Created at: 2017/12/18
  */
 public class StrategyB implements Strategy {
     @Override
@@ -57,8 +57,8 @@ public class StrategyB implements Strategy {
 ``` java
 /**
  * Description: 策略执行
- * Author:		lllx
- * Created at:	2017/12/18
+ * Author: lllx
+ * Created at: 2017/12/18
  */
 public class Context {
     
@@ -82,8 +82,8 @@ public class Context {
 ``` java
 /**
  * Description: StrategyTest
- * Author:		lllx
- * Created at:	2017/12/18
+ * Author: lllx
+ * Created at: 2017/12/18
  */
 public class StrategyTest {
     public static void main(String[] args) {
@@ -96,7 +96,7 @@ public class StrategyTest {
 ```
 运行结果：
 ![strategy_1](http://ou3np1yz4.bkt.clouddn.com/strategy_1.jpg)
-从这我们可以看到，这里采用了多态的形式:父类的引用指向子类的对象。从而改变其实现类。实例化不同的实现类可以出现不同的结果。
+实例化不同的实现类可以出现不同的结果。
 
 ## 三、与Spring想结合的策略模式
 我们主要利用Spring的核心IOC来实现它，还是使用上面的例子；

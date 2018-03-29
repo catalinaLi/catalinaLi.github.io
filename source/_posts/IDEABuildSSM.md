@@ -2,7 +2,7 @@
 title: 记录：使用IDEA搭建Maven+SSM的过程
 date: 2017-08-15 15:51:18
 tags: [SSM,IDEA]
-categories: [IDEA,SSM]
+categories: SSM
 keywords: [SSM,IDEA] 
 ---
 ![hellossm_15](http://ou3np1yz4.bkt.clouddn.com/hellossm_15.jpg)

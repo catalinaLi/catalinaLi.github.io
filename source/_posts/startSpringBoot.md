@@ -1,9 +1,9 @@
 ---
 title: 使用IDEA搭建第一个SpringBoot程序
 date: 2018-01-27 17:25:26
-tags: springBoot
-categories: springBoot
-keywords: springBoot
+tags: [SpringBoot,IDEA]
+categories: SpringBoot
+keywords: [SpringBoot,IDEA]
 ---
 ![startSpringBoot_logo](http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_logo.jpg)
 >近来在研究SpringBoot的使用，现在把使用IDEA搭建一个SpringBoot的HelloWorld程序记录下来
