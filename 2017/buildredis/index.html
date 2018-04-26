@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Redis" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="catalinaLi's Notes" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="今天学习了淘淘商城中的redis的使用，在这里把它记录下来。">
+<meta name="keywords" content="Redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="走进Redis：Redis的安装、使用以及集群的搭建">
+<meta property="og:url" content="http://catalinali.top/2017/buildredis/index.html">
+<meta property="og:site_name" content="catalinaLi&#39;s Notes">
+<meta property="og:description" content="今天学习了淘淘商城中的redis的使用，在这里把它记录下来。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/redis_logo.jpeg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/redis_1.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/redis_2.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/redis_3.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/redis_4.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/redis_5.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/redis_6.png">
+<meta property="og:updated_time" content="2018-04-25T09:49:24.284Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="走进Redis：Redis的安装、使用以及集群的搭建">
+<meta name="twitter:description" content="今天学习了淘淘商城中的redis的使用，在这里把它记录下来。">
+<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/redis_logo.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://catalinali.top/2017/buildredis/"/>
+
+
+
+
+
+  <title>走进Redis：Redis的安装、使用以及集群的搭建 | catalinaLi's Notes</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">catalinaLi's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Rooookie</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2017/buildredis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="从不装逼夫斯基">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="catalinaLi's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">走进Redis：Redis的安装、使用以及集群的搭建</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-06T17:48:16+08:00">
+                2017-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/buildredis/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/buildredis/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p><img src="http://ou3np1yz4.bkt.clouddn.com/redis_logo.jpeg" alt="redis_logo"></p>
+<blockquote>
+<p>今天学习了淘淘商城中的redis的使用，在这里把它记录下来。</p>
+</blockquote>
+<hr>
+<a id="more"></a>
+<h2 id="一、Redis的安装"><a href="#一、Redis的安装" class="headerlink" title="一、Redis的安装"></a>一、Redis的安装</h2><p>Redis的安装是很简单的,安装之前我们需要c语言的编译环境。如果没有gcc需要在线安装。<code>yum install gcc-c++</code>。</p>
+<h3 id="安装步骤："><a href="#安装步骤：" class="headerlink" title="安装步骤："></a>安装步骤：</h3><p>第一步：redis的源码包上传到linux系统。<br>第二步：解压缩redis。<code>tar -zxvf redis-3.0.0.tar.gz</code><br>第三步：编译。进入redis源码目录。<code>make</code><br>第四步：安装。<code>make install PREFIX=/usr/local/redis</code>,PREFIX参数指定redis的安装目录。</p>
+<h2 id="二、Redis的启动与基本操作"><a href="#二、Redis的启动与基本操作" class="headerlink" title="二、Redis的启动与基本操作"></a>二、Redis的启动与基本操作</h2><p><strong>1.运行redis</strong><br>在redis的安装目录下直接运行<code>./redis-server</code>就可以启动redis,但这是前端启动。如果我们想后台启动就需要：<br>①进入<em>redis-3.0.0.tar.gz</em>解压出来的文件夹，复制里面的redis.conf文件到安装目录下。然后将daemonize改为yes<img src="http://ou3np1yz4.bkt.clouddn.com/redis_1.jpg" alt="redis_1"><br>②执行<code>./redis-server redis.conf</code>运行redis。这样redis就后台运行了,我们可以使用<code>ps aux|grep redis</code>来查看redis的运行状态<br><img src="http://ou3np1yz4.bkt.clouddn.com/redis_2.png" alt="redis_2"><br>我们可以使用以下命令来进入操作redis：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./redis-cli ##进入redis客户端</span><br><span class="line">./redis-cli -h 192.168.72.121 -p 6379 ##连接指定ip和端口的redis服务器</span><br><span class="line">./redis-cli shutdown ##关闭redis客户端</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.redis中的五种类型</strong><br>先来看几个操作数据库的基本命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">KEYS *                   ##获得当前数据库的所有键</span><br><span class="line">EXISTS key [key ...]     ##判断键是否存在，返回个数，如果key有一样的也是叠加数</span><br><span class="line">DEL key [key ...]        ##删除键，返回删除的个数</span><br><span class="line">TYPE key                 ##获取减值的数据类型（string，hash，list，set，zset）</span><br><span class="line">FLUSHALL                 ##清空所有数据库</span><br><span class="line">Expire key second        ##设置key的过期时间</span><br><span class="line">Ttl key                  ##查看key的有效期</span><br><span class="line">Persist key              ##清除key的过期时间。Key持久化。</span><br></pre></td></tr></table></figure></p>
+<p>redis中所有的数据都是Key-value类型的，其中有五种主要数据类型：字符串类型（string），散列类型（hash），列表类型（list），集合类型（set），有序集合类型（zset）。而在这五种类型中，我们最常用的是字符串类型，散列类型。这里简单介绍一下字符串类型和散列类型：<br>①<strong>字符串类型string</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SET         ##赋值，用法： SET key value</span><br><span class="line">GET         ##取值，用法： GET key</span><br><span class="line">INCR        ##递增数字，仅仅对数字类型的键有用，相当于Java的i++运算，用法： INCR key</span><br><span class="line">INCRBY      ##增加指定的数字，仅仅对数字类型的键有用，相当于Java的i+=3，用法：INCRBY key increment，意思是key自增increment，increment可以为负数，表示减少。</span><br><span class="line">DECR        ##递减数字，仅仅对数字类型的键有用，相当于Java的i–，用法：DECR key</span><br><span class="line">DECRBY      ##减少指定的数字，仅仅对数字类型的键有用，相当于Java的i-=3，用法：DECRBY key decrement，意思是key自减decrement，decrement可以为正数，表示增加。</span><br><span class="line">INCRBYFLOAT ##增加指定浮点数，仅仅对数字类型的键有用，用法：INCRBYFLOAT key increment</span><br><span class="line">APPEND      ##向尾部追加值，相当于Java中的”hello”.append(“ world”)，用法：APPEND key value</span><br><span class="line">STRLEN      ##获取字符串长度，用法：STRLEN key</span><br><span class="line">MSET        ##同时设置多个key的值，用法：MSET key1 value1 [key2 value2 ...]</span><br><span class="line">MGET        ##同时获取多个key的值，用法：MGET key1 [key2 ...]</span><br></pre></td></tr></table></figure></p>
+<p>②<strong>散列类型hash</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">HSET        ##赋值，用法：HSET key field value</span><br><span class="line">HMSET       ##一次赋值多个字段，用法：HMSET key field1 value1 [field2 values]</span><br><span class="line">HGET        ##取值，用法：HSET key field</span><br><span class="line">HMGET       ##一次取多个字段的值，用法：HMSET key field1 [field2]</span><br><span class="line">HGETALL     ##一次取所有字段的值，用法：HGETALL key</span><br><span class="line">HEXISTS     ##判断字段是否存在，用法：HEXISTS key field</span><br><span class="line">HSETNX      ##当字段不存在时赋值，用法：HSETNX key field value</span><br><span class="line">HINCRBY     ##增加数字，仅对数字类型的值有用，用法：HINCRBY key field increment</span><br><span class="line">HDEL        ##删除字段，用法：HDEL key field</span><br><span class="line">HKEYS       ##获取所有字段名，用法：HKEYS key</span><br><span class="line">HVALS       ##获取所有字段值，用法：HVALS key</span><br><span class="line">HLEN        ##获取字段数量，用法：HLEN key</span><br></pre></td></tr></table></figure></p>
+<p>其他的数据类型就不详细介绍了，相关资料可以点击<a href="https://www.baidu.com/s?wd=redis%E7%9A%84%E4%BA%94%E7%A7%8D%E7%B1%BB%E5%9E%8B&amp;rsv_spt=1&amp;rsv_iqid=0xe2ece0d100005fa4&amp;issp=1&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=2&amp;ie=utf-8&amp;tn=baiduhome_pg&amp;rsv_enter=1&amp;rsv_n=2&amp;rsv_sug3=17&amp;rsv_sug1=14&amp;rsv_sug7=100&amp;rsv_t=eae6CtVWEeBxwTXJYEIsK1Rg%2BIZxWLgTM0hyCSOEYS2VOLZsg6CfpRxdvrRCXXlTZCe7&amp;rsv_sug2=0&amp;inputT=3842&amp;rsv_sug4=3842" target="_blank" rel="noopener">传送门</a></p>
+<h2 id="三、Redis的持久化方案"><a href="#三、Redis的持久化方案" class="headerlink" title="三、Redis的持久化方案"></a>三、Redis的持久化方案</h2><p>Redis的所有数据都是保存到内存中的。<br>Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案,一直开启,不会被关闭。<br><img src="http://ou3np1yz4.bkt.clouddn.com/redis_3.png" alt="redis_Rdb"><br>通过上图我们可以看到,<strong>dump.rdb</strong>会在以下情况保存一次。</p>
+<ul>
+<li>900秒（15分钟）之内至少有1个KEY进行了改变</li>
+<li>300秒（5分钟）之内至少有10个KEY进行了改变</li>
+<li>60秒（1分钟）之内至少有10000个KEY进行了改变</li>
+</ul>
+<p>aof形式：append only file。把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。要想开启aof模式需要在<strong>redis.conf</strong>配置文件中将appendonly改为yes<br><img src="http://ou3np1yz4.bkt.clouddn.com/redis_4.png" alt="redis_aof"></p>
+<h2 id="四、Redis集群的搭建"><a href="#四、Redis集群的搭建" class="headerlink" title="四、Redis集群的搭建"></a>四、Redis集群的搭建</h2><h3 id="1-Redis集群特点"><a href="#1-Redis集群特点" class="headerlink" title="1.Redis集群特点"></a>1.Redis集群特点</h3><p>Redis集群搭建的方式有多种，例如使用zookeeper等，但从redis3.0之后版本支持redis-cluster集群，Redis-Cluster采用无中心结构，每个节点保存数据和整个集群状态,每个节点都和其他所有节点连接。其redis-cluster架构图如下：<br><img src="http://ou3np1yz4.bkt.clouddn.com/redis_5.png" alt="redis_cluster"><br>其架构细节：<br>1、所有的redis节点彼此互联(PING-PONG机制),内部使用二进制协议优化传输速度和带宽。<br>2、节点的fail是通过集群中超过半数的节点检测失效时才生效。<br>3、客户端与redis节点直连,不需要中间proxy层.客户端不需要连接集群所有节点,连接集群中任何一个可用节点即可。<br>4、redis-cluster把所有的物理节点映射到[0-16383]slot上（不一定是平均分配）,cluster 负责维护node&lt;-&gt;slot&lt;-&gt;value。<br>5、Redis集群预分好16384个哈希槽，当需要在 Redis 集群中放置一个 key-value 时，根据 CRC16(key) mod 16384的值，决定将一个key放到哪个槽中。</p>
+<h3 id="2-Redis集群环境搭建"><a href="#2-Redis集群环境搭建" class="headerlink" title="2.Redis集群环境搭建"></a>2.Redis集群环境搭建</h3><p>Redis集群中至少应该有三个节点。要保证集群的高可用，需要每个节点有一个备份机。<br>Redis集群至少需要6台服务器。由于条件限制,这里采用与淘淘商城相同的方式搭建伪分布式。在一台虚拟机运行6个redis实例。需要修改redis的端口号7001-7006。<br><strong>第一步</strong>：创建6个redis实例，每个实例运行在不同的端口。需要修改redis.conf配置文件,将端口号修改成7001-7006。除此之外,还需要把cluster-enabled yes前的注释去掉。<br><strong>第二步</strong>：启动每个redis实例。这里我们可以自己写一个shell脚本,这里给出我的也就是淘淘商城中所使用的脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">cd redis01</span><br><span class="line">./redis-server redis.conf</span><br><span class="line">cd ..</span><br><span class="line">cd redis02</span><br><span class="line">./redis-server redis.conf</span><br><span class="line">cd ..</span><br><span class="line">cd redis03</span><br><span class="line">./redis-server redis.conf</span><br><span class="line">cd ..</span><br><span class="line">cd redis04</span><br><span class="line">./redis-server redis.conf</span><br><span class="line">cd ..</span><br><span class="line">cd redis05</span><br><span class="line">./redis-server redis.conf</span><br><span class="line">cd ..</span><br><span class="line">cd redis06</span><br><span class="line">./redis-server redis.conf</span><br><span class="line">cd ..</span><br></pre></td></tr></table></figure></p>
+<p>关闭集群的脚本也类似：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./redis-cli -p 7001 shutdown</span><br><span class="line">./redis-cli -p 7002 shutdown</span><br><span class="line">./redis-cli -p 7003 shutdown</span><br><span class="line">./redis-cli -p 7004 shutdown</span><br><span class="line">./redis-cli -p 7005 shutdown</span><br><span class="line">./redis-cli -p 7006 shutdown</span><br></pre></td></tr></table></figure></p>
+<p>记得在运行脚本前要添加可执行（x）的权限：<code>chmod u+x fileName.sh</code><br><strong>第三步</strong>：使用ruby脚本搭建集群。<br>首先我们需要安装ruby运行环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install ruby</span><br><span class="line">yum install rubygems</span><br></pre></td></tr></table></figure></p>
+<p>然后我们需要安装ruby脚本运行使用的包,将这个文件放在集群文件根目录下，然后运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install redis-3.0.0.gem</span><br></pre></td></tr></table></figure></p>
+<p>文件我上传在了<a href="http://download.csdn.net/download/a3212/10048482" target="_blank" rel="noopener">CSDN</a>。<br>这时我们就可以启动集群环境了,运行下面这条命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./redis-trib.rb create --replicas 1 192.168.72.121:7001 192.168.72.121:7002 192.168.72.121:7003 192.168.72.121:7004 192.168.72.121:7005  192.168.72.121:7006</span><br></pre></td></tr></table></figure></p>
+<p>从这条命令我们可以看出使用6个节点来创建一个集群，集群中每个主节点有1个从节点。运行过程中输入一个yes就成功了。需要注意的是在真正搭建的时候一定要关闭防火墙。这时候我们查看进程<br><strong>第四步</strong>：连接Redis集群<br>因为每一个节点都是互联互通的,所以我们不论连哪个节点都是可以的。</p>
+<h2 id="五、使用Java操作Redis"><a href="#五、使用Java操作Redis" class="headerlink" title="五、使用Java操作Redis"></a>五、使用Java操作Redis</h2><p>redis的客户端有很多,从<a href="http://www.redis.cn/clients.html#java" target="_blank" rel="noopener">官网</a>中我们可以看出来,不仅支持的语言众多,而且很多语言有不止一种连接方式。<br><img src="http://ou3np1yz4.bkt.clouddn.com/redis_6.png" alt="redis_client"><br>这里我们采用在JAVA中使用最广泛的Jedis作为实例。</p>
+<h3 id="1-连接单机版"><a href="#1-连接单机版" class="headerlink" title="1.连接单机版"></a>1.连接单机版</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testJedis</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">	<span class="comment">// 第一步：创建一个Jedis对象。需要指定服务端的ip及端口。</span></span><br><span class="line">	Jedis jedis = <span class="keyword">new</span> Jedis(<span class="string">"192.168.25.153"</span>, <span class="number">6379</span>);</span><br><span class="line">	<span class="comment">// 第二步：使用Jedis对象操作数据库，每个redis命令对应一个方法。</span></span><br><span class="line">	String result = jedis.get(<span class="string">"hello"</span>);</span><br><span class="line">	<span class="comment">// 第三步：打印结果。</span></span><br><span class="line">	System.out.println(result);</span><br><span class="line">	<span class="comment">// 第四步：关闭Jedis</span></span><br><span class="line">	jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用起来很简单,不过通常在连接单机版的时候我们采用的是连接池的方式。</p>
+<h3 id="2-连接单机版使用连接池"><a href="#2-连接单机版使用连接池" class="headerlink" title="2.连接单机版使用连接池"></a>2.连接单机版使用连接池</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testJedisPool</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">	<span class="comment">// 第一步：创建一个JedisPool对象。需要指定服务端的ip及端口。</span></span><br><span class="line">	JedisPool jedisPool = <span class="keyword">new</span> JedisPool(<span class="string">"192.168.25.153"</span>, <span class="number">6379</span>);</span><br><span class="line">	<span class="comment">// 第二步：从JedisPool中获得Jedis对象。</span></span><br><span class="line">	Jedis jedis = jedisPool.getResource();</span><br><span class="line">	<span class="comment">// 第三步：使用Jedis操作redis服务器。</span></span><br><span class="line">	jedis.set(<span class="string">"jedis"</span>, <span class="string">"test"</span>);</span><br><span class="line">	String result = jedis.get(<span class="string">"jedis"</span>);</span><br><span class="line">	System.out.println(result);</span><br><span class="line">	<span class="comment">// 第四步：操作完毕后关闭jedis对象，连接池回收资源。</span></span><br><span class="line">	jedis.close();</span><br><span class="line">	<span class="comment">// 第五步：关闭JedisPool对象。</span></span><br><span class="line">	jedisPool.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>连接集群的方式就又稍微不一样了。</p>
+<h3 id="3-连接集群版"><a href="#3-连接集群版" class="headerlink" title="3.连接集群版"></a>3.连接集群版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">   @Testjava</span><br><span class="line">public void testJedisCluster() throws Exception &#123;</span><br><span class="line">	// 第一步：使用JedisCluster对象。需要一个Set&lt;HostAndPort&gt;参数。Redis节点的列表。</span><br><span class="line">	Set&lt;HostAndPort&gt; nodes = new HashSet&lt;&gt;();</span><br><span class="line">	nodes.add(new HostAndPort(&quot;192.168.72.121&quot;, 7001));</span><br><span class="line">	nodes.add(new HostAndPort(&quot;192.168.72.121&quot;, 7002));</span><br><span class="line">	nodes.add(new HostAndPort(&quot;192.168.72.121&quot;, 7003));</span><br><span class="line">	nodes.add(new HostAndPort(&quot;192.168.72.121&quot;, 7004));</span><br><span class="line">	nodes.add(new HostAndPort(&quot;192.168.72.121&quot;, 7005));</span><br><span class="line">	nodes.add(new HostAndPort(&quot;192.168.72.121&quot;, 7006));</span><br><span class="line">	JedisCluster jedisCluster = new JedisCluster(nodes);</span><br><span class="line">	// 第二步：直接使用JedisCluster对象操作redis。在系统中单例存在。</span><br><span class="line">	jedisCluster.set(&quot;hello&quot;, &quot;100&quot;);</span><br><span class="line">	String result = jedisCluster.get(&quot;hello&quot;);</span><br><span class="line">	// 第三步：打印结果</span><br><span class="line">	System.out.println(result);</span><br><span class="line">	// 第四步：系统关闭前，关闭JedisCluster对象。</span><br><span class="line">	jedisCluster.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2017/buildredis/">http://catalinali.top/2017/buildredis/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_wechat.png?v=3" alt="从不装逼夫斯基 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_alipay.jpg?v=3" alt="从不装逼夫斯基 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/helloNginx/" rel="next" title="Nginx初探究：安装与简单使用">
+                <i class="fa fa-chevron-left"></i> Nginx初探究：安装与简单使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/installVue/" rel="prev" title="Vue.js小白入门，搭建开发环境">
+                Vue.js小白入门，搭建开发环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg"
+               alt="从不装逼夫斯基" />
+          <p class="site-author-name" itemprop="name">从不装逼夫斯基</p>
+           
+              <p class="site-description motion-element" itemprop="description">我希望我的朋友们都能挣大钱</br>然后养我</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/catalinaLi" target="_blank" rel="external nofollow" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/3413cfc7da01" target="_blank" rel="external nofollow" title="简书">
+                  
+                    <i class="fa fa-fw fa-edit"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/shehuili" target="_blank" rel="external nofollow" title="segmentF">
+                  
+                    <i class="fa fa-fw fa-object-group"></i>
+                  
+                  segmentF
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/a3212" target="_blank" rel="external nofollow" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-book"></i>
+                  
+                  CSDN
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://halomelody.github.io/" title="玉面小二龙" target="_blank">玉面小二龙</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://minigoooo.github.io/" title="mini" target="_blank">mini</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Redis的安装"><span class="nav-number">1.</span> <span class="nav-text">一、Redis的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装步骤："><span class="nav-number">1.1.</span> <span class="nav-text">安装步骤：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Redis的启动与基本操作"><span class="nav-number">2.</span> <span class="nav-text">二、Redis的启动与基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Redis的持久化方案"><span class="nav-number">3.</span> <span class="nav-text">三、Redis的持久化方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Redis集群的搭建"><span class="nav-number">4.</span> <span class="nav-text">四、Redis集群的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Redis集群特点"><span class="nav-number">4.1.</span> <span class="nav-text">1.Redis集群特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Redis集群环境搭建"><span class="nav-number">4.2.</span> <span class="nav-text">2.Redis集群环境搭建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、使用Java操作Redis"><span class="nav-number">5.</span> <span class="nav-text">五、使用Java操作Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-连接单机版"><span class="nav-number">5.1.</span> <span class="nav-text">1.连接单机版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-连接单机版使用连接池"><span class="nav-number">5.2.</span> <span class="nav-text">2.连接单机版使用连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-连接集群版"><span class="nav-number">5.3.</span> <span class="nav-text">3.连接集群版</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">从不装逼夫斯基
+
+ &nbsp;&nbsp;|&nbsp;&nbsp;
+  <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(http://data.zz.baidu.com/urls?site=catalinali.top&token=rmAGtCYijiQ7Shu8' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  </span>
+</div>
+
+
+<div class="powered-by">
+  个人博客
+</div>
+
+<div class="theme-info">
+  解释权归本人所有 -
+
+</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt9trSeT';
+      var conf = '90f344394566ccdbd9a5b2b7f22f1dc7';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
