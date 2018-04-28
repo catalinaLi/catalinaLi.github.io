@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://catalinali.top/"/>
-  <updated>2018-04-27T01:51:46.703Z</updated>
+  <updated>2018-04-27T02:11:58.059Z</updated>
   <id>http://catalinali.top/</id>
   
   <author>
@@ -20,21 +20,18 @@
     <link href="http://catalinali.top/2018/noteGithubGitlab/"/>
     <id>http://catalinali.top/2018/noteGithubGitlab/</id>
     <published>2018-04-27T01:50:24.000Z</published>
-    <updated>2018-04-27T01:51:46.703Z</updated>
+    <updated>2018-04-27T02:11:58.059Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/gitlabgithub_logo.jpg" alt="gitlabgithub_logo"></p>
 <blockquote>
-<p>换了工作后使用的是gitlab，这样对github的使用会有影响。为了解决这个问题，搜了很多资料后完美解决。现在把它记录下来。<br><a id="more"></a></p>
+<p>换了工作后使用的是gitlab，这样对github的使用会有影响。为了解决这个问题，搜了很多资料后完美解决。现在把它记录下来。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在同一台电脑上使用github和gitlab，主要的思想就是使用不同的仓库时，切换成不同的账号。不同账号的sshKey分别对应github和gitlab。接下来跟着我看看怎么做吧^_^</p>
-<h2 id="一、生成ssh密钥"><a href="#一、生成ssh密钥" class="headerlink" title="一、生成ssh密钥"></a>一、生成ssh密钥</h2><p>这里我们要做的事情就是分别对githubn和gitlab生成对应的密钥（默认情况下本地生成的秘钥位于/Users/用户名/.ssh/），并且配置git访问不同host时访问不同的密钥，流程如下：</p>
-<p>####1、在gitbash中使用<code>ssh-keygen -t rsa -C &quot;公司邮箱地址&quot;</code>生成对应的gitlab密钥：<em>id_rsa</em>和<em>id_rsa.pub</em></p>
-<p>####2、将gitlab公钥即<em>id_rsa.pub</em>中的内容配置到公司的gitlab上</p>
-<p>####3、在gitbash中使用<code>ssh-keygen -t rsa -C &quot;github地址&quot; -f ~/.ssh/github_rsa</code>生成对应的github密钥：<em>github_rsa</em>和<em>github_rsa.pub</em></p>
-<p>####4、将github公钥即<em>github_rsa.pub</em>中的内容配置到自己的github上</p>
-<p>####5、进入密钥生成的位置，创建一个<code>config</code>文件，添加配置：</p>
+<h2 id="一、生成ssh密钥"><a href="#一、生成ssh密钥" class="headerlink" title="一、生成ssh密钥"></a>一、生成ssh密钥</h2><p>这里我们要做的事情就是分别对githubn和gitlab生成对应的密钥（默认情况下本地生成的秘钥位于/Users/用户名/.ssh/），并且配置git访问不同host时访问不同的密钥，流程如下：<br><strong>1、</strong> 在gitbash中使用<code>ssh-keygen -t rsa -C &quot;公司邮箱地址&quot;</code>生成对应的gitlab密钥：<em>id_rsa</em>和<em>id_rsa.pub</em><br><strong>2、</strong> 将gitlab公钥即<em>id_rsa.pub</em>中的内容配置到公司的gitlab上<br><strong>3、</strong> 在gitbash中使用<code>ssh-keygen -t rsa -C &quot;github地址&quot; -f ~/.ssh/github_rsa</code>生成对应的github密钥：<em>github_rsa</em>和<em>github_rsa.pub</em><br><strong>4、</strong> 将github公钥即<em>github_rsa.pub</em>中的内容配置到自己的github上<br><strong>5、</strong> 进入密钥生成的位置，创建一个<code>config</code>文件，添加配置：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gitlab</span></span><br><span class="line"><span class="string">Host</span> <span class="string">gitlab</span></span><br><span class="line">	<span class="string">HostName</span> <span class="string">git.xxx.com</span> <span class="comment">#这里填你的gitlab的Host</span></span><br><span class="line">	<span class="string">User</span> <span class="string">git</span></span><br><span class="line">	<span class="string">IdentityFile</span> <span class="string">~/.ssh/id_rsa</span></span><br><span class="line"><span class="comment"># githab</span></span><br><span class="line"><span class="string">Host</span> <span class="string">github.com</span></span><br><span class="line">	<span class="string">HostName</span> <span class="string">github.com</span></span><br><span class="line">	<span class="string">User</span> <span class="string">git</span></span><br><span class="line">	<span class="string">IdentityFile</span> <span class="string">~/.ssh/github_rsa</span></span><br></pre></td></tr></table></figure>
-<h2 id="二、测试连接"><a href="#二、测试连接" class="headerlink" title="二、测试连接"></a>二、测试连接</h2><p>在密钥的生成位置/Users/用户名/.ssh/下使用gitbash运行<code>ssh -T git@hostName</code>命令测试sshkey对gitlab与github的连接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">catalinaLi@catalinaLi MINGW64 ~/.ssh</span><br><span class="line">$ ssh -T git@gitlab</span><br><span class="line">Welcome to GitLab, catalinaLi!</span><br><span class="line"></span><br><span class="line">catalinaLi@catalinaLi MINGW64 ~/.ssh</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi catalinaLi! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、测试连接"><a href="#二、测试连接" class="headerlink" title="二、测试连接"></a>二、测试连接</h2><p>在密钥的生成位置/Users/用户名/.ssh/下使用gitbash运行<code>ssh -T git@hostName</code>命令测试sshkey对gitlab与github的连接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">catalinaLi@catalinaLi MINGW64 ~/.ssh</span><br><span class="line">$ ssh -T git@gitlab</span><br><span class="line">Welcome to GitLab, catalinaLi!</span><br><span class="line"></span><br><span class="line">catalinaLi@catalinaLi MINGW64 ~/.ssh</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi catalinaLi! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 <p>如果出现上图结果就说明连接成功，如果不是这样的话就仔细看看第一步哪里做错了。</p>
 <h2 id="三、配置git仓库"><a href="#三、配置git仓库" class="headerlink" title="三、配置git仓库"></a>三、配置git仓库</h2><p>这里我们要用到git的config配置。git的config文件记录了用户的基本信息，我们的账号信息也在里面，这里我们要做的就行在不同的本地仓库配置不同的用户信息来访问不同的远程仓库。config文件通常有三个位置：</p>
 <ul>
@@ -43,10 +40,13 @@
 <li>local（仓库级别）：<br>  位于 .git/config，无论你当前在用的库是什么，特定指向该单一的库。每个级别重写前一个级别的值。</li>
 </ul>
 <p>简单了解后我们就可以来配置了</p>
-<h4 id="1-用户级别配置"><a href="#1-用户级别配置" class="headerlink" title="1.用户级别配置"></a>1.用户级别配置</h4><p>因为公司的代码使用频率较高，所以我们将用户级别config设置为公司的gitlab账号,在gitlab中使用如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &apos;catalinaLi&apos; #公司账号名称</span><br><span class="line">$ git config --global user.email &apos;catalinaLi@companyName.com&apos; #公司账号邮箱</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-仓库级别配置"><a href="#2-仓库级别配置" class="headerlink" title="2.仓库级别配置"></a>2.仓库级别配置</h4><p>我们将仓库级别配置成github的账号。此时我们需要先<strong>init</strong>一个git的仓库并进入里面才能执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --local user.name &apos;username&apos; #github账号名称</span><br><span class="line">$ git config --local user.email &apos;username@gmail.com&apos; #github账号邮箱</span><br></pre></td></tr></table></figure></p>
+<p><strong>1.</strong> 用户级别配置<br>因为公司的代码使用频率较高，所以我们将git配置文件的global（用户级别）设置为公司的gitlab账号,在gitlab中使用如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &apos;catalinaLi&apos; #公司账号名称</span><br><span class="line">$ git config --global user.email &apos;catalinaLi@companyName.com&apos; #公司账号邮箱</span><br></pre></td></tr></table></figure>
+<p><strong>2.</strong> 仓库级别配置<br>我们将local（仓库级别）配置成github的账号。此时我们需要先<strong>init</strong>一个git的仓库并进入里面后执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --local user.name &apos;username&apos; #github账号名称</span><br><span class="line">$ git config --local user.email &apos;username@gmail.com&apos; #github账号邮箱</span><br></pre></td></tr></table></figure>
 <p>之后我们github的代码都应该在这个仓库下拉取。</p>
-<h4 id="3-克隆代码"><a href="#3-克隆代码" class="headerlink" title="3.克隆代码"></a>3.克隆代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git@github.com:catalinaLi/ideaTaotao.git</span><br></pre></td></tr></table></figure>
+<p><strong>3.</strong> 克隆代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git@github.com:catalinaLi/ideaTaotao.git</span><br></pre></td></tr></table></figure>
 <p>在使用github克隆代码时，因为配置了config, 所以会通过配置的host自动查找到git@github.com。对于gitlab也是相同的道理</p>
 <p>至此，在同一台电脑上使用gitlab与github已经成功了，尽情感受吧。另外，大家可以寻找<a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;tn=baidu&amp;wd=git%20config&amp;oq=git%25E5%259B%25BE%25E7%2589%2587&amp;rsv_pq=8af24b1f00001879&amp;rsv_t=f935uktxm1WFti3L2TeFRHq8XdFpo%2B3%2FcGp%2F14sVbaYetcqU4uCbhZ5DCCQ&amp;rqlang=cn&amp;rsv_enter=1&amp;inputT=1397&amp;rsv_sug3=14&amp;rsv_sug1=18&amp;rsv_sug7=100&amp;bs=git%E5%9B%BE%E7%89%87" target="_blank" rel="noopener">度娘</a>来学习关于git的config的更多使用</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.arccode.net/config-multi-git-account-and-workspaces.html" target="_blank" rel="noopener">http://www.arccode.net/config-multi-git-account-and-workspaces.html</a><br><a href="https://segmentfault.com/a/1190000002994742" target="_blank" rel="noopener">https://segmentfault.com/a/1190000002994742</a></p>
@@ -60,7 +60,8 @@
     
       &lt;p&gt;&lt;img src=&quot;http://ou3np1yz4.bkt.clouddn.com/gitlabgithub_logo.jpg&quot; alt=&quot;gitlabgithub_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;换了工作后使用的是gitlab，这样对github的使用会有影响。为了解决这个问题，搜了很多资料后完美解决。现在把它记录下来。&lt;br&gt;
+&lt;p&gt;换了工作后使用的是gitlab，这样对github的使用会有影响。为了解决这个问题，搜了很多资料后完美解决。现在把它记录下来。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
