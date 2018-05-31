@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="SpringCloud" />
 
 
 
@@ -95,16 +95,24 @@
 
 
 
-<meta name="description" content="我希望我的朋友们都能挣大钱然后养我">
-<meta property="og:type" content="website">
-<meta property="og:title" content="catalinaLi&#39;s Notes">
-<meta property="og:url" content="http://catalinali.top/page/3/index.html">
+<meta name="keywords" content="SpringCloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud(一)：服务的注册与发现（Eureka）">
+<meta property="og:url" content="http://catalinali.top/2018/startEureka/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="我希望我的朋友们都能挣大钱然后养我">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_logo1.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_logo.jpg?v=2">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_2.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_3.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_4.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_5.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_6.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_7.jpg">
+<meta property="og:updated_time" content="2018-05-31T10:26:25.736Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="catalinaLi&#39;s Notes">
-<meta name="twitter:description" content="我希望我的朋友们都能挣大钱然后养我">
+<meta name="twitter:title" content="SpringCloud(一)：服务的注册与发现（Eureka）">
+<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_logo1.jpg">
 
 
 
@@ -132,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://catalinali.top/page/3/"/>
+  <link rel="canonical" href="http://catalinali.top/2018/startEureka/"/>
 
 
 
 
 
-  <title>catalinaLi's Notes</title>
+  <title>SpringCloud(一)：服务的注册与发现（Eureka） | catalinaLi's Notes</title>
   
 
 
@@ -163,9 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -302,9 +308,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -313,7 +319,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2017/installVue/">
+    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2018/startEureka/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="从不装逼夫斯基">
@@ -330,9 +336,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/installVue/" itemprop="url">Vue.js小白入门，搭建开发环境</a></h1>
+          <h1 class="post-title" itemprop="name headline">SpringCloud(一)：服务的注册与发现（Eureka）</h1>
         
 
         <div class="post-meta">
@@ -344,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T16:39:32+08:00">
-                2017-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T18:19:58+08:00">
+                2018-05-31
               </time>
             
 
@@ -367,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue-js/" itemprop="url" rel="index">
-                    <span itemprop="name">vue.js</span>
+                  <a href="/categories/SpringCloud/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringCloud</span>
                   </a>
                 </span>
 
@@ -386,8 +390,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2017/installVue/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://catalinali.top/2017/installVue/" class="cy_cmt_count" data-xid="2017/installVue/" itemprop="commentsCount" ></span>
+                <a href="/2018/startEureka/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/startEureka/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -397,161 +401,13 @@
           
 
           
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://ou3np1yz4.bkt.clouddn.com/installvue_logo.jpg" alt="installvue_logo"></p>
-<blockquote>
-<p>最近Vue.js的热度持续上升，甚至有标题说2017再不会Vue.js就out了。而作为一个不排斥前段的后端码农来说，当然也要跟得上时代。近来准备放下手中的DOM操作，来一次Vue.js从入门到放弃。现将环境搭建过程记录下来。</p>
-</blockquote>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/installVue/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2017/buildredis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="从不装逼夫斯基">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="catalinaLi's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/buildredis/" itemprop="url">走进Redis：Redis的安装、使用以及集群的搭建</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-06T17:48:16+08:00">
-                2017-11-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Redis/" itemprop="url" rel="index">
-                    <span itemprop="name">Redis</span>
-                  </a>
-                </span>
-
-                
-                
-              
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
           
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/buildredis/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://catalinali.top/2017/buildredis/" class="cy_cmt_count" data-xid="2017/buildredis/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
@@ -565,362 +421,114 @@
       
 
       
-        
-          <hr>
-<p><img src="http://ou3np1yz4.bkt.clouddn.com/redis_logo.jpeg" alt="redis_logo"></p>
-<blockquote>
-<p>今天学习了淘淘商城中的redis的使用，在这里把它记录下来。</p>
-</blockquote>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/buildredis/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p><img src="http://ou3np1yz4.bkt.clouddn.com/eureka_logo1.jpg" alt="eureka_logo"></p>
+<a id="more"></a>
+<h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>首先我们先引用Dubbo官网的一段话<br><img src="http://ou3np1yz4.bkt.clouddn.com/eureka_logo.jpg?v=2" alt="eureka_logo.jpg"></p>
+<ul>
+<li>单一应用架构<br>  当网站流量很小时，只需一个应用，将所有功能都部署在一起，以减少部署节点和成本。<br>  此时，用于简化增删改查工作量的 数据访问框架(ORM) 是关键。</li>
+<li>垂直应用架构<br>  当访问量逐渐增大，单一应用增加机器带来的加速度越来越小，将应用拆成互不相干的几个应用，以提升效率。<br>  此时，用于加速前端页面开发的 Web框架(MVC) 是关键。</li>
+<li>分布式服务架构<br>  当垂直应用越来越多，应用之间交互不可避免，将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中 心，使前端应用能更快速的响应多变的市场需求。此时，用于提高业务复用及整合的分布式服务框架(RPC)是关键。</li>
+<li>流动计算架构<br>当服务越来越多，容量的评估，小服务资源的浪费等问题逐渐显现，此时需增加一个调度中心基于访问压力实时管理集群容量，提高集群利用率。此时，用于提高机器利用率的资源调度和治理中心(SOA) 是关键。</li>
+</ul>
+<p>结合现在大火的微服务，SpringCloud成了炙手可热的微服务架构方案，这里我们介绍一个他的核心组件：Eureka ,eureka是一个服务注册和发现模块。类似于Dubbo的管控台。它分为两个模块:客户端和服务端</p>
+<h2 id="二、创建一个Eureka-Server"><a href="#二、创建一个Eureka-Server" class="headerlink" title="二、创建一个Eureka Server"></a>二、创建一个Eureka Server</h2><p>这里我们使用IntelliJ IDEA进行展示。<br><strong>1.首先创建一个Eureka Server</strong><br>使用IDEA创建一个项目<br><img src="http://ou3np1yz4.bkt.clouddn.com/eureka_2.jpg" alt="eureka_2"><br>中间有一步我们选择Eureka Server选项和SpringBoot版本，如图<br><img src="http://ou3np1yz4.bkt.clouddn.com/eureka_3.jpg" alt="eureka_2"><br>然后下一步就可以创建好了<br><strong>2.添加@EnableEurekaServer注解</strong><br>这个注解只需要在springboot工程的启动application类上就好了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(EurekaApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这时候我们就可以启动了，运行EurekaApplication，然后就输入<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a>就可以看到我们Eureka的页面了。但这时候我们观察console可以发现一直在报错，这是因为默认情况下Eureka Server也是一个Client,我们需要通过配置来解决这个问题<br><strong>3.添加配置</strong><br>eureka是一个高可用的组件，它没有后端缓存，每一个实例注册之后需要向注册中心发送心跳（因此可以在内存中完成），在默认情况下erureka server也是一个eureka client ,必须要指定一个server。eureka server的配置文件appication.yml<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">eureka</span> <span class="comment">#应用的名称</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8761</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  instance:</span></span><br><span class="line"><span class="attr">    hostname:</span> <span class="string">localhost</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span></span><br><span class="line">    <span class="comment"># 通过添加配置我们这里忽略自己</span></span><br><span class="line"><span class="attr">    register-with-eureka:</span> <span class="literal">false</span> <span class="comment">#表示是否注册自身到eureka服务器</span></span><br><span class="line"><span class="attr">    fetch-registry:</span> <span class="literal">false</span> <span class="comment">#表示是否从eureka服务器获取注册信息</span></span><br></pre></td></tr></table></figure></p>
+<p>这时候再启动应用，就大功告成了<br><img src="http://ou3np1yz4.bkt.clouddn.com/eureka_4.jpg" alt="eureka_4"></p>
+<h2 id="三、创建一个Eureka-Client"><a href="#三、创建一个Eureka-Client" class="headerlink" title="三、创建一个Eureka Client"></a>三、创建一个Eureka Client</h2><p><strong>1.运行Eureka Server</strong><br>这里我们可以使用命令行在Eureka Server的目录位置使用<code>mvn clean package</code>来进行打包<br>然后使用<code>java -jar target/eureka-0.0.1-SNAPSHOT.jar</code>命令来进行启动jar包<br>也可以使用<code>nohup java -jar target/eureka-0.0.1-SNAPSHOT.jar &amp;</code>来后台启动这个jar。<br>最后刷新Eureka Server来判断是否启动成功<br><strong>2.创建一个Eureka Client</strong><br>这一步跟创建Server端的步骤是一样的，不同的是模板选择Discovery<br><img src="http://ou3np1yz4.bkt.clouddn.com/eureka_5.jpg" alt="eureka_5"><br><strong>3.添加@EnableEurekaServer注解和服务端地址</strong><br>基本和服务端的做法一样，首先我们在DicoveryApplication.java的代码上添加@EnableDiscoveryClient注解。然后在application.yml上添加配置：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DicoveryApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DicoveryApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    serviceUrl:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span> <span class="comment">#服务端地址</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8762</span> <span class="comment">#客户端端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">client</span> <span class="comment">#客户端名称</span></span><br></pre></td></tr></table></figure>
+<p>注意了，这个版本我们需要在pom文件中添加<code>spring-boot-starter-web</code>的依赖，<br>这时候我们就可以启动我们的服务了，然后就可以在eureka的页面上看到我们刚才的Client了<br><img src="http://ou3np1yz4.bkt.clouddn.com/eureka_6.jpg" alt="eureka_6"></p>
+<h2 id="三、Eureka-Server的高可用"><a href="#三、Eureka-Server的高可用" class="headerlink" title="三、Eureka Server的高可用"></a>三、Eureka Server的高可用</h2><p>简单的说，实现Eureka Server的高可用就是让Eureka Server的实例互相注册。<br>让我们来看一下如何实现：<br>首先我们配置文件中这样写<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">discovery-cluster</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  profiles:</span> <span class="string">discovery1</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8761</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  instance:</span></span><br><span class="line"><span class="attr">    hostname:</span> <span class="string">discovery1</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      default-zone:</span> <span class="attr">http://discovery2:8762/eureka</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  profiles:</span> <span class="string">discovery2</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8762</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  instance:</span></span><br><span class="line"><span class="attr">    hostname:</span> <span class="string">discovery2</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      default-zone:</span> <span class="attr">http://discovery1:8761/eureka</span></span><br></pre></td></tr></table></figure></p>
+<p>配置文件是通过两个Eureka Server互相注册，这里有三段配置，第一段配置为公共配置，配置了应用名称，第二段为名discovery1的配置，第三段为discovery2的配置。在项目启动可以通过–spring.profiles.active={配置名称} 来启动不同的配置。<br>下面我们来进行测试：<br>1）在discovery-cluster目录下，使用<code>mvn clean package</code>打包项目<br>2）使用下面命令启动两个Eureka Server节点<br><code>java -jar discovery-cluster-0.0.1-SNAPSHOT.jar --spring.profiles.active=discovery1</code></p>
+<p><code>java -jar discovery-cluster-0.0.1-SNAPSHOT.jar --spring.profiles.active=discovery2</code><br>3）在浏览器上分别输入<a href="http://localhost:8761和http://localhost:8762查看注册的服务。" target="_blank" rel="noopener">http://localhost:8761和http://localhost:8762查看注册的服务。</a><br>这时候我们可以发现两个网址都可以访问Eueka页面<br><img src="http://ou3np1yz4.bkt.clouddn.com/eureka_7.jpg" alt="eureka_7"><br>这样我们就大功告成了，如我们我们的实例有3个，那就在配置文件中都写入<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">   client:</span></span><br><span class="line"><span class="attr">      service-url:</span></span><br><span class="line"><span class="attr">          default-zone:</span><span class="attr">http://discovery1:8761/eureka,http://discovery2:8762/eureka</span></span><br></pre></td></tr></table></figure></p>
+<p>以上，就是Eureka的基本用法了！</p>
+
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
       
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2017/helloNginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="从不装逼夫斯基">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="catalinaLi's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/helloNginx/" itemprop="url">Nginx初探究：安装与简单使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T16:30:13+08:00">
-                2017-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/nginx/" itemprop="url" rel="index">
-                    <span itemprop="name">nginx</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/helloNginx/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://catalinali.top/2017/helloNginx/" class="cy_cmt_count" data-xid="2017/helloNginx/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_wechat.png?v=3" alt="从不装逼夫斯基 WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
       
       
-
-      
-        
-          <p><img src="http://ou3np1yz4.bkt.clouddn.com/nginx_logo1.jpg" alt="nginx_logo"></p>
-<blockquote>
-<p>在学习淘淘商城的过程中接触到了nginx,今天就把使用它的过程记录下来,作为留存。</p>
-</blockquote>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/helloNginx/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2017/recordsql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="从不装逼夫斯基">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="catalinaLi's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/recordsql/" itemprop="url">记录：mysql中的case when|on duplicate key update|重复插入返回主键的用法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-27T16:17:44+08:00">
-                2017-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">mysql</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/recordsql/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://catalinali.top/2017/recordsql/" class="cy_cmt_count" data-xid="2017/recordsql/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_alipay.jpg?v=3" alt="从不装逼夫斯基 Alipay"/>
+          <p>支付宝打赏</p>
         </div>
-      </header>
-    
+      
+    </div>
+  </div>
 
-    <div class="post-body" itemprop="articleBody">
 
       
-      
+    </div>
 
+    <div>
       
         
-          <p><img src="http://ou3np1yz4.bkt.clouddn.com/case_logo.jpg" alt="case_logo"><br>在平时的开发中不免接触到数据库,这里记录一些平时开发中遇到的细节问题，与大家共勉。</p>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/recordsql/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/SpringCloud/" rel="tag"># SpringCloud</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/noteGithubGitlab/" rel="next" title="如何在同一台电脑上使用github和gitlab">
+                <i class="fa fa-chevron-left"></i> 如何在同一台电脑上使用github和gitlab
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -928,6 +536,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
 
         </div>
         
@@ -948,8 +562,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg"
@@ -1074,6 +697,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、引言"><span class="nav-number">1.</span> <span class="nav-text">一、引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、创建一个Eureka-Server"><span class="nav-number">2.</span> <span class="nav-text">二、创建一个Eureka Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、创建一个Eureka-Client"><span class="nav-number">3.</span> <span class="nav-text">三、创建一个Eureka Client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Eureka-Server的高可用"><span class="nav-number">4.</span> <span class="nav-text">三、Eureka Server的高可用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1234,10 +873,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -1272,7 +911,18 @@
 
 
   
-    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt9trSeT"></script>
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt9trSeT';
+      var conf = '90f344394566ccdbd9a5b2b7f22f1dc7';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
   
 
 
