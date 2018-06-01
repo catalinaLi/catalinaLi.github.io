@@ -4,7 +4,7 @@
   <url>
     <loc>http://catalinali.top/2018/startEureka/</loc>
     
-    <lastmod>2018-05-31T10:26:25.736Z</lastmod>
+    <lastmod>2018-06-01T02:24:51.966Z</lastmod>
     
   </url>
   
@@ -30,14 +30,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/about/index.html</loc>
+    <loc>http://catalinali.top/categories/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/categories/index.html</loc>
+    <loc>http://catalinali.top/about/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
@@ -58,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/useJSONP/</loc>
-    
-    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2017/useJDBC/</loc>
     
     <lastmod>2018-04-25T09:49:24.289Z</lastmod>
@@ -72,14 +65,21 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
+    <loc>http://catalinali.top/2018/useJSONP/</loc>
+    
+    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2017/strategyPattern/</loc>
     
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/strategyPattern/</loc>
+    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
     
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     
@@ -93,14 +93,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/installVue/</loc>
+    <loc>http://catalinali.top/2017/installjira/</loc>
     
     <lastmod>2018-04-25T09:49:24.287Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/installjira/</loc>
+    <loc>http://catalinali.top/2017/installVue/</loc>
     
     <lastmod>2018-04-25T09:49:24.287Z</lastmod>
     
