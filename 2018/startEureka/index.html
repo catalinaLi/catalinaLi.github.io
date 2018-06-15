@@ -97,7 +97,7 @@
 
 <meta name="keywords" content="SpringCloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringCloud(一)：服务的注册与发现（Eureka）">
+<meta property="og:title" content="小白学SpringCloud(一)：服务的注册与发现（Eureka）">
 <meta property="og:url" content="http://catalinali.top/2018/startEureka/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
 <meta property="og:locale" content="zh-Hans">
@@ -108,9 +108,9 @@
 <meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_5.jpg">
 <meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_6.jpg">
 <meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_7.jpg">
-<meta property="og:updated_time" content="2018-06-01T02:24:51.966Z">
+<meta property="og:updated_time" content="2018-06-15T06:40:28.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringCloud(一)：服务的注册与发现（Eureka）">
+<meta name="twitter:title" content="小白学SpringCloud(一)：服务的注册与发现（Eureka）">
 <meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/eureka_logo1.jpg">
 
 
@@ -145,7 +145,7 @@
 
 
 
-  <title>SpringCloud(一)：服务的注册与发现（Eureka） | catalinaLi's Notes</title>
+  <title>小白学SpringCloud(一)：服务的注册与发现（Eureka） | catalinaLi's Notes</title>
   
 
 
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringCloud(一)：服务的注册与发现（Eureka）</h1>
+          <h1 class="post-title" itemprop="name headline">小白学SpringCloud(一)：服务的注册与发现（Eureka）</h1>
         
 
         <div class="post-meta">
@@ -440,6 +440,10 @@
 <p>配置文件是通过两个Eureka Server互相注册，这里有三段配置，第一段配置为公共配置，配置了应用名称，第二段为名discovery1的配置，第三段为discovery2的配置。在项目启动可以通过–spring.profiles.active={配置名称} 来启动不同的配置。<br>下面我们来进行测试：<br>1）在discovery-cluster目录下，使用<code>mvn clean package</code>打包项目<br>2）使用下面命令启动两个Eureka Server节点<br><code>java -jar discovery-cluster-0.0.1-SNAPSHOT.jar --spring.profiles.active=discovery1</code></p>
 <p><code>java -jar discovery-cluster-0.0.1-SNAPSHOT.jar --spring.profiles.active=discovery2</code><br>3）在浏览器上分别输入<a href="http://localhost:8761和http://localhost:8762查看注册的服务。" target="_blank" rel="noopener">http://localhost:8761和http://localhost:8762查看注册的服务。</a><br>这时候我们可以发现两个网址都可以访问Eueka页面<br><img src="http://ou3np1yz4.bkt.clouddn.com/eureka_7.jpg" alt="eureka_7"><br>这样我们就大功告成了，如我们我们的实例有3个，那就在配置文件中都写入<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">   client:</span></span><br><span class="line"><span class="attr">      service-url:</span></span><br><span class="line"><span class="attr">          default-zone:</span><span class="attr">http://discovery1:8761/eureka,http://discovery2:8762/eureka</span></span><br></pre></td></tr></table></figure></p>
 <p>以上，就是Eureka的基本用法了！</p>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/startfeign&amp;Rest/">http://catalinali.top/2018/startfeign&amp;Rest/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+</blockquote>
 
       
     </div>
@@ -513,8 +517,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/startfeignRest/" rel="prev" title="SpringCloud(二)：服务间的调用">
-                SpringCloud(二)：服务间的调用 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/startfeignRest/" rel="prev" title="小白学SpringCloud(二)：服务间的调用">
+                小白学SpringCloud(二)：服务间的调用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,7 +594,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
