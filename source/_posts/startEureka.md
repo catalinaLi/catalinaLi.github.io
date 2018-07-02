@@ -1,5 +1,5 @@
 ---
-title: SpringCloud(一)：服务的注册与发现（Eureka）
+title: 小白学SpringCloud(一)：服务的注册与发现（Eureka）
 date: 2018-05-31 18:19:58
 tags: SpringCloud
 categories: SpringCloud
@@ -12,7 +12,6 @@ keywords: SpringCloud
 
 ## 一、引言
 首先我们先引用Dubbo官网的一段话
-![eureka_logo.jpg](http://ou3np1yz4.bkt.clouddn.com/eureka_logo.jpg?v=2)
 
 - 单一应用架构
     当网站流量很小时，只需一个应用，将所有功能都部署在一起，以减少部署节点和成本。
@@ -153,3 +152,9 @@ eureka:
           default-zone:http://discovery1:8761/eureka,http://discovery2:8762/eureka
 ```
 以上，就是Eureka的基本用法了！
+
+---
+
+>本文作者： catalinaLi
+本文链接： http://catalinali.top/2018/startfeign&Rest/
+版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。
