@@ -4,8 +4,48 @@
 
     
   <url>
+    <loc>http://catalinali.top/2018/startbus/</loc>
+    <lastmod>2018-07-02T06:37:15.885Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(四)：消息总线（Spring Cloud Bus）</title>
+        <pubTime>2018-07-02T06:33:08.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2018/config/</loc>
-    <lastmod>2018-06-15T07:45:54.619Z</lastmod>
+    <lastmod>2018-07-02T06:34:27.733Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(三)：统一配置中心(config)</title>
+        <pubTime>2018-06-15T07:45:19.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startconfig/</loc>
+    <lastmod>2018-07-02T06:34:09.845Z</lastmod>
     <data>
         <display>
         <title>小白学SpringCloud(三)：统一配置中心(config)</title>
@@ -151,6 +191,26 @@
 
     
   <url>
+    <loc>http://catalinali.top/2018/useJSONP/</loc>
+    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
+    <data>
+        <display>
+        <title>使用JSONP解决ajax跨域</title>
+        <pubTime>2018-01-08T08:26:23.000Z</pubTime>
+        
+        <tag>jsonp</tag>
+         
+         
+           
+             
+              <breadCrumb title="jsonp" url="http://catalinali.top/categories/jsonp/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2017/useJDBC/</loc>
     <lastmod>2018-04-25T09:49:24.289Z</lastmod>
     <data>
@@ -173,19 +233,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/useJSONP/</loc>
-    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
+    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
+    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     <data>
         <display>
-        <title>使用JSONP解决ajax跨域</title>
-        <pubTime>2018-01-08T08:26:23.000Z</pubTime>
+        <title>Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</title>
+        <pubTime>2017-08-10T08:12:56.000Z</pubTime>
         
-        <tag>jsonp</tag>
+        <tag>hexo</tag>
          
          
            
              
-              <breadCrumb title="jsonp" url="http://catalinali.top/categories/jsonp/"/>
+              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
           
         </display>
     </data>
@@ -208,26 +268,6 @@
            
              
               <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
-    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</title>
-        <pubTime>2017-08-10T08:12:56.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
           
         </display>
     </data>
@@ -395,26 +435,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
-    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
-    <data>
-        <display>
-        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
-        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
-        
-        <tag>Redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     <data>
@@ -428,6 +448,26 @@
            
              
               <breadCrumb title="Spring" url="http://catalinali.top/categories/Spring/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
+    <data>
+        <display>
+        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
+        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
           
         </display>
     </data>

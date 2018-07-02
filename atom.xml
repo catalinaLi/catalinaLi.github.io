@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://catalinali.top/"/>
-  <updated>2018-06-15T07:45:54.619Z</updated>
+  <updated>2018-07-02T06:37:15.885Z</updated>
   <id>http://catalinali.top/</id>
   
   <author>
@@ -16,11 +16,51 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>小白学SpringCloud(四)：消息总线（Spring Cloud Bus）</title>
+    <link href="http://catalinali.top/2018/startbus/"/>
+    <id>http://catalinali.top/2018/startbus/</id>
+    <published>2018-07-02T06:33:08.000Z</published>
+    <updated>2018-07-02T06:37:15.885Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/bus_logo.jpg" alt="bus_logo"></p>
+<blockquote>
+<p>Spring Cloud Bus 将分布式的节点用轻量的消息代理连接起来。它可以用于广播配置文件的更改或者服务之间的通讯，也可以用于监控。上篇我们有说到Spring Cloud为我们提供了在不重启项目的情况下切换配置的功能，就要用到它，让我们来看看怎么实现的吧。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一、安装MQ"><a href="#一、安装MQ" class="headerlink" title="一、安装MQ"></a>一、安装MQ</h2><p>Spring Cloud Bus支持常见的Rabbitmq、kafka、Activemq等。我们这里使用Rabbitmq来作为演示。Rabbitmq的安装这里就不作演示了，大家可以使用docker来安装使用，很方便。给大家一个度娘的<a href="https://www.baidu.com/s?wd=docker%E5%AE%89%E8%A3%85activemq&amp;rsv_spt=1&amp;rsv_iqid=0xf5578fe4000354b9&amp;issp=1&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rqlang=cn&amp;tn=baiduhome_pg&amp;rsv_enter=0&amp;oq=docker%2520%25E5%25AE%2589%25E8%25A3%2585activemq&amp;inputT=1021&amp;rsv_t=11e21%2FaLzaFQGzuvMvLtKuHmxzuLUWS0TB6d8t9pETvwOEs%2B0fjRN9KsfhoNwJv1cAky&amp;rsv_pq=ef4e2567000322af&amp;sug=activemq&amp;rsv_sug3=21&amp;rsv_sug1=17&amp;rsv_sug7=100&amp;rsv_sug2=0&amp;rsv_sug4=1751" target="_blank" rel="noopener">传送门</a>。</p>
+<h2 id="二、Config-Server配置"><a href="#二、Config-Server配置" class="headerlink" title="二、Config Server配置"></a>二、Config Server配置</h2><p>这里我们还是以廖师兄的图为例，先来看看自动更新配置的原理(图中product、order均为客户端)。<br><img src="http://ou3np1yz4.bkt.clouddn.com/bus_1.png" alt="bus_1"><br>当我们在远端Git修改了配置之后，如果我们访问Config Server的<code>/bus-refresh</code>接口，Config Server就会把更改的配置发送给MQ，之后MQ就会把要改变的配置推送给各个客户端，这样就实现了自动更换配置的功能，现在我们来试一试吧。记住在这之前要先启动Rabbitmq。<br><strong>1.</strong>添加pom引用<br>老规矩，先来添加pom引用，要注意的是Config的Server和Client端都要添加。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.</strong>修改配置文件<br>首先我们要先添加rabbitmq的配置，我们可以直接配置在远程git上面，这样服务端和客户端就都有这份配置了。<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  rabbitmq:</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">guest</span></span><br><span class="line"><span class="attr">    password:</span> <span class="string">guest</span></span><br><span class="line"><span class="attr">    host:</span> <span class="number">192.168</span><span class="string">.xxx.xxx</span></span><br><span class="line"><span class="attr">    port:</span> <span class="number">5672</span></span><br></pre></td></tr></table></figure></p>
+<p>然后我们也要显示的使我们的服务暴漏<code>/bus-refresh</code>接口。在Spring2.0中把这个接口都移动到了<em>actuator</em>下面。这个也需要在客户端和服务端进行配置，所以我们直接加在远端Git上就好<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">management:</span></span><br><span class="line"><span class="attr">  endpoints:</span></span><br><span class="line"><span class="attr">    web:</span></span><br><span class="line"><span class="attr">      exposure:</span></span><br><span class="line"><span class="attr">        include:</span> <span class="string">bus-refresh</span></span><br></pre></td></tr></table></figure></p>
+<p>现在我们逐一启动我们的Eureka、Config和Client项目，同时在启动Config Server的时候可以看到我们对外暴露的接口<br><img src="http://ou3np1yz4.bkt.clouddn.com/bus_2.png" alt="bus_2"><br>这样我们就完成配置了，现在我们修改一下远端配置中的<code>env</code>的值，然后访问一下这个接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST http://localhost:8764/actuator/bus-refresh</span><br></pre></td></tr></table></figure></p>
+<p>这时候我们发现在不重启项目的情况下，我们的配置已经修改了。<br><strong>3.</strong>配置Webhook<br>刚才我们已经实现了自动替换项目配置，但是我们每次更改配置都要手动访问<code>/bus-refresh</code>接口，有没有简单的方式呢?答案当然是有的。现在大部分远端Git都提供了webhook功能，即我们每更改一次配置，就自动向某一接口发送一次请求。这不就是我们想要的吗？</p>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/startbus/">http://catalinali.top/2018/startbus/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ou3np1yz4.bkt.clouddn.com/bus_logo.jpg&quot; alt=&quot;bus_logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Spring Cloud Bus 将分布式的节点用轻量的消息代理连接起来。它可以用于广播配置文件的更改或者服务之间的通讯，也可以用于监控。上篇我们有说到Spring Cloud为我们提供了在不重启项目的情况下切换配置的功能，就要用到它，让我们来看看怎么实现的吧。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="SpringCloud" scheme="http://catalinali.top/categories/SpringCloud/"/>
+    
+    
+      <category term="SpringCloud" scheme="http://catalinali.top/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
     <title>小白学SpringCloud(三)：统一配置中心(config)</title>
     <link href="http://catalinali.top/2018/config/"/>
     <id>http://catalinali.top/2018/config/</id>
     <published>2018-06-15T07:45:19.000Z</published>
-    <updated>2018-06-15T07:45:54.619Z</updated>
+    <updated>2018-07-02T06:34:27.733Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/config_logo.png" alt="config_logo"></p>
 <blockquote>
@@ -45,7 +85,57 @@
 <p>还记得导语中说的更改配置可以不用重新启动项目吗？这里需要用到另外一个组件，我们在下篇文章进行讲解。</p>
 <hr>
 <blockquote>
-<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/config/">http://catalinali.top/2018/config/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/startconfig/">http://catalinali.top/2018/startconfig/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ou3np1yz4.bkt.clouddn.com/config_logo.png&quot; alt=&quot;config_logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在分布式系统中，每一个功能模块都能拆分成一个独立的服务，一次请求的完成，可能会调用很多个服务协调来完成。如果我们每个服务都有一个独立的配置的话，这样很不方便我们维护。Spring Cloud中为我们提供了一个config组件为我们解决了这个问题，并且更改了配置并不需要我们重启。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="SpringCloud" scheme="http://catalinali.top/categories/SpringCloud/"/>
+    
+    
+      <category term="SpringCloud" scheme="http://catalinali.top/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小白学SpringCloud(三)：统一配置中心(config)</title>
+    <link href="http://catalinali.top/2018/startconfig/"/>
+    <id>http://catalinali.top/2018/startconfig/</id>
+    <published>2018-06-15T07:45:19.000Z</published>
+    <updated>2018-07-02T06:34:09.845Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/config_logo.png" alt="config_logo"></p>
+<blockquote>
+<p>在分布式系统中，每一个功能模块都能拆分成一个独立的服务，一次请求的完成，可能会调用很多个服务协调来完成。如果我们每个服务都有一个独立的配置的话，这样很不方便我们维护。Spring Cloud中为我们提供了一个config组件为我们解决了这个问题，并且更改了配置并不需要我们重启。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一、Config概述"><a href="#一、Config概述" class="headerlink" title="一、Config概述"></a>一、Config概述</h2><p>同Eureka一样，config也分为server端和client端，我们先来看看server端的原理。这里引用一张廖师兄的图（注：图中的order、product都是客户端）<br><img src="http://ou3np1yz4.bkt.clouddn.com/config_1.png" alt="config_1"><br>从这张图我们可以看出，Config Server是以远端Git作为依托（SVN也可以,这里使用Github作为演示），从远端Git仓库中拉取配置并同步到本地Git上。当客户端需要配置的时候就可以从Server端进行配置的拉取。</p>
+<h2 id="二、Config-Server配置"><a href="#二、Config-Server配置" class="headerlink" title="二、Config Server配置"></a>二、Config Server配置</h2><p><strong>1.</strong>创建Config工程<br>跟前文一样，我们使用IDEA的Spring Initializr创建我们的Config工程，如图:除了图中圈起来的config Server要勾上，Eureka Discover也要勾上。<br><img src="http://ou3np1yz4.bkt.clouddn.com/config_2.png" alt="config_2"></p>
+<p><strong>2.</strong>创建远程仓库<br>首先我们先创建一个远程Git仓库，这里以Github为例，这里我已经创建好了一个公开仓库<a href="https://github.com/catalinaLi/config_repo" target="_blank" rel="noopener">https://github.com/catalinaLi/config_repo</a><br>然后在里面先添加一份配置<br><img src="http://ou3np1yz4.bkt.clouddn.com/config_6.png" alt="config_3"><br><strong>3.</strong>配置Config工程<br>将我们的Config工程注册到Eureka注册中心：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    serviceUrl:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span> <span class="comment">#服务端地址</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8764</span> <span class="comment">#客户端端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">config</span></span><br><span class="line"><span class="attr">  cloud:</span></span><br><span class="line"><span class="attr">    config:</span></span><br><span class="line"><span class="attr">      server:</span></span><br><span class="line"><span class="attr">        git:</span></span><br><span class="line"><span class="attr">          uri:</span> <span class="attr">https://github.com/catalinaLi/config_repo</span> <span class="comment">#config_Server仓库地址</span></span><br><span class="line">          <span class="comment">#如果我们配置的是私有仓库，则还需要远程仓库的账号和密码</span></span><br><span class="line">          <span class="comment">#username: yourusername  </span></span><br><span class="line">          <span class="comment">#password: yourpassword</span></span><br><span class="line"><span class="attr">env:</span></span><br><span class="line">  <span class="string">dev</span></span><br></pre></td></tr></table></figure></p>
+<p>然后在启动类上添加注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableConfigServer</span> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ConfigApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>4.</strong> Config Server配置<br>这里首先我们要先填一个坑，因为博主在这里使用的Spring Cloud是<em>Finchley.RC2</em>版本的。可是这个版本这里有一个bug，所以我们暂时把pom中Spring Cloud的版本修改为<em>Finchley.RC1</em>,等待官方的修复。<br>接下来就可以通过网络来访问我们的配置了，首先启动注册中心Eureka，然后启动我们的Config。这时候我们通过浏览器访问<a href="http://localhost:8764/client-dev.yml" target="_blank" rel="noopener">http://localhost:8764/client-dev.yml</a>就可以看到我们的配置了。<br><img src="http://ou3np1yz4.bkt.clouddn.com/config_5.png" alt="config_5"><br>这里是Spring Cloud对配置请求的路径做了映射,通常为：</p>
+<ul>
+<li>/{name}-{profiles}.yml</li>
+<li>/{label}/{name}-{profiles}.yml</li>
+</ul>
+<p>这两种方式大家可以挑选一个适合你的。<br>后缀名也可以不是yml，你可以试试properties，json。Spring Cloud会自动帮你转换。</p>
+<h2 id="三、Config-Client配置"><a href="#三、Config-Client配置" class="headerlink" title="三、Config Client配置"></a>三、Config Client配置</h2><p>这里我们使用上一篇文章<a href="http://catalinali.top/2018/startfeignRest/">小白SpringCloud(二)：服务间的调用</a>中的Client项目来进行改造<br><strong>1.添加pom引用</strong><br>在FeignClient的pom文件中添加Config Client引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-config-client&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.修改配置文件</strong><br>首先我们要把配置文件的名字改为<strong>bootstrap.yml</strong>，改成这个名字Spring Cloud就会先去Config Server拉取配置。<br>然后我们要在bootstrap.yml中定义我们要拉取的文件名称，还记得刚才说的Spring Cloud对请求的路径做的映射方式吗(/{name}-{profiles}.yml)？在这里我们配置<em>name</em>、<em>profiles</em>和<em>Config项目的名称</em></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">client</span> <span class="comment">#name</span></span><br><span class="line"><span class="attr">  cloud:</span></span><br><span class="line"><span class="attr">    config:</span></span><br><span class="line"><span class="attr">      discovery:</span></span><br><span class="line"><span class="attr">        enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        service-id:</span> <span class="string">config</span> <span class="comment">#Eureka Config's name</span></span><br><span class="line"><span class="attr">      profile:</span> <span class="string">dev</span> <span class="comment">#profiles</span></span><br></pre></td></tr></table></figure>
+<p>这时候，我们的Client就可以正常启动啦，怎么样简单吧。</p>
+<h2 id="二、Config-Server的高可用"><a href="#二、Config-Server的高可用" class="headerlink" title="二、Config Server的高可用"></a>二、Config Server的高可用</h2><p>统一配置中心的高可用很简单，只需要我们多启动几个相同的实例就好了。Config Client在启动的时候会根据负载均衡去访问Config Server中的某一台.</p>
+<p>还记得导语中说的更改配置可以不用重新启动项目吗？这里需要用到另外一个组件，我们在下篇文章进行讲解。</p>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/startconfig/">http://catalinali.top/2018/startconfig/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
 </blockquote>
 ]]></content>
     
@@ -946,136 +1036,6 @@
     
     
       <category term="Spring" scheme="http://catalinali.top/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos7下破解安装JIRA 7.2</title>
-    <link href="http://catalinali.top/2017/installjira/"/>
-    <id>http://catalinali.top/2017/installjira/</id>
-    <published>2017-08-16T03:41:50.000Z</published>
-    <updated>2018-04-25T09:49:24.287Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_1.jpg" alt="hello_jira"></p>
-<blockquote>
-<p>JIRA是Atlassian公司出品的项目与事务跟踪工具,是一款Code Review利器。实习的时候帮公司安装了一下jira，发现网上的资料参差不齐，现在抽空把搭建的过程一步步记录下来。有兴趣的朋友可以参考下。</p>
-</blockquote>
-<hr>
-<a id="more"></a>
-<h1 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h1><ul>
-<li><p><strong>jdk的搭建</strong><br>jira 7.2的运行需要jdk1.8的依赖，首先去<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">oracle官网</a>下载linux版本的jdk，然后我们开始进行安装。</p>
-<ol>
-<li>找到一个目录解压jdk:<code>tar -zxvf jdk-8u144-linux-i586.tar.gz</code><br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_01.png" alt="hellojira_01"></li>
-<li>在usr下创建一个目录,然后将解压的文件放进去:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/java</span><br><span class="line">mv  jdk1.8.0_102 /usr/java/</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol>
-<li>配置环境变量,<code>vim /etc/profile</code>,然后在最后面加入下列代码:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_102/</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br></pre></td></tr></table></figure>
-<p>4.更新profile文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-<p><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_2.png" alt="hellojira_2"></p>
-<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p> 如果是给公司安装的话,你可能会发现服务器上不止一个版本的jdk,而且<em>/etc/profile</em>下的环境变量也不是1.8的，这时候该怎么办呢？<br>你可以在jira的运行目录下找到程序启动的<strong>.sh</strong>文件,使用vim编辑器在此文件的最上方添加你要使用的jdk的环境变量,让其从这个路径下寻找jdk。</p>
-<ul>
-<li>数据库mysql的搭建<br>我使用的是<em>centos7</em>,好多配置跟之前的不太一样。也踩了不少坑,这里就简单说一下我的安装过程吧。<br>首先我使用网上大多数人的答案:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql</span><br><span class="line">yum install mysql-server</span><br><span class="line">yum install mysql-devel</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>结果发现安装上的压根不是mysql,而是一个mariadb的鬼玩意。于是我去查资料发现centos7的默认数据库由mysql改为了mariadb。于是我又查了各种资料进行mysql的安装,简单说一下步骤:</p>
-<p><strong>1.首先下载mysql的repo源</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br></pre></td></tr></table></figure>
-<p><strong>2.安装mysql-community-release-el7-5.noarch.rpm包</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br></pre></td></tr></table></figure>
-<p><strong>3.安装mysql</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure>
-<p>这样mysql就安装好了,不过这是centos7下的方法,如果大家用的别的环境就不适用了。<br><strong>4.mysql安装好后是没有密码的,我们需要登录mysql然后设置密码:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root</span><br><span class="line">use mysql;</span><br><span class="line">update user set password=password(‘123456‘) where user=‘root‘;</span><br></pre></td></tr></table></figure>
-<p><strong>5.设置远程连接</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql;          #使用&apos;mysql&apos;这个数据库</span><br><span class="line">Grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by &apos;123456&apos; with grant option;   #赋权限</span><br><span class="line">flush privileges;   #刷新权限</span><br></pre></td></tr></table></figure>
-<p>这时候我们使用这个账号就可以远程访问了,比如使用桌面的sqlyog进行连接。如果连接不上有可能是3306端口没有放开,下面说一下centos7下的开放端口的方法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state #查看运行状态</span><br><span class="line">firewall-cmd --add-port=3306/tcp --permanent #开放3306端口</span><br><span class="line">firewall-cmd --reload #生效刚才的端口设置</span><br></pre></td></tr></table></figure>
-<p><strong>6.创建一个jira使用的mysql账号</strong><br>回到正题,mysql已经安装好了。现在我们来为jira创建一个mysql用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &apos;jira&apos;@&apos;%&apos; IDENTIFIED BY &apos;jira&apos;;</span><br></pre></td></tr></table></figure>
-<p>创建一个jira数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database jira default character set utf8 collate utf8_bin;</span><br></pre></td></tr></table></figure>
-<p>给jira用户赋权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT all on jiradb.* to &apos;jira&apos;@&apos;%&apos; identified by &apos;jira&apos;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-<p>这时候我们可以使用<code>show grants for jira@localhost;</code>来查看一下权限。</p>
-<h1 id="二、破解安装jira"><a href="#二、破解安装jira" class="headerlink" title="二、破解安装jira"></a>二、破解安装jira</h1><p>这时候我们就可以安装并破解jira了<br><strong>1.下载linux版本的jira</strong><br>首先去<a href="https://www.atlassian.com/software/jira/download" target="_blank" rel="noopener">官网</a>下载linux版本的jira<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_03.png" alt="hellojira_03"><br>并且把破解包下载下来链接：<a href="http://pan.baidu.com/s/1bMfksQ" target="_blank" rel="noopener">http://pan.baidu.com/s/1bMfksQ</a> 密码：lsc7<br><strong>2.开始安装jira</strong><br>将安装包放入linux随意一个目录下后,使用如下命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> chmod 755 atlassian-jira-software-7.4.2-x64.bin #修改权限</span><br><span class="line"></span><br><span class="line">./atlassian-jira-software-7.4.2-x64.bin</span><br></pre></td></tr></table></figure>
-<p>安装过程有一些选项,如果选不对就会出现下图情景,我们可以看到jira安装的端口是8080,安装的路径是/opt/atlassian/jira和/var/atlassian/application-data/jira目录下:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_04.png" alt="hellojira_04.png"><br>因为8080端口比较常用,所以我们把他更换一下:<code>vim /opt/atlassian/jira/conf/server.xml</code><br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_4.png" alt="hellojira_4.png"><br>这里我把红框中的端口改为了8090<br><strong>3.破解jira</strong><br>解压破解包,找到一下两个文件:</p>
-<pre><code>atlassian-extras-3.1.2.jar    #jira破解文件
-mysql-connector-java-5.1.39-bin.jar   #mysql驱动
-</code></pre><p>和两个文件复制到/opt/atlassian/jira/atlassian-jira/WEB-INF/lib/目录下。这时候需要注意,jira破解文件是需要替换里面的原文件,但由于他的版本比较旧,所以就需要大家先找到原本目录下的atlassian-extras-3.x.jar文件。将它删除,然后把我们的破解文件换成它的名字。<br><strong>4.启动jira</strong><br>进入/opt/atlassian/jira/bin目录下运行<em>start-jira.sh</em><br>打开桌面上的浏览器,访问<a href="http://localhost:8090" target="_blank" rel="noopener">http://localhost:8090</a>。就可以看到启动画面,如果不能访问,尝试用上面的方法放开一下8090端口:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_6.png" alt="hellojira_6"><br>点击continue后开始选择配置数据库:<br>输入正确的数据库信息后可以先test一下,如果test成功的话,执行下一步会jira会自动的向数据库中创建表。<br>这里需要注意的就是Mode选项。private是只有管理员可以注册账号，public是用户可以自己注册。<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_10.png" alt="hellojira_10"><br>下面的步骤需要获取license:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_11.png" alt="hellojira_11"><br>需要我们去官网注册一个账号来获取license:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_13.png" alt="hellojira_13"><br>确定后会自动跳转回来:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_14.png" alt="hellojira_14"><br>之后就简单多了:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_15.png" alt="hellojira_14"><br>点击<em>Next</em><br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_16.png" alt="hellojira_14"><br>选择<em>Finish</em>,之后选择一些语言就好了:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellojira_17.png" alt="hellojira_14"></p>
-<p>jira到这里就算是安装完成了,看着步骤多其实没有什么难点。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="https://www.ilanni.com/?p=12119" target="_blank" rel="noopener">烂泥：jira7.2安装、中文及破解</a></li>
-<li><a href="http://10551335.blog.51cto.com/10541335/1749945" target="_blank" rel="noopener">Centos 6.7下 jira7.1.1+confluence5.96+mysql结合（破解）</a></li>
-<li><a href="http://blog.csdn.net/dunhanson/article/details/52997803" target="_blank" rel="noopener">CentOS yum 安装、卸载MariaDB数据库</a></li>
-<li><a href="http://www.cnblogs.com/julyme/p/5969626.html" target="_blank" rel="noopener">centos7下使用yum安装mysql</a></li>
-<li><a href="http://blog.csdn.net/sodino/article/details/52356472" target="_blank" rel="noopener">【Linux】CentOS 7通过Firewall开放防火墙端口</a></li>
-</ul>
-<blockquote>
-<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2017/installjira/">http://catalinali.top/2017/installjira/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ou3np1yz4.bkt.clouddn.com/hellojira_1.jpg&quot; alt=&quot;hello_jira&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;JIRA是Atlassian公司出品的项目与事务跟踪工具,是一款Code Review利器。实习的时候帮公司安装了一下jira，发现网上的资料参差不齐，现在抽空把搭建的过程一步步记录下来。有兴趣的朋友可以参考下。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="jira" scheme="http://catalinali.top/categories/jira/"/>
-    
-    
-      <category term="jira" scheme="http://catalinali.top/tags/jira/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记录：使用IDEA搭建Maven+SSM的过程</title>
-    <link href="http://catalinali.top/2017/IDEABuildSSM/"/>
-    <id>http://catalinali.top/2017/IDEABuildSSM/</id>
-    <published>2017-08-15T07:51:18.000Z</published>
-    <updated>2018-04-25T09:49:24.283Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_15.jpg" alt="hellossm_15"></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>IntelliJ IDEA被认为是当前 Java 开发效率最快的 IDE 工具。份额已经逐渐超越Eclipse。一直使用Eclipse的我也不禁想尝尝鲜，之前简单的使用它搭建了一下SSM环境，现在把他记录下来。</p>
-</blockquote>
-<a id="more"></a>
-<h1 id="新建一个Maven项目"><a href="#新建一个Maven项目" class="headerlink" title="新建一个Maven项目"></a>新建一个Maven项目</h1><p>打开IDEA,选择新建一个项目<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_1.png" alt="hellossm_1"><br>如图:首先我们选择一个maven Project,然后要创建模板勾选Create from archetype。由于我们准备新建一个web工程所以选择maven-archetype-webapp。<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_2.png" alt="hellossm_2"><br>下一步:填写GroupId,ArtifactId。填写的标准就不用多说了吧。<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_3.png" alt="hellossm_3"><br>下一步:选择使用的maven的本地位置,这个根据实际情况选择就好。<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_4.png" alt="hellossm_4"><br>下一步:这一步会填写项目名称,根据实际来就好了。<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_5.png" alt="hellossm_5"><br>然后点击Finish,一个空的web工程就建好了。</p>
-<h1 id="搭建SSM环境"><a href="#搭建SSM环境" class="headerlink" title="搭建SSM环境"></a>搭建SSM环境</h1><p><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_6.png" alt="hellossm_6"><br>IDEA里的java文件只能在Source Boot类型的文件夹下创建,所以我们要新建一个文件夹，然后将它的类型改为Source Boot:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_7.png" alt="hellossm_7"><br>这时候我们就可以新建需要的类了。ssm的配置还是那老一套，由于篇幅问题这里就不贴出来了。配置完的大体结构是这样的。<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_8.png" alt="hellossm_8"></p>
-<h1 id="运行web工程"><a href="#运行web工程" class="headerlink" title="运行web工程"></a>运行web工程</h1><p>选择如图位置：<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_9.png" alt="hellossm_9"><br>然后选择如图:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_10.png" alt="hellossm_10"><br>这里主要选择本地tomcat的位置<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_11.png" alt="hellossm_11"><br>然后我们切换到第二栏Deployment:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_12.png" alt="hellossm_12"><br>选择如图的选项,注意这里一定要选择带exploded的这个:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_13.png" alt="hellossm_13"><br>选择OK，然后install–&gt;运行tomcat。如果出现如图，则表示成功:<br><img src="http://ou3np1yz4.bkt.clouddn.com/hellossm_14.png" alt="hellossm_14"></p>
-<h1 id="随便说说"><a href="#随便说说" class="headerlink" title="随便说说"></a>随便说说</h1><p>IntelliJ IDEA现在已经被基本被认为是当前 Java 开发效率最快的 IDE 工具。对于用惯了Eclipse的我来说显然快要跟不上时代了,这篇文章只是简单的记录了一下搭建的过程,目的是快速熟悉一下IDEA的运行方式。然而关于SSM配置内容却只字未提。一个是因为关于SSM整合的文章现在网上多的是,大家只要一搜就好了。再一个是因为配置都是一大段一大段的,全部粘上来未免太占篇幅。<br>最后贴一个IDEA的<a href="https://youmeek.gitbooks.io/intellij-idea-tutorial/content/" target="_blank" rel="noopener">教程</a></p>
-<hr>
-<blockquote>
-<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2017/IDEABuildSSM/">http://catalinali.top/2017/IDEABuildSSM/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ou3np1yz4.bkt.clouddn.com/hellossm_15.jpg&quot; alt=&quot;hellossm_15&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;IntelliJ IDEA被认为是当前 Java 开发效率最快的 IDE 工具。份额已经逐渐超越Eclipse。一直使用Eclipse的我也不禁想尝尝鲜，之前简单的使用它搭建了一下SSM环境，现在把他记录下来。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="SSM" scheme="http://catalinali.top/categories/SSM/"/>
-    
-    
-      <category term="SSM" scheme="http://catalinali.top/tags/SSM/"/>
-    
-      <category term="IDEA" scheme="http://catalinali.top/tags/IDEA/"/>
     
   </entry>
   

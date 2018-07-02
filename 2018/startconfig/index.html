@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="SpringCloud" />
 
 
 
@@ -95,28 +95,24 @@
 
 
 
-<meta name="description" content="前言 相信各位在看过上一篇blog手把手教你使用hexo搭建属于你的个人博客后已经初步搭建了属于自己的博客，不过细心的你可能已经发现这样的博客还是缺点什么，现在就来说说Hexo的骚操作:添加主题、统计、评论、SEO等等等等。">
-<meta name="keywords" content="hexo">
+<meta name="description" content="在分布式系统中，每一个功能模块都能拆分成一个独立的服务，一次请求的完成，可能会调用很多个服务协调来完成。如果我们每个服务都有一个独立的配置的话，这样很不方便我们维护。Spring Cloud中为我们提供了一个config组件为我们解决了这个问题，并且更改了配置并不需要我们重启。">
+<meta name="keywords" content="SpringCloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床">
-<meta property="og:url" content="http://catalinali.top/2017/secondBuildHexo/index.html">
+<meta property="og:title" content="小白学SpringCloud(三)：统一配置中心(config)">
+<meta property="og:url" content="http://catalinali.top/2018/startconfig/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="前言 相信各位在看过上一篇blog手把手教你使用hexo搭建属于你的个人博客后已经初步搭建了属于自己的博客，不过细心的你可能已经发现这样的博客还是缺点什么，现在就来说说Hexo的骚操作:添加主题、统计、评论、SEO等等等等。">
+<meta property="og:description" content="在分布式系统中，每一个功能模块都能拆分成一个独立的服务，一次请求的完成，可能会调用很多个服务协调来完成。如果我们每个服务都有一个独立的配置的话，这样很不方便我们维护。Spring Cloud中为我们提供了一个config组件为我们解决了这个问题，并且更改了配置并不需要我们重启。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/front-pic2.jpg">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_1.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_2.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_3.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_4.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_5.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_6.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_7.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_8.png">
-<meta property="og:updated_time" content="2018-04-25T09:49:24.288Z">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/config_logo.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/config_1.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/config_2.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/config_6.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/config_5.png">
+<meta property="og:updated_time" content="2018-07-02T06:34:09.845Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床">
-<meta name="twitter:description" content="前言 相信各位在看过上一篇blog手把手教你使用hexo搭建属于你的个人博客后已经初步搭建了属于自己的博客，不过细心的你可能已经发现这样的博客还是缺点什么，现在就来说说Hexo的骚操作:添加主题、统计、评论、SEO等等等等。">
-<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/front-pic2.jpg">
+<meta name="twitter:title" content="小白学SpringCloud(三)：统一配置中心(config)">
+<meta name="twitter:description" content="在分布式系统中，每一个功能模块都能拆分成一个独立的服务，一次请求的完成，可能会调用很多个服务协调来完成。如果我们每个服务都有一个独立的配置的话，这样很不方便我们维护。Spring Cloud中为我们提供了一个config组件为我们解决了这个问题，并且更改了配置并不需要我们重启。">
+<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/config_logo.png">
 
 
 
@@ -144,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://catalinali.top/2017/secondBuildHexo/"/>
+  <link rel="canonical" href="http://catalinali.top/2018/startconfig/"/>
 
 
 
 
 
-  <title>Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床 | catalinaLi's Notes</title>
+  <title>小白学SpringCloud(三)：统一配置中心(config) | catalinaLi's Notes</title>
   
 
 
@@ -323,7 +319,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2017/secondBuildHexo/">
+    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2018/startconfig/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="从不装逼夫斯基">
@@ -340,7 +336,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</h1>
+          <h1 class="post-title" itemprop="name headline">小白学SpringCloud(三)：统一配置中心(config)</h1>
         
 
         <div class="post-meta">
@@ -352,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-10T16:12:56+08:00">
-                2017-08-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T15:45:19+08:00">
+                2018-06-15
               </time>
             
 
@@ -375,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/SpringCloud/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringCloud</span>
                   </a>
                 </span>
 
@@ -394,8 +390,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2017/secondBuildHexo/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/secondBuildHexo/" itemprop="commentsCount"></span>
+                <a href="/2018/startconfig/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/startconfig/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -425,40 +421,30 @@
       
 
       
-        <p><img src="http://ou3np1yz4.bkt.clouddn.com/front-pic2.jpg" alt="front-pic2"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>相信各位在看过上一篇blog<a href="http://catalinali.top/2017/firstBuildHexo/">手把手教你使用hexo搭建属于你的个人博客</a>后已经初步搭建了属于自己的博客，不过细心的你可能已经发现这样的博客还是缺点什么，现在就来说说Hexo的骚操作:添加主题、统计、评论、SEO等等等等。</p>
+        <p><img src="http://ou3np1yz4.bkt.clouddn.com/config_logo.png" alt="config_logo"></p>
+<blockquote>
+<p>在分布式系统中，每一个功能模块都能拆分成一个独立的服务，一次请求的完成，可能会调用很多个服务协调来完成。如果我们每个服务都有一个独立的配置的话，这样很不方便我们维护。Spring Cloud中为我们提供了一个config组件为我们解决了这个问题，并且更改了配置并不需要我们重启。</p>
 </blockquote>
-<hr>
 <a id="more"></a>
-<p>承接上篇最后说过的:根目录下的<code>_config.yml</code>叫做<strong>站点配置文件</strong>，主题下文件夹的<code>_config.yml</code>叫做<strong>主题配置文件</strong>。好了,现在进入正题，今天我们要对Hexo进行一些脱胎换骨的操作，让你从内到外了解Hexo，要完成的操作如下：</p>
+<h2 id="一、Config概述"><a href="#一、Config概述" class="headerlink" title="一、Config概述"></a>一、Config概述</h2><p>同Eureka一样，config也分为server端和client端，我们先来看看server端的原理。这里引用一张廖师兄的图（注：图中的order、product都是客户端）<br><img src="http://ou3np1yz4.bkt.clouddn.com/config_1.png" alt="config_1"><br>从这张图我们可以看出，Config Server是以远端Git作为依托（SVN也可以,这里使用Github作为演示），从远端Git仓库中拉取配置并同步到本地Git上。当客户端需要配置的时候就可以从Server端进行配置的拉取。</p>
+<h2 id="二、Config-Server配置"><a href="#二、Config-Server配置" class="headerlink" title="二、Config Server配置"></a>二、Config Server配置</h2><p><strong>1.</strong>创建Config工程<br>跟前文一样，我们使用IDEA的Spring Initializr创建我们的Config工程，如图:除了图中圈起来的config Server要勾上，Eureka Discover也要勾上。<br><img src="http://ou3np1yz4.bkt.clouddn.com/config_2.png" alt="config_2"></p>
+<p><strong>2.</strong>创建远程仓库<br>首先我们先创建一个远程Git仓库，这里以Github为例，这里我已经创建好了一个公开仓库<a href="https://github.com/catalinaLi/config_repo" target="_blank" rel="noopener">https://github.com/catalinaLi/config_repo</a><br>然后在里面先添加一份配置<br><img src="http://ou3np1yz4.bkt.clouddn.com/config_6.png" alt="config_3"><br><strong>3.</strong>配置Config工程<br>将我们的Config工程注册到Eureka注册中心：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    serviceUrl:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span> <span class="comment">#服务端地址</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8764</span> <span class="comment">#客户端端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">config</span></span><br><span class="line"><span class="attr">  cloud:</span></span><br><span class="line"><span class="attr">    config:</span></span><br><span class="line"><span class="attr">      server:</span></span><br><span class="line"><span class="attr">        git:</span></span><br><span class="line"><span class="attr">          uri:</span> <span class="attr">https://github.com/catalinaLi/config_repo</span> <span class="comment">#config_Server仓库地址</span></span><br><span class="line">          <span class="comment">#如果我们配置的是私有仓库，则还需要远程仓库的账号和密码</span></span><br><span class="line">          <span class="comment">#username: yourusername  </span></span><br><span class="line">          <span class="comment">#password: yourpassword</span></span><br><span class="line"><span class="attr">env:</span></span><br><span class="line">  <span class="string">dev</span></span><br></pre></td></tr></table></figure></p>
+<p>然后在启动类上添加注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableConfigServer</span> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ConfigApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>4.</strong> Config Server配置<br>这里首先我们要先填一个坑，因为博主在这里使用的Spring Cloud是<em>Finchley.RC2</em>版本的。可是这个版本这里有一个bug，所以我们暂时把pom中Spring Cloud的版本修改为<em>Finchley.RC1</em>,等待官方的修复。<br>接下来就可以通过网络来访问我们的配置了，首先启动注册中心Eureka，然后启动我们的Config。这时候我们通过浏览器访问<a href="http://localhost:8764/client-dev.yml" target="_blank" rel="noopener">http://localhost:8764/client-dev.yml</a>就可以看到我们的配置了。<br><img src="http://ou3np1yz4.bkt.clouddn.com/config_5.png" alt="config_5"><br>这里是Spring Cloud对配置请求的路径做了映射,通常为：</p>
 <ul>
-<li>添加个性化主题</li>
-<li>在github保存Hexo</li>
-<li>添加评论系统</li>
-<li>添加搜索与统计</li>
-<li>添加图床</li>
+<li>/{name}-{profiles}.yml</li>
+<li>/{label}/{name}-{profiles}.yml</li>
 </ul>
-<h2 id="一、添加个性化主题"><a href="#一、添加个性化主题" class="headerlink" title="一、添加个性化主题"></a>一、添加个性化主题</h2><p>Hexo默认的主题可能满足不了你的胃口，我们这里选择换一个更加个性化的主题，首先先去挑一个你心仪的主题:<a href="https://www.zhihu.com/question/24422335" target="_blank" rel="noopener">传送门</a>。大家也可以自行寻找一些主题。这里使用人气最高的Next主题为例：<br><strong>1.安装主题</strong><br>打开<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">github下载地址</a>，clone下载地址<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_1.png" alt="buildHexo2_1"><br>进入你的Hexo根目录右键选择Git Bash Here,在命令行中输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure></p>
-<p>这时在我们的<code>theme</code>文件夹下就会有一个名next的主题文件夹。<br><strong>2.配置主题</strong><br>进入<strong>站点配置文件</strong>,找到theme选项，后面填写你要使用的主题名字。这里再次强调一下,_config.yml使用的是<code>YAML</code>语法。选项后面要先加一个空格才能填值，遇到无法解决的问题不妨对格式进行<a href="http://www.yamllint.com/" target="_blank" rel="noopener">校验</a>。<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_2.png" alt="buildHexo2_2"><br>这时候就可以使用调试模式来查看一下主题了:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #清除缓存</span><br><span class="line">hexo g #自动生成静态页面,hexo generate的缩写</span><br><span class="line">hexo s --debug #调试模式,在浏览器进入http://localhost:4000/进行访问</span><br></pre></td></tr></table></figure></p>
-<p>发现没有什么问题就可以使用<code>hexo d</code>进行发布了,Next主题有他的<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">官方文档</a>,一些基本的设置都可以在上面找的，这里就不赘述了。</p>
-<h2 id="二、在github保存Hexo"><a href="#二、在github保存Hexo" class="headerlink" title="二、在github保存Hexo"></a>二、在github保存Hexo</h2><p>当你慢慢了解Hexo以后，不知你是否会有这样的想法:当我换了一台电脑，我该怎样继续更新的我blog。查阅了众多资料后找到了我心中答案:<a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">传送门</a>。我们要用的就是知乎中1楼的这个高亮答案。过程他已经说的很清楚了，但是这里我要说几个我遇到的坑:</p>
-<ul>
-<li>在明白了答主的步骤后，我们发现刚才的主题是用git拉下来的,那么Next主题文件夹下就会有一个<strong>.git</strong>的隐藏文件夹,这个文件会影响我们对博客文件的提交，所以我们要首要的一步是删除Next文件夹下隐藏的<strong>.git</strong>文件夹</li>
-<li>这篇文章楼下答主<a href="https://www.zhihu.com/people/KOKO-55/answers" target="_blank" rel="noopener"><strong>KOKO</strong></a>所说的内容。在我们拉下来仓库以后会生成一个.git文件夹。这个文件夹记录了我们所对应github的分支。然而在进行了hexo命令操作以后会覆盖这个.git文件夹。所以应该提前将这个文件夹备份一下,然后回过头来进行覆盖。</li>
-</ul>
-<h2 id="三、为Hexo添加评论系统"><a href="#三、为Hexo添加评论系统" class="headerlink" title="三、为Hexo添加评论系统"></a>三、为Hexo添加评论系统</h2><p>官方文档里推荐了好多个评论系统,一路用过来发现DISQUS被墙了,网易云跟帖跟多说关闭服务了。现在还比较好用的就剩下来必力跟畅言了,并且我们选择的Next昨天还很贴心的集成了这两个评论系统。</p>
-<ul>
-<li>添加来必力<br>1.注册<a href="https://livere.com/" target="_blank" rel="noopener">来必力</a>,注册过程中可能会冒出一些棒子语言，让我们使用直觉注册好后点击我的页面–&gt;代码管理–&gt;data-uid<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_3.png" alt="buildHexo2_3"><br>2.复制我们的这个id,粘贴到主题配置文件<code>livere_uid</code>选项后面<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_4.png" alt="buildHexo2_4"><br>这时你再重新部署你的Hexo,是不是已经有了来必力评论系统</li>
-<li>添加畅言<br>畅言的UI感觉比来必力清爽一些，但是注册的过程需要ICP备案号,这个比较麻烦<br>1.注册<a href="http://changyan.kuaizhan.com/" target="_blank" rel="noopener">畅言</a>,进入账户管理–&gt;后台总览–&gt;畅言秘钥<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_5.png" alt="buildHexo2_5"><br>2.复制畅言秘钥，粘贴到主题配置文件<code>changyan</code>后面<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_6.png" alt="buildHexo2_6"></li>
-</ul>
-<h2 id="四、为Hexo搜索与统计"><a href="#四、为Hexo搜索与统计" class="headerlink" title="四、为Hexo搜索与统计"></a>四、为Hexo搜索与统计</h2><p>搜索与统计都比较简单，<a href="http://theme-next.iissnan.com/third-party-services.html#analytics-busuanzi" target="_blank" rel="noopener">官方文档</a>有详尽的明细,统计推荐不蒜子，简单粗暴。<br>搜索的话我使用的是本地搜索，即Local Search。他的原理是在你本地生成一个xml文件,搜索的时候对这个文件进行检索。下面说说安装步骤<br>1.执行下面2个命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></p>
-<p>2.打开站点配置文件，新增以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure></p>
-<p>3.打开主题配置文件，启用本地搜索功能：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure></p>
-<h2 id="五、为Hexo添加图床"><a href="#五、为Hexo添加图床" class="headerlink" title="五、为Hexo添加图床"></a>五、为Hexo添加图床</h2><p>以后写博客避免不了常常使用图片,可是Github Pages是有容量限制的,总不能全部都作为静态文件进行上传吧。这里推荐一个好评的<a href="https://portal.qiniu.com/signup?code=3letjvek8jgia" target="_blank" rel="noopener">七牛云</a>图床。七牛云不是免费的，但每个用户有10GB免费存储，每月10GB免费下载流量,对于博客使用来说够了。使用方法:<br>1.打开链接并注册,单机 对象存储–&gt;创建空间。<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_7.png" alt="buildHexo2_7"><br>2.当我们使用图片时。需要先上传到七牛,然后复制外链,之后就可以在MarkDown文章中使用了。<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildHexo2_8.png" alt="buildHexo2_8"><br>3.每次这样获取图片链接,相信你一定会很烦的。这里有一个针对七牛的小工具<a href="http://mpic.lzhaofu.cn/" target="_blank" rel="noopener">Mpic</a>。简化了这一步骤,相信你一定会爱上他的。</p>
+<p>这两种方式大家可以挑选一个适合你的。<br>后缀名也可以不是yml，你可以试试properties，json。Spring Cloud会自动帮你转换。</p>
+<h2 id="三、Config-Client配置"><a href="#三、Config-Client配置" class="headerlink" title="三、Config Client配置"></a>三、Config Client配置</h2><p>这里我们使用上一篇文章<a href="http://catalinali.top/2018/startfeignRest/">小白SpringCloud(二)：服务间的调用</a>中的Client项目来进行改造<br><strong>1.添加pom引用</strong><br>在FeignClient的pom文件中添加Config Client引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-config-client&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.修改配置文件</strong><br>首先我们要把配置文件的名字改为<strong>bootstrap.yml</strong>，改成这个名字Spring Cloud就会先去Config Server拉取配置。<br>然后我们要在bootstrap.yml中定义我们要拉取的文件名称，还记得刚才说的Spring Cloud对请求的路径做的映射方式吗(/{name}-{profiles}.yml)？在这里我们配置<em>name</em>、<em>profiles</em>和<em>Config项目的名称</em></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">client</span> <span class="comment">#name</span></span><br><span class="line"><span class="attr">  cloud:</span></span><br><span class="line"><span class="attr">    config:</span></span><br><span class="line"><span class="attr">      discovery:</span></span><br><span class="line"><span class="attr">        enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        service-id:</span> <span class="string">config</span> <span class="comment">#Eureka Config's name</span></span><br><span class="line"><span class="attr">      profile:</span> <span class="string">dev</span> <span class="comment">#profiles</span></span><br></pre></td></tr></table></figure>
+<p>这时候，我们的Client就可以正常启动啦，怎么样简单吧。</p>
+<h2 id="二、Config-Server的高可用"><a href="#二、Config-Server的高可用" class="headerlink" title="二、Config Server的高可用"></a>二、Config Server的高可用</h2><p>统一配置中心的高可用很简单，只需要我们多启动几个相同的实例就好了。Config Client在启动的时候会根据负载均衡去访问Config Server中的某一台.</p>
+<p>还记得导语中说的更改配置可以不用重新启动项目吗？这里需要用到另外一个组件，我们在下篇文章进行讲解。</p>
 <hr>
 <blockquote>
-<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2017/secondBuildHexo/">http://catalinali.top/2017/secondBuildHexo/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/startconfig/">http://catalinali.top/2018/startconfig/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
 </blockquote>
 
       
@@ -510,7 +496,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/SpringCloud/" rel="tag"># SpringCloud</a>
           
         </div>
       
@@ -523,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/firstBuildHexo/" rel="next" title="手把手教你使用hexo搭建属于你的个人博客">
-                <i class="fa fa-chevron-left"></i> 手把手教你使用hexo搭建属于你的个人博客
+              <a href="/2018/startfeignRest/" rel="next" title="小白学SpringCloud(二)：服务间的调用">
+                <i class="fa fa-chevron-left"></i> 小白学SpringCloud(二)：服务间的调用
               </a>
             
           </div>
@@ -533,8 +519,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/IDEABuildSSM/" rel="prev" title="记录：使用IDEA搭建Maven+SSM的过程">
-                记录：使用IDEA搭建Maven+SSM的过程 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/config/" rel="prev" title="小白学SpringCloud(三)：统一配置中心(config)">
+                小白学SpringCloud(三)：统一配置中心(config) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -730,7 +716,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、添加个性化主题"><span class="nav-number">2.</span> <span class="nav-text">一、添加个性化主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、在github保存Hexo"><span class="nav-number">3.</span> <span class="nav-text">二、在github保存Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、为Hexo添加评论系统"><span class="nav-number">4.</span> <span class="nav-text">三、为Hexo添加评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、为Hexo搜索与统计"><span class="nav-number">5.</span> <span class="nav-text">四、为Hexo搜索与统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、为Hexo添加图床"><span class="nav-number">6.</span> <span class="nav-text">五、为Hexo添加图床</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Config概述"><span class="nav-number">1.</span> <span class="nav-text">一、Config概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Config-Server配置"><span class="nav-number">2.</span> <span class="nav-text">二、Config Server配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Config-Client配置"><span class="nav-number">3.</span> <span class="nav-text">三、Config Client配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Config-Server的高可用"><span class="nav-number">4.</span> <span class="nav-text">二、Config Server的高可用</span></a></li></ol></div>
             
 
           </div>
