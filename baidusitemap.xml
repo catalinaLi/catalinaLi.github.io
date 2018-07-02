@@ -24,26 +24,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/config/</loc>
-    <lastmod>2018-07-02T06:34:27.733Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(三)：统一配置中心(config)</title>
-        <pubTime>2018-06-15T07:45:19.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2018/startconfig/</loc>
     <lastmod>2018-07-02T06:34:09.845Z</lastmod>
     <data>
@@ -151,26 +131,6 @@
     
     
   <url>
-    <loc>http://catalinali.top/2017/useMQ/</loc>
-    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
-    <data>
-        <display>
-        <title>ActiveMQ从入门到实践</title>
-        <pubTime>2017-12-22T01:48:26.000Z</pubTime>
-        
-        <tag>mq</tag>
-         
-         
-           
-             
-              <breadCrumb title="mq" url="http://catalinali.top/categories/mq/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2018/wechatOAuth/</loc>
     <lastmod>2018-04-25T09:49:24.290Z</lastmod>
     <data>
@@ -191,19 +151,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/useJSONP/</loc>
-    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
+    <loc>http://catalinali.top/2017/useMQ/</loc>
+    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
     <data>
         <display>
-        <title>使用JSONP解决ajax跨域</title>
-        <pubTime>2018-01-08T08:26:23.000Z</pubTime>
+        <title>ActiveMQ从入门到实践</title>
+        <pubTime>2017-12-22T01:48:26.000Z</pubTime>
         
-        <tag>jsonp</tag>
+        <tag>mq</tag>
          
          
            
              
-              <breadCrumb title="jsonp" url="http://catalinali.top/categories/jsonp/"/>
+              <breadCrumb title="mq" url="http://catalinali.top/categories/mq/"/>
           
         </display>
     </data>
@@ -226,6 +186,26 @@
            
              
               <breadCrumb title="jdbcTemplate" url="http://catalinali.top/categories/jdbcTemplate/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/useJSONP/</loc>
+    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
+    <data>
+        <display>
+        <title>使用JSONP解决ajax跨域</title>
+        <pubTime>2018-01-08T08:26:23.000Z</pubTime>
+        
+        <tag>jsonp</tag>
+         
+         
+           
+             
+              <breadCrumb title="jsonp" url="http://catalinali.top/categories/jsonp/"/>
           
         </display>
     </data>
@@ -295,6 +275,26 @@
 
     
   <url>
+    <loc>http://catalinali.top/2017/installVue/</loc>
+    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
+    <data>
+        <display>
+        <title>Vue.js小白入门，搭建开发环境</title>
+        <pubTime>2017-11-27T08:39:32.000Z</pubTime>
+        
+        <tag>vue.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2017/recordsql/</loc>
     <lastmod>2018-04-25T09:49:24.287Z</lastmod>
     <data>
@@ -328,26 +328,6 @@
            
              
               <breadCrumb title="jira" url="http://catalinali.top/categories/jira/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/installVue/</loc>
-    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
-    <data>
-        <display>
-        <title>Vue.js小白入门，搭建开发环境</title>
-        <pubTime>2017-11-27T08:39:32.000Z</pubTime>
-        
-        <tag>vue.js</tag>
-         
-         
-           
-             
-              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
           
         </display>
     </data>
@@ -435,26 +415,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
-    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
-    <data>
-        <display>
-        <title>Spring中的ApplicationContextAware接口的使用</title>
-        <pubTime>2017-08-23T06:45:57.000Z</pubTime>
-        
-        <tag>Spring</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring" url="http://catalinali.top/categories/Spring/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/buildredis/</loc>
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     <data>
@@ -468,6 +428,26 @@
            
              
               <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
+    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
+    <data>
+        <display>
+        <title>Spring中的ApplicationContextAware接口的使用</title>
+        <pubTime>2017-08-23T06:45:57.000Z</pubTime>
+        
+        <tag>Spring</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring" url="http://catalinali.top/categories/Spring/"/>
           
         </display>
     </data>

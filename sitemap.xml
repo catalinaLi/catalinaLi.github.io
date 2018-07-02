@@ -9,13 +9,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/config/</loc>
-    
-    <lastmod>2018-07-02T06:34:27.733Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2018/startconfig/</loc>
     
     <lastmod>2018-07-02T06:34:09.845Z</lastmod>
@@ -58,13 +51,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/about/index.html</loc>
-    
-    <lastmod>2018-04-25T09:49:24.291Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/categories/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
@@ -72,9 +58,9 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/useMQ/</loc>
+    <loc>http://catalinali.top/about/index.html</loc>
     
-    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
+    <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
   </url>
   
@@ -86,14 +72,21 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/useJSONP/</loc>
+    <loc>http://catalinali.top/2017/useMQ/</loc>
+    
+    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2017/useJDBC/</loc>
     
     <lastmod>2018-04-25T09:49:24.289Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/useJDBC/</loc>
+    <loc>http://catalinali.top/2018/useJSONP/</loc>
     
     <lastmod>2018-04-25T09:49:24.289Z</lastmod>
     
@@ -121,6 +114,13 @@
   </url>
   
   <url>
+    <loc>http://catalinali.top/2017/installVue/</loc>
+    
+    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://catalinali.top/2017/recordsql/</loc>
     
     <lastmod>2018-04-25T09:49:24.287Z</lastmod>
@@ -129,13 +129,6 @@
   
   <url>
     <loc>http://catalinali.top/2017/installjira/</loc>
-    
-    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2017/installVue/</loc>
     
     <lastmod>2018-04-25T09:49:24.287Z</lastmod>
     
@@ -170,14 +163,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
     
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
     
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     
