@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://catalinali.top/"/>
-  <updated>2018-07-10T10:16:45.011Z</updated>
+  <updated>2018-07-10T10:17:48.140Z</updated>
   <id>http://catalinali.top/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>startZuul</title>
+    <title>小白学SpringCloud(五)：路由网关（Zuul）</title>
     <link href="http://catalinali.top/2018/startZuul/"/>
     <id>http://catalinali.top/2018/startZuul/</id>
     <published>2018-07-10T10:15:28.000Z</published>
-    <updated>2018-07-10T10:16:45.011Z</updated>
+    <updated>2018-07-10T10:17:48.140Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/zuul_logo.png" alt="zuul_logo"></p>
 <blockquote>
