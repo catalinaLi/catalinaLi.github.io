@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://catalinali.top/2018/startHystrix/</loc>
-    <lastmod>2018-08-06T01:44:44.050Z</lastmod>
+    <lastmod>2018-08-06T01:51:41.318Z</lastmod>
     <data>
         <display>
         <title>小白学SpringCloud(六)：服务降级（Hystrix）</title>
@@ -171,6 +171,26 @@
     
     
   <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
+    <data>
+        <display>
+        <title>微信开发之微信网页授权获取openid</title>
+        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
+        
+        <tag>wechat</tag>
+         
+         
+           
+             
+              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2017/useMQ/</loc>
     <lastmod>2018-04-25T09:49:24.290Z</lastmod>
     <data>
@@ -191,19 +211,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
+    <loc>http://catalinali.top/2018/useJSONP/</loc>
+    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
     <data>
         <display>
-        <title>微信开发之微信网页授权获取openid</title>
-        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
+        <title>使用JSONP解决ajax跨域</title>
+        <pubTime>2018-01-08T08:26:23.000Z</pubTime>
         
-        <tag>wechat</tag>
+        <tag>jsonp</tag>
          
          
            
              
-              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
+              <breadCrumb title="jsonp" url="http://catalinali.top/categories/jsonp/"/>
           
         </display>
     </data>
@@ -226,26 +246,6 @@
            
              
               <breadCrumb title="jdbcTemplate" url="http://catalinali.top/categories/jdbcTemplate/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/useJSONP/</loc>
-    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
-    <data>
-        <display>
-        <title>使用JSONP解决ajax跨域</title>
-        <pubTime>2018-01-08T08:26:23.000Z</pubTime>
-        
-        <tag>jsonp</tag>
-         
-         
-           
-             
-              <breadCrumb title="jsonp" url="http://catalinali.top/categories/jsonp/"/>
           
         </display>
     </data>
@@ -315,26 +315,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/recordsql/</loc>
-    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
-    <data>
-        <display>
-        <title>记录：mysql中的case when|on duplicate key update|重复插入返回主键的用法</title>
-        <pubTime>2017-09-27T08:17:44.000Z</pubTime>
-        
-        <tag>mysql</tag>
-         
-         
-           
-             
-              <breadCrumb title="mysql" url="http://catalinali.top/categories/mysql/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/installjira/</loc>
     <lastmod>2018-04-25T09:49:24.287Z</lastmod>
     <data>
@@ -348,6 +328,26 @@
            
              
               <breadCrumb title="jira" url="http://catalinali.top/categories/jira/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/recordsql/</loc>
+    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
+    <data>
+        <display>
+        <title>记录：mysql中的case when|on duplicate key update|重复插入返回主键的用法</title>
+        <pubTime>2017-09-27T08:17:44.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://catalinali.top/categories/mysql/"/>
           
         </display>
     </data>
@@ -395,19 +395,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/helloDubbo/</loc>
+    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
         <display>
-        <title>Dubbo初体验:远程服务调用和管控台的搭建</title>
-        <pubTime>2017-09-06T07:42:56.000Z</pubTime>
+        <title>小白从头到脚搭建zookeeper集群的过程</title>
+        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
         
-        <tag>Dubbo</tag>
+        <tag>zookeeper</tag>
          
          
            
              
-              <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
+              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
           
         </display>
     </data>
@@ -435,19 +435,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
+    <loc>http://catalinali.top/2017/helloDubbo/</loc>
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
         <display>
-        <title>小白从头到脚搭建zookeeper集群的过程</title>
-        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
+        <title>Dubbo初体验:远程服务调用和管控台的搭建</title>
+        <pubTime>2017-09-06T07:42:56.000Z</pubTime>
         
-        <tag>zookeeper</tag>
+        <tag>Dubbo</tag>
          
          
            
              
-              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
+              <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
           
         </display>
     </data>
