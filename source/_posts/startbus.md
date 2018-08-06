@@ -37,13 +37,13 @@ spring:
     host: 192.168.xxx.xxx
     port: 5672
 ```
-然后我们也要显示的使我们的服务暴漏`/bus-refresh`接口。在Spring2.0中把这个接口都移动到了*actuator*下面。这个也需要在客户端和服务端进行配置，所以我们直接加在远端Git上就好
+然后我们也要显示的使我们的服务暴漏`/bus-refresh`接口。在Spring2.0中把这个接口都移动到了*actuator*下面。这个只需要在Config端进行配置就好了。
 ``` yml
 management:
   endpoints:
     web:
       exposure:
-        include: bus-refresh
+        include: bus-refresh #也可以改为"*"来暴露所有接口
 ```
 现在我们逐一启动我们的Eureka、Config和Client项目，同时在启动Config Server的时候可以看到我们对外暴露的接口
 ![bus_2](http://ou3np1yz4.bkt.clouddn.com/bus_2.png)
