@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="juc" />
 
 
 
@@ -95,16 +95,20 @@
 
 
 
-<meta name="description" content="我希望我的朋友们都能挣大钱然后养我">
-<meta property="og:type" content="website">
-<meta property="og:title" content="catalinaLi&#39;s Notes">
-<meta property="og:url" content="http://catalinali.top/archives/2017/08/index.html">
+<meta name="description" content="也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，">
+<meta name="keywords" content="juc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA并发编程(二)：理解CAS机制">
+<meta property="og:url" content="http://catalinali.top/2018/helloCAS/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="我希望我的朋友们都能挣大钱然后养我">
+<meta property="og:description" content="也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/helloCAS_logo.jpg">
+<meta property="og:updated_time" content="2018-08-19T06:10:15.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="catalinaLi&#39;s Notes">
-<meta name="twitter:description" content="我希望我的朋友们都能挣大钱然后养我">
+<meta name="twitter:title" content="JAVA并发编程(二)：理解CAS机制">
+<meta name="twitter:description" content="也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，">
+<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/helloCAS_logo.jpg">
 
 
 
@@ -132,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://catalinali.top/archives/2017/08/"/>
+  <link rel="canonical" href="http://catalinali.top/2018/helloCAS/"/>
 
 
 
 
 
-  <title>归档 | catalinaLi's Notes</title>
+  <title>JAVA并发编程(二)：理解CAS机制 | catalinaLi's Notes</title>
   
 
 
@@ -163,7 +167,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -301,251 +305,228 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 27 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/useJDBC/" itemprop="url">
-              
-                <span itemprop="name">详解jdbcTemplate和namedParameterJdbcTemplate</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-24T17:41:55+08:00"
-              content="2017-08-24" >
-          08-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/UseApplicationContextAware/" itemprop="url">
-              
-                <span itemprop="name">Spring中的ApplicationContextAware接口的使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-23T14:45:57+08:00"
-              content="2017-08-23" >
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/installjira/" itemprop="url">
-              
-                <span itemprop="name">centos7下破解安装JIRA 7.2</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-16T11:41:50+08:00"
-              content="2017-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/IDEABuildSSM/" itemprop="url">
-              
-                <span itemprop="name">记录：使用IDEA搭建Maven+SSM的过程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-15T15:51:18+08:00"
-              content="2017-08-15" >
-          08-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/secondBuildHexo/" itemprop="url">
-              
-                <span itemprop="name">Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-10T16:12:56+08:00"
-              content="2017-08-10" >
-          08-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/firstBuildHexo/" itemprop="url">
-              
-                <span itemprop="name">手把手教你使用hexo搭建属于你的个人博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-06T14:15:15+08:00"
-              content="2017-08-06" >
-          08-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2018/helloCAS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="从不装逼夫斯基">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="catalinaLi's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JAVA并发编程(二)：理解CAS机制</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T14:09:25+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/juc/" itemprop="url" rel="index">
+                    <span itemprop="name">juc</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/helloCAS/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/helloCAS/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://ou3np1yz4.bkt.clouddn.com/helloCAS_logo.jpg" alt="volatile_logo"></p>
+<blockquote>
+<p>也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，所以很多地方也称之为自旋。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一、并发编程中的原子性问题"><a href="#一、并发编程中的原子性问题" class="headerlink" title="一、并发编程中的原子性问题"></a>一、并发编程中的原子性问题</h2><p>在上篇<a href="http://catalinali.top/2018/helloVolatile/">JAVA并发编程(一)：理解volatile关键字</a>的结尾留了一个原子性的问题：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * i++ 的原子性问题：i++ 的操作实际上分为三个步骤“读-改-写”</span></span><br><span class="line"><span class="comment"> * 		  int i = 10;</span></span><br><span class="line"><span class="comment"> * 		  i = i++; //10</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 		  int temp = i;</span></span><br><span class="line"><span class="comment"> * 		  i = i + 1;</span></span><br><span class="line"><span class="comment"> * 		  i = temp;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAtomicDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		AtomicDemo ad = <span class="keyword">new</span> AtomicDemo();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">new</span> Thread(ad).start();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AtomicDemo</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> serialNumber = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">200</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(getSerialNumber());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSerialNumber</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> serialNumber++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果并不总是0-10。要想解决这个问题，你可能会说加Synchronized同步锁：加了同步锁之后，serialNumber++操作变成了原子性操作，所以最终的输出一定是0-9，代码实现了线程安全。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	AtomicDemo ad = <span class="keyword">new</span> AtomicDemo();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">synchronized</span> (TestAtomicDemo.class) &#123;</span><br><span class="line">			<span class="keyword">new</span> Thread(ad).start();				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是众所周知的是Synchronized同步锁比较耗费性能，在某些情况下并不是一个好的选择，那有没有什么好的办法呢？在JDK1.5之后，java.util.concurrent.atomic包下为我们封装了常用的原子变量，他们底层就是使用了<strong>CAS</strong>（compare and swap）算法来保证原子性，我们将上面例子中的serialNumber改为使用AtomicInteger修饰，然后运行发现也可以得到正确的结果。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	private volatile int serialNumber = 0;</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> AtomicInteger serialNumber = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、什么是CAS？"><a href="#二、什么是CAS？" class="headerlink" title="二、什么是CAS？"></a>二、什么是CAS？</h2><p>CAS是英文单词Compare And Swap的缩写，翻译过来就是比较并替换。<br>CAS机制当中使用了3个基本操作数：内存地址V，旧的预期值A，要修改的新值B。<br>更新一个变量的时候，只有当变量的预期值A和内存地址V当中的实际值相同时，才会将内存地址V对应的值修改为B。<br>来看一个例子：<br>我们现在有两个线程：<br>1.在内存地址V当中，存储着值为10的变量。<br>2.此时线程1想要把变量的值增加1。对线程1来说，旧的预期值A=10，要修改的新值B=11。<br>3.在线程1要提交更新之前，另一个线程2抢先一步，把内存地址V中的变量值率先更新成了11。<br>4.线程1开始提交更新，首先进行A和地址V的实际值比较（Compare），发现A不等于V的实际值，提交失败。<br>5.线程1重新获取内存地址V的当前值，并重新计算想要修改的新值。此时对线程1来说，A=11，B=12。这个重新尝试的过程被称为自旋。<br>6.这一次比较幸运，没有其他线程改变地址V的值。线程1进行Compare，发现A和地址V的实际值是相等的。<br>7.线程1进行SWAP，把地址V的值替换为B，也就是12。<br>从思想上来说，Synchronized属于悲观锁，悲观地认为程序中的并发情况严重，所以严防死守。CAS属于乐观锁，乐观地认为程序中的并发情况不那么严重，所以让线程不断去尝试更新。</p>
+<h2 id="三、CAS的缺点"><a href="#三、CAS的缺点" class="headerlink" title="三、CAS的缺点"></a>三、CAS的缺点</h2><p>CAS机制这么巧妙，是不是在任何地方都比同步锁要好？然而并不是这样的，CAS机制有以下几个问题：</p>
+<ul>
+<li><strong>CPU开销较大</strong><br>在并发量比较高的情况下，如果许多线程反复尝试更新某一个变量，却又一直更新不成功，循环往复，会给CPU带来很大的压力。</li>
+<li><strong>不能保证代码块的原子性</strong><br>CAS机制所保证的只是一个变量的原子性操作，而不能保证整个代码块的原子性。比如需要保证3个变量共同进行原子性的更新，就不得不使用Synchronized了。</li>
+<li><p><strong>ABA问题</strong><br>什么是ABA呢？简单说就是一个值从A改成了B，又从B改成了A。<br>1.假设内存中有一个值为A的变量，存储在地址V当中。<br>2.此时有三个线程想使用CAS的方式更新这个变量值，每个线程的执行时间有略微的偏差。线程1和线程2已经获得当前值，线程3还未获得当前值。<br>3.接下来，线程1先一步执行成功，把当前值成功从A更新为B；同时线程2因为某种原因被阻塞住，没有做更新操作；线程3在线程1更新之后，获得了当前值B。<br>4.再之后，线程2仍然处于阻塞状态，线程3继续执行，成功把当前值从B更新成了A。<br>5.最后，线程2终于恢复了运行状态，由于阻塞之前已经获得了“当前值”A，并且经过compare检测，内存地址V中的实际值也是A，所以成功把变量值A更新成了B。<br>6.这个过程中，线程2获取到的变量值A是一个旧值，尽管和当前的实际值相同，但内存地址V中的变量已经经历了A-&gt;B-&gt;A的改变。<br>从表面看起来运行结果好像没什么问题，但是结合实际情况就会出现问题了。比如取款时有可能发生两个线程同时扣款成功的情况。所以，真正要做到严谨的CAS机制，我们在Compare阶段不仅要比较期望值A和地址V中的实际值，还要比较变量的版本号是否一致。<br>在Java当中，AtomicStampedReference类就实现了用版本号做比较的CAS机制。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2></li>
+<li><p><a href="https://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&amp;mid=2653192625&amp;idx=1&amp;sn=cbabbd806e4874e8793332724ca9d454&amp;chksm=8c99f36bbbee7a7d169581dedbe09658d0b0edb62d2cbc9ba4c40f706cb678c7d8c768afb666&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">漫画：什么是 CAS 机制？</a></p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/helloCAS/">http://catalinali.top/2018/helloCAS/</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_wechat.png?v=3" alt="从不装逼夫斯基 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_alipay.jpg?v=3" alt="从不装逼夫斯基 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/juc/" rel="tag"># juc</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/helloVolatile/" rel="next" title="JAVA并发编程(一)：理解volatile关键字">
+                <i class="fa fa-chevron-left"></i> JAVA并发编程(一)：理解volatile关键字
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -553,6 +534,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
 
         </div>
         
@@ -573,8 +560,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg"
@@ -699,6 +695,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、并发编程中的原子性问题"><span class="nav-number">1.</span> <span class="nav-text">一、并发编程中的原子性问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、什么是CAS？"><span class="nav-number">2.</span> <span class="nav-text">二、什么是CAS？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、CAS的缺点"><span class="nav-number">3.</span> <span class="nav-text">三、CAS的缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -859,11 +871,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   

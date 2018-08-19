@@ -5,11 +5,31 @@
     
   <url>
     <loc>http://catalinali.top/2018/helloVolatile/</loc>
-    <lastmod>2018-08-15T02:11:42.388Z</lastmod>
+    <lastmod>2018-08-19T06:10:27.823Z</lastmod>
     <data>
         <display>
         <title>JAVA并发编程(一)：理解volatile关键字</title>
         <pubTime>2018-08-15T02:11:12.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloCAS/</loc>
+    <lastmod>2018-08-19T06:10:15.844Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(二)：理解CAS机制</title>
+        <pubTime>2018-08-19T06:09:25.000Z</pubTime>
         
         <tag>juc</tag>
          
@@ -273,21 +293,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
+    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     <data>
         <display>
-        <title>使用IDEA搭建第一个SpringBoot程序</title>
-        <pubTime>2018-01-27T09:25:26.000Z</pubTime>
+        <title>Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</title>
+        <pubTime>2017-08-10T08:12:56.000Z</pubTime>
         
-        <tag>IDEA</tag>
-         
-        <tag>SpringBoot</tag>
+        <tag>hexo</tag>
          
          
            
              
-              <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
+              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
           
         </display>
     </data>
@@ -315,19 +333,21 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
+    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     <data>
         <display>
-        <title>Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</title>
-        <pubTime>2017-08-10T08:12:56.000Z</pubTime>
+        <title>使用IDEA搭建第一个SpringBoot程序</title>
+        <pubTime>2018-01-27T09:25:26.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>IDEA</tag>
+         
+        <tag>SpringBoot</tag>
          
          
            
              
-              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
+              <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
           
         </display>
     </data>
@@ -415,26 +435,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/firstBuildHexo/</loc>
-    <lastmod>2018-04-25T09:49:24.285Z</lastmod>
-    <data>
-        <display>
-        <title>手把手教你使用hexo搭建属于你的个人博客</title>
-        <pubTime>2017-08-06T06:15:15.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/buildzookeeper/</loc>
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
@@ -468,6 +468,26 @@
            
              
               <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/firstBuildHexo/</loc>
+    <lastmod>2018-04-25T09:49:24.285Z</lastmod>
+    <data>
+        <display>
+        <title>手把手教你使用hexo搭建属于你的个人博客</title>
+        <pubTime>2017-08-06T06:15:15.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
           
         </display>
     </data>

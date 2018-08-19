@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/volatile_logo.png">
 <meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/volatile_1.png">
 <meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/volatile_2.png">
-<meta property="og:updated_time" content="2018-08-15T02:11:42.388Z">
+<meta property="og:updated_time" content="2018-08-19T06:10:27.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA并发编程(一)：理解volatile关键字">
 <meta name="twitter:description" content="Java中volatile这个热门的关键字，在面试中经常会被提及，在各种技术交流群中也经常被讨论：volatile关键字在java多线程中有着比较重要作用，volatile主要作用是可以保持变量在多线程中是实时可见的,是java中提供的最轻量的同步机制。">
@@ -439,8 +439,8 @@
 <h2 id="三、深入理解volatile关键字"><a href="#三、深入理解volatile关键字" class="headerlink" title="三、深入理解volatile关键字"></a>三、深入理解volatile关键字</h2><p>　在多线程并发编程中synchronized和volatile都扮演着重要的角色，volatile是轻量级的 synchronized。如果volatile变量修饰符使用恰当 的话，它比synchronized的使用和执行成本更低，因为它不会引起线程上下文的切换和调度。</p>
 <h3 id="1-volatile的作用"><a href="#1-volatile的作用" class="headerlink" title="1.volatile的作用"></a>1.volatile的作用</h3><p>　一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：<br>　　1）保证了内存的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。<br>　　2）禁止进行指令重排序。</p>
 <h3 id="1-volatile不能保证原子性"><a href="#1-volatile不能保证原子性" class="headerlink" title="1.volatile不能保证原子性"></a>1.volatile不能保证原子性</h3><p>我们来看下面这一段代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * i++ 的原子性问题：i++ 的操作实际上分为三个步骤“读-改-写”</span></span><br><span class="line"><span class="comment"> * 		  int i = 10;</span></span><br><span class="line"><span class="comment"> * 		  i = i++; //10</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 		  int temp = i;</span></span><br><span class="line"><span class="comment"> * 		  i = i + 1;</span></span><br><span class="line"><span class="comment"> * 		  i = temp;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAtomicDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		AtomicDemo ad = <span class="keyword">new</span> AtomicDemo();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">new</span> Thread(ad).start();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AtomicDemo</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> serialNumber = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">200</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(getSerialNumber());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSerialNumber</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> serialNumber++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>反复运行这段代码，发现结果并不是每次都是0-10,而是有可能会有重复结果出现。<br>自增操作是不具备原子性的，它包括读取变量的原始值、进行加1操作、写入工作内存。那么就是说自增操作的三个子操作可能会分割开执行：<br>线程1对变量进行读取操作之后，被阻塞了的话，并没有对serialNumber值进行修改。虽然volatile能保证线程2对变量serialNumber的值读取是从内存中读取的，但是线程1没有进行修改，所以线程2根本就不会看到修改的值。</p>
-<p>根源就在这里，自增操作不是原子性操作，而且volatile也无法保证对变量的任何操作都是原子性的。</p>
+<p>反复运行这段代码，发现结果并不是每次都是0-9,而是有可能会有重复结果出现。<br>自增操作是不具备原子性的，它包括读取变量的原始值、进行加1操作、写入工作内存。那么就是说自增操作的三个子操作可能会分割开执行：<br>线程1对变量进行读取操作之后，被阻塞了的话，并没有对serialNumber值进行修改。虽然volatile能保证线程2对变量serialNumber的值读取是从内存中读取的，但是线程1没有进行修改，所以线程2根本就不会看到修改的值。</p>
+<p>根源就在这里，自增操作不是原子性操作，而且volatile也无法保证对变量的任何操作都是原子性的。那么原子性问题究竟应该怎么解决呢？我们在下篇文章中会给出详细解答。</p>
 <h2 id="四、volatile关键字的应用场景"><a href="#四、volatile关键字的应用场景" class="headerlink" title="四、volatile关键字的应用场景"></a>四、volatile关键字的应用场景</h2><p>synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字的，因为volatile关键字无法保证操作的原子性。通常来说，使用volatile必须具备以下2个条件：</p>
 <p>1）对变量的写操作不依赖于当前值<br>2）该变量没有包含在具有其他变量的不变式中</p>
 <p>下面列举几个Java中使用volatile的几个场景。<br><strong>1.状态标记量</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line"> <span class="comment">//线程1</span></span><br><span class="line"><span class="keyword">while</span>(!flag)&#123;</span><br><span class="line">    doSomething();</span><br><span class="line">&#125;</span><br><span class="line">  <span class="comment">//线程2</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFlag</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    flag = <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">根据状态标记，终止线程。</span><br></pre></td></tr></table></figure></p>
@@ -454,7 +454,7 @@
 </ul>
 <hr>
 <blockquote>
-<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/config/">http://catalinali.top/2018/config/</a></p>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/helloVolatile/">http://catalinali.top/2018/helloVolatile/</a></p>
 </blockquote>
 
       
@@ -529,6 +529,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/helloCAS/" rel="prev" title="JAVA并发编程(二)：理解CAS机制">
+                JAVA并发编程(二)：理解CAS机制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -602,7 +606,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

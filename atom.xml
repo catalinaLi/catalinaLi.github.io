@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://catalinali.top/"/>
-  <updated>2018-08-15T02:11:42.388Z</updated>
+  <updated>2018-08-19T06:10:15.844Z</updated>
   <id>http://catalinali.top/</id>
   
   <author>
@@ -16,11 +16,58 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JAVA并发编程(二)：理解CAS机制</title>
+    <link href="http://catalinali.top/2018/helloCAS/"/>
+    <id>http://catalinali.top/2018/helloCAS/</id>
+    <published>2018-08-19T06:09:25.000Z</published>
+    <updated>2018-08-19T06:10:15.844Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/helloCAS_logo.jpg" alt="volatile_logo"></p>
+<blockquote>
+<p>也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，所以很多地方也称之为自旋。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一、并发编程中的原子性问题"><a href="#一、并发编程中的原子性问题" class="headerlink" title="一、并发编程中的原子性问题"></a>一、并发编程中的原子性问题</h2><p>在上篇<a href="http://catalinali.top/2018/helloVolatile/">JAVA并发编程(一)：理解volatile关键字</a>的结尾留了一个原子性的问题：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * i++ 的原子性问题：i++ 的操作实际上分为三个步骤“读-改-写”</span></span><br><span class="line"><span class="comment"> * 		  int i = 10;</span></span><br><span class="line"><span class="comment"> * 		  i = i++; //10</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 		  int temp = i;</span></span><br><span class="line"><span class="comment"> * 		  i = i + 1;</span></span><br><span class="line"><span class="comment"> * 		  i = temp;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAtomicDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		AtomicDemo ad = <span class="keyword">new</span> AtomicDemo();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">new</span> Thread(ad).start();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AtomicDemo</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> serialNumber = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">200</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(getSerialNumber());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSerialNumber</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> serialNumber++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果并不总是0-10。要想解决这个问题，你可能会说加Synchronized同步锁：加了同步锁之后，serialNumber++操作变成了原子性操作，所以最终的输出一定是0-9，代码实现了线程安全。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	AtomicDemo ad = <span class="keyword">new</span> AtomicDemo();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">synchronized</span> (TestAtomicDemo.class) &#123;</span><br><span class="line">			<span class="keyword">new</span> Thread(ad).start();				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是众所周知的是Synchronized同步锁比较耗费性能，在某些情况下并不是一个好的选择，那有没有什么好的办法呢？在JDK1.5之后，java.util.concurrent.atomic包下为我们封装了常用的原子变量，他们底层就是使用了<strong>CAS</strong>（compare and swap）算法来保证原子性，我们将上面例子中的serialNumber改为使用AtomicInteger修饰，然后运行发现也可以得到正确的结果。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	private volatile int serialNumber = 0;</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> AtomicInteger serialNumber = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、什么是CAS？"><a href="#二、什么是CAS？" class="headerlink" title="二、什么是CAS？"></a>二、什么是CAS？</h2><p>CAS是英文单词Compare And Swap的缩写，翻译过来就是比较并替换。<br>CAS机制当中使用了3个基本操作数：内存地址V，旧的预期值A，要修改的新值B。<br>更新一个变量的时候，只有当变量的预期值A和内存地址V当中的实际值相同时，才会将内存地址V对应的值修改为B。<br>来看一个例子：<br>我们现在有两个线程：<br>1.在内存地址V当中，存储着值为10的变量。<br>2.此时线程1想要把变量的值增加1。对线程1来说，旧的预期值A=10，要修改的新值B=11。<br>3.在线程1要提交更新之前，另一个线程2抢先一步，把内存地址V中的变量值率先更新成了11。<br>4.线程1开始提交更新，首先进行A和地址V的实际值比较（Compare），发现A不等于V的实际值，提交失败。<br>5.线程1重新获取内存地址V的当前值，并重新计算想要修改的新值。此时对线程1来说，A=11，B=12。这个重新尝试的过程被称为自旋。<br>6.这一次比较幸运，没有其他线程改变地址V的值。线程1进行Compare，发现A和地址V的实际值是相等的。<br>7.线程1进行SWAP，把地址V的值替换为B，也就是12。<br>从思想上来说，Synchronized属于悲观锁，悲观地认为程序中的并发情况严重，所以严防死守。CAS属于乐观锁，乐观地认为程序中的并发情况不那么严重，所以让线程不断去尝试更新。</p>
+<h2 id="三、CAS的缺点"><a href="#三、CAS的缺点" class="headerlink" title="三、CAS的缺点"></a>三、CAS的缺点</h2><p>CAS机制这么巧妙，是不是在任何地方都比同步锁要好？然而并不是这样的，CAS机制有以下几个问题：</p>
+<ul>
+<li><strong>CPU开销较大</strong><br>在并发量比较高的情况下，如果许多线程反复尝试更新某一个变量，却又一直更新不成功，循环往复，会给CPU带来很大的压力。</li>
+<li><strong>不能保证代码块的原子性</strong><br>CAS机制所保证的只是一个变量的原子性操作，而不能保证整个代码块的原子性。比如需要保证3个变量共同进行原子性的更新，就不得不使用Synchronized了。</li>
+<li><p><strong>ABA问题</strong><br>什么是ABA呢？简单说就是一个值从A改成了B，又从B改成了A。<br>1.假设内存中有一个值为A的变量，存储在地址V当中。<br>2.此时有三个线程想使用CAS的方式更新这个变量值，每个线程的执行时间有略微的偏差。线程1和线程2已经获得当前值，线程3还未获得当前值。<br>3.接下来，线程1先一步执行成功，把当前值成功从A更新为B；同时线程2因为某种原因被阻塞住，没有做更新操作；线程3在线程1更新之后，获得了当前值B。<br>4.再之后，线程2仍然处于阻塞状态，线程3继续执行，成功把当前值从B更新成了A。<br>5.最后，线程2终于恢复了运行状态，由于阻塞之前已经获得了“当前值”A，并且经过compare检测，内存地址V中的实际值也是A，所以成功把变量值A更新成了B。<br>6.这个过程中，线程2获取到的变量值A是一个旧值，尽管和当前的实际值相同，但内存地址V中的变量已经经历了A-&gt;B-&gt;A的改变。<br>从表面看起来运行结果好像没什么问题，但是结合实际情况就会出现问题了。比如取款时有可能发生两个线程同时扣款成功的情况。所以，真正要做到严谨的CAS机制，我们在Compare阶段不仅要比较期望值A和地址V中的实际值，还要比较变量的版本号是否一致。<br>在Java当中，AtomicStampedReference类就实现了用版本号做比较的CAS机制。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2></li>
+<li><p><a href="https://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&amp;mid=2653192625&amp;idx=1&amp;sn=cbabbd806e4874e8793332724ca9d454&amp;chksm=8c99f36bbbee7a7d169581dedbe09658d0b0edb62d2cbc9ba4c40f706cb678c7d8c768afb666&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">漫画：什么是 CAS 机制？</a></p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/helloCAS/">http://catalinali.top/2018/helloCAS/</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ou3np1yz4.bkt.clouddn.com/helloCAS_logo.jpg&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，所以很多地方也称之为自旋。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="juc" scheme="http://catalinali.top/categories/juc/"/>
+    
+    
+      <category term="juc" scheme="http://catalinali.top/tags/juc/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JAVA并发编程(一)：理解volatile关键字</title>
     <link href="http://catalinali.top/2018/helloVolatile/"/>
     <id>http://catalinali.top/2018/helloVolatile/</id>
     <published>2018-08-15T02:11:12.000Z</published>
-    <updated>2018-08-15T02:11:42.388Z</updated>
+    <updated>2018-08-19T06:10:27.823Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/volatile_logo.png" alt="volatile_logo"></p>
 <blockquote>
@@ -42,8 +89,8 @@
 <h2 id="三、深入理解volatile关键字"><a href="#三、深入理解volatile关键字" class="headerlink" title="三、深入理解volatile关键字"></a>三、深入理解volatile关键字</h2><p>　在多线程并发编程中synchronized和volatile都扮演着重要的角色，volatile是轻量级的 synchronized。如果volatile变量修饰符使用恰当 的话，它比synchronized的使用和执行成本更低，因为它不会引起线程上下文的切换和调度。</p>
 <h3 id="1-volatile的作用"><a href="#1-volatile的作用" class="headerlink" title="1.volatile的作用"></a>1.volatile的作用</h3><p>　一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：<br>　　1）保证了内存的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。<br>　　2）禁止进行指令重排序。</p>
 <h3 id="1-volatile不能保证原子性"><a href="#1-volatile不能保证原子性" class="headerlink" title="1.volatile不能保证原子性"></a>1.volatile不能保证原子性</h3><p>我们来看下面这一段代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * i++ 的原子性问题：i++ 的操作实际上分为三个步骤“读-改-写”</span></span><br><span class="line"><span class="comment"> * 		  int i = 10;</span></span><br><span class="line"><span class="comment"> * 		  i = i++; //10</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 		  int temp = i;</span></span><br><span class="line"><span class="comment"> * 		  i = i + 1;</span></span><br><span class="line"><span class="comment"> * 		  i = temp;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAtomicDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		AtomicDemo ad = <span class="keyword">new</span> AtomicDemo();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">new</span> Thread(ad).start();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AtomicDemo</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> serialNumber = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Thread.sleep(<span class="number">200</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(getSerialNumber());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSerialNumber</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> serialNumber++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>反复运行这段代码，发现结果并不是每次都是0-10,而是有可能会有重复结果出现。<br>自增操作是不具备原子性的，它包括读取变量的原始值、进行加1操作、写入工作内存。那么就是说自增操作的三个子操作可能会分割开执行：<br>线程1对变量进行读取操作之后，被阻塞了的话，并没有对serialNumber值进行修改。虽然volatile能保证线程2对变量serialNumber的值读取是从内存中读取的，但是线程1没有进行修改，所以线程2根本就不会看到修改的值。</p>
-<p>根源就在这里，自增操作不是原子性操作，而且volatile也无法保证对变量的任何操作都是原子性的。</p>
+<p>反复运行这段代码，发现结果并不是每次都是0-9,而是有可能会有重复结果出现。<br>自增操作是不具备原子性的，它包括读取变量的原始值、进行加1操作、写入工作内存。那么就是说自增操作的三个子操作可能会分割开执行：<br>线程1对变量进行读取操作之后，被阻塞了的话，并没有对serialNumber值进行修改。虽然volatile能保证线程2对变量serialNumber的值读取是从内存中读取的，但是线程1没有进行修改，所以线程2根本就不会看到修改的值。</p>
+<p>根源就在这里，自增操作不是原子性操作，而且volatile也无法保证对变量的任何操作都是原子性的。那么原子性问题究竟应该怎么解决呢？我们在下篇文章中会给出详细解答。</p>
 <h2 id="四、volatile关键字的应用场景"><a href="#四、volatile关键字的应用场景" class="headerlink" title="四、volatile关键字的应用场景"></a>四、volatile关键字的应用场景</h2><p>synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字的，因为volatile关键字无法保证操作的原子性。通常来说，使用volatile必须具备以下2个条件：</p>
 <p>1）对变量的写操作不依赖于当前值<br>2）该变量没有包含在具有其他变量的不变式中</p>
 <p>下面列举几个Java中使用volatile的几个场景。<br><strong>1.状态标记量</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line"> <span class="comment">//线程1</span></span><br><span class="line"><span class="keyword">while</span>(!flag)&#123;</span><br><span class="line">    doSomething();</span><br><span class="line">&#125;</span><br><span class="line">  <span class="comment">//线程2</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFlag</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    flag = <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">根据状态标记，终止线程。</span><br></pre></td></tr></table></figure></p>
@@ -57,7 +104,7 @@
 </ul>
 <hr>
 <blockquote>
-<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/config/">http://catalinali.top/2018/config/</a></p>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/helloVolatile/">http://catalinali.top/2018/helloVolatile/</a></p>
 </blockquote>
 ]]></content>
     
@@ -983,53 +1030,6 @@
     
     
       <category term="Dubbo" scheme="http://catalinali.top/tags/Dubbo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白从头到脚搭建zookeeper集群的过程</title>
-    <link href="http://catalinali.top/2017/buildzookeeper/"/>
-    <id>http://catalinali.top/2017/buildzookeeper/</id>
-    <published>2017-09-04T07:59:30.000Z</published>
-    <updated>2018-04-25T09:49:24.285Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_logo.jpg" alt="buildzk_logo"></p>
-<blockquote>
-<p>zookeeper的字面意思为动物园管理员,正如他的名字,各个子系统能正常为用户提供统一的服务。并且还可以作为Dubbo的注册中心来使用。今天进行了一番centos的安装到zookeeper集群的搭建,也遇到不少坑。特此记录下来搭建过程。</p>
-</blockquote>
-<hr>
-<a id="more"></a>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
-<li>VMware Workstation 11   </li>
-<li>centos 6.4镜像</li>
-<li>jdk-7u67-linux-x64.tar.gz</li>
-<li>zookeeper-3.4.6.tar.gz</li>
-<li>Xshell </li>
-<li>Xftp</li>
-</ul>
-<h2 id="搭建linux环境"><a href="#搭建linux环境" class="headerlink" title="搭建linux环境"></a>搭建linux环境</h2><p>1.linux安装过程就不赘述了,网上有很多。可以参考<a href="http://blog.csdn.net/lzwglory/article/details/53468199" target="_blank" rel="noopener">这一篇</a>。需要注意的是安装过程中我们最好配置一下网络:<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_8.png" alt="buildzk_8"><br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_9.png" alt="buildzk_9"><br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_10.png" alt="buildzk_10"><br>最后一步中红色方框的一样就好了,ip只需要最后一段不一样即可。另外我安装的也是minimal模式。<br>2.安装好centos以后我们要更改一下网络连接方式。如图:<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_1.png" alt="buildzk_1"><br>3.这样我们就安装好了一台linux,由于我们要搭建集群,所以我们再克隆2台linux:<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_2.jpg" alt="buildzk_2"><br>除了这一步,其他的一直下一步就好<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_3.jpg" alt="buildzk_3"><br>这时我们就得到了3台linux环境。可是由于是克隆的,所以后两台连ip地址都是一样的。所以我们需要更改一些配置来使得后2台也能有了自己的ip。参考<a href="http://www.linuxidc.com/Linux/2012-12/76248.htm" target="_blank" rel="noopener">这一篇</a>。<br>4.开启我们的三台linux环境,使用Xshell分别进行连接。<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_4.png" alt="buildzk_4"><br>至此,linux环境就搭建成功了。</p>
-<h2 id="搭建zookeeper集群"><a href="#搭建zookeeper集群" class="headerlink" title="搭建zookeeper集群"></a>搭建zookeeper集群</h2><p>1.由于zookeeper是Java编写的,运行在Java环境上，所以我们要先安装jdk。具体安装过程可以看我之前写的<a href="http://catalinali.top/2017/installjira/">centos7下破解安装JIRA 7.2</a>的开头部分。<br>2.使用tar -zxvf 将<code>zookeeper-3.4.6.tar.gz</code>解压到某一个位置。<br>3.将zookeeper-3.4.6/conf目录下面的zoo_sample.cfg修改为zoo.cfg。<br>4.使用vi/vim命令修改<code>zoo.cfg</code>的内容如下图:<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_5.png" alt="buildzk_5"><br>其中上面的红框是zookeeper的<strong>数据日志目录</strong>,可以更改成自己的位置。下面的红框是集群中服务的列表。<br>5.分别操作linux进入刚才修改的<strong>数据日志目录</strong>,新建一个myid文件。内容分别是<strong>0</strong>、<strong>1</strong>、<strong>2</strong>。没有错,里面就一个数字，用来唯一标识这个服务。这个id是很重要的，一定要保证整个集群中唯一。zookeeper会根据这个id来取出server.x上的配置。比如当前id为1，则对应着zoo.cfg里的server.1的配置。<br>6.使用关闭<code>service iptables stop</code>暂时关闭防火墙,或者使用<code>chkconfig iptables off</code>永久禁用防火墙。然后进入zookeeper下的bin目录,使用./zkServer.sh start同时对三个linux进行操作。<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_6.png" alt="buildzk_6"><br>这时候我们再使用<code>./zkServer.sh status</code>来查看状态如果出现下图,恭喜你搭建成功<br><img src="http://ou3np1yz4.bkt.clouddn.com/buildzk_7.png" alt="buildzk_7"><br>其中leader是主节点,follow是从节点。<br>但是大多数情况我们却出现<strong>It is probably not running</strong>。这时可以参考这篇<a href="http://blog.csdn.net/henni_719/article/details/53331724" target="_blank" rel="noopener">文章</a>去解决问题。</p>
-<h2 id="随便说说"><a href="#随便说说" class="headerlink" title="随便说说"></a>随便说说</h2><p>首先感谢上文参考的所有文章！！<br>其次感谢这个开发的网络世界,让我们可以找到想找的所有资料！！！</p>
-<hr>
-<blockquote>
-<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2017/buildzookeeper/">http://catalinali.top/2017/buildzookeeper/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ou3np1yz4.bkt.clouddn.com/buildzk_logo.jpg&quot; alt=&quot;buildzk_logo&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;zookeeper的字面意思为动物园管理员,正如他的名字,各个子系统能正常为用户提供统一的服务。并且还可以作为Dubbo的注册中心来使用。今天进行了一番centos的安装到zookeeper集群的搭建,也遇到不少坑。特此记录下来搭建过程。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="zookeeper" scheme="http://catalinali.top/categories/zookeeper/"/>
-    
-    
-      <category term="zookeeper" scheme="http://catalinali.top/tags/zookeeper/"/>
     
   </entry>
   
