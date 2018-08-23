@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://catalinali.top/2018/helloLatch/</loc>
+    <lastmod>2018-08-23T11:11:38.761Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(三)：同步的辅助类之闭锁（CountDownLatch）与循环屏障（CyclicBarrier）</title>
+        <pubTime>2018-08-23T11:11:08.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2018/helloVolatile/</loc>
     <lastmod>2018-08-19T06:10:27.823Z</lastmod>
     <data>
@@ -211,26 +231,6 @@
     
     
   <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
-    <data>
-        <display>
-        <title>微信开发之微信网页授权获取openid</title>
-        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
-        
-        <tag>wechat</tag>
-         
-         
-           
-             
-              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/useMQ/</loc>
     <lastmod>2018-04-25T09:49:24.290Z</lastmod>
     <data>
@@ -244,6 +244,26 @@
            
              
               <breadCrumb title="mq" url="http://catalinali.top/categories/mq/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
+    <data>
+        <display>
+        <title>微信开发之微信网页授权获取openid</title>
+        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
+        
+        <tag>wechat</tag>
+         
+         
+           
+             
+              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
           
         </display>
     </data>
@@ -293,19 +313,21 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
+    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     <data>
         <display>
-        <title>Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</title>
-        <pubTime>2017-08-10T08:12:56.000Z</pubTime>
+        <title>使用IDEA搭建第一个SpringBoot程序</title>
+        <pubTime>2018-01-27T09:25:26.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>IDEA</tag>
+         
+        <tag>SpringBoot</tag>
          
          
            
              
-              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
+              <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
           
         </display>
     </data>
@@ -333,21 +355,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
+    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     <data>
         <display>
-        <title>使用IDEA搭建第一个SpringBoot程序</title>
-        <pubTime>2018-01-27T09:25:26.000Z</pubTime>
+        <title>Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</title>
+        <pubTime>2017-08-10T08:12:56.000Z</pubTime>
         
-        <tag>IDEA</tag>
-         
-        <tag>SpringBoot</tag>
+        <tag>hexo</tag>
          
          
            
              
-              <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
+              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
           
         </display>
     </data>
@@ -435,26 +455,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
-    <lastmod>2018-04-25T09:49:24.285Z</lastmod>
-    <data>
-        <display>
-        <title>小白从头到脚搭建zookeeper集群的过程</title>
-        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
-        
-        <tag>zookeeper</tag>
-         
-         
-           
-             
-              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/helloDubbo/</loc>
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
@@ -488,6 +488,26 @@
            
              
               <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
+    <lastmod>2018-04-25T09:49:24.285Z</lastmod>
+    <data>
+        <display>
+        <title>小白从头到脚搭建zookeeper集群的过程</title>
+        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
+        
+        <tag>zookeeper</tag>
+         
+         
+           
+             
+              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
           
         </display>
     </data>
