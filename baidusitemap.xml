@@ -4,19 +4,39 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/recordsql/</loc>
-    <lastmod>2018-08-23T11:17:46.521Z</lastmod>
+    <loc>http://catalinali.top/2018/helloThreadPool/</loc>
+    <lastmod>2018-08-27T02:52:57.005Z</lastmod>
     <data>
         <display>
-        <title>记录：mysql中的case when|on duplicate key update|重复插入返回主键的用法</title>
-        <pubTime>2017-09-27T08:17:44.000Z</pubTime>
+        <title>（转载）JAVA并发编程(四)：线程池的使用</title>
+        <pubTime>2018-08-27T02:48:41.000Z</pubTime>
         
-        <tag>mysql</tag>
+        <tag>juc</tag>
          
          
            
              
-              <breadCrumb title="mysql" url="http://catalinali.top/categories/mysql/"/>
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloCallable/</loc>
+    <lastmod>2018-08-27T02:50:24.244Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(五)：创建线程的第三种方式：实现Callable接口</title>
+        <pubTime>2018-08-27T02:49:54.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
           
         </display>
     </data>
@@ -25,7 +45,7 @@
     
   <url>
     <loc>http://catalinali.top/2018/helloLatch/</loc>
-    <lastmod>2018-08-23T11:11:38.761Z</lastmod>
+    <lastmod>2018-08-25T05:54:58.070Z</lastmod>
     <data>
         <display>
         <title>JAVA并发编程(三)：同步的辅助类之闭锁（CountDownLatch）与循环屏障（CyclicBarrier）</title>
@@ -45,7 +65,7 @@
     
   <url>
     <loc>http://catalinali.top/2018/helloVolatile/</loc>
-    <lastmod>2018-08-19T06:10:27.823Z</lastmod>
+    <lastmod>2018-08-25T05:54:04.437Z</lastmod>
     <data>
         <display>
         <title>JAVA并发编程(一)：理解volatile关键字</title>
@@ -57,6 +77,26 @@
            
              
               <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/recordsql/</loc>
+    <lastmod>2018-08-23T11:17:46.521Z</lastmod>
+    <data>
+        <display>
+        <title>记录：mysql中的case when|on duplicate key update|重复插入返回主键的用法</title>
+        <pubTime>2017-09-27T08:17:44.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://catalinali.top/categories/mysql/"/>
           
         </display>
     </data>
@@ -251,26 +291,6 @@
     
     
   <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
-    <data>
-        <display>
-        <title>微信开发之微信网页授权获取openid</title>
-        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
-        
-        <tag>wechat</tag>
-         
-         
-           
-             
-              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/useMQ/</loc>
     <lastmod>2018-04-25T09:49:24.290Z</lastmod>
     <data>
@@ -284,6 +304,26 @@
            
              
               <breadCrumb title="mq" url="http://catalinali.top/categories/mq/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
+    <data>
+        <display>
+        <title>微信开发之微信网页授权获取openid</title>
+        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
+        
+        <tag>wechat</tag>
+         
+         
+           
+             
+              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
           
         </display>
     </data>
@@ -333,26 +373,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/strategyPattern/</loc>
-    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
-    <data>
-        <display>
-        <title>Java设计模式之策略模式</title>
-        <pubTime>2017-12-18T06:55:26.000Z</pubTime>
-        
-        <tag>design-patterns</tag>
-         
-         
-           
-             
-              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     <data>
@@ -360,9 +380,9 @@
         <title>使用IDEA搭建第一个SpringBoot程序</title>
         <pubTime>2018-01-27T09:25:26.000Z</pubTime>
         
-        <tag>IDEA</tag>
-         
         <tag>SpringBoot</tag>
+         
+        <tag>IDEA</tag>
          
          
            
@@ -388,6 +408,26 @@
            
              
               <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/strategyPattern/</loc>
+    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
+    <data>
+        <display>
+        <title>Java设计模式之策略模式</title>
+        <pubTime>2017-12-18T06:55:26.000Z</pubTime>
+        
+        <tag>design-patterns</tag>
+         
+         
+           
+             
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
           
         </display>
     </data>
@@ -455,19 +495,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
+    <loc>http://catalinali.top/2017/helloDubbo/</loc>
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
         <display>
-        <title>小白从头到脚搭建zookeeper集群的过程</title>
-        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
+        <title>Dubbo初体验:远程服务调用和管控台的搭建</title>
+        <pubTime>2017-09-06T07:42:56.000Z</pubTime>
         
-        <tag>zookeeper</tag>
+        <tag>Dubbo</tag>
          
          
            
              
-              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
+              <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
           
         </display>
     </data>
@@ -495,39 +535,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/helloDubbo/</loc>
+    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
         <display>
-        <title>Dubbo初体验:远程服务调用和管控台的搭建</title>
-        <pubTime>2017-09-06T07:42:56.000Z</pubTime>
+        <title>小白从头到脚搭建zookeeper集群的过程</title>
+        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
         
-        <tag>Dubbo</tag>
+        <tag>zookeeper</tag>
          
          
            
              
-              <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
-    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
-    <data>
-        <display>
-        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
-        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
-        
-        <tag>Redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
+              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
           
         </display>
     </data>
@@ -555,6 +575,26 @@
 
     
   <url>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
+    <data>
+        <display>
+        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
+        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2017/IDEABuildSSM/</loc>
     <lastmod>2018-04-25T09:49:24.283Z</lastmod>
     <data>
@@ -562,9 +602,9 @@
         <title>记录：使用IDEA搭建Maven+SSM的过程</title>
         <pubTime>2017-08-15T07:51:18.000Z</pubTime>
         
-        <tag>SSM</tag>
-         
         <tag>IDEA</tag>
+         
+        <tag>SSM</tag>
          
          
            
