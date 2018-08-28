@@ -104,7 +104,7 @@
 <meta property="og:description" content="如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。今天我们就来详细讲解一下Java的线程池。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/ThreadPool_logo.jpg">
-<meta property="og:updated_time" content="2018-08-27T02:54:29.843Z">
+<meta property="og:updated_time" content="2018-08-27T03:06:56.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="（转载）JAVA并发编程(四)：线程池的使用">
 <meta name="twitter:description" content="如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。今天我们就来详细讲解一下Java的线程池。">
@@ -436,7 +436,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TimeUnit.DAYS;               //天</span><br><span class="line">TimeUnit.HOURS;             //小时</span><br><span class="line">TimeUnit.MINUTES;           //分钟</span><br><span class="line">TimeUnit.SECONDS;           //秒</span><br><span class="line">TimeUnit.MILLISECONDS;      //毫秒</span><br><span class="line">TimeUnit.MICROSECONDS;      //微妙</span><br><span class="line">TimeUnit.NANOSECONDS;       //纳秒</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>workQueue：一个阻塞队列，用来存储等待执行的任务，这个参数的选择也很重要，会对线程池的运行过程产生重大影响，一般来说，这里的阻塞队列有以下几种选择：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ArrayBlockingQueue;</span><br><span class="line">LinkedBlockingQueue;</span><br><span class="line">SynchronousQueue;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ArrayBlockingQueue;</span><br><span class="line">LinkedBlockingQueue;</span><br><span class="line">SynchronousQueue;</span><br><span class="line">PriorityBlockingQueue;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>ArrayBlockingQueue和PriorityBlockingQueue使用较少，一般使用LinkedBlockingQueue和Synchronous。线程池的排队策略与BlockingQueue有关。</p>
@@ -654,7 +654,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

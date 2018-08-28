@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
+    
+    <lastmod>2018-08-28T01:46:07.590Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://catalinali.top/2018/helloThreadPool/</loc>
     
-    <lastmod>2018-08-27T02:54:29.843Z</lastmod>
+    <lastmod>2018-08-27T03:06:56.619Z</lastmod>
     
   </url>
   
@@ -135,14 +142,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/useJDBC/</loc>
+    <loc>http://catalinali.top/2018/useJSONP/</loc>
     
     <lastmod>2018-04-25T09:49:24.289Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/useJSONP/</loc>
+    <loc>http://catalinali.top/2017/useJDBC/</loc>
     
     <lastmod>2018-04-25T09:49:24.289Z</lastmod>
     
@@ -156,13 +163,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
-    
-    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2017/strategyPattern/</loc>
     
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
@@ -170,14 +170,21 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/installjira/</loc>
+    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
+    
+    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2017/installVue/</loc>
     
     <lastmod>2018-04-25T09:49:24.287Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/installVue/</loc>
+    <loc>http://catalinali.top/2017/installjira/</loc>
     
     <lastmod>2018-04-25T09:49:24.287Z</lastmod>
     
@@ -212,14 +219,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
     
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
     
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     
