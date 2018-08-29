@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://catalinali.top/2018/proxyPattern/</loc>
+    <lastmod>2018-08-29T03:27:01.021Z</lastmod>
+    <data>
+        <display>
+        <title>（转载）Java设计模式之代理模式</title>
+        <pubTime>2018-08-29T03:22:19.000Z</pubTime>
+        
+        <tag>design-patterns</tag>
+         
+         
+           
+             
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
     <lastmod>2018-08-28T01:46:07.590Z</lastmod>
     <data>
@@ -393,6 +413,26 @@
 
     
   <url>
+    <loc>http://catalinali.top/2017/strategyPattern/</loc>
+    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
+    <data>
+        <display>
+        <title>Java设计模式之策略模式</title>
+        <pubTime>2017-12-18T06:55:26.000Z</pubTime>
+        
+        <tag>design-patterns</tag>
+         
+         
+           
+             
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     <data>
@@ -408,26 +448,6 @@
            
              
               <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/strategyPattern/</loc>
-    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
-    <data>
-        <display>
-        <title>Java设计模式之策略模式</title>
-        <pubTime>2017-12-18T06:55:26.000Z</pubTime>
-        
-        <tag>design-patterns</tag>
-         
-         
-           
-             
-              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
           
         </display>
     </data>
@@ -575,26 +595,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
-    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
-    <data>
-        <display>
-        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
-        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
-        
-        <tag>Redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     <data>
@@ -608,6 +608,26 @@
            
              
               <breadCrumb title="Spring" url="http://catalinali.top/categories/Spring/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
+    <data>
+        <display>
+        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
+        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
           
         </display>
     </data>

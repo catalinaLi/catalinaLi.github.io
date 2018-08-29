@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://catalinali.top/2018/proxyPattern/</loc>
+    
+    <lastmod>2018-08-29T03:27:01.021Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
     
     <lastmod>2018-08-28T01:46:07.590Z</lastmod>
@@ -114,14 +121,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/categories/index.html</loc>
+    <loc>http://catalinali.top/about/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/about/index.html</loc>
+    <loc>http://catalinali.top/categories/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
@@ -156,14 +163,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
+    <loc>http://catalinali.top/2017/strategyPattern/</loc>
     
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/strategyPattern/</loc>
+    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     
@@ -219,14 +226,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
     
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
     
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     
