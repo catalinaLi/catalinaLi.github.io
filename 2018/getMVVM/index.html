@@ -95,16 +95,22 @@
 
 
 
-<meta name="description" content="我希望我的朋友们都能挣大钱然后养我">
-<meta property="og:type" content="website">
-<meta property="og:title" content="catalinaLi&#39;s Notes">
-<meta property="og:url" content="http://catalinali.top/archives/page/2/index.html">
+<meta name="description" content="近年来前端一个明显的开发趋势就是架构从传统的 MVC 模式向 MVVM 模式迁移。在传统的 MVC 下，当前前端和后端发生数据交互后会刷新整个页面，从而导致比较差的用户体验。因此我们通过 Ajax 的方式和网关 REST API 作通讯，异步的刷新页面的某个区块，来优化和提升体验。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解析Vue.js的MVVM模式">
+<meta property="og:url" content="http://catalinali.top/2018/getMVVM/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="我希望我的朋友们都能挣大钱然后养我">
+<meta property="og:description" content="近年来前端一个明显的开发趋势就是架构从传统的 MVC 模式向 MVVM 模式迁移。在传统的 MVC 下，当前前端和后端发生数据交互后会刷新整个页面，从而导致比较差的用户体验。因此我们通过 Ajax 的方式和网关 REST API 作通讯，异步的刷新页面的某个区块，来优化和提升体验。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_logo.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_1.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_2.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_3.png">
+<meta property="og:updated_time" content="2018-08-31T03:46:48.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="catalinaLi&#39;s Notes">
-<meta name="twitter:description" content="我希望我的朋友们都能挣大钱然后养我">
+<meta name="twitter:title" content="解析Vue.js的MVVM模式">
+<meta name="twitter:description" content="近年来前端一个明显的开发趋势就是架构从传统的 MVC 模式向 MVVM 模式迁移。在传统的 MVC 下，当前前端和后端发生数据交互后会刷新整个页面，从而导致比较差的用户体验。因此我们通过 Ajax 的方式和网关 REST API 作通讯，异步的刷新页面的某个区块，来优化和提升体验。">
+<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_logo.png">
 
 
 
@@ -132,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://catalinali.top/archives/page/2/"/>
+  <link rel="canonical" href="http://catalinali.top/2018/getMVVM/"/>
 
 
 
 
 
-  <title>归档 | catalinaLi's Notes</title>
+  <title>解析Vue.js的MVVM模式 | catalinaLi's Notes</title>
   
 
 
@@ -163,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -301,407 +307,209 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 目前共计 33 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2018/getMVVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="从不装逼夫斯基">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="catalinaLi's Notes">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">解析Vue.js的MVVM模式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-31T11:44:06+08:00">
+                2018-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/getMVVM/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/getMVVM/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <p><img src="http://ou3np1yz4.bkt.clouddn.com/getMVVM_logo.png" alt="getMVVM_logo"></p>
+<blockquote>
+<p>近年来前端一个明显的开发趋势就是架构从传统的 MVC 模式向 MVVM 模式迁移。在传统的 MVC 下，当前前端和后端发生数据交互后会刷新整个页面，从而导致比较差的用户体验。因此我们通过 Ajax 的方式和网关 REST API 作通讯，异步的刷新页面的某个区块，来优化和提升体验。</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="一、MVP模式"><a href="#一、MVP模式" class="headerlink" title="一、MVP模式"></a>一、MVP模式</h2><p>我们以前使用JQuery操作Dom的模式就是遵循了MVP模式,我们先来看一下MVP模式的图示：</p>
+<p><img src="http://ou3np1yz4.bkt.clouddn.com/getMVVM_1.png" alt="getMVVM_1"></p>
+<ul>
+<li>视图（View）：用户界面。</li>
+<li>控制器（Presenter）：业务逻辑</li>
+<li>模型（Model）：数据保存</li>
+</ul>
+<p>MVP有以下特点：</p>
+<ol>
+<li>各部分之间的通信，都是双向的。</li>
+<li>View 与 Model 不发生联系，都通过 Presenter 传递。</li>
+<li>View 非常薄，不部署任何业务逻辑，称为”被动视图”（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里。</li>
+</ol>
+<p>在我们常规的DOM操作中，Model层的数据一般通过AJAX获取，Presenter层通常就是我们的js逻辑而相应的View就是我们用户看到的界面。</p>
+<h2 id="二、MVVM模式"><a href="#二、MVVM模式" class="headerlink" title="二、MVVM模式"></a>二、MVVM模式</h2><p>MVVM是Model-View-ViewModel的简写。它本质上就是MVP的改进版。MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。</p>
+<p>我们先来看一下图示：</p>
+<p><img src="http://ou3np1yz4.bkt.clouddn.com/getMVVM_2.png" alt="getMVVM_2"></p>
+<p>它与MVP的区别在于它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。Vue.js 正是采用了这种模式：</p>
+<p><img src="http://ou3np1yz4.bkt.clouddn.com/getMVVM_3.png" alt="getMVVM_3"><br>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对比较轻量级的JS 库，API 简洁，很容易上手。</p>
+<p>小伙伴们，快来试试Vue.js吧！</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html" target="_blank" rel="noopener">MVC，MVP 和 MVVM 的图示</a></p>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/getMVVM/">http://catalinali.top/2018/getMVVM/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_wechat.png?v=3" alt="从不装逼夫斯基 WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/startbus/" itemprop="url">
-              
-                <span itemprop="name">小白学SpringCloud(四)：消息总线（Spring Cloud Bus）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-02T14:33:08+08:00"
-              content="2018-07-02" >
-          07-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/startconfig/" itemprop="url">
-              
-                <span itemprop="name">小白学SpringCloud(三)：统一配置中心(config)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-15T15:45:19+08:00"
-              content="2018-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/startfeignRest/" itemprop="url">
-              
-                <span itemprop="name">小白学SpringCloud(二)：服务间的调用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-05T10:07:05+08:00"
-              content="2018-06-05" >
-          06-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/startEureka/" itemprop="url">
-              
-                <span itemprop="name">小白学SpringCloud(一)：服务的注册与发现（Eureka）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-31T18:19:58+08:00"
-              content="2018-05-31" >
-          05-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/noteGithubGitlab/" itemprop="url">
-              
-                <span itemprop="name">如何在同一台电脑上使用github和gitlab</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-27T09:50:24+08:00"
-              content="2018-04-27" >
-          04-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/noteHexoBak/" itemprop="url">
-              
-                <span itemprop="name">笔记：使用hexo，如果换了电脑怎么更新博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-26T16:02:00+08:00"
-              content="2018-04-26" >
-          04-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/wechatOAuth/" itemprop="url">
-              
-                <span itemprop="name">微信开发之微信网页授权获取openid</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-26T16:21:09+08:00"
-              content="2018-02-26" >
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/startSpringBoot/" itemprop="url">
-              
-                <span itemprop="name">使用IDEA搭建第一个SpringBoot程序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-27T17:25:26+08:00"
-              content="2018-01-27" >
-          01-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/useJSONP/" itemprop="url">
-              
-                <span itemprop="name">使用JSONP解决ajax跨域</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-08T16:26:23+08:00"
-              content="2018-01-08" >
-          01-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_alipay.jpg?v=3" alt="从不装逼夫斯基 Alipay"/>
+          <p>支付宝打赏</p>
         </div>
       
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
       
 
       
+      
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/proxyPattern/" rel="next" title="（转载）Java设计模式之代理模式">
+                <i class="fa fa-chevron-left"></i> （转载）Java设计模式之代理模式
+              </a>
+            
+          </div>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/useMQ/" itemprop="url">
-              
-                <span itemprop="name">ActiveMQ从入门到实践</span>
-              
-            </a>
-        
-      </h2>
+          <span class="post-nav-divider"></span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-22T09:48:26+08:00"
-              content="2017-12-22" >
-          12-22
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -709,6 +517,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
 
         </div>
         
@@ -729,8 +543,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg"
@@ -855,6 +678,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、MVP模式"><span class="nav-number">1.</span> <span class="nav-text">一、MVP模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、MVVM模式"><span class="nav-number">2.</span> <span class="nav-text">二、MVVM模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1015,11 +854,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   

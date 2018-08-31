@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://catalinali.top/2018/getMVVM/</loc>
+    <lastmod>2018-08-31T03:46:48.251Z</lastmod>
+    <data>
+        <display>
+        <title>解析Vue.js的MVVM模式</title>
+        <pubTime>2018-08-31T03:44:06.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2018/proxyPattern/</loc>
     <lastmod>2018-08-29T03:27:01.021Z</lastmod>
     <data>
@@ -331,26 +346,6 @@
     
     
   <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
-    <data>
-        <display>
-        <title>微信开发之微信网页授权获取openid</title>
-        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
-        
-        <tag>wechat</tag>
-         
-         
-           
-             
-              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/useMQ/</loc>
     <lastmod>2018-04-25T09:49:24.290Z</lastmod>
     <data>
@@ -364,6 +359,26 @@
            
              
               <breadCrumb title="mq" url="http://catalinali.top/categories/mq/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
+    <data>
+        <display>
+        <title>微信开发之微信网页授权获取openid</title>
+        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
+        
+        <tag>wechat</tag>
+         
+         
+           
+             
+              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
           
         </display>
     </data>
@@ -413,26 +428,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/strategyPattern/</loc>
-    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
-    <data>
-        <display>
-        <title>Java设计模式之策略模式</title>
-        <pubTime>2017-12-18T06:55:26.000Z</pubTime>
-        
-        <tag>design-patterns</tag>
-         
-         
-           
-             
-              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     <data>
@@ -475,19 +470,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/installVue/</loc>
-    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
+    <loc>http://catalinali.top/2017/strategyPattern/</loc>
+    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     <data>
         <display>
-        <title>Vue.js小白入门，搭建开发环境</title>
-        <pubTime>2017-11-27T08:39:32.000Z</pubTime>
+        <title>Java设计模式之策略模式</title>
+        <pubTime>2017-12-18T06:55:26.000Z</pubTime>
         
-        <tag>vue.js</tag>
+        <tag>design-patterns</tag>
          
          
            
              
-              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
           
         </display>
     </data>
@@ -515,6 +510,26 @@
 
     
   <url>
+    <loc>http://catalinali.top/2017/installVue/</loc>
+    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
+    <data>
+        <display>
+        <title>Vue.js小白入门，搭建开发环境</title>
+        <pubTime>2017-11-27T08:39:32.000Z</pubTime>
+        
+        <tag>vue.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2017/helloNginx/</loc>
     <lastmod>2018-04-25T09:49:24.286Z</lastmod>
     <data>
@@ -528,6 +543,26 @@
            
              
               <breadCrumb title="nginx" url="http://catalinali.top/categories/nginx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
+    <lastmod>2018-04-25T09:49:24.285Z</lastmod>
+    <data>
+        <display>
+        <title>小白从头到脚搭建zookeeper集群的过程</title>
+        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
+        
+        <tag>zookeeper</tag>
+         
+         
+           
+             
+              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
           
         </display>
     </data>
@@ -575,19 +610,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
-    <lastmod>2018-04-25T09:49:24.285Z</lastmod>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     <data>
         <display>
-        <title>小白从头到脚搭建zookeeper集群的过程</title>
-        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
+        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
+        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
         
-        <tag>zookeeper</tag>
+        <tag>Redis</tag>
          
          
            
              
-              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
+              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
           
         </display>
     </data>
@@ -608,26 +643,6 @@
            
              
               <breadCrumb title="Spring" url="http://catalinali.top/categories/Spring/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
-    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
-    <data>
-        <display>
-        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
-        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
-        
-        <tag>Redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
           
         </display>
     </data>
