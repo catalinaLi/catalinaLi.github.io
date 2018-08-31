@@ -27,7 +27,7 @@ keywords: SpringCloud
 结合现在大火的微服务，SpringCloud成了炙手可热的微服务架构方案，这里我们介绍一个他的核心组件：Eureka ,eureka是一个服务注册和发现模块。类似于Dubbo的管控台。它分为两个模块:客户端和服务端
 
 ## 二、创建一个Eureka Server
-这里我们使用IntelliJ IDEA进行展示。
+这里我们使用IntelliJ IDEA进行展示。这里SpringBoot我们统一使用2.0.2版本,SpringCloud使用Finchley.RELEASE版本
 **1.首先创建一个Eureka Server**
 使用IDEA创建一个项目
 ![eureka_2](http://ou3np1yz4.bkt.clouddn.com/eureka_2.jpg)

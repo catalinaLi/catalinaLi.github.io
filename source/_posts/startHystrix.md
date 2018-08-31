@@ -18,7 +18,7 @@ Netflix提供了一个叫Hystrix的类库，它实现了断路器模式。在微
 较底层的服务如果出现故障，会导致连锁故障。当对特定的服务的调用的不可用达到一个阀值（Hystric 是5秒20次） 断路器将会被打开。
 ![Hystrix_2](http://ou3np1yz4.bkt.clouddn.com/Hystrix_2.png)
 
-## 二、创建一个api-gateway工程
+## 二、Hystrix使用
 这里我们使用之前的Client项目进行演示。
 **1.在服务调用方添加pom**
 ``` pom

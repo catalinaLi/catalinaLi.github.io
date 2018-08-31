@@ -61,14 +61,14 @@ UPDATE t1 SET c=c+1 WHERE a=1 OR b=2 LIMIT 1;
 ```
 这样在调用此方法后实体中的主键值就会自动返回:
 ```java
-Financial Financial = new Financial();  
-Financial.setId("chenzhou");  
-Financial.setAmount("xxxx");  
-Financial.setComment("测试插入数据返回主键功能");  
+Financial financial = new Financial();  
+financial.setId("chenzhou");  
+financial.setAmount("xxxx");  
+financial.setComment("测试插入数据返回主键功能");  
   
-System.out.println("插入前主键为："+user.getId());  
-userDao.insertAndGetId(user);//插入操作  
-System.out.println("插入后主键为："+user.getId());  
+System.out.println("插入前主键为："+financial.getId());  
+userDao.insertAndGetId(financial);//插入操作  
+System.out.println("插入后主键为："+financial.getId());  
 ```
 ---
 >本文作者： catalinaLi

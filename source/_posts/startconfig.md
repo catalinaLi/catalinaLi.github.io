@@ -62,7 +62,6 @@ public class ConfigApplication {
 }
 ```
 **4.** Config Server配置
-这里首先我们要先填一个坑，因为博主在这里使用的Spring Cloud是*Finchley.RC2*版本的。可是这个版本这里有一个bug，所以我们暂时把pom中Spring Cloud的版本修改为*Finchley.RC1*,等待官方的修复。
 接下来就可以通过网络来访问我们的配置了，首先启动注册中心Eureka，然后启动我们的Config。这时候我们通过浏览器访问[http://localhost:8764/client-dev.yml](http://localhost:8764/client-dev.yml)就可以看到我们的配置了。
 ![config_5](http://ou3np1yz4.bkt.clouddn.com/config_5.png)
 这里是Spring Cloud对配置请求的路径做了映射,通常为：
