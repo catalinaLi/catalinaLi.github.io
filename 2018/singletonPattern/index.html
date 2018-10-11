@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SpringBoot,IDEA" />
+  <meta name="keywords" content="singletonPattern" />
 
 
 
@@ -95,27 +95,20 @@
 
 
 
-<meta name="description" content="近来在研究SpringBoot的使用，现在把使用IDEA搭建一个SpringBoot的HelloWorld程序记录下来">
-<meta name="keywords" content="SpringBoot,IDEA">
+<meta name="description" content="单例模式可能是后端学习者接触到的第一种设计模式，可是单例模式真的有那么简单吗？在并发模式下会出现什么样的问题？在学习了前面的并发知识后，我们来看看究极版的单例模式应该怎么写。">
+<meta name="keywords" content="singletonPattern">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用IDEA搭建第一个SpringBoot程序">
-<meta property="og:url" content="http://catalinali.top/2018/startSpringBoot/index.html">
+<meta property="og:title" content="Java设计模式之单例模式的究极版写法">
+<meta property="og:url" content="http://catalinali.top/2018/singletonPattern/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="近来在研究SpringBoot的使用，现在把使用IDEA搭建一个SpringBoot的HelloWorld程序记录下来">
+<meta property="og:description" content="单例模式可能是后端学习者接触到的第一种设计模式，可是单例模式真的有那么简单吗？在并发模式下会出现什么样的问题？在学习了前面的并发知识后，我们来看看究极版的单例模式应该怎么写。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_logo.jpg">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_1.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_2.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_3.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_4.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_5.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_7.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_8.png">
-<meta property="og:updated_time" content="2018-04-25T09:49:24.288Z">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/singleton_logo1.jpg">
+<meta property="og:updated_time" content="2018-10-11T01:33:32.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用IDEA搭建第一个SpringBoot程序">
-<meta name="twitter:description" content="近来在研究SpringBoot的使用，现在把使用IDEA搭建一个SpringBoot的HelloWorld程序记录下来">
-<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_logo.jpg">
+<meta name="twitter:title" content="Java设计模式之单例模式的究极版写法">
+<meta name="twitter:description" content="单例模式可能是后端学习者接触到的第一种设计模式，可是单例模式真的有那么简单吗？在并发模式下会出现什么样的问题？在学习了前面的并发知识后，我们来看看究极版的单例模式应该怎么写。">
+<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/singleton_logo1.jpg">
 
 
 
@@ -143,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://catalinali.top/2018/startSpringBoot/"/>
+  <link rel="canonical" href="http://catalinali.top/2018/singletonPattern/"/>
 
 
 
 
 
-  <title>使用IDEA搭建第一个SpringBoot程序 | catalinaLi's Notes</title>
+  <title>Java设计模式之单例模式的究极版写法 | catalinaLi's Notes</title>
   
 
 
@@ -322,7 +315,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2018/startSpringBoot/">
+    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2018/singletonPattern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="从不装逼夫斯基">
@@ -339,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用IDEA搭建第一个SpringBoot程序</h1>
+          <h1 class="post-title" itemprop="name headline">Java设计模式之单例模式的究极版写法</h1>
         
 
         <div class="post-meta">
@@ -351,8 +344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-27T17:25:26+08:00">
-                2018-01-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T09:29:06+08:00">
+                2018-10-11
               </time>
             
 
@@ -374,8 +367,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringBoot</span>
+                  <a href="/categories/design-patterns/" itemprop="url" rel="index">
+                    <span itemprop="name">design-patterns</span>
                   </a>
                 </span>
 
@@ -393,8 +386,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2018/startSpringBoot/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/startSpringBoot/" itemprop="commentsCount"></span>
+                <a href="/2018/singletonPattern/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/singletonPattern/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -424,27 +417,55 @@
       
 
       
-        <p><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_logo.jpg" alt="startSpringBoot_logo"></p>
+        <p><img src="http://ou3np1yz4.bkt.clouddn.com/singleton_logo1.jpg" alt="redis_logo"></p>
 <blockquote>
-<p>近来在研究SpringBoot的使用，现在把使用IDEA搭建一个SpringBoot的HelloWorld程序记录下来</p>
+<p>单例模式可能是后端学习者接触到的第一种设计模式，可是单例模式真的有那么简单吗？在并发模式下会出现什么样的问题？在学习了前面的并发知识后，我们来看看究极版的单例模式应该怎么写。</p>
 </blockquote>
-<a id="more"></a>
-<h2 id="新建一个SpringBoot环境"><a href="#新建一个SpringBoot环境" class="headerlink" title="新建一个SpringBoot环境"></a>新建一个SpringBoot环境</h2><p>打开你的IntelliJ IDEA，然后选择Create New Project。如图，我们要选择一个Spring Initializr<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_1.png" alt="startSpringBoot_1"><br>之后我们填入自己的Group与Artifact(项目名字)后选择Next<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_2.png" alt="startSpringBoot_2"><br>由于我们是Web项目，所以我们先勾选最基本的Web选项，其他的待我们用到了再勾选。<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_3.png" alt="startSpringBoot_3"><br>接下来是选择项目存放的位置<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_4.png" alt="startSpringBoot_4"><br>选择Finish之后静静等待IEAD加载索引搭建工程。OK，一个完整的SpringBoot项目的结构我们已经搭建好了。<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_5.png" alt="startSpringBoot_5"><br>上图我用红框圈住的可以删掉，保持项目的简洁。这样，一个可供使用的SpringBoot环境就搭好了。</p>
-<h2 id="SpringBoot介绍"><a href="#SpringBoot介绍" class="headerlink" title="SpringBoot介绍"></a>SpringBoot介绍</h2><p>使用SpringBoot可以让你快速搭建一个SpringWeb项目，它使用“习惯优于配置”的理念让你的项目快速运行起来。使用SpringBoot可以很容易创建一个独立运行（运行jar，内嵌Servlet容器）、准生产级别的基于Spring框架的项目。使用SpringBoot你可以不用或者是很少的配置。<br>使用SpringBoot的优点：</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="一、单例模式第一版"><a href="#一、单例模式第一版" class="headerlink" title="一、单例模式第一版"></a>一、单例模式第一版</h2><p>我们最初接触到的单例模式一般就是懒汉模式与饿汉模式。我们先来看看怎么写：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//懒汉模式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;  <span class="comment">//私有构造函数</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;  <span class="comment">//单例对象</span></span><br><span class="line">    <span class="comment">//静态工厂方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//饿汉模式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;  <span class="comment">//私有构造函数</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();  <span class="comment">//单例对象</span></span><br><span class="line">    <span class="comment">//静态工厂方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>快速构建项;</li>
-<li>对主流开发框架的无配罝集成；</li>
-<li>项目可独立运行，无须外部依赖Servlet容器；</li>
-<li>提供运行时的应用监控；</li>
-<li>极大地提髙了开发、部署效率；</li>
-<li>与云计算的天然集成。<h2 id="SpringBoot入门"><a href="#SpringBoot入门" class="headerlink" title="SpringBoot入门"></a>SpringBoot入门</h2>我们来写一个SpringBoot的HelloWorld<br>打开项目自动生成的DemoApplication类，修改代码：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"hello"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"hello world！"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>要想让一个类只能构建一个对象，自然不能让它随便去做new操作，因此Signleton的构造方法是私有的。</p>
+</li>
+<li><p>instance是Singleton类的静态成员，也是我们的单例对象。它的初始值可以写成Null，也可以写成new Singleton()。至于其中的区别后来会做解释。</p>
+</li>
+<li><p>getInstance是获取单例对象的方法。</p>
 </li>
 </ul>
-<p>然后右键选择Run<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_7.png" alt="startSpringBoot_7"><br>然后打开浏览器访问<a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a>就可以看到我们写的HelloWorld<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_8.png" alt="startSpringBoot_8"><br><strong>代码说明：</strong><br>1、@SpringBootApplication：Spring Boot项目的核心注解，主要目的是开启自动配置。；<br>2、@Configuration：这是一个配置Spring的配置类；<br>3、@Controller：标明这是一个SpringMVC的Controller控制器；<br>4、main方法：在main方法中启动一个应用，即：这个应用的入口；</p>
-<p>这次只是记录了一下搭建SpringBoot的HelloWorld过程。具体的SpringBoot知识还需要大家去深入学习</p>
+<p>这两个名字很形象：饿汉主动找食物吃，懒汉躺在地上等着人喂。<br>1、饿汉式：在程序启动或单件模式类被加载的时候，单件模式实例就已经被创建。<br>2、懒汉式：当程序第一次访问单件模式实例时才进行创建。</p>
+<p>懒汉模式加载快执行慢，但是有线程安全问题，容易引起不同步问题，所以应该创建同步”锁”。</p>
+<h2 id="二、单例模式第二版"><a href="#二、单例模式第二版" class="headerlink" title="二、单例模式第二版"></a>二、单例模式第二版</h2><p>懒汉模式的线程安全问题主要在<code>if (instance == null)</code>这句判断是否为空上。在多线程的环境下，可能有多个线程同时通过这个判断。这样一来，就有可能同时创建多个实例。让我们来对代码做一下修改：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;  <span class="comment">//私有构造函数</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;  <span class="comment">//单例对象</span></span><br><span class="line">   <span class="comment">//静态工厂方法</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;      <span class="comment">//双重检测机制</span></span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class)&#123;  <span class="comment">//同步锁</span></span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;     <span class="comment">//双重检测机制</span></span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>为了防止new Singleton被执行多次，因此在new操作之前加上Synchronized 同步锁，锁住整个类（注意，这里不能使用对象锁）。</p>
+</li>
+<li><p>进入Synchronized 临界区以后，还要再做一次判空。因为当两个线程同时访问的时候，线程A构建完对象，线程B也已经通过了最初的判空验证，不做第二次判空的话，线程B还是会再次构建instance对象。</p>
+</li>
+</ul>
+<p>然而，这种方法也有一定的缺席。</p>
+<h2 id="三、单例模式第三版"><a href="#三、单例模式第三版" class="headerlink" title="三、单例模式第三版"></a>三、单例模式第三版</h2><p>假设这样的场景，当两个线程一先一后访问getInstance方法的时候，当A线程正在构建对象，B线程刚刚进入方法。</p>
+<p>这种情况表面看似没什么问题，要么Instance还没被线程A构建，线程B执行 if（instance == null）的时候得到true；要么Instance已经被线程A构建完成，线程B执行 if（instance == null）的时候得到false。</p>
+<p>我们之前在<a href="http://catalinali.top/2018/helloVolatile/">JAVA并发编程(一)：理解volatile关键字</a>学习过<strong>指令重排</strong>的知识，<code>instance = new Singleton()</code>这个操作不是一个原子操作，它在执行的时候要经历以下三个步骤：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">memory =allocate();    //1：分配对象的内存空间 </span><br><span class="line">ctorInstance(memory);  //2：初始化对象 </span><br><span class="line">instance =memory;     //3：设置instance指向刚分配的内存地址</span><br></pre></td></tr></table></figure>
+<p>所以这里有可能出现如下情况：</p>
+<p>当线程A执行完1,3,时，instance对象还未完成初始化，但已经不再指向null。此时如果线程B抢占到CPU资源，执行  if（instance == null）的结果会是false，从而返回一个没有初始化完成的instance对象。</p>
+<p>如何避免这一情况呢？我们需要在instance对象前面增加一个修饰符volatile。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">    private Singleton() &#123;&#125;  //私有构造函数</span><br><span class="line">    private volatile static Singleton instance = null;  //单例对象</span><br><span class="line">    //静态工厂方法</span><br><span class="line">    public static Singleton getInstance() &#123;</span><br><span class="line">          if (instance == null) &#123;      //双重检测机制</span><br><span class="line">         synchronized (Singleton.class)&#123;  //同步锁</span><br><span class="line">           if (instance == null) &#123;     //双重检测机制</span><br><span class="line">             instance = new Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">             &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          return instance;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三、其他方式实现单例模式"><a href="#三、其他方式实现单例模式" class="headerlink" title="三、其他方式实现单例模式"></a>三、其他方式实现单例模式</h2><p>实现单例模式的手段还有很多，我们再来看一些别的实现方式。</p>
+<h3 id="①静态内部类实现单例模式"><a href="#①静态内部类实现单例模式" class="headerlink" title="①静态内部类实现单例模式"></a>①静态内部类实现单例模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">LazyHolder</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span> <span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> LazyHolder.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是：</p>
+<ul>
+<li><p>从外部无法访问静态内部类LazyHolder，只有当调用Singleton.getInstance方法的时候，才能得到单例对象INSTANCE。</p>
+</li>
+<li><p>INSTANCE对象初始化的时机并不是在单例类Singleton被加载的时候，而是在调用getInstance方法，使得静态内部类LazyHolder被加载的时候。因此这种实现方式是利用classloader的加载机制来实现懒加载，并保证构建单例的线程安全。</p>
+</li>
+<li><p>静态内部类与饿汉&amp;懒汉模式存在共同的问题:无法防止利用反射来重复构建对象。</p>
+</li>
+</ul>
+<h3 id="②枚举实现单例模式"><a href="#②枚举实现单例模式" class="headerlink" title="②枚举实现单例模式"></a>②枚举实现单例模式</h3><p>可以防止反射的无懈可击的单例模式代码:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonExample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 私有构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonExample</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonExample <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Singleton.INSTANCE.getInstance();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">enum</span> Singleton &#123;</span><br><span class="line">        INSTANCE;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> SingletonExample singleton;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// JVM保证这个方法绝对只调用一次</span></span><br><span class="line">        Singleton() &#123;</span><br><span class="line">            singleton = <span class="keyword">new</span> SingletonExample();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> SingletonExample <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> singleton;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用枚举实现的单例模式不仅能够防止反射构造对象，而且可以保证线程安全。不过这种方式也有一个缺点，那就是不能实现懒加载，它的单例模式是在枚举类被加载的时候进行初始化的。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://mp.weixin.qq.com/s/2UYXNzgTCEZdEfuGIbcczA" target="_blank" rel="noopener">漫画：什么是单例模式？</a></p>
 <hr>
 <blockquote>
-<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2017/startSpringBoot/">http://catalinali.top/2017/startSpringBoot/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/singletonPattern/">http://catalinali.top/2018/singletonPattern/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
 </blockquote>
 
       
@@ -496,9 +517,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/IDEA/" rel="tag"># IDEA</a>
-          
-            <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+            <a href="/tags/design-patterns/" rel="tag"># design-patterns</a>
           
         </div>
       
@@ -511,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/useJSONP/" rel="next" title="使用JSONP解决ajax跨域">
-                <i class="fa fa-chevron-left"></i> 使用JSONP解决ajax跨域
+              <a href="/2018/getMVVM/" rel="next" title="解析Vue.js的MVVM模式">
+                <i class="fa fa-chevron-left"></i> 解析Vue.js的MVVM模式
               </a>
             
           </div>
@@ -520,10 +539,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/wechatOAuth/" rel="prev" title="微信开发之微信网页授权获取openid">
-                微信开发之微信网页授权获取openid <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -718,7 +733,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建一个SpringBoot环境"><span class="nav-number">1.</span> <span class="nav-text">新建一个SpringBoot环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot介绍"><span class="nav-number">2.</span> <span class="nav-text">SpringBoot介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot入门"><span class="nav-number">3.</span> <span class="nav-text">SpringBoot入门</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、单例模式第一版"><span class="nav-number">2.</span> <span class="nav-text">一、单例模式第一版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、单例模式第二版"><span class="nav-number">3.</span> <span class="nav-text">二、单例模式第二版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、单例模式第三版"><span class="nav-number">4.</span> <span class="nav-text">三、单例模式第三版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、其他方式实现单例模式"><span class="nav-number">5.</span> <span class="nav-text">三、其他方式实现单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#①静态内部类实现单例模式"><span class="nav-number">5.1.</span> <span class="nav-text">①静态内部类实现单例模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#②枚举实现单例模式"><span class="nav-number">5.2.</span> <span class="nav-text">②枚举实现单例模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">6.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
 
           </div>

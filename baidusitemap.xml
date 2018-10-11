@@ -4,15 +4,40 @@
 
     
   <url>
+    <loc>http://catalinali.top/2018/singletonPattern/</loc>
+    <lastmod>2018-10-11T01:33:32.055Z</lastmod>
+    <data>
+        <display>
+        <title>Java设计模式之单例模式的究极版写法</title>
+        <pubTime>2018-10-11T01:29:06.000Z</pubTime>
+        
+        <tag>design-patterns</tag>
+         
+         
+           
+             
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2018/getMVVM/</loc>
-    <lastmod>2018-08-31T03:46:48.251Z</lastmod>
+    <lastmod>2018-09-03T02:11:52.387Z</lastmod>
     <data>
         <display>
         <title>解析Vue.js的MVVM模式</title>
         <pubTime>2018-08-31T03:44:06.000Z</pubTime>
         
+        <tag>vue.js</tag>
+         
          
            
+             
+              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
+          
         </display>
     </data>
     </url>
@@ -386,26 +411,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/useJSONP/</loc>
-    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
-    <data>
-        <display>
-        <title>使用JSONP解决ajax跨域</title>
-        <pubTime>2018-01-08T08:26:23.000Z</pubTime>
-        
-        <tag>jsonp</tag>
-         
-         
-           
-             
-              <breadCrumb title="jsonp" url="http://catalinali.top/categories/jsonp/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/useJDBC/</loc>
     <lastmod>2018-04-25T09:49:24.289Z</lastmod>
     <data>
@@ -428,21 +433,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
-    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
+    <loc>http://catalinali.top/2018/useJSONP/</loc>
+    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
     <data>
         <display>
-        <title>使用IDEA搭建第一个SpringBoot程序</title>
-        <pubTime>2018-01-27T09:25:26.000Z</pubTime>
+        <title>使用JSONP解决ajax跨域</title>
+        <pubTime>2018-01-08T08:26:23.000Z</pubTime>
         
-        <tag>IDEA</tag>
-         
-        <tag>SpringBoot</tag>
+        <tag>jsonp</tag>
          
          
            
              
-              <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
+              <breadCrumb title="jsonp" url="http://catalinali.top/categories/jsonp/"/>
           
         </display>
     </data>
@@ -483,6 +486,28 @@
            
              
               <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
+    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
+    <data>
+        <display>
+        <title>使用IDEA搭建第一个SpringBoot程序</title>
+        <pubTime>2018-01-27T09:25:26.000Z</pubTime>
+        
+        <tag>IDEA</tag>
+         
+        <tag>SpringBoot</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
           
         </display>
     </data>
@@ -550,19 +575,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
+    <loc>http://catalinali.top/2017/helloDubbo/</loc>
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
         <display>
-        <title>小白从头到脚搭建zookeeper集群的过程</title>
-        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
+        <title>Dubbo初体验:远程服务调用和管控台的搭建</title>
+        <pubTime>2017-09-06T07:42:56.000Z</pubTime>
         
-        <tag>zookeeper</tag>
+        <tag>Dubbo</tag>
          
          
            
              
-              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
+              <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
           
         </display>
     </data>
@@ -590,39 +615,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/helloDubbo/</loc>
+    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
         <display>
-        <title>Dubbo初体验:远程服务调用和管控台的搭建</title>
-        <pubTime>2017-09-06T07:42:56.000Z</pubTime>
+        <title>小白从头到脚搭建zookeeper集群的过程</title>
+        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
         
-        <tag>Dubbo</tag>
+        <tag>zookeeper</tag>
          
          
            
              
-              <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
-    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
-    <data>
-        <display>
-        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
-        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
-        
-        <tag>Redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
+              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
           
         </display>
     </data>
@@ -643,6 +648,26 @@
            
              
               <breadCrumb title="Spring" url="http://catalinali.top/categories/Spring/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
+    <data>
+        <display>
+        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
+        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
           
         </display>
     </data>

@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://catalinali.top/2018/singletonPattern/</loc>
+    
+    <lastmod>2018-10-11T01:33:32.055Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://catalinali.top/2018/getMVVM/</loc>
     
-    <lastmod>2018-08-31T03:46:48.251Z</lastmod>
+    <lastmod>2018-09-03T02:11:52.387Z</lastmod>
     
   </url>
   
@@ -128,14 +135,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/about/index.html</loc>
+    <loc>http://catalinali.top/categories/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/categories/index.html</loc>
+    <loc>http://catalinali.top/about/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
@@ -156,13 +163,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/useJSONP/</loc>
-    
-    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2017/useJDBC/</loc>
     
     <lastmod>2018-04-25T09:49:24.289Z</lastmod>
@@ -170,9 +170,9 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
+    <loc>http://catalinali.top/2018/useJSONP/</loc>
     
-    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
+    <lastmod>2018-04-25T09:49:24.289Z</lastmod>
     
   </url>
   
@@ -185,6 +185,13 @@
   
   <url>
     <loc>http://catalinali.top/2017/strategyPattern/</loc>
+    
+    <lastmod>2018-04-25T09:49:24.288Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     
@@ -212,7 +219,7 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
+    <loc>http://catalinali.top/2017/helloDubbo/</loc>
     
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     
@@ -226,21 +233,21 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/helloDubbo/</loc>
+    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
     
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
     
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
     
     <lastmod>2018-04-25T09:49:24.284Z</lastmod>
     
