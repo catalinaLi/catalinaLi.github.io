@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="HashMap" />
 
 
 
@@ -95,16 +95,26 @@
 
 
 
-<meta name="description" content="我希望我的朋友们都能挣大钱然后养我">
-<meta property="og:type" content="website">
-<meta property="og:title" content="catalinaLi&#39;s Notes">
-<meta property="og:url" content="http://catalinali.top/archives/2017/index.html">
+<meta name="description" content="HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。">
+<meta name="keywords" content="HashMap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解HashMap">
+<meta property="og:url" content="http://catalinali.top/2018/knowHashMap/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="我希望我的朋友们都能挣大钱然后养我">
+<meta property="og:description" content="HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/hashmap_logo1.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/hashmap_1.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/hashmap_2.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/hashmap_3.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/hashmap_4.jpg">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/hashmap_5.png">
+<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/hashmap_6.jpg">
+<meta property="og:updated_time" content="2018-10-19T01:47:58.109Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="catalinaLi&#39;s Notes">
-<meta name="twitter:description" content="我希望我的朋友们都能挣大钱然后养我">
+<meta name="twitter:title" content="深入理解HashMap">
+<meta name="twitter:description" content="HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。">
+<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/hashmap_logo1.jpg">
 
 
 
@@ -132,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://catalinali.top/archives/2017/"/>
+  <link rel="canonical" href="http://catalinali.top/2018/knowHashMap/"/>
 
 
 
 
 
-  <title>归档 | catalinaLi's Notes</title>
+  <title>深入理解HashMap | catalinaLi's Notes</title>
   
 
 
@@ -163,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -301,402 +311,242 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 目前共计 35 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://catalinali.top/2018/knowHashMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="从不装逼夫斯基">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="catalinaLi's Notes">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">深入理解HashMap</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-19T09:46:26+08:00">
+                2018-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HashMap/" itemprop="url" rel="index">
+                    <span itemprop="name">HashMap</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/knowHashMap/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/knowHashMap/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <p><img src="http://ou3np1yz4.bkt.clouddn.com/hashmap_logo1.jpg" alt="redis_logo"></p>
+<blockquote>
+<p>HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<p>众所周知，HashMap是一个用于存储Key-Value键值对的集合，每一个键值对也叫做Entry。这些个键值对（Entry）分散存储在一个数组当中，这个数组就是HashMap的主干。</p>
+<p><img src="http://ou3np1yz4.bkt.clouddn.com/hashmap_1.jpg" alt="hashmap_logo"></p>
+<p>这个数组在首次使用时进行初始化，每一个元素的初始值都是Null。<br>为了了解它，我们从Put方法个Get方法来进行阐述。</p>
+<h2 id="一、Put方法的原理"><a href="#一、Put方法的原理" class="headerlink" title="一、Put方法的原理"></a>一、Put方法的原理</h2><p>HashMap在调用put方法时会先根据Key值来进行哈希运算来得到结果，即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index =  Hash（“Key”）</span><br></pre></td></tr></table></figure></p>
+<p>假如计算出的index是2，那么就会将它放入index为2的位置，如图：</p>
+<p><img src="http://ou3np1yz4.bkt.clouddn.com/hashmap_2.jpg" alt="hashmap_2"></p>
+<p>但是再完美的Hash函数也难免会出现index冲突的情况。比如下面这样。<br><img src="http://ou3np1yz4.bkt.clouddn.com/hashmap_3.jpg" alt="hashmap_3"><br>这时候我们就可以使用<strong>链表</strong>来解决</p>
+<p>HashMap数组的每一个元素不止是一个Entry对象，也是一个链表的头节点。每一个Entry对象通过Next指针指向它的下一个Entry节点。当新来的Entry映射到冲突的数组位置时，只需要插入到对应的链表即可：<br><img src="http://ou3np1yz4.bkt.clouddn.com/hashmap_4.jpg" alt="hashmap_4"><br>需要注意的是，新来的Entry节点插入链表时，使用的是“头插法”。<br>所以一个完整的HashMap样子应该是这样的<br><img src="http://ou3np1yz4.bkt.clouddn.com/hashmap_5.png" alt="hashmap_5"></p>
+<h2 id="二、Get方法的原理"><a href="#二、Get方法的原理" class="headerlink" title="二、Get方法的原理"></a>二、Get方法的原理</h2><p>使用Get方法根据Key来查找Value的时候，发生了什么呢？</p>
+<p>首先会把输入的Key做一次Hash映射，得到对应的index：</p>
+<p>index =  Hash（“apple”）</p>
+<p>由于刚才所说的Hash冲突，同一个位置有可能匹配到多个Entry，这时候就需要顺着对应链表的头节点，一个一个向下来查找。假设我们要查找的Key是“apple”：<br><img src="http://ou3np1yz4.bkt.clouddn.com/hashmap_6.jpg" alt="hashmap_6"><br>第一步，我们查看的是头节点Entry6，Entry6的Key是banana，显然不是我们要找的结果。</p>
+<p>第二步，我们查看的是Next节点Entry1，Entry1的Key是apple，正是我们要找的结果。</p>
+<p>之所以把Entry6放在头节点，是因为HashMap的发明者认为，<strong>后插入的Entry被查找的可能性更大</strong>。</p>
+<h2 id="三、哈希方法"><a href="#三、哈希方法" class="headerlink" title="三、哈希方法"></a>三、哈希方法</h2><p>如何实现一个尽量均匀分布的Hash函数呢？我们通过利用Key的HashCode值来做某种运算。具体公式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index =  HashCode（Key） &amp;  （Length - 1）</span><br></pre></td></tr></table></figure></p>
+<p>从公式中我们可以看到运用了HashMap的长度。那么它的长度是多少呢？答案是16。因为这个数字可以尽量避免哈希碰撞，减少相同index的几率。如果你不相信的话，换个别的数字试试？</p>
+<h2 id="四、HashMap的扩容"><a href="#四、HashMap的扩容" class="headerlink" title="四、HashMap的扩容"></a>四、HashMap的扩容</h2><p>HashMap的容量是有限的。当经过多次元素插入，使得HashMap达到一定饱和度时，Key映射位置发生冲突的几率会逐渐提高。</p>
+<p>这时候，HashMap需要扩展它的长度，也就是进行Resize。</p>
+<p>影响发生Resize的因素有两个：</p>
+<p>1.Capacity<br>HashMap的当前长度。上一期曾经说过，HashMap的长度是2的幂。<br>2.LoadFactor<br>HashMap负载因子，默认值为0.75f。</p>
+<p>衡量HashMap是否进行Resize的条件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HashMap.Size   &gt;=  Capacity * LoadFactor</span><br></pre></td></tr></table></figure></p>
+<p><strong>1.扩容</strong><br>创建一个新的Entry空数组，长度是原数组的2倍。</p>
+<p><strong>2.ReHash</strong><br>遍历原Entry数组，把所有的Entry重新Hash到新数组。为什么要重新Hash呢？因为长度扩大以后，Hash的规则也随之改变。</p>
+<p>让我们回顾一下Hash公式：<br>index =  HashCode（Key） &amp;  （Length - 1） </p>
+<p>当原数组长度为8时，Hash运算是和111B做与运算；新数组长度为16，Hash运算是和1111B做与运算。Hash结果显然不同。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://mp.weixin.qq.com/s/HzRH9ZJYmidzW5jrMvEi4w" target="_blank" rel="noopener">漫画：什么是HashMap？</a></p>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/knowHashMap/">http://catalinali.top/2018/knowHashMap/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_wechat.png?v=3" alt="从不装逼夫斯基 WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ou3np1yz4.bkt.clouddn.com/reward_alipay.jpg?v=3" alt="从不装逼夫斯基 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/useMQ/" itemprop="url">
-              
-                <span itemprop="name">ActiveMQ从入门到实践</span>
-              
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-22T09:48:26+08:00"
-              content="2017-12-22" >
-          12-22
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HashMap/" rel="tag"># HashMap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/singletonPattern/" rel="next" title="Java设计模式之单例模式的究极版写法">
+                <i class="fa fa-chevron-left"></i> Java设计模式之单例模式的究极版写法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/strategyPattern/" itemprop="url">
-              
-                <span itemprop="name">Java设计模式之策略模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-18T14:55:26+08:00"
-              content="2017-12-18" >
-          12-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/installVue/" itemprop="url">
-              
-                <span itemprop="name">Vue.js小白入门，搭建开发环境</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-27T16:39:32+08:00"
-              content="2017-11-27" >
-          11-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/buildredis/" itemprop="url">
-              
-                <span itemprop="name">走进Redis：Redis的安装、使用以及集群的搭建</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-06T17:48:16+08:00"
-              content="2017-11-06" >
-          11-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/helloNginx/" itemprop="url">
-              
-                <span itemprop="name">Nginx初探究：安装与简单使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-31T16:30:13+08:00"
-              content="2017-10-31" >
-          10-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/recordsql/" itemprop="url">
-              
-                <span itemprop="name">记录：mysql中的case when|on duplicate key update|重复插入返回主键的用法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-27T16:17:44+08:00"
-              content="2017-09-27" >
-          09-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/helloDubbo/" itemprop="url">
-              
-                <span itemprop="name">Dubbo初体验:远程服务调用和管控台的搭建</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-06T15:42:56+08:00"
-              content="2017-09-06" >
-          09-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/buildzookeeper/" itemprop="url">
-              
-                <span itemprop="name">小白从头到脚搭建zookeeper集群的过程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-04T15:59:30+08:00"
-              content="2017-09-04" >
-          09-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/useJDBC/" itemprop="url">
-              
-                <span itemprop="name">详解jdbcTemplate和namedParameterJdbcTemplate</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-24T17:41:55+08:00"
-              content="2017-08-24" >
-          08-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/UseApplicationContextAware/" itemprop="url">
-              
-                <span itemprop="name">Spring中的ApplicationContextAware接口的使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-23T14:45:57+08:00"
-              content="2017-08-23" >
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -704,6 +554,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
 
         </div>
         
@@ -724,8 +580,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg"
@@ -850,6 +715,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Put方法的原理"><span class="nav-number">1.</span> <span class="nav-text">一、Put方法的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Get方法的原理"><span class="nav-number">2.</span> <span class="nav-text">二、Get方法的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、哈希方法"><span class="nav-number">3.</span> <span class="nav-text">三、哈希方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、HashMap的扩容"><span class="nav-number">4.</span> <span class="nav-text">四、HashMap的扩容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">5.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1010,11 +891,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   

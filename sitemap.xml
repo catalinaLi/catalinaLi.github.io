@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://catalinali.top/2018/knowHashMap/</loc>
+    
+    <lastmod>2018-10-19T01:47:58.109Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://catalinali.top/2018/singletonPattern/</loc>
     
     <lastmod>2018-10-11T01:33:32.055Z</lastmod>
@@ -135,13 +142,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/categories/index.html</loc>
-    
-    <lastmod>2018-04-25T09:49:24.291Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/about/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
@@ -149,14 +149,21 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/useMQ/</loc>
+    <loc>http://catalinali.top/categories/index.html</loc>
+    
+    <lastmod>2018-04-25T09:49:24.291Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
     
     <lastmod>2018-04-25T09:49:24.290Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    <loc>http://catalinali.top/2017/useMQ/</loc>
     
     <lastmod>2018-04-25T09:49:24.290Z</lastmod>
     
@@ -177,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
+    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     
@@ -191,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
+    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
     
     <lastmod>2018-04-25T09:49:24.288Z</lastmod>
     
@@ -219,7 +226,7 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/helloDubbo/</loc>
+    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
     
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     
@@ -233,7 +240,7 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
+    <loc>http://catalinali.top/2017/helloDubbo/</loc>
     
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     
