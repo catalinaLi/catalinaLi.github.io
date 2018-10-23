@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://catalinali.top/"/>
-  <updated>2018-10-19T01:47:58.109Z</updated>
+  <updated>2018-10-23T02:29:30.776Z</updated>
   <id>http://catalinali.top/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JAVA并发编程(七)：并发容器（ConcurrentHashMap）</title>
+    <link href="http://catalinali.top/2018/knowConHashMap/"/>
+    <id>http://catalinali.top/2018/knowConHashMap/</id>
+    <published>2018-10-23T02:27:00.000Z</published>
+    <updated>2018-10-23T02:29:30.776Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/ConHashMap_logo.jpg" alt="volatile_logo"></p>
+<blockquote>
+<p>我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一、分段锁Segment概述"><a href="#一、分段锁Segment概述" class="headerlink" title="一、分段锁Segment概述"></a>一、分段锁Segment概述</h2><p>分段锁Segment是ConcurrentHashMap很重要的一个概念。</p>
+<p>Segment本身就相当于一个HashMap对象。</p>
+<p>同HashMap一样，Segment包含一个HashEntry数组，数组中的每一个HashEntry既是一个键值对，也是一个链表的头节点。</p>
+<p>像这样的Segment对象，在ConcurrentHashMap集合中有2的N次方个，共同保存在一个名为segments的数组当中。<br>因此整个ConcurrentHashMap的结构如下：</p>
+<p><img src="http://ou3np1yz4.bkt.clouddn.com/ConHashMap_1.jpg" alt="ConHashMap_1"></p>
+<p>可以说，ConcurrentHashMap是一个二级哈希表。在一个总的哈希表下面，有若干个子哈希表。<br>这样的二级结构，和数据库的水平拆分有些相似。每一个Segment就好比一个高度自治的自治区。读写高度自治，Segment之间互不影响。</p>
+<p>这种结构下的ConcurrentHashMap有以下特点：</p>
+<ul>
+<li>不同Segment的写入是可以并发执行的。</li>
+<li>同一Segment的写和读是可以并发执行的。</li>
+<li>对同一Segment的并发写入会被阻塞。</li>
+</ul>
+<p>由此可见，ConcurrentHashMap当中每个Segment各自持有一把锁。在保证线程安全的同时降低了锁的粒度，让并发操作效率更高。</p>
+<h2 id="二、ConcurrentHashMap读写概述"><a href="#二、ConcurrentHashMap读写概述" class="headerlink" title="二、ConcurrentHashMap读写概述"></a>二、ConcurrentHashMap读写概述</h2><p>###Get方法：</p>
+<p>1.为输入的Key做Hash运算，得到hash值。<br>2.通过hash值，定位到对应的Segment对象<br>3.再次通过hash值，定位到Segment当中数组的具体位置。</p>
+<p>###Put方法：</p>
+<p>1.为输入的Key做Hash运算，得到hash值。<br>2.通过hash值，定位到对应的Segment对象<br>3.获取可重入锁<br>4.再次通过hash值，定位到Segment当中数组的具体位置。<br>5.插入或覆盖HashEntry对象。<br>6.释放锁。</p>
+<p>从以上步骤可以看出，ConcurrentHashMap在读写时都需要两次定位（Hash）操作。</p>
+<h2 id="三、ConcurrentHashMap的size-方法"><a href="#三、ConcurrentHashMap的size-方法" class="headerlink" title="三、ConcurrentHashMap的size()方法"></a>三、ConcurrentHashMap的size()方法</h2><p>Size方法的目的是统计ConcurrentHashMap的总元素数量， 自然需要把各个Segment内部的元素数量汇总起来。</p>
+<p>但是，如果在统计Segment元素数量的过程中，已统计过的Segment瞬间插入新的元素，这时候该怎么办呢？</p>
+<p>ConcurrentHashMap的Size方法是一个嵌套循环，大体逻辑如下：</p>
+<p>1.遍历所有的Segment。<br>2.把Segment的元素数量累加起来。<br>3.把Segment的修改次数累加起来。<br>4.判断所有Segment的总修改次数是否大于上一次的总修改次数。如果大于，说明统计过程中有修改，重新统计，尝试次数+1；如果不是。说明没有修改，统计结束。<br>5.如果尝试次数超过阈值，则对每一个Segment加锁，再重新统计。<br>6.再次判断所有Segment的总修改次数是否大于上一次的总修改次数。由于已经加锁，次数一定和上次相等。<br>7.释放锁，统计结束。</p>
+<p>这种思想和乐观锁悲观锁的思想如出一辙。</p>
+<p>为了尽量不锁住所有Segment，首先乐观地假设Size过程中不会有修改。当尝试一定次数，才无奈转为悲观锁，锁住所有Segment保证强一致性。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s/1yWSfdz0j-PprGkDgOomhQ" target="_blank" rel="noopener">什么是ConcurrentHashMap</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/knowConHashMap/">http://catalinali.top/2018/knowConHashMap/</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ou3np1yz4.bkt.clouddn.com/ConHashMap_logo.jpg&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="juc" scheme="http://catalinali.top/categories/juc/"/>
+    
+    
+      <category term="juc" scheme="http://catalinali.top/tags/juc/"/>
+    
+  </entry>
   
   <entry>
     <title>深入理解HashMap</title>
@@ -1117,55 +1178,6 @@
     
     
       <category term="wechat" scheme="http://catalinali.top/tags/wechat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用IDEA搭建第一个SpringBoot程序</title>
-    <link href="http://catalinali.top/2018/startSpringBoot/"/>
-    <id>http://catalinali.top/2018/startSpringBoot/</id>
-    <published>2018-01-27T09:25:26.000Z</published>
-    <updated>2018-04-25T09:49:24.288Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_logo.jpg" alt="startSpringBoot_logo"></p>
-<blockquote>
-<p>近来在研究SpringBoot的使用，现在把使用IDEA搭建一个SpringBoot的HelloWorld程序记录下来</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="新建一个SpringBoot环境"><a href="#新建一个SpringBoot环境" class="headerlink" title="新建一个SpringBoot环境"></a>新建一个SpringBoot环境</h2><p>打开你的IntelliJ IDEA，然后选择Create New Project。如图，我们要选择一个Spring Initializr<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_1.png" alt="startSpringBoot_1"><br>之后我们填入自己的Group与Artifact(项目名字)后选择Next<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_2.png" alt="startSpringBoot_2"><br>由于我们是Web项目，所以我们先勾选最基本的Web选项，其他的待我们用到了再勾选。<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_3.png" alt="startSpringBoot_3"><br>接下来是选择项目存放的位置<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_4.png" alt="startSpringBoot_4"><br>选择Finish之后静静等待IEAD加载索引搭建工程。OK，一个完整的SpringBoot项目的结构我们已经搭建好了。<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_5.png" alt="startSpringBoot_5"><br>上图我用红框圈住的可以删掉，保持项目的简洁。这样，一个可供使用的SpringBoot环境就搭好了。</p>
-<h2 id="SpringBoot介绍"><a href="#SpringBoot介绍" class="headerlink" title="SpringBoot介绍"></a>SpringBoot介绍</h2><p>使用SpringBoot可以让你快速搭建一个SpringWeb项目，它使用“习惯优于配置”的理念让你的项目快速运行起来。使用SpringBoot可以很容易创建一个独立运行（运行jar，内嵌Servlet容器）、准生产级别的基于Spring框架的项目。使用SpringBoot你可以不用或者是很少的配置。<br>使用SpringBoot的优点：</p>
-<ul>
-<li>快速构建项;</li>
-<li>对主流开发框架的无配罝集成；</li>
-<li>项目可独立运行，无须外部依赖Servlet容器；</li>
-<li>提供运行时的应用监控；</li>
-<li>极大地提髙了开发、部署效率；</li>
-<li>与云计算的天然集成。<h2 id="SpringBoot入门"><a href="#SpringBoot入门" class="headerlink" title="SpringBoot入门"></a>SpringBoot入门</h2>我们来写一个SpringBoot的HelloWorld<br>打开项目自动生成的DemoApplication类，修改代码：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@RequestMapping</span>(<span class="string">"hello"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"hello world！"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>然后右键选择Run<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_7.png" alt="startSpringBoot_7"><br>然后打开浏览器访问<a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a>就可以看到我们写的HelloWorld<br><img src="http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_8.png" alt="startSpringBoot_8"><br><strong>代码说明：</strong><br>1、@SpringBootApplication：Spring Boot项目的核心注解，主要目的是开启自动配置。；<br>2、@Configuration：这是一个配置Spring的配置类；<br>3、@Controller：标明这是一个SpringMVC的Controller控制器；<br>4、main方法：在main方法中启动一个应用，即：这个应用的入口；</p>
-<p>这次只是记录了一下搭建SpringBoot的HelloWorld过程。具体的SpringBoot知识还需要大家去深入学习</p>
-<hr>
-<blockquote>
-<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2017/startSpringBoot/">http://catalinali.top/2017/startSpringBoot/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ou3np1yz4.bkt.clouddn.com/startSpringBoot_logo.jpg&quot; alt=&quot;startSpringBoot_logo&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;近来在研究SpringBoot的使用，现在把使用IDEA搭建一个SpringBoot的HelloWorld程序记录下来&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="http://catalinali.top/categories/SpringBoot/"/>
-    
-    
-      <category term="IDEA" scheme="http://catalinali.top/tags/IDEA/"/>
-    
-      <category term="SpringBoot" scheme="http://catalinali.top/tags/SpringBoot/"/>
     
   </entry>
   

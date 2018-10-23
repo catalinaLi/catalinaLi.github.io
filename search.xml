@@ -3,6 +3,62 @@
   
     
     <entry>
+      <title><![CDATA[JAVA并发编程(七)：并发容器（ConcurrentHashMap）]]></title>
+      <url>/2018/knowConHashMap/</url>
+      <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/ConHashMap_logo.jpg" alt="volatile_logo"></p>
+<blockquote>
+<p>我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一、分段锁Segment概述"><a href="#一、分段锁Segment概述" class="headerlink" title="一、分段锁Segment概述"></a>一、分段锁Segment概述</h2><p>分段锁Segment是ConcurrentHashMap很重要的一个概念。</p>
+<p>Segment本身就相当于一个HashMap对象。</p>
+<p>同HashMap一样，Segment包含一个HashEntry数组，数组中的每一个HashEntry既是一个键值对，也是一个链表的头节点。</p>
+<p>像这样的Segment对象，在ConcurrentHashMap集合中有2的N次方个，共同保存在一个名为segments的数组当中。<br>因此整个ConcurrentHashMap的结构如下：</p>
+<p><img src="http://ou3np1yz4.bkt.clouddn.com/ConHashMap_1.jpg" alt="ConHashMap_1"></p>
+<p>可以说，ConcurrentHashMap是一个二级哈希表。在一个总的哈希表下面，有若干个子哈希表。<br>这样的二级结构，和数据库的水平拆分有些相似。每一个Segment就好比一个高度自治的自治区。读写高度自治，Segment之间互不影响。</p>
+<p>这种结构下的ConcurrentHashMap有以下特点：</p>
+<ul>
+<li>不同Segment的写入是可以并发执行的。</li>
+<li>同一Segment的写和读是可以并发执行的。</li>
+<li>对同一Segment的并发写入会被阻塞。</li>
+</ul>
+<p>由此可见，ConcurrentHashMap当中每个Segment各自持有一把锁。在保证线程安全的同时降低了锁的粒度，让并发操作效率更高。</p>
+<h2 id="二、ConcurrentHashMap读写概述"><a href="#二、ConcurrentHashMap读写概述" class="headerlink" title="二、ConcurrentHashMap读写概述"></a>二、ConcurrentHashMap读写概述</h2><p>###Get方法：</p>
+<p>1.为输入的Key做Hash运算，得到hash值。<br>2.通过hash值，定位到对应的Segment对象<br>3.再次通过hash值，定位到Segment当中数组的具体位置。</p>
+<p>###Put方法：</p>
+<p>1.为输入的Key做Hash运算，得到hash值。<br>2.通过hash值，定位到对应的Segment对象<br>3.获取可重入锁<br>4.再次通过hash值，定位到Segment当中数组的具体位置。<br>5.插入或覆盖HashEntry对象。<br>6.释放锁。</p>
+<p>从以上步骤可以看出，ConcurrentHashMap在读写时都需要两次定位（Hash）操作。</p>
+<h2 id="三、ConcurrentHashMap的size-方法"><a href="#三、ConcurrentHashMap的size-方法" class="headerlink" title="三、ConcurrentHashMap的size()方法"></a>三、ConcurrentHashMap的size()方法</h2><p>Size方法的目的是统计ConcurrentHashMap的总元素数量， 自然需要把各个Segment内部的元素数量汇总起来。</p>
+<p>但是，如果在统计Segment元素数量的过程中，已统计过的Segment瞬间插入新的元素，这时候该怎么办呢？</p>
+<p>ConcurrentHashMap的Size方法是一个嵌套循环，大体逻辑如下：</p>
+<p>1.遍历所有的Segment。<br>2.把Segment的元素数量累加起来。<br>3.把Segment的修改次数累加起来。<br>4.判断所有Segment的总修改次数是否大于上一次的总修改次数。如果大于，说明统计过程中有修改，重新统计，尝试次数+1；如果不是。说明没有修改，统计结束。<br>5.如果尝试次数超过阈值，则对每一个Segment加锁，再重新统计。<br>6.再次判断所有Segment的总修改次数是否大于上一次的总修改次数。由于已经加锁，次数一定和上次相等。<br>7.释放锁，统计结束。</p>
+<p>这种思想和乐观锁悲观锁的思想如出一辙。</p>
+<p>为了尽量不锁住所有Segment，首先乐观地假设Size过程中不会有修改。当尝试一定次数，才无奈转为悲观锁，锁住所有Segment保证强一致性。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s/1yWSfdz0j-PprGkDgOomhQ" target="_blank" rel="noopener">什么是ConcurrentHashMap</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/knowConHashMap/">http://catalinali.top/2018/knowConHashMap/</a></p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> juc </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> juc </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[深入理解HashMap]]></title>
       <url>/2018/knowHashMap/</url>
       <content type="html"><![CDATA[<p><img src="http://ou3np1yz4.bkt.clouddn.com/hashmap_logo1.jpg" alt="redis_logo"></p>
