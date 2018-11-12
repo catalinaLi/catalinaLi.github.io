@@ -95,23 +95,23 @@
 
 
 
-<meta name="description" content="在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。  一、Zuul简介Zuul是Netflix开源的微服务网关，他可以和Eureka,Ribbon,Hystrix等组件配合使用。Zuul组件的核心是一系列的过滤器，这些">
+<meta name="description" content="在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。">
 <meta name="keywords" content="SpringCloud">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小白学SpringCloud(五)：路由网关（Zuul）">
 <meta property="og:url" content="http://catalinali.top/2018/startZuul/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。  一、Zuul简介Zuul是Netflix开源的微服务网关，他可以和Eureka,Ribbon,Hystrix等组件配合使用。Zuul组件的核心是一系列的过滤器，这些">
+<meta property="og:description" content="在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-0196ff9f46197af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-b79c552c2c709087.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-bddeee8a3e4e947c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-647dd90de5e26676.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-40ab3d967fd21088.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-11-12T06:37:35.646Z">
+<meta property="og:updated_time" content="2018-11-12T06:50:37.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小白学SpringCloud(五)：路由网关（Zuul）">
-<meta name="twitter:description" content="在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。  一、Zuul简介Zuul是Netflix开源的微服务网关，他可以和Eureka,Ribbon,Hystrix等组件配合使用。Zuul组件的核心是一系列的过滤器，这些">
+<meta name="twitter:description" content="在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3962292-0196ff9f46197af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -324,7 +324,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="从不装逼夫斯基">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
+      <meta itemprop="image" content="https://wx4.sinaimg.cn/square/82e156dagy1fx5asqd4yoj208c08c749.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -425,6 +425,8 @@
 <blockquote>
 <p>在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。</p>
 </blockquote>
+<hr>
+<a id="more"></a>
 <h2 id="一、Zuul简介"><a href="#一、Zuul简介" class="headerlink" title="一、Zuul简介"></a>一、Zuul简介</h2><p>Zuul是Netflix开源的微服务网关，他可以和Eureka,Ribbon,Hystrix等组件配合使用。Zuul组件的核心是一系列的过滤器，这些过滤器可以完成以下功能：</p>
 <ul>
 <li>身份认证和安全: 识别每一个资源的验证要求，并拒绝那些不符的请求</li>
@@ -583,7 +585,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg"
+               src="https://wx4.sinaimg.cn/square/82e156dagy1fx5asqd4yoj208c08c749.jpg"
                alt="从不装逼夫斯基" />
           <p class="site-author-name" itemprop="name">从不装逼夫斯基</p>
            

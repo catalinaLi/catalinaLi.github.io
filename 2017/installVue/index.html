@@ -95,13 +95,13 @@
 
 
 
-<meta name="description" content="最近Vue.js的热度持续上升，甚至有标题说2017再不会Vue.js就out了。而作为一个不排斥前段的后端码农来说，当然也要跟得上时代。近来准备放下手中的DOM操作，来一次Vue.js从入门到放弃。现将环境搭建过程记录下来。   环境准备 Node.js Javascript的运行时环境 npm Node.js下的包管理工具 webpack 前端资源模块化管理和打包工具 vue-cli 脚手">
+<meta name="description" content="最近Vue.js的热度持续上升，甚至有标题说2017再不会Vue.js就out了。而作为一个不排斥前段的后端码农来说，当然也要跟得上时代。近来准备放下手中的DOM操作，来一次Vue.js从入门到放弃。现将环境搭建过程记录下来。">
 <meta name="keywords" content="vue.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue.js小白入门，搭建开发环境">
 <meta property="og:url" content="http://catalinali.top/2017/installVue/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="最近Vue.js的热度持续上升，甚至有标题说2017再不会Vue.js就out了。而作为一个不排斥前段的后端码农来说，当然也要跟得上时代。近来准备放下手中的DOM操作，来一次Vue.js从入门到放弃。现将环境搭建过程记录下来。   环境准备 Node.js Javascript的运行时环境 npm Node.js下的包管理工具 webpack 前端资源模块化管理和打包工具 vue-cli 脚手">
+<meta property="og:description" content="最近Vue.js的热度持续上升，甚至有标题说2017再不会Vue.js就out了。而作为一个不排斥前段的后端码农来说，当然也要跟得上时代。近来准备放下手中的DOM操作，来一次Vue.js从入门到放弃。现将环境搭建过程记录下来。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-fdd4edcf8dcc1832.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-e7abad86da36b992.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -109,10 +109,10 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-458f6bf1e593c84b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-625f941c2d6cd082.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-31fd7e57db8e665f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-11-12T06:42:16.224Z">
+<meta property="og:updated_time" content="2018-11-12T06:48:47.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue.js小白入门，搭建开发环境">
-<meta name="twitter:description" content="最近Vue.js的热度持续上升，甚至有标题说2017再不会Vue.js就out了。而作为一个不排斥前段的后端码农来说，当然也要跟得上时代。近来准备放下手中的DOM操作，来一次Vue.js从入门到放弃。现将环境搭建过程记录下来。   环境准备 Node.js Javascript的运行时环境 npm Node.js下的包管理工具 webpack 前端资源模块化管理和打包工具 vue-cli 脚手">
+<meta name="twitter:description" content="最近Vue.js的热度持续上升，甚至有标题说2017再不会Vue.js就out了。而作为一个不排斥前段的后端码农来说，当然也要跟得上时代。近来准备放下手中的DOM操作，来一次Vue.js从入门到放弃。现将环境搭建过程记录下来。">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3962292-fdd4edcf8dcc1832.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -325,7 +325,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="从不装逼夫斯基">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
+      <meta itemprop="image" content="https://wx4.sinaimg.cn/square/82e156dagy1fx5asqd4yoj208c08c749.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -427,6 +427,7 @@
 <p>最近Vue.js的热度持续上升，甚至有标题说2017再不会Vue.js就out了。而作为一个不排斥前段的后端码农来说，当然也要跟得上时代。近来准备放下手中的DOM操作，来一次Vue.js从入门到放弃。现将环境搭建过程记录下来。</p>
 </blockquote>
 <hr>
+<a id="more"></a>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
 <li>Node.js Javascript的运行时环境</li>
 <li>npm Node.js下的包管理工具</li>
@@ -586,7 +587,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg"
+               src="https://wx4.sinaimg.cn/square/82e156dagy1fx5asqd4yoj208c08c749.jpg"
                alt="从不装逼夫斯基" />
           <p class="site-author-name" itemprop="name">从不装逼夫斯基</p>
            

@@ -95,13 +95,13 @@
 
 
 
-<meta name="description" content="不知觉间已经接触了几次微信支付开发，而要进行微信支付就需要用户的唯一标识:openid。还记得第一次获取用户openid的时候就踩了很多坑。这两天又接触了一下，想着索性就把他记录下来，也便于以后查阅  一、准备工具不管开发什么，官方的文档应该是第一个想到的这里把官方文档贴出来：微信网页授权文档除此之外，我们还需要一个内网穿透的工具在开发环境下让微信能访问到我们的域名。我使用的是natapp。此">
+<meta name="description" content="不知觉间已经接触了几次微信支付开发，而要进行微信支付就需要用户的唯一标识:openid。还记得第一次获取用户openid的时候就踩了很多坑。这两天又接触了一下，想着索性就把他记录下来，也便于以后查阅">
 <meta name="keywords" content="wechat OAuth">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信开发之微信网页授权获取openid">
 <meta property="og:url" content="http://catalinali.top/2018/wechatOAuth/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="不知觉间已经接触了几次微信支付开发，而要进行微信支付就需要用户的唯一标识:openid。还记得第一次获取用户openid的时候就踩了很多坑。这两天又接触了一下，想着索性就把他记录下来，也便于以后查阅  一、准备工具不管开发什么，官方的文档应该是第一个想到的这里把官方文档贴出来：微信网页授权文档除此之外，我们还需要一个内网穿透的工具在开发环境下让微信能访问到我们的域名。我使用的是natapp。此">
+<meta property="og:description" content="不知觉间已经接触了几次微信支付开发，而要进行微信支付就需要用户的唯一标识:openid。还记得第一次获取用户openid的时候就踩了很多坑。这两天又接触了一下，想着索性就把他记录下来，也便于以后查阅">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-6eb93042fa5fda95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-ec7e467e67c31d02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -109,10 +109,10 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-b8aebf3d24fd9380.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-91746bd1b234c646.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-bbff619cd1b27320.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-11-12T06:32:13.278Z">
+<meta property="og:updated_time" content="2018-11-12T06:50:14.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信开发之微信网页授权获取openid">
-<meta name="twitter:description" content="不知觉间已经接触了几次微信支付开发，而要进行微信支付就需要用户的唯一标识:openid。还记得第一次获取用户openid的时候就踩了很多坑。这两天又接触了一下，想着索性就把他记录下来，也便于以后查阅  一、准备工具不管开发什么，官方的文档应该是第一个想到的这里把官方文档贴出来：微信网页授权文档除此之外，我们还需要一个内网穿透的工具在开发环境下让微信能访问到我们的域名。我使用的是natapp。此">
+<meta name="twitter:description" content="不知觉间已经接触了几次微信支付开发，而要进行微信支付就需要用户的唯一标识:openid。还记得第一次获取用户openid的时候就踩了很多坑。这两天又接触了一下，想着索性就把他记录下来，也便于以后查阅">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3962292-6eb93042fa5fda95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -325,7 +325,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="从不装逼夫斯基">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg">
+      <meta itemprop="image" content="https://wx4.sinaimg.cn/square/82e156dagy1fx5asqd4yoj208c08c749.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -426,6 +426,8 @@
 <blockquote>
 <p>不知觉间已经接触了几次微信支付开发，而要进行微信支付就需要用户的唯一标识:openid。还记得第一次获取用户openid的时候就踩了很多坑。这两天又接触了一下，想着索性就把他记录下来，也便于以后查阅</p>
 </blockquote>
+<hr>
+<a id="more"></a>
 <h2 id="一、准备工具"><a href="#一、准备工具" class="headerlink" title="一、准备工具"></a>一、准备工具</h2><p>不管开发什么，官方的文档应该是第一个想到的这里把官方文档贴出来：<strong><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140842" target="_blank" rel="noopener">微信网页授权文档</a></strong><br>除此之外，我们还需要一个<strong>内网穿透</strong>的工具在开发环境下让微信能访问到我们的域名。我使用的是natapp。此类工具网上有很多，大家可以自行寻找。<br>这里我们使用微信提供的<strong><a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="noopener">测试账号</a></strong>来作为演示</p>
 <h2 id="二、开始开发"><a href="#二、开始开发" class="headerlink" title="二、开始开发"></a>二、开始开发</h2><p>内网穿透就不在这里演示了，下面我们直入主题：<br><strong>1.填写网页授权域名</strong><br>在这篇文档的一开始就埋了一个坑<br><img src="http://upload-images.jianshu.io/upload_images/3962292-ec7e467e67c31d02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="wechatOAuth_1"><br>这段话就是说，我们在开发前需要在图片中框红的位置填入我们所要开发的域名。这里我们使用的是测试环境，所以需要在测试账号管理页面的这个位置填入我们自己的域名,这里要注意填入域名的规则。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-866a7344390d10af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="wechatOAuth_2"><br><strong>2.文档阅读</strong><br>接着阅读文档我们可以发现网页授权有两种scope,<br>snsapi_base和snsapi_userinfo。两种scope都可以获取到opeid，不同的是snsapi_userinfo除了openid外还可以获取到用户的基本信息，但是需要用户手动进行确认。<br>再往下阅读我们可以看到官方文档的授权步骤</p>
 <ul>
@@ -582,7 +584,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://ou3np1yz4.bkt.clouddn.com/avatar.jpg"
+               src="https://wx4.sinaimg.cn/square/82e156dagy1fx5asqd4yoj208c08c749.jpg"
                alt="从不装逼夫斯基" />
           <p class="site-author-name" itemprop="name">从不装逼夫斯基</p>
            

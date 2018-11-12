@@ -142,7 +142,7 @@
     <link href="http://catalinali.top/2018/singletonPattern/"/>
     <id>http://catalinali.top/2018/singletonPattern/</id>
     <published>2018-10-11T01:29:06.000Z</published>
-    <updated>2018-11-12T06:39:59.995Z</updated>
+    <updated>2018-11-12T06:51:32.964Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-acac6f7616985e72.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="redis_logo"></p>
 <blockquote>
@@ -798,12 +798,14 @@
     <link href="http://catalinali.top/2018/startZuul/"/>
     <id>http://catalinali.top/2018/startZuul/</id>
     <published>2018-07-10T10:15:28.000Z</published>
-    <updated>2018-11-12T06:37:35.646Z</updated>
+    <updated>2018-11-12T06:50:37.663Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-0196ff9f46197af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="zuul_logo"></p>
 <blockquote>
 <p>在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。</p>
 </blockquote>
+<hr>
+<a id="more"></a>
 <h2 id="一、Zuul简介"><a href="#一、Zuul简介" class="headerlink" title="一、Zuul简介"></a>一、Zuul简介</h2><p>Zuul是Netflix开源的微服务网关，他可以和Eureka,Ribbon,Hystrix等组件配合使用。Zuul组件的核心是一系列的过滤器，这些过滤器可以完成以下功能：</p>
 <ul>
 <li>身份认证和安全: 识别每一个资源的验证要求，并拒绝那些不符的请求</li>
@@ -828,7 +830,11 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-0196ff9f46197af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; 
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-0196ff9f46197af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;zuul_logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
     
     </summary>
     
@@ -984,9 +990,11 @@
     <link href="http://catalinali.top/2018/startEureka/"/>
     <id>http://catalinali.top/2018/startEureka/</id>
     <published>2018-05-31T10:19:58.000Z</published>
-    <updated>2018-11-12T06:38:57.204Z</updated>
+    <updated>2018-11-12T06:49:48.420Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-ab00c7411900a8c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_logo"></p>
+<hr>
+<a id="more"></a>
 <h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>首先我们先引用Dubbo官网的一段话</p>
 <ul>
 <li>单一应用架构<br>  当网站流量很小时，只需一个应用，将所有功能都部署在一起，以减少部署节点和成本。<br>  此时，用于简化增删改查工作量的 数据访问框架(ORM) 是关键。</li>
@@ -1009,7 +1017,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-ab00c7411900a8c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; 
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-ab00c7411900a8c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;eureka_logo&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
     
     </summary>
     
@@ -1118,9 +1127,9 @@
       <category term="hexo" scheme="http://catalinali.top/categories/hexo/"/>
     
     
-      <category term="note" scheme="http://catalinali.top/tags/note/"/>
-    
       <category term="hexo" scheme="http://catalinali.top/tags/hexo/"/>
+    
+      <category term="note" scheme="http://catalinali.top/tags/note/"/>
     
   </entry>
   
@@ -1129,12 +1138,14 @@
     <link href="http://catalinali.top/2018/wechatOAuth/"/>
     <id>http://catalinali.top/2018/wechatOAuth/</id>
     <published>2018-02-26T08:21:09.000Z</published>
-    <updated>2018-11-12T06:32:13.278Z</updated>
+    <updated>2018-11-12T06:50:14.818Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-6eb93042fa5fda95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="wechatOAuth_logo"></p>
 <blockquote>
 <p>不知觉间已经接触了几次微信支付开发，而要进行微信支付就需要用户的唯一标识:openid。还记得第一次获取用户openid的时候就踩了很多坑。这两天又接触了一下，想着索性就把他记录下来，也便于以后查阅</p>
 </blockquote>
+<hr>
+<a id="more"></a>
 <h2 id="一、准备工具"><a href="#一、准备工具" class="headerlink" title="一、准备工具"></a>一、准备工具</h2><p>不管开发什么，官方的文档应该是第一个想到的这里把官方文档贴出来：<strong><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140842" target="_blank" rel="noopener">微信网页授权文档</a></strong><br>除此之外，我们还需要一个<strong>内网穿透</strong>的工具在开发环境下让微信能访问到我们的域名。我使用的是natapp。此类工具网上有很多，大家可以自行寻找。<br>这里我们使用微信提供的<strong><a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="noopener">测试账号</a></strong>来作为演示</p>
 <h2 id="二、开始开发"><a href="#二、开始开发" class="headerlink" title="二、开始开发"></a>二、开始开发</h2><p>内网穿透就不在这里演示了，下面我们直入主题：<br><strong>1.填写网页授权域名</strong><br>在这篇文档的一开始就埋了一个坑<br><img src="http://upload-images.jianshu.io/upload_images/3962292-ec7e467e67c31d02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="wechatOAuth_1"><br>这段话就是说，我们在开发前需要在图片中框红的位置填入我们所要开发的域名。这里我们使用的是测试环境，所以需要在测试账号管理页面的这个位置填入我们自己的域名,这里要注意填入域名的规则。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-866a7344390d10af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="wechatOAuth_2"><br><strong>2.文档阅读</strong><br>接着阅读文档我们可以发现网页授权有两种scope,<br>snsapi_base和snsapi_userinfo。两种scope都可以获取到opeid，不同的是snsapi_userinfo除了openid外还可以获取到用户的基本信息，但是需要用户手动进行确认。<br>再往下阅读我们可以看到官方文档的授权步骤</p>
 <ul>
@@ -1157,7 +1168,11 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-6eb93042fa5fda95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; 
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-6eb93042fa5fda95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;wechatOAuth_logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不知觉间已经接触了几次微信支付开发，而要进行微信支付就需要用户的唯一标识:openid。还记得第一次获取用户openid的时候就踩了很多坑。这两天又接触了一下，想着索性就把他记录下来，也便于以后查阅&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
     
     </summary>
     

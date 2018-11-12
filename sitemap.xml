@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://catalinali.top/2018/singletonPattern/</loc>
+    
+    <lastmod>2018-11-12T06:51:32.964Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/startZuul/</loc>
+    
+    <lastmod>2018-11-12T06:50:37.663Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    
+    <lastmod>2018-11-12T06:50:14.818Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/startEureka/</loc>
+    
+    <lastmod>2018-11-12T06:49:48.420Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2017/helloNginx/</loc>
+    
+    <lastmod>2018-11-12T06:49:17.794Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2017/installVue/</loc>
+    
+    <lastmod>2018-11-12T06:48:47.093Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2017/firstBuildHexo/</loc>
+    
+    <lastmod>2018-11-12T06:48:15.196Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://catalinali.top/2017/buildredis/</loc>
     
     <lastmod>2018-11-12T06:45:52.095Z</lastmod>
@@ -12,13 +61,6 @@
     <loc>http://catalinali.top/2017/buildzookeeper/</loc>
     
     <lastmod>2018-11-12T06:45:23.818Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2017/firstBuildHexo/</loc>
-    
-    <lastmod>2018-11-12T06:45:11.861Z</lastmod>
     
   </url>
   
@@ -58,13 +100,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2017/helloNginx/</loc>
-    
-    <lastmod>2018-11-12T06:43:54.392Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
     
     <lastmod>2018-11-12T06:43:39.701Z</lastmod>
@@ -96,13 +131,6 @@
     <loc>http://catalinali.top/2017/installjira/</loc>
     
     <lastmod>2018-11-12T06:42:32.742Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2017/installVue/</loc>
-    
-    <lastmod>2018-11-12T06:42:16.224Z</lastmod>
     
   </url>
   
@@ -156,13 +184,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/singletonPattern/</loc>
-    
-    <lastmod>2018-11-12T06:39:59.995Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2018/startbus/</loc>
     
     <lastmod>2018-11-12T06:39:27.185Z</lastmod>
@@ -173,13 +194,6 @@
     <loc>http://catalinali.top/2018/startconfig/</loc>
     
     <lastmod>2018-11-12T06:39:13.030Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2018/startEureka/</loc>
-    
-    <lastmod>2018-11-12T06:38:57.204Z</lastmod>
     
   </url>
   
@@ -201,13 +215,6 @@
     <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     
     <lastmod>2018-11-12T06:38:02.319Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2018/startZuul/</loc>
-    
-    <lastmod>2018-11-12T06:37:35.646Z</lastmod>
     
   </url>
   
@@ -247,13 +254,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    
-    <lastmod>2018-11-12T06:32:13.278Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/tags/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.293Z</lastmod>
@@ -261,14 +261,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/categories/index.html</loc>
+    <loc>http://catalinali.top/about/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/about/index.html</loc>
+    <loc>http://catalinali.top/categories/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     

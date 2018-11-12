@@ -4,6 +4,146 @@
 
     
   <url>
+    <loc>http://catalinali.top/2018/singletonPattern/</loc>
+    <lastmod>2018-11-12T06:51:32.964Z</lastmod>
+    <data>
+        <display>
+        <title>Java设计模式之单例模式的究极版写法</title>
+        <pubTime>2018-10-11T01:29:06.000Z</pubTime>
+        
+        <tag>design-patterns</tag>
+         
+         
+           
+             
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startZuul/</loc>
+    <lastmod>2018-11-12T06:50:37.663Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(五)：路由网关（Zuul）</title>
+        <pubTime>2018-07-10T10:15:28.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    <lastmod>2018-11-12T06:50:14.818Z</lastmod>
+    <data>
+        <display>
+        <title>微信开发之微信网页授权获取openid</title>
+        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
+        
+        <tag>wechat</tag>
+         
+         
+           
+             
+              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startEureka/</loc>
+    <lastmod>2018-11-12T06:49:48.420Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(一)：服务的注册与发现（Eureka）</title>
+        <pubTime>2018-05-31T10:19:58.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/helloNginx/</loc>
+    <lastmod>2018-11-12T06:49:17.794Z</lastmod>
+    <data>
+        <display>
+        <title>Nginx初探究：安装与简单使用</title>
+        <pubTime>2017-10-31T08:30:13.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="nginx" url="http://catalinali.top/categories/nginx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/installVue/</loc>
+    <lastmod>2018-11-12T06:48:47.093Z</lastmod>
+    <data>
+        <display>
+        <title>Vue.js小白入门，搭建开发环境</title>
+        <pubTime>2017-11-27T08:39:32.000Z</pubTime>
+        
+        <tag>vue.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/firstBuildHexo/</loc>
+    <lastmod>2018-11-12T06:48:15.196Z</lastmod>
+    <data>
+        <display>
+        <title>手把手教你使用hexo搭建属于你的个人博客</title>
+        <pubTime>2017-08-06T06:15:15.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2017/buildredis/</loc>
     <lastmod>2018-11-12T06:45:52.095Z</lastmod>
     <data>
@@ -37,26 +177,6 @@
            
              
               <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/firstBuildHexo/</loc>
-    <lastmod>2018-11-12T06:45:11.861Z</lastmod>
-    <data>
-        <display>
-        <title>手把手教你使用hexo搭建属于你的个人博客</title>
-        <pubTime>2017-08-06T06:15:15.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
           
         </display>
     </data>
@@ -157,26 +277,6 @@
            
              
               <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/helloNginx/</loc>
-    <lastmod>2018-11-12T06:43:54.392Z</lastmod>
-    <data>
-        <display>
-        <title>Nginx初探究：安装与简单使用</title>
-        <pubTime>2017-10-31T08:30:13.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="nginx" url="http://catalinali.top/categories/nginx/"/>
           
         </display>
     </data>
@@ -286,26 +386,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/installVue/</loc>
-    <lastmod>2018-11-12T06:42:16.224Z</lastmod>
-    <data>
-        <display>
-        <title>Vue.js小白入门，搭建开发环境</title>
-        <pubTime>2017-11-27T08:39:32.000Z</pubTime>
-        
-        <tag>vue.js</tag>
-         
-         
-           
-             
-              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2018/knowConHashMap/</loc>
     <lastmod>2018-11-12T06:41:52.947Z</lastmod>
     <data>
@@ -375,9 +455,9 @@
         <title>笔记：使用hexo，如果换了电脑怎么更新博客</title>
         <pubTime>2018-04-26T08:02:00.000Z</pubTime>
         
-        <tag>note</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>note</tag>
          
          
            
@@ -450,26 +530,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/singletonPattern/</loc>
-    <lastmod>2018-11-12T06:39:59.995Z</lastmod>
-    <data>
-        <display>
-        <title>Java设计模式之单例模式的究极版写法</title>
-        <pubTime>2018-10-11T01:29:06.000Z</pubTime>
-        
-        <tag>design-patterns</tag>
-         
-         
-           
-             
-              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2018/startbus/</loc>
     <lastmod>2018-11-12T06:39:27.185Z</lastmod>
     <data>
@@ -496,26 +556,6 @@
         <display>
         <title>小白学SpringCloud(三)：统一配置中心(config)</title>
         <pubTime>2018-06-15T07:45:19.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/startEureka/</loc>
-    <lastmod>2018-11-12T06:38:57.204Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(一)：服务的注册与发现（Eureka）</title>
-        <pubTime>2018-05-31T10:19:58.000Z</pubTime>
         
         <tag>SpringCloud</tag>
          
@@ -585,26 +625,6 @@
            
              
               <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/startZuul/</loc>
-    <lastmod>2018-11-12T06:37:35.646Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(五)：路由网关（Zuul）</title>
-        <pubTime>2018-07-10T10:15:28.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
           
         </display>
     </data>
@@ -707,26 +727,6 @@
            
              
               <breadCrumb title="mq" url="http://catalinali.top/categories/mq/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    <lastmod>2018-11-12T06:32:13.278Z</lastmod>
-    <data>
-        <display>
-        <title>微信开发之微信网页授权获取openid</title>
-        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
-        
-        <tag>wechat</tag>
-         
-         
-           
-             
-              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
           
         </display>
     </data>
