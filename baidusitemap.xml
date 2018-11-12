@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    <lastmod>2018-11-12T06:32:13.278Z</lastmod>
+    <data>
+        <display>
+        <title>微信开发之微信网页授权获取openid</title>
+        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
+        
+        <tag>wechat</tag>
+         
+         
+           
+             
+              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2017/firstBuildHexo/</loc>
     <lastmod>2018-11-12T06:21:37.259Z</lastmod>
     <data>
@@ -431,26 +451,6 @@
     
     
   <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    <lastmod>2018-04-25T09:49:24.290Z</lastmod>
-    <data>
-        <display>
-        <title>微信开发之微信网页授权获取openid</title>
-        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
-        
-        <tag>wechat</tag>
-         
-         
-           
-             
-              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/useMQ/</loc>
     <lastmod>2018-04-25T09:49:24.290Z</lastmod>
     <data>
@@ -575,26 +575,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/installjira/</loc>
-    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
-    <data>
-        <display>
-        <title>centos7下破解安装JIRA 7.2</title>
-        <pubTime>2017-08-16T03:41:50.000Z</pubTime>
-        
-        <tag>jira</tag>
-         
-         
-           
-             
-              <breadCrumb title="jira" url="http://catalinali.top/categories/jira/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/installVue/</loc>
     <lastmod>2018-04-25T09:49:24.287Z</lastmod>
     <data>
@@ -608,6 +588,26 @@
            
              
               <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/installjira/</loc>
+    <lastmod>2018-04-25T09:49:24.287Z</lastmod>
+    <data>
+        <display>
+        <title>centos7下破解安装JIRA 7.2</title>
+        <pubTime>2017-08-16T03:41:50.000Z</pubTime>
+        
+        <tag>jira</tag>
+         
+         
+           
+             
+              <breadCrumb title="jira" url="http://catalinali.top/categories/jira/"/>
           
         </display>
     </data>
@@ -635,26 +635,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
-    <lastmod>2018-04-25T09:49:24.285Z</lastmod>
-    <data>
-        <display>
-        <title>小白从头到脚搭建zookeeper集群的过程</title>
-        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
-        
-        <tag>zookeeper</tag>
-         
-         
-           
-             
-              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/helloDubbo/</loc>
     <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
@@ -675,19 +655,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
-    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
+    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
+    <lastmod>2018-04-25T09:49:24.285Z</lastmod>
     <data>
         <display>
-        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
-        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
+        <title>小白从头到脚搭建zookeeper集群的过程</title>
+        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
         
-        <tag>Redis</tag>
+        <tag>zookeeper</tag>
          
          
            
              
-              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
+              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
           
         </display>
     </data>
@@ -708,6 +688,26 @@
            
              
               <breadCrumb title="Spring" url="http://catalinali.top/categories/Spring/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <lastmod>2018-04-25T09:49:24.284Z</lastmod>
+    <data>
+        <display>
+        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
+        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
           
         </display>
     </data>
