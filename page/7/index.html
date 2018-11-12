@@ -413,18 +413,35 @@
 
       
         
-          <p><img src="http://ou3np1yz4.bkt.clouddn.com/installvue_logo.jpg" alt="installvue_logo"></p>
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/3962292-fdd4edcf8dcc1832.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="installvue_logo"></p>
 <blockquote>
 <p>最近Vue.js的热度持续上升，甚至有标题说2017再不会Vue.js就out了。而作为一个不排斥前段的后端码农来说，当然也要跟得上时代。近来准备放下手中的DOM操作，来一次Vue.js从入门到放弃。现将环境搭建过程记录下来。</p>
 </blockquote>
 <hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/installVue/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li>Node.js Javascript的运行时环境</li>
+<li>npm Node.js下的包管理工具</li>
+<li>webpack 前端资源模块化管理和打包工具</li>
+<li>vue-cli 脚手架构建工具</li>
+<li>cnpm  npm的淘宝镜像</li>
+</ul>
+<p>如果你像我一样是个后端开发者，并且对以上的工具还处在一脸懵逼的状态下。那么可以先看一下这篇文章<a href="https://zhuanlan.zhihu.com/p/31044340" target="_blank" rel="noopener">萌新也能懂的现代 JavaScript 开发</a>。了解一下现代 JavaScript的演变过程。</p>
+<h3 id="Vue-js安装"><a href="#Vue-js安装" class="headerlink" title="Vue.js安装"></a>Vue.js安装</h3><p><strong>1.</strong> Node.js的安装非常容易，首先从<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">官网</a>下载你所需操作系统的版本，然后一直下一步就ok，这里贴个菜鸟教程的<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">传送门</a>。<br>安装完成之后，在命令行敲出<code>node -v</code>，如果出现对应版本号，则表示安装成功。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-e7abad86da36b992.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="installvue_01"><br><strong>2.</strong> npm是随同Node.js一起安装的包管理工具,直接在命令行敲出<code>npm -v</code>就可以查看是否安装成功。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-fbd8e3638a1c52ca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="installvue_02"><br>npm包管理器虽然有了，但是由于npm下载需要依赖包的服务器地址在国外，导致很多资源访问会很慢。所以我们可以安装淘宝的国内镜像。<br><strong>3.</strong> 在命令行敲出<code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>。<br>这样就可以使用 cnpm 命令来安装模块了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install [name]</span><br></pre></td></tr></table></figure></p>
+<p><strong>4.</strong> 安装webpack<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install webpack -g</span><br></pre></td></tr></table></figure></p>
+<p><strong>5.</strong> 安装vue脚手架<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-cli -g</span><br></pre></td></tr></table></figure></p>
+<h3 id="初始化一个Vue-js环境"><a href="#初始化一个Vue-js环境" class="headerlink" title="初始化一个Vue.js环境"></a>初始化一个Vue.js环境</h3><p>在电脑上新建一个文件夹用来存放我们的代码。然后使用命令行进入这个文件夹<code>cd 目录路径</code>。<br>之后使用命令<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack name</span><br></pre></td></tr></table></figure></p>
+<p>来初始化一个vue环境，这个命令的意思是初始化一个项目，其中webpack是构建工具，也就是整个项目是基于webpack的。在安装过程会有一些初始化的设置，我们可以采用默认配置，一路回车 。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-458f6bf1e593c84b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="installvue_04"><br>从上图的我们还可以看到vue很贴心的告诉了我们快速开始(To get started)的命令<br><strong>安装项目依赖</strong><br>一定要从官方仓库安装，npm 服务器在国外所以这一步安装速度会很慢。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>不要从国内镜像cnpm安装(会导致后面缺了很多依赖库)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install</span><br></pre></td></tr></table></figure></p>
+<p>安装 vue 路由模块vue-router和网络请求模块vue-resource<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install vue-router vue-resource --save</span><br></pre></td></tr></table></figure></p>
+<p>启动项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
+<p>运行成功以后他会告诉你ip和端口号<br><img src="http://upload-images.jianshu.io/upload_images/3962292-625f941c2d6cd082.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="installvue_05"><br>访问这个地址<br><img src="http://upload-images.jianshu.io/upload_images/3962292-31fd7e57db8e665f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="installvue_06"><br>如果出现上图。恭喜你，已经可以开始Vue.js之旅了。</p>
+<hr>
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2017/installVue/">http://catalinali.top/2017/installVue/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+</blockquote>
+
+          
         
       
     </div>
@@ -566,8 +583,7 @@
 
       
         
-          <hr>
-<p><img src="http://ou3np1yz4.bkt.clouddn.com/redis_logo.jpeg" alt="redis_logo"></p>
+          <p><img src="http://upload-images.jianshu.io/upload_images/3962292-82a29d27a79feda5.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="redis_logo"></p>
 <blockquote>
 <p>今天学习了淘淘商城中的redis的使用，在这里把它记录下来。</p>
 </blockquote>
@@ -720,18 +736,45 @@
 
       
         
-          <p><img src="http://ou3np1yz4.bkt.clouddn.com/nginx_logo1.jpg" alt="nginx_logo"></p>
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/3962292-5474845afdc1f410.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nginx_logo"></p>
 <blockquote>
 <p>在学习淘淘商城的过程中接触到了nginx,今天就把使用它的过程记录下来,作为留存。</p>
 </blockquote>
+<h2 id="一、什么是Nginx"><a href="#一、什么是Nginx" class="headerlink" title="一、什么是Nginx"></a>一、什么是Nginx</h2><p>Nginx是一款高性能的http服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。由俄罗斯的程序设计师Igor Sysoev所开发，官方测试nginx能够支支撑5万并发链接，并且cpu、内存等资源消耗却非常低，运行非常稳定。</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>http服务器。Nginx是一个http服务可以独立提供http服务。可以做网页静态服务器。</li>
+<li>虚拟主机。可以实现在一台服务器虚拟出多个网站。例如个人网站使用的虚拟主机。</li>
+<li>反向代理，负载均衡。当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群可以使用nginx做反向代理。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。</li>
+</ul>
+<h2 id="二、nginx安装"><a href="#二、nginx安装" class="headerlink" title="二、nginx安装"></a>二、nginx安装</h2><h3 id="1-官网下载nginx源码。"><a href="#1-官网下载nginx源码。" class="headerlink" title="1.官网下载nginx源码。"></a>1.<a href="http://nginx.org/" target="_blank" rel="noopener">官网</a>下载nginx源码。</h3><h3 id="2-外部环境准备"><a href="#2-外部环境准备" class="headerlink" title="2.外部环境准备:"></a>2.外部环境准备:</h3><ul>
+<li>需要安装gcc的环境:<code>yum install gcc-c++</code></li>
+<li>第三方的开发包:<br>① PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括 perl 兼容的正则表达式库。nginx的http模块使用pcre来解析正则表达式，所以需要在linux上安装pcre库。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y pcre pcre-devel</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>②zlib库提供了很多种压缩和解压缩的方式，nginx使用zlib对http包的内容进行gzip，所以需要在linux上安装zlib库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y zlib zlib-devel</span><br></pre></td></tr></table></figure></p>
+<p>③OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。nginx不仅支持http协议，还支持https（即在ssl协议上传输http）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-正式安装"><a href="#3-正式安装" class="headerlink" title="3.正式安装"></a>3.正式安装</h3><p>第一步：把nginx的源码包上传到linux系统<br>第二步：解压缩<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxf nginx-1.8.0.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>第三步：使用configure命令创建一makeFile文件。<br>./configure \<br>–prefix=/usr/local/nginx \<br>–pid-path=/var/run/nginx/nginx.pid \<br>–lock-path=/var/lock/nginx.lock \<br>–error-log-path=/var/log/nginx/error.log \<br>–http-log-path=/var/log/nginx/access.log \<br>–with-http_gzip_static_module \<br>–http-client-body-temp-path=/var/temp/nginx/client \<br>–http-proxy-temp-path=/var/temp/nginx/proxy \<br>–http-fastcgi-temp-path=/var/temp/nginx/fastcgi \<br>–http-uwsgi-temp-path=/var/temp/nginx/uwsgi \<br>–http-scgi-temp-path=/var/temp/nginx/scgi<br>注意：以上都是一些安装时配置nginx的一些参数,具体含义可以自行百度。另外在启动nginx之前，上边将临时文件目录指定为/var/temp/nginx，需要在/var下创建temp及nginx目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/temp/nginx/client -p</span><br></pre></td></tr></table></figure></p>
+<p>第四步：编译,运行<code>make</code>命令<br>第五步：安装运行<code>make install</code>命令<br>第六步：测试<br>进入安装目录下的<strong>sbin</strong>文件,运行<code>./nginx</code>后，打开浏览器访问主机ip。<br>注意：①默认是80端口。②是否关闭防火墙。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-cf04749534c7c769.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nginx_1"><br>如果出现上图，恭喜你，nginx安装成功。<br>相关命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s stop ##关闭nginx</span><br><span class="line">./nginx -s quit ##关闭nginx(推荐使用)</span><br><span class="line">./nginx -s reload ##重启nginx</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、配置虚拟主机"><a href="#三、配置虚拟主机" class="headerlink" title="三、配置虚拟主机"></a>三、配置虚拟主机</h2><h3 id="1-通过端口号区分虚拟主机"><a href="#1-通过端口号区分虚拟主机" class="headerlink" title="1.通过端口号区分虚拟主机"></a>1.通过端口号区分虚拟主机</h3><p>打开nginx的配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure></p>
+<p>可以看到一个server节点,这个就是我们配置虚拟主机的关键,每一个此节点代表一台主机。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;    ##端口号</span><br><span class="line">    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        root   html;    ##nginx安装目录下的html目录</span><br><span class="line">        index  index.html index.htm; ##每台主机对应的页面</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当我们配置了多个server，就相当于配置了多个虚拟主机。这时我们就可以通过不同的端口号来进行访问。</p>
+<h3 id="2-通过域名区分虚拟主机"><a href="#2-通过域名区分虚拟主机" class="headerlink" title="2.通过域名区分虚拟主机"></a>2.通过域名区分虚拟主机</h3><p>首先我们要知道当我们打开浏览器访问每一个域名的时候，每一个域名对应的是一个ip地址。并且一个ip地址可以被多个域名绑定。当我们在本地hosts文件（C:\Windows\System32\drivers\etc）中配置了域名与ip的对应的映射关系时，浏览器就不会再去走DNS服务器<br>为了方便测试，我们先在本地hosts文件配置一下测试所用数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">192.168.71.121 www.taobao.com</span><br><span class="line">192.168.21.121 www.baidu.com</span><br></pre></td></tr></table></figure></p>
+<p>然后配置两个server节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.taobao.com; ##不同域名配置</span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        root   html-taobao; ##不同域名访问的不同文件夹</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.baidu.com; ##不同域名配置</span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        root   html-baidu; ##不同域名访问的不同文件夹</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在浏览器上访问这两个地址就可以访问到我们配置的两台虚拟主机。</p>
+<h2 id="四、反向代理"><a href="#四、反向代理" class="headerlink" title="四、反向代理"></a>四、反向代理</h2><h3 id="1-什么是反向代理"><a href="#1-什么是反向代理" class="headerlink" title="1.什么是反向代理"></a>1.什么是反向代理</h3><p>两个域名指向同一台nginx服务器，用户访问不同的域名显示不同的网页内容。<br>两个域名是www.sian.com.cn和www.sohu.com<br>nginx服务器使用虚拟机192.168.101.3</p>
+<h3 id="2-实现反向代理"><a href="#2-实现反向代理" class="headerlink" title="2.实现反向代理"></a>2.实现反向代理</h3><p>第一步：安装两个tomcat，分别运行在8080和8081端口。<br>第二步：启动两个tomcat。<br>第三步：反向代理服务器的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcat1 &#123;</span><br><span class="line">    server 192.168.25.148:8080;</span><br><span class="line">    &#125;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  www.sina.com.cn;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass   http://tomcat1;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    upstream tomcat2 &#123;</span><br><span class="line">    server 192.168.25.148:8081;</span><br><span class="line">    &#125;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  www.sohu.com;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass   http://tomcat2;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>第四步：nginx重新加载配置文件<br>第五步：配置域名<br>在hosts文件中添加域名和ip的映射关系<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">192.168.71.121 www.sina.com.cn</span><br><span class="line">192.168.71.121 www.sohu.com</span><br></pre></td></tr></table></figure></p>
+<h2 id="五、负载均衡"><a href="#五、负载均衡" class="headerlink" title="五、负载均衡"></a>五、负载均衡</h2><p>如果一个服务由多条服务器提供，需要把负载分配到不同的服务器处理，需要负载均衡。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcat2 &#123;</span><br><span class="line">   server 192.168.71.121:8081;</span><br><span class="line">   server 192.168.71.121:8082;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以根据服务器的实际情况调整服务器权重。权重越高分配的请求越多，权重越低，请求越少。默认是都是1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcat2 &#123;</span><br><span class="line">   server 192.168.71.121:8081;</span><br><span class="line">   server 192.168.71.121:8082 weight=2;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/helloNginx/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<blockquote>
+<p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2017/helloNginx/">http://catalinali.top/2017/helloNginx/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
+</blockquote>
+
+          
         
       
     </div>
@@ -873,7 +916,7 @@
 
       
         
-          <p><img src="http://ou3np1yz4.bkt.clouddn.com/case_logo.jpg" alt="case_logo"><br>在平时的开发中不免接触到数据库,这里记录一些平时开发中遇到的细节问题，与大家共勉。</p>
+          <p><img src="http://upload-images.jianshu.io/upload_images/3962292-08c6dc75ad729db0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="case_logo"><br>在平时的开发中不免接触到数据库,这里记录一些平时开发中遇到的细节问题，与大家共勉。</p>
 <hr>
           <!--noindex-->
           <div class="post-button text-center">

@@ -103,13 +103,13 @@
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
 <meta property="og:description" content="我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/ConHashMap_logo.jpg">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/ConHashMap_1.jpg">
-<meta property="og:updated_time" content="2018-10-23T02:29:30.776Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-74587e0c863b9eaa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-11-12T06:41:52.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA并发编程(七)：并发容器（ConcurrentHashMap）">
 <meta name="twitter:description" content="我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。">
-<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/ConHashMap_logo.jpg">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -418,7 +418,7 @@
       
 
       
-        <p><img src="http://ou3np1yz4.bkt.clouddn.com/ConHashMap_logo.jpg" alt="volatile_logo"></p>
+        <p><img src="http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
 <blockquote>
 <p>我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。</p>
 </blockquote>
@@ -427,7 +427,7 @@
 <p>Segment本身就相当于一个HashMap对象。</p>
 <p>同HashMap一样，Segment包含一个HashEntry数组，数组中的每一个HashEntry既是一个键值对，也是一个链表的头节点。</p>
 <p>像这样的Segment对象，在ConcurrentHashMap集合中有2的N次方个，共同保存在一个名为segments的数组当中。<br>因此整个ConcurrentHashMap的结构如下：</p>
-<p><img src="http://ou3np1yz4.bkt.clouddn.com/ConHashMap_1.jpg" alt="ConHashMap_1"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3962292-74587e0c863b9eaa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ConHashMap_1"></p>
 <p>可以说，ConcurrentHashMap是一个二级哈希表。在一个总的哈希表下面，有若干个子哈希表。<br>这样的二级结构，和数据库的水平拆分有些相似。每一个Segment就好比一个高度自治的自治区。读写高度自治，Segment之间互不影响。</p>
 <p>这种结构下的ConcurrentHashMap有以下特点：</p>
 <ul>

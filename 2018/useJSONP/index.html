@@ -95,20 +95,20 @@
 
 
 
-<meta name="description" content="在日常开发中，不免遇到跨域的问题。在这里我们介绍使用Jsonp来解决ajax跨域的问题。">
+<meta name="description" content="在日常开发中，不免遇到跨域的问题。在这里我们介绍使用Jsonp来解决ajax跨域的问题">
 <meta name="keywords" content="jsonp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用JSONP解决ajax跨域">
 <meta property="og:url" content="http://catalinali.top/2018/useJSONP/index.html">
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
-<meta property="og:description" content="在日常开发中，不免遇到跨域的问题。在这里我们介绍使用Jsonp来解决ajax跨域的问题。">
+<meta property="og:description" content="在日常开发中，不免遇到跨域的问题。在这里我们介绍使用Jsonp来解决ajax跨域的问题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/jsonp_logo.jpg">
-<meta property="og:updated_time" content="2018-04-25T09:49:24.289Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-b47e508baa6ec6fd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-11-12T06:35:46.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用JSONP解决ajax跨域">
-<meta name="twitter:description" content="在日常开发中，不免遇到跨域的问题。在这里我们介绍使用Jsonp来解决ajax跨域的问题。">
-<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/jsonp_logo.jpg">
+<meta name="twitter:description" content="在日常开发中，不免遇到跨域的问题。在这里我们介绍使用Jsonp来解决ajax跨域的问题">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3962292-b47e508baa6ec6fd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -417,13 +417,13 @@
       
 
       
-        <p><img src="http://ou3np1yz4.bkt.clouddn.com/jsonp_logo.jpg" alt="jsonp_logo"></p>
+        <p><img src="http://upload-images.jianshu.io/upload_images/3962292-b47e508baa6ec6fd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jsonp_logo"></p>
 <blockquote>
-<p>在日常开发中，不免遇到跨域的问题。在这里我们介绍使用Jsonp来解决ajax跨域的问题。</p>
+<p>在日常开发中，不免遇到跨域的问题。在这里我们介绍使用Jsonp来解决ajax跨域的问题</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域?"></a>什么是跨域?</h2><p>跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器施加的安全限制。简单的理解就是开发时当客户端所在的工程与服务端的ip不同或者端口不同时进行请求，就产生了跨域，进而不能请求数据。</p>
-<h2 id="什么是JSONP"><a href="#什么是JSONP" class="headerlink" title="什么是JSONP?"></a>什么是JSONP?</h2><p>官方的说法是:JSONP(JSON with Padding)是一个非官方的协议，它允许在服务器端集成Script tags返回至客户端，通过javascript callback的形式实现跨域访问（这仅仅是JSONP简单的实现形式）。<br>我们都知道，JSON是一种数据交换格式。而JSONP是一种的数据调用方式。它利用&lt;script&gt;标签可以跨域的特性，将需要跨域获取的数据包在&lt;script&gt;标签中来达到目的。当我们需要使用JSONP时，客户端调用服务端时传递一个callback，这样服务端根据callback的有无就可以判断是否需要使用JSONP。可以简单的理解为带callback的json就是jsonp。</p>
+<h2 id="什么是JSONP"><a href="#什么是JSONP" class="headerlink" title="什么是JSONP?"></a>什么是JSONP?</h2><p>官方的说法是:JSONP(JSON with Padding)是一个非官方的协议，它允许在服务器端集成Script tags返回至客户端，通过javascript callback的形式实现跨域访问（这仅仅是JSONP简单的实现形式）。<br>我们都知道，JSON是一种数据交换格式。而JSONP是一种的数据调用方式。它利用<script>标签可以跨域的特性，将需要跨域获取的数据包在<script>标签中来达到目的。当我们需要使用JSONP时，客户端调用服务端时传递一个callback，这样服务端根据callback的有无就可以判断是否需要使用JSONP。可以简单的理解为带callback的json就是jsonp。</p>
 <h2 id="JSONP的使用"><a href="#JSONP的使用" class="headerlink" title="JSONP的使用"></a>JSONP的使用</h2><p>AJAX的使用与平常无异，只需要将dataType改为jsonp即可<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	url : url,</span><br><span class="line">	dataType : <span class="string">"jsonp"</span>,</span><br><span class="line">	type : <span class="string">"GET"</span>,</span><br><span class="line">	success : <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">              ...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>服务端接收到以后，只需要手动判断一下有无callback再手动拼一对括号即可,这里以java为例<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"xxx"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testJsonp</span><span class="params">(String callback)</span> </span>&#123;</span><br><span class="line">	Student result = <span class="keyword">new</span> Student();</span><br><span class="line">	<span class="comment">//响应结果之前，判断是否为jsonp请求</span></span><br><span class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(callback)) &#123;</span><br><span class="line">		<span class="comment">//把结果封装成一个js语句响应</span></span><br><span class="line">		<span class="keyword">return</span> callback + <span class="string">"("</span> + JsonUtils.objectToJson(result)  + <span class="string">");"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> JsonUtils.objectToJson(result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在Spring 4.1以上的版本也可以使用MappingJacksonValue来响应<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"xxx"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">testJsonp</span><span class="params">(String callback)</span> </span>&#123;</span><br><span class="line">    Student result = <span class="keyword">new</span> Student();</span><br><span class="line">	<span class="comment">//响应结果之前，判断是否为jsonp请求</span></span><br><span class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(callback)) &#123;</span><br><span class="line">		<span class="comment">//把结果封装成一个js语句响应</span></span><br><span class="line">		MappingJacksonValue mappingJacksonValue = <span class="keyword">new</span> MappingJacksonValue(result);</span><br><span class="line">		mappingJacksonValue.setJsonpFunction(callback);</span><br><span class="line">		<span class="keyword">return</span> mappingJacksonValue;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -432,7 +432,7 @@
 <blockquote>
 <p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/useJSONP/">http://catalinali.top/2018/useJSONP/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
 </blockquote>
-
+</script></p>
       
     </div>
 
@@ -702,7 +702,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是跨域"><span class="nav-number">1.</span> <span class="nav-text">什么是跨域?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是JSONP"><span class="nav-number">2.</span> <span class="nav-text">什么是JSONP?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP的使用"><span class="nav-number">3.</span> <span class="nav-text">JSONP的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是跨域"><span class="nav-number">1.</span> <span class="nav-text">什么是跨域?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是JSONP"><span class="nav-number">2.</span> <span class="nav-text">什么是JSONP?</span></a></li></ol></div>
             
 
           </div>

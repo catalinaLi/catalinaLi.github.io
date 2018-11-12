@@ -103,15 +103,15 @@
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
 <meta property="og:description" content="近年来前端一个明显的开发趋势就是架构从传统的 MVC 模式向 MVVM 模式迁移。在传统的 MVC 下，当前前端和后端发生数据交互后会刷新整个页面，从而导致比较差的用户体验。因此我们通过 Ajax 的方式和网关 REST API 作通讯，异步的刷新页面的某个区块，来优化和提升体验。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_logo.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_1.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_2.png">
-<meta property="og:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_3.png">
-<meta property="og:updated_time" content="2018-09-03T02:11:52.387Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-2a81793926834d13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-162fe3b8fcc01f81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-1a409887611e6e65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-dbd01a83b745d32d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-11-12T06:44:56.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解析Vue.js的MVVM模式">
 <meta name="twitter:description" content="近年来前端一个明显的开发趋势就是架构从传统的 MVC 模式向 MVVM 模式迁移。在传统的 MVC 下，当前前端和后端发生数据交互后会刷新整个页面，从而导致比较差的用户体验。因此我们通过 Ajax 的方式和网关 REST API 作通讯，异步的刷新页面的某个区块，来优化和提升体验。">
-<meta name="twitter:image" content="http://ou3np1yz4.bkt.clouddn.com/getMVVM_logo.png">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3962292-2a81793926834d13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -420,14 +420,14 @@
       
 
       
-        <p><img src="http://ou3np1yz4.bkt.clouddn.com/getMVVM_logo.png" alt="getMVVM_logo"></p>
+        <p><img src="http://upload-images.jianshu.io/upload_images/3962292-2a81793926834d13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="getMVVM_logo"></p>
 <blockquote>
 <p>近年来前端一个明显的开发趋势就是架构从传统的 MVC 模式向 MVVM 模式迁移。在传统的 MVC 下，当前前端和后端发生数据交互后会刷新整个页面，从而导致比较差的用户体验。因此我们通过 Ajax 的方式和网关 REST API 作通讯，异步的刷新页面的某个区块，来优化和提升体验。</p>
 </blockquote>
 <a id="more"></a>
 <hr>
-<h2 id="一、MVP模式"><a href="#一、MVP模式" class="headerlink" title="一、MVP模式"></a>一、MVP模式</h2><p>我们以前使用JQuery操作Dom的模式就是遵循了MVP模式,我们先来看一下MVP模式的图示：</p>
-<p><img src="http://ou3np1yz4.bkt.clouddn.com/getMVVM_1.png" alt="getMVVM_1"></p>
+<h2 id="一、MVP模式"><a href="#一、MVP模式" class="headerlink" title="一、MVP模式"></a>一、MVP模式</h2><p>我们以前使用JQuery操作Dom的模式就是遵循了MVP模式,我们来看一下MVP模式的图示：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3962292-162fe3b8fcc01f81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="getMVVM_1"></p>
 <ul>
 <li>视图（View）：用户界面。</li>
 <li>控制器（Presenter）：业务逻辑</li>
@@ -442,9 +442,9 @@
 <p>在我们常规的DOM操作中，Model层的数据一般通过AJAX获取，Presenter层通常就是我们的js逻辑而相应的View就是我们用户看到的界面。</p>
 <h2 id="二、MVVM模式"><a href="#二、MVVM模式" class="headerlink" title="二、MVVM模式"></a>二、MVVM模式</h2><p>MVVM是Model-View-ViewModel的简写。它本质上就是MVP的改进版。MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。</p>
 <p>我们先来看一下图示：</p>
-<p><img src="http://ou3np1yz4.bkt.clouddn.com/getMVVM_2.png" alt="getMVVM_2"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3962292-1a409887611e6e65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="getMVVM_2"></p>
 <p>它与MVP的区别在于它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。Vue.js 正是采用了这种模式：</p>
-<p><img src="http://ou3np1yz4.bkt.clouddn.com/getMVVM_3.png" alt="getMVVM_3"><br>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对比较轻量级的JS 库，API 简洁，很容易上手。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3962292-dbd01a83b745d32d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="getMVVM_3"><br>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对比较轻量级的JS 库，API 简洁，很容易上手。</p>
 <p>小伙伴们，快来试试Vue.js吧！</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html" target="_blank" rel="noopener">MVC，MVP 和 MVVM 的图示</a></p>
 <hr>
