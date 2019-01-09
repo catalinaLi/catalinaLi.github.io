@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://catalinali.top/2019/knowCOWList/</loc>
+    <lastmod>2019-01-09T03:03:04.045Z</lastmod>
+    <data>
+        <display>
+        <title>（转载）JAVA并发编程(八)：并发容器（CopyOnWriteArrayList）</title>
+        <pubTime>2019-01-09T03:02:15.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2018/singletonPattern/</loc>
     <lastmod>2018-11-12T06:51:32.964Z</lastmod>
     <data>
