@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://catalinali.top/2019/solveConcurrency/</loc>
+    <lastmod>2019-04-02T02:37:11.452Z</lastmod>
+    <data>
+        <display>
+        <title>应对大并发</title>
+        <pubTime>2019-04-02T02:36:32.000Z</pubTime>
+        
+        <tag>concurrency</tag>
+         
+         
+           
+             
+              <breadCrumb title="concurrency" url="http://catalinali.top/categories/concurrency/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2019/knowCOWList/</loc>
-    <lastmod>2019-01-09T03:03:04.045Z</lastmod>
+    <lastmod>2019-01-09T03:04:12.734Z</lastmod>
     <data>
         <display>
         <title>（转载）JAVA并发编程(八)：并发容器（CopyOnWriteArrayList）</title>

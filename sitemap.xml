@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://catalinali.top/2019/solveConcurrency/</loc>
+    
+    <lastmod>2019-04-02T02:37:11.452Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://catalinali.top/2019/knowCOWList/</loc>
     
-    <lastmod>2019-01-09T03:03:04.045Z</lastmod>
+    <lastmod>2019-01-09T03:04:12.734Z</lastmod>
     
   </url>
   
@@ -268,14 +275,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/about/index.html</loc>
+    <loc>http://catalinali.top/categories/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/categories/index.html</loc>
+    <loc>http://catalinali.top/about/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
