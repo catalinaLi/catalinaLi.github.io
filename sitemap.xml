@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://catalinali.top/2017/helloNginx/</loc>
+    
+    <lastmod>2019-06-20T01:53:42.180Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/useJSONP/</loc>
+    
+    <lastmod>2019-06-20T01:48:43.519Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://catalinali.top/2019/solveConcurrency/</loc>
     
     <lastmod>2019-04-02T02:37:11.452Z</lastmod>
@@ -40,13 +54,6 @@
     <loc>http://catalinali.top/2018/startEureka/</loc>
     
     <lastmod>2018-11-12T06:49:48.420Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2017/helloNginx/</loc>
-    
-    <lastmod>2018-11-12T06:49:17.794Z</lastmod>
     
   </url>
   
@@ -254,13 +261,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/useJSONP/</loc>
-    
-    <lastmod>2018-11-12T06:35:46.603Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2017/useMQ/</loc>
     
     <lastmod>2018-11-12T06:35:05.543Z</lastmod>
@@ -275,14 +275,14 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/categories/index.html</loc>
+    <loc>http://catalinali.top/about/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://catalinali.top/about/index.html</loc>
+    <loc>http://catalinali.top/categories/index.html</loc>
     
     <lastmod>2018-04-25T09:49:24.291Z</lastmod>
     
