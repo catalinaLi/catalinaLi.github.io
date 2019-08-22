@@ -2,6 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    
+    <lastmod>2019-08-22T06:25:47.391Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2019/solveConcurrency/</loc>
+    
+    <lastmod>2019-08-22T06:25:32.523Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/proxyPattern/</loc>
+    
+    <lastmod>2019-08-22T06:25:18.544Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/knowHashMap/</loc>
+    
+    <lastmod>2019-08-22T06:24:42.292Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2019/knowCOWList/</loc>
+    
+    <lastmod>2019-08-22T06:24:36.328Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/knowConHashMap/</loc>
+    
+    <lastmod>2019-08-22T06:24:20.266Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/helloThreadPool/</loc>
+    
+    <lastmod>2019-08-22T06:24:00.592Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
+    
+    <lastmod>2019-08-22T06:23:52.788Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/helloLatch/</loc>
+    
+    <lastmod>2019-08-22T06:23:40.680Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/helloCAS/</loc>
+    
+    <lastmod>2019-08-22T06:23:27.361Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://catalinali.top/2018/helloCallable/</loc>
+    
+    <lastmod>2019-08-22T06:23:19.238Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://catalinali.top/2017/helloNginx/</loc>
     
     <lastmod>2019-06-20T01:53:42.180Z</lastmod>
@@ -16,20 +93,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2019/solveConcurrency/</loc>
-    
-    <lastmod>2019-04-02T02:37:11.452Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2019/knowCOWList/</loc>
-    
-    <lastmod>2019-01-09T03:04:12.734Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2018/singletonPattern/</loc>
     
     <lastmod>2018-11-12T06:51:32.964Z</lastmod>
@@ -40,13 +103,6 @@
     <loc>http://catalinali.top/2018/startZuul/</loc>
     
     <lastmod>2018-11-12T06:50:37.663Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    
-    <lastmod>2018-11-12T06:50:14.818Z</lastmod>
     
   </url>
   
@@ -93,44 +149,9 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/helloCallable/</loc>
-    
-    <lastmod>2018-11-12T06:44:46.012Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2018/helloCAS/</loc>
-    
-    <lastmod>2018-11-12T06:44:32.571Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2017/helloDubbo/</loc>
     
     <lastmod>2018-11-12T06:44:20.385Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2018/helloLatch/</loc>
-    
-    <lastmod>2018-11-12T06:44:07.454Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
-    
-    <lastmod>2018-11-12T06:43:39.701Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2018/helloThreadPool/</loc>
-    
-    <lastmod>2018-11-12T06:43:22.745Z</lastmod>
     
   </url>
   
@@ -156,20 +177,6 @@
   </url>
   
   <url>
-    <loc>http://catalinali.top/2018/knowConHashMap/</loc>
-    
-    <lastmod>2018-11-12T06:41:52.947Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2018/knowHashMap/</loc>
-    
-    <lastmod>2018-11-12T06:41:38.833Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://catalinali.top/2018/noteGithubGitlab/</loc>
     
     <lastmod>2018-11-12T06:41:24.768Z</lastmod>
@@ -180,13 +187,6 @@
     <loc>http://catalinali.top/2018/noteHexoBak/</loc>
     
     <lastmod>2018-11-12T06:41:08.446Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://catalinali.top/2018/proxyPattern/</loc>
-    
-    <lastmod>2018-11-12T06:40:53.702Z</lastmod>
     
   </url>
   

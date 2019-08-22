@@ -4,6 +4,226 @@
 
     
   <url>
+    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
+    <lastmod>2019-08-22T06:25:47.391Z</lastmod>
+    <data>
+        <display>
+        <title>微信开发之微信网页授权获取openid</title>
+        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
+        
+        <tag>wechat</tag>
+         
+         
+           
+             
+              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2019/solveConcurrency/</loc>
+    <lastmod>2019-08-22T06:25:32.523Z</lastmod>
+    <data>
+        <display>
+        <title>应对大并发</title>
+        <pubTime>2019-04-02T02:36:32.000Z</pubTime>
+        
+        <tag>concurrency</tag>
+         
+         
+           
+             
+              <breadCrumb title="concurrency" url="http://catalinali.top/categories/concurrency/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/proxyPattern/</loc>
+    <lastmod>2019-08-22T06:25:18.544Z</lastmod>
+    <data>
+        <display>
+        <title>（转载）Java设计模式之代理模式</title>
+        <pubTime>2018-08-29T03:22:19.000Z</pubTime>
+        
+        <tag>design-patterns</tag>
+         
+         
+           
+             
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/knowHashMap/</loc>
+    <lastmod>2019-08-22T06:24:42.292Z</lastmod>
+    <data>
+        <display>
+        <title>深入理解HashMap</title>
+        <pubTime>2018-10-19T01:46:26.000Z</pubTime>
+        
+        <tag>HashMap</tag>
+         
+         
+           
+             
+              <breadCrumb title="HashMap" url="http://catalinali.top/categories/HashMap/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2019/knowCOWList/</loc>
+    <lastmod>2019-08-22T06:24:36.328Z</lastmod>
+    <data>
+        <display>
+        <title>（转载）JAVA并发编程(八)：并发容器（CopyOnWriteArrayList）</title>
+        <pubTime>2019-01-09T03:02:15.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/knowConHashMap/</loc>
+    <lastmod>2019-08-22T06:24:20.266Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(七)：并发容器（ConcurrentHashMap）</title>
+        <pubTime>2018-10-23T02:27:00.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloThreadPool/</loc>
+    <lastmod>2019-08-22T06:24:00.592Z</lastmod>
+    <data>
+        <display>
+        <title>（转载）JAVA并发编程(四)：线程池的使用</title>
+        <pubTime>2018-08-27T02:48:41.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
+    <lastmod>2019-08-22T06:23:52.788Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(六)：线程本地变量ThreadLocal与TransmittableThreadLocal</title>
+        <pubTime>2018-08-28T01:44:53.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloLatch/</loc>
+    <lastmod>2019-08-22T06:23:40.680Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(三)：同步的辅助类之闭锁（CountDownLatch）与循环屏障（CyclicBarrier）</title>
+        <pubTime>2018-08-23T11:11:08.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloCAS/</loc>
+    <lastmod>2019-08-22T06:23:27.361Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(二)：理解CAS机制</title>
+        <pubTime>2018-08-19T06:09:25.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloCallable/</loc>
+    <lastmod>2019-08-22T06:23:19.238Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(五)：创建线程的第三种方式：实现Callable接口</title>
+        <pubTime>2018-08-27T02:49:54.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2017/helloNginx/</loc>
     <lastmod>2019-06-20T01:53:42.180Z</lastmod>
     <data>
@@ -44,46 +264,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2019/solveConcurrency/</loc>
-    <lastmod>2019-04-02T02:37:11.452Z</lastmod>
-    <data>
-        <display>
-        <title>应对大并发</title>
-        <pubTime>2019-04-02T02:36:32.000Z</pubTime>
-        
-        <tag>concurrency</tag>
-         
-         
-           
-             
-              <breadCrumb title="concurrency" url="http://catalinali.top/categories/concurrency/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2019/knowCOWList/</loc>
-    <lastmod>2019-01-09T03:04:12.734Z</lastmod>
-    <data>
-        <display>
-        <title>（转载）JAVA并发编程(八)：并发容器（CopyOnWriteArrayList）</title>
-        <pubTime>2019-01-09T03:02:15.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2018/singletonPattern/</loc>
     <lastmod>2018-11-12T06:51:32.964Z</lastmod>
     <data>
@@ -117,26 +297,6 @@
            
              
               <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    <lastmod>2018-11-12T06:50:14.818Z</lastmod>
-    <data>
-        <display>
-        <title>微信开发之微信网页授权获取openid</title>
-        <pubTime>2018-02-26T08:21:09.000Z</pubTime>
-        
-        <tag>wechat</tag>
-         
-         
-           
-             
-              <breadCrumb title="wechat" url="http://catalinali.top/categories/wechat/"/>
           
         </display>
     </data>
@@ -264,46 +424,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/helloCallable/</loc>
-    <lastmod>2018-11-12T06:44:46.012Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(五)：创建线程的第三种方式：实现Callable接口</title>
-        <pubTime>2018-08-27T02:49:54.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloCAS/</loc>
-    <lastmod>2018-11-12T06:44:32.571Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(二)：理解CAS机制</title>
-        <pubTime>2018-08-19T06:09:25.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/helloDubbo/</loc>
     <lastmod>2018-11-12T06:44:20.385Z</lastmod>
     <data>
@@ -317,66 +437,6 @@
            
              
               <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloLatch/</loc>
-    <lastmod>2018-11-12T06:44:07.454Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(三)：同步的辅助类之闭锁（CountDownLatch）与循环屏障（CyclicBarrier）</title>
-        <pubTime>2018-08-23T11:11:08.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
-    <lastmod>2018-11-12T06:43:39.701Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(六)：线程本地变量ThreadLocal与TransmittableThreadLocal</title>
-        <pubTime>2018-08-28T01:44:53.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloThreadPool/</loc>
-    <lastmod>2018-11-12T06:43:22.745Z</lastmod>
-    <data>
-        <display>
-        <title>（转载）JAVA并发编程(四)：线程池的使用</title>
-        <pubTime>2018-08-27T02:48:41.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
           
         </display>
     </data>
@@ -446,46 +506,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/knowConHashMap/</loc>
-    <lastmod>2018-11-12T06:41:52.947Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(七)：并发容器（ConcurrentHashMap）</title>
-        <pubTime>2018-10-23T02:27:00.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/knowHashMap/</loc>
-    <lastmod>2018-11-12T06:41:38.833Z</lastmod>
-    <data>
-        <display>
-        <title>深入理解HashMap</title>
-        <pubTime>2018-10-19T01:46:26.000Z</pubTime>
-        
-        <tag>HashMap</tag>
-         
-         
-           
-             
-              <breadCrumb title="HashMap" url="http://catalinali.top/categories/HashMap/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2018/noteGithubGitlab/</loc>
     <lastmod>2018-11-12T06:41:24.768Z</lastmod>
     <data>
@@ -523,26 +543,6 @@
            
              
               <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/proxyPattern/</loc>
-    <lastmod>2018-11-12T06:40:53.702Z</lastmod>
-    <data>
-        <display>
-        <title>（转载）Java设计模式之代理模式</title>
-        <pubTime>2018-08-29T03:22:19.000Z</pubTime>
-        
-        <tag>design-patterns</tag>
-         
-         
-           
-             
-              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
           
         </display>
     </data>

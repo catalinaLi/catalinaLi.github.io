@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://catalinali.top/"/>
-  <updated>2019-04-02T02:37:11.452Z</updated>
+  <updated>2019-08-22T06:25:32.523Z</updated>
   <id>http://catalinali.top/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://catalinali.top/2019/solveConcurrency/"/>
     <id>http://catalinali.top/2019/solveConcurrency/</id>
     <published>2019-04-02T02:36:32.000Z</published>
-    <updated>2019-04-02T02:37:11.452Z</updated>
+    <updated>2019-08-22T06:25:32.523Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1g1o385hp0tj30lo0dxtbf.jpg" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1g1o385hp0tj30lo0dxtbf.jpg" alt="concurrency_logo"></p>
 <blockquote>
 <p>高并发是我们现在老生常谈的内容了，这里我们以秒杀为例，来聊聊怎么应对大并发。</p>
 </blockquote>
@@ -57,7 +57,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/005BYqpgly1g1o385hp0tj30lo0dxtbf.jpg&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/005BYqpgly1g1o385hp0tj30lo0dxtbf.jpg&quot; alt=&quot;concurrency_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;高并发是我们现在老生常谈的内容了，这里我们以秒杀为例，来聊聊怎么应对大并发。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -76,9 +76,9 @@
     <link href="http://catalinali.top/2019/knowCOWList/"/>
     <id>http://catalinali.top/2019/knowCOWList/</id>
     <published>2019-01-09T03:02:15.000Z</published>
-    <updated>2019-01-09T03:04:12.734Z</updated>
+    <updated>2019-08-22T06:24:36.328Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1fz0594lpabj30lo0c7myu.jpg" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1fz0594lpabj30lo0c7myu.jpg" alt="cowlist_logo"></p>
 <blockquote>
 <p>Copy-On-Write简称COW，是一种用于程序设计中的优化策略。其基本思路是，从一开始大家都在共享同一个内容，当某个人想要修改这个内容的时候，才会真正把内容Copy出去形成一个新的内容然后再改，这是一种延时懒惰策略。从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet。CopyOnWrite容器非常有用，可以在非常多的并发场景中使用到。</p>
 </blockquote>
@@ -108,7 +108,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/005BYqpgly1fz0594lpabj30lo0c7myu.jpg&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/005BYqpgly1fz0594lpabj30lo0c7myu.jpg&quot; alt=&quot;cowlist_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Copy-On-Write简称COW，是一种用于程序设计中的优化策略。其基本思路是，从一开始大家都在共享同一个内容，当某个人想要修改这个内容的时候，才会真正把内容Copy出去形成一个新的内容然后再改，这是一种延时懒惰策略。从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet。CopyOnWrite容器非常有用，可以在非常多的并发场景中使用到。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -127,9 +127,9 @@
     <link href="http://catalinali.top/2018/knowConHashMap/"/>
     <id>http://catalinali.top/2018/knowConHashMap/</id>
     <published>2018-10-23T02:27:00.000Z</published>
-    <updated>2018-11-12T06:41:52.947Z</updated>
+    <updated>2019-08-22T06:24:20.266Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="concurrmap_logo"></p>
 <blockquote>
 <p>我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。</p>
 </blockquote>
@@ -169,7 +169,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;concurrmap_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -188,9 +188,9 @@
     <link href="http://catalinali.top/2018/knowHashMap/"/>
     <id>http://catalinali.top/2018/knowHashMap/</id>
     <published>2018-10-19T01:46:26.000Z</published>
-    <updated>2018-11-12T06:41:38.833Z</updated>
+    <updated>2019-08-22T06:24:42.292Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="redis_logo"></p>
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_logo"></p>
 <blockquote>
 <p>HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。</p>
 </blockquote>
@@ -230,7 +230,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;redis_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;hashmap_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -384,9 +384,9 @@
     <link href="http://catalinali.top/2018/proxyPattern/"/>
     <id>http://catalinali.top/2018/proxyPattern/</id>
     <published>2018-08-29T03:22:19.000Z</published>
-    <updated>2018-11-12T06:40:53.702Z</updated>
+    <updated>2019-08-22T06:25:18.544Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-7c035942db875458.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-7c035942db875458.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="agent_logo"></p>
 <blockquote>
 <p>设计模式是语言的表达方式，它能让语言轻便而富有内涵、易读却功能强大。代理模式在Java中十分常见，有为扩展某些类的功能而使用静态代理，也有如Spring实现AOP而使用动态代理，更有RPC实现中使用的调用端调用的代理服务。代理模型除了是一种设计模式之外，它更是一种思维，所以探讨并深入理解这种模型是非常有必要的。</p>
 </blockquote>
@@ -465,7 +465,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-7c035942db875458.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-7c035942db875458.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;agent_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;设计模式是语言的表达方式，它能让语言轻便而富有内涵、易读却功能强大。代理模式在Java中十分常见，有为扩展某些类的功能而使用静态代理，也有如Spring实现AOP而使用动态代理，更有RPC实现中使用的调用端调用的代理服务。代理模型除了是一种设计模式之外，它更是一种思维，所以探讨并深入理解这种模型是非常有必要的。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -484,9 +484,9 @@
     <link href="http://catalinali.top/2018/helloThreadLocal/"/>
     <id>http://catalinali.top/2018/helloThreadLocal/</id>
     <published>2018-08-28T01:44:53.000Z</published>
-    <updated>2018-11-12T06:43:39.701Z</updated>
+    <updated>2019-08-22T06:23:52.788Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-9a65cf48d4f39524.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-9a65cf48d4f39524.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="threadlocal_logo"></p>
 <blockquote>
 <p>我们知道有时候一个对象的共享变量会被多个线程所访问，这时就会有线程安全问题。当然我们可以使用synchorinized 关键字来为此变量加锁，进行同步处理。从而限制只能有一个线程来使用此变量，但是加锁会大大影响程序执行效率，此外我们还可以使用ThreadLocal来解决对某一个变量的访问冲突问题。</p>
 </blockquote>
@@ -516,7 +516,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-9a65cf48d4f39524.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-9a65cf48d4f39524.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;threadlocal_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我们知道有时候一个对象的共享变量会被多个线程所访问，这时就会有线程安全问题。当然我们可以使用synchorinized 关键字来为此变量加锁，进行同步处理。从而限制只能有一个线程来使用此变量，但是加锁会大大影响程序执行效率，此外我们还可以使用ThreadLocal来解决对某一个变量的访问冲突问题。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -535,9 +535,9 @@
     <link href="http://catalinali.top/2018/helloCallable/"/>
     <id>http://catalinali.top/2018/helloCallable/</id>
     <published>2018-08-27T02:49:54.000Z</published>
-    <updated>2018-11-12T06:44:46.012Z</updated>
+    <updated>2019-08-22T06:23:19.238Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a886bc10a753b44e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a886bc10a753b44e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="callable_logo"></p>
 <blockquote>
 <p>众所周知创建线程的方式有两种：1.继承Thread类。2.实现Runnable接口。从jdk1.5开始，提供了另一种创建线程的方式。今天我们就来看看这第三种方式：实现Callable接口</p>
 </blockquote>
@@ -573,7 +573,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-a886bc10a753b44e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-a886bc10a753b44e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;callable_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;众所周知创建线程的方式有两种：1.继承Thread类。2.实现Runnable接口。从jdk1.5开始，提供了另一种创建线程的方式。今天我们就来看看这第三种方式：实现Callable接口&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -592,9 +592,9 @@
     <link href="http://catalinali.top/2018/helloThreadPool/"/>
     <id>http://catalinali.top/2018/helloThreadPool/</id>
     <published>2018-08-27T02:48:41.000Z</published>
-    <updated>2018-11-12T06:43:22.745Z</updated>
+    <updated>2019-08-22T06:24:00.592Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-32986334ff3bf845.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-32986334ff3bf845.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="threadpool_logo"></p>
 <blockquote>
 <p>如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。今天我们就来详细讲解一下Java的线程池。</p>
 </blockquote>
@@ -684,7 +684,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-32986334ff3bf845.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-32986334ff3bf845.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;threadpool_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。今天我们就来详细讲解一下Java的线程池。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -703,9 +703,9 @@
     <link href="http://catalinali.top/2018/helloLatch/"/>
     <id>http://catalinali.top/2018/helloLatch/</id>
     <published>2018-08-23T11:11:08.000Z</published>
-    <updated>2018-11-12T06:44:07.454Z</updated>
+    <updated>2019-08-22T06:23:40.680Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a0fa086b5465c2e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a0fa086b5465c2e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="countdownlatch_logo"></p>
 <blockquote>
 <p>jdk1.5的concurrent包为我们提供了很多有用的辅助类，今天我们来学习一下</p>
 </blockquote>
@@ -736,7 +736,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-a0fa086b5465c2e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-a0fa086b5465c2e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;countdownlatch_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;jdk1.5的concurrent包为我们提供了很多有用的辅助类，今天我们来学习一下&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -755,9 +755,9 @@
     <link href="http://catalinali.top/2018/helloCAS/"/>
     <id>http://catalinali.top/2018/helloCAS/</id>
     <published>2018-08-19T06:09:25.000Z</published>
-    <updated>2018-11-12T06:44:32.571Z</updated>
+    <updated>2019-08-22T06:23:27.361Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-e74f791fa0e5c43f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-e74f791fa0e5c43f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cas_logo"></p>
 <blockquote>
 <p>也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，所以很多地方也称之为自旋。</p>
 </blockquote>
@@ -783,7 +783,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-e74f791fa0e5c43f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-e74f791fa0e5c43f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;cas_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，所以很多地方也称之为自旋。&lt;/p&gt;
 &lt;/blockquote&gt;

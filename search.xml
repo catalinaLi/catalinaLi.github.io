@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[应对大并发]]></title>
       <url>/2019/solveConcurrency/</url>
-      <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1g1o385hp0tj30lo0dxtbf.jpg" alt="volatile_logo"></p>
+      <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1g1o385hp0tj30lo0dxtbf.jpg" alt="concurrency_logo"></p>
 <blockquote>
 <p>高并发是我们现在老生常谈的内容了，这里我们以秒杀为例，来聊聊怎么应对大并发。</p>
 </blockquote>
@@ -56,7 +56,7 @@
     <entry>
       <title><![CDATA[（转载）JAVA并发编程(八)：并发容器（CopyOnWriteArrayList）]]></title>
       <url>/2019/knowCOWList/</url>
-      <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1fz0594lpabj30lo0c7myu.jpg" alt="volatile_logo"></p>
+      <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1fz0594lpabj30lo0c7myu.jpg" alt="cowlist_logo"></p>
 <blockquote>
 <p>Copy-On-Write简称COW，是一种用于程序设计中的优化策略。其基本思路是，从一开始大家都在共享同一个内容，当某个人想要修改这个内容的时候，才会真正把内容Copy出去形成一个新的内容然后再改，这是一种延时懒惰策略。从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet。CopyOnWrite容器非常有用，可以在非常多的并发场景中使用到。</p>
 </blockquote>
@@ -102,7 +102,7 @@
     <entry>
       <title><![CDATA[JAVA并发编程(七)：并发容器（ConcurrentHashMap）]]></title>
       <url>/2018/knowConHashMap/</url>
-      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="concurrmap_logo"></p>
 <blockquote>
 <p>我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。</p>
 </blockquote>
@@ -158,7 +158,7 @@
     <entry>
       <title><![CDATA[深入理解HashMap]]></title>
       <url>/2018/knowHashMap/</url>
-      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="redis_logo"></p>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_logo"></p>
 <blockquote>
 <p>HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。</p>
 </blockquote>
@@ -339,7 +339,7 @@
     <entry>
       <title><![CDATA[（转载）Java设计模式之代理模式]]></title>
       <url>/2018/proxyPattern/</url>
-      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-7c035942db875458.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-7c035942db875458.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="agent_logo"></p>
 <blockquote>
 <p>设计模式是语言的表达方式，它能让语言轻便而富有内涵、易读却功能强大。代理模式在Java中十分常见，有为扩展某些类的功能而使用静态代理，也有如Spring实现AOP而使用动态代理，更有RPC实现中使用的调用端调用的代理服务。代理模型除了是一种设计模式之外，它更是一种思维，所以探讨并深入理解这种模型是非常有必要的。</p>
 </blockquote>
@@ -434,7 +434,7 @@
     <entry>
       <title><![CDATA[JAVA并发编程(六)：线程本地变量ThreadLocal与TransmittableThreadLocal]]></title>
       <url>/2018/helloThreadLocal/</url>
-      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-9a65cf48d4f39524.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-9a65cf48d4f39524.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="threadlocal_logo"></p>
 <blockquote>
 <p>我们知道有时候一个对象的共享变量会被多个线程所访问，这时就会有线程安全问题。当然我们可以使用synchorinized 关键字来为此变量加锁，进行同步处理。从而限制只能有一个线程来使用此变量，但是加锁会大大影响程序执行效率，此外我们还可以使用ThreadLocal来解决对某一个变量的访问冲突问题。</p>
 </blockquote>
@@ -480,7 +480,7 @@
     <entry>
       <title><![CDATA[JAVA并发编程(五)：创建线程的第三种方式：实现Callable接口]]></title>
       <url>/2018/helloCallable/</url>
-      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a886bc10a753b44e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a886bc10a753b44e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="callable_logo"></p>
 <blockquote>
 <p>众所周知创建线程的方式有两种：1.继承Thread类。2.实现Runnable接口。从jdk1.5开始，提供了另一种创建线程的方式。今天我们就来看看这第三种方式：实现Callable接口</p>
 </blockquote>
@@ -532,7 +532,7 @@
     <entry>
       <title><![CDATA[（转载）JAVA并发编程(四)：线程池的使用]]></title>
       <url>/2018/helloThreadPool/</url>
-      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-32986334ff3bf845.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-32986334ff3bf845.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="threadpool_logo"></p>
 <blockquote>
 <p>如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。今天我们就来详细讲解一下Java的线程池。</p>
 </blockquote>
@@ -638,7 +638,7 @@
     <entry>
       <title><![CDATA[JAVA并发编程(三)：同步的辅助类之闭锁（CountDownLatch）与循环屏障（CyclicBarrier）]]></title>
       <url>/2018/helloLatch/</url>
-      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a0fa086b5465c2e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a0fa086b5465c2e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="countdownlatch_logo"></p>
 <blockquote>
 <p>jdk1.5的concurrent包为我们提供了很多有用的辅助类，今天我们来学习一下</p>
 </blockquote>
@@ -685,7 +685,7 @@
     <entry>
       <title><![CDATA[JAVA并发编程(二)：理解CAS机制]]></title>
       <url>/2018/helloCAS/</url>
-      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-e74f791fa0e5c43f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+      <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-e74f791fa0e5c43f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cas_logo"></p>
 <blockquote>
 <p>也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，所以很多地方也称之为自旋。</p>
 </blockquote>
