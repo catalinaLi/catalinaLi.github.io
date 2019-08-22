@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>http://catalinali.top/2017/installjira/</loc>
+    <lastmod>2019-08-22T08:20:44.239Z</lastmod>
+    <data>
+        <display>
+        <title>centos7下破解安装JIRA 7.2</title>
+        <pubTime>2017-08-16T03:41:50.000Z</pubTime>
+        
+        <tag>jira</tag>
+         
+         
+           
+             
+              <breadCrumb title="jira" url="http://catalinali.top/categories/jira/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startZuul/</loc>
+    <lastmod>2019-08-22T08:10:26.864Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(五)：路由网关（Zuul）</title>
+        <pubTime>2018-07-10T10:15:28.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/knowHashMap/</loc>
+    <lastmod>2019-08-22T08:04:14.098Z</lastmod>
+    <data>
+        <display>
+        <title>深入理解HashMap</title>
+        <pubTime>2018-10-19T01:46:26.000Z</pubTime>
+        
+        <tag>HashMap</tag>
+         
+         
+           
+             
+              <breadCrumb title="HashMap" url="http://catalinali.top/categories/HashMap/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://catalinali.top/2018/wechatOAuth/</loc>
     <lastmod>2019-08-22T07:56:26.525Z</lastmod>
     <data>
@@ -126,26 +186,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/startZuul/</loc>
-    <lastmod>2019-08-22T07:53:38.329Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(五)：路由网关（Zuul）</title>
-        <pubTime>2018-07-10T10:15:28.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2018/startSpringBoot/</loc>
     <lastmod>2019-08-22T07:51:24.177Z</lastmod>
     <data>
@@ -153,9 +193,9 @@
         <title>使用IDEA搭建第一个SpringBoot程序</title>
         <pubTime>2018-01-27T09:25:26.000Z</pubTime>
         
-        <tag>SpringBoot</tag>
-         
         <tag>IDEA</tag>
+         
+        <tag>SpringBoot</tag>
          
          
            
@@ -392,26 +432,6 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/installjira/</loc>
-    <lastmod>2019-08-22T07:28:18.097Z</lastmod>
-    <data>
-        <display>
-        <title>centos7下破解安装JIRA 7.2</title>
-        <pubTime>2017-08-16T03:41:50.000Z</pubTime>
-        
-        <tag>jira</tag>
-         
-         
-           
-             
-              <breadCrumb title="jira" url="http://catalinali.top/categories/jira/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/IDEABuildSSM/</loc>
     <lastmod>2019-08-22T07:01:45.508Z</lastmod>
     <data>
@@ -419,9 +439,9 @@
         <title>记录：使用IDEA搭建Maven+SSM的过程</title>
         <pubTime>2017-08-15T07:51:18.000Z</pubTime>
         
-        <tag>IDEA</tag>
-         
         <tag>SSM</tag>
+         
+        <tag>IDEA</tag>
          
          
            
@@ -687,26 +707,6 @@
            
              
               <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/knowHashMap/</loc>
-    <lastmod>2019-08-22T06:46:57.583Z</lastmod>
-    <data>
-        <display>
-        <title>深入理解HashMap</title>
-        <pubTime>2018-10-19T01:46:26.000Z</pubTime>
-        
-        <tag>HashMap</tag>
-         
-         
-           
-             
-              <breadCrumb title="HashMap" url="http://catalinali.top/categories/HashMap/"/>
           
         </display>
     </data>
