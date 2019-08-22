@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://catalinali.top/"/>
-  <updated>2019-08-22T06:25:32.523Z</updated>
+  <updated>2019-08-22T06:39:50.664Z</updated>
   <id>http://catalinali.top/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://catalinali.top/2019/solveConcurrency/"/>
     <id>http://catalinali.top/2019/solveConcurrency/</id>
     <published>2019-04-02T02:36:32.000Z</published>
-    <updated>2019-08-22T06:25:32.523Z</updated>
+    <updated>2019-08-22T06:39:50.664Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1g1o385hp0tj30lo0dxtbf.jpg" alt="concurrency_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/concurrency_logo.jpg" alt="concurrency_logo"></p>
 <blockquote>
 <p>高并发是我们现在老生常谈的内容了，这里我们以秒杀为例，来聊聊怎么应对大并发。</p>
 </blockquote>
@@ -57,7 +57,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/005BYqpgly1g1o385hp0tj30lo0dxtbf.jpg&quot; alt=&quot;concurrency_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/concurrency_logo.jpg&quot; alt=&quot;concurrency_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;高并发是我们现在老生常谈的内容了，这里我们以秒杀为例，来聊聊怎么应对大并发。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -76,9 +76,9 @@
     <link href="http://catalinali.top/2019/knowCOWList/"/>
     <id>http://catalinali.top/2019/knowCOWList/</id>
     <published>2019-01-09T03:02:15.000Z</published>
-    <updated>2019-08-22T06:24:36.328Z</updated>
+    <updated>2019-08-22T06:40:40.692Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws3.sinaimg.cn/large/005BYqpgly1fz0594lpabj30lo0c7myu.jpg" alt="cowlist_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/cowlist_logo.jpg" alt="cowlist_logo"></p>
 <blockquote>
 <p>Copy-On-Write简称COW，是一种用于程序设计中的优化策略。其基本思路是，从一开始大家都在共享同一个内容，当某个人想要修改这个内容的时候，才会真正把内容Copy出去形成一个新的内容然后再改，这是一种延时懒惰策略。从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet。CopyOnWrite容器非常有用，可以在非常多的并发场景中使用到。</p>
 </blockquote>
@@ -108,7 +108,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/005BYqpgly1fz0594lpabj30lo0c7myu.jpg&quot; alt=&quot;cowlist_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/cowlist_logo.jpg&quot; alt=&quot;cowlist_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Copy-On-Write简称COW，是一种用于程序设计中的优化策略。其基本思路是，从一开始大家都在共享同一个内容，当某个人想要修改这个内容的时候，才会真正把内容Copy出去形成一个新的内容然后再改，这是一种延时懒惰策略。从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet。CopyOnWrite容器非常有用，可以在非常多的并发场景中使用到。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -127,9 +127,9 @@
     <link href="http://catalinali.top/2018/knowConHashMap/"/>
     <id>http://catalinali.top/2018/knowConHashMap/</id>
     <published>2018-10-23T02:27:00.000Z</published>
-    <updated>2019-08-22T06:24:20.266Z</updated>
+    <updated>2019-08-22T06:41:56.623Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="concurrmap_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/concurrmap_logo.jpg" alt="concurrmap_logo"></p>
 <blockquote>
 <p>我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。</p>
 </blockquote>
@@ -138,7 +138,7 @@
 <p>Segment本身就相当于一个HashMap对象。</p>
 <p>同HashMap一样，Segment包含一个HashEntry数组，数组中的每一个HashEntry既是一个键值对，也是一个链表的头节点。</p>
 <p>像这样的Segment对象，在ConcurrentHashMap集合中有2的N次方个，共同保存在一个名为segments的数组当中。<br>因此整个ConcurrentHashMap的结构如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3962292-74587e0c863b9eaa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ConHashMap_1"></p>
+<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/ConHashMap_1.jpg" alt="ConHashMap_1"></p>
 <p>可以说，ConcurrentHashMap是一个二级哈希表。在一个总的哈希表下面，有若干个子哈希表。<br>这样的二级结构，和数据库的水平拆分有些相似。每一个Segment就好比一个高度自治的自治区。读写高度自治，Segment之间互不影响。</p>
 <p>这种结构下的ConcurrentHashMap有以下特点：</p>
 <ul>
@@ -169,7 +169,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-894019d64cfb767f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;concurrmap_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/concurrmap_logo.jpg&quot; alt=&quot;concurrmap_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我们上节讲了HashMap，实际上HashMap并不是线程安全的，在并发插入元素的时候有可能出现环形链表，让下一次读操作出现死循环。解决的办法就是使用线程安全的容器，除了Collections提供的synchronizedMap同步容器外，实际上我们还可以选择性能更好的juc提供的同步容器。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -188,26 +188,26 @@
     <link href="http://catalinali.top/2018/knowHashMap/"/>
     <id>http://catalinali.top/2018/knowHashMap/</id>
     <published>2018-10-19T01:46:26.000Z</published>
-    <updated>2019-08-22T06:24:42.292Z</updated>
+    <updated>2019-08-22T06:46:57.583Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_logo.jpg" alt="hashmap_logo"></p>
 <blockquote>
 <p>HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。</p>
 </blockquote>
 <a id="more"></a>
 <hr>
 <p>众所周知，HashMap是一个用于存储Key-Value键值对的集合，每一个键值对也叫做Entry。这些个键值对（Entry）分散存储在一个数组当中，这个数组就是HashMap的主干。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3962292-9586406d9946c776.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_logo"></p>
+<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_1.jpg" alt="hashmap_logo"></p>
 <p>这个数组在首次使用时进行初始化，每一个元素的初始值都是Null。<br>为了了解它，我们从Put方法个Get方法来进行阐述。</p>
 <h2 id="一、Put方法的原理"><a href="#一、Put方法的原理" class="headerlink" title="一、Put方法的原理"></a>一、Put方法的原理</h2><p>HashMap在调用put方法时会先根据Key值来进行哈希运算来得到结果，即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index =  Hash（“Key”）</span><br></pre></td></tr></table></figure></p>
 <p>假如计算出的index是2，那么就会将它放入index为2的位置，如图：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3962292-51863fe255a6985b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_2"></p>
-<p>但是再完美的Hash函数也难免会出现index冲突的情况。比如下面这样。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-7cada083ed007cca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_3"><br>这时候我们就可以使用<strong>链表</strong>来解决</p>
-<p>HashMap数组的每一个元素不止是一个Entry对象，也是一个链表的头节点。每一个Entry对象通过Next指针指向它的下一个Entry节点。当新来的Entry映射到冲突的数组位置时，只需要插入到对应的链表即可：<br><img src="http://upload-images.jianshu.io/upload_images/3962292-4509c3909ad70d4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_4"><br>需要注意的是，新来的Entry节点插入链表时，使用的是“头插法”。<br>所以一个完整的HashMap样子应该是这样的<br><img src="http://upload-images.jianshu.io/upload_images/3962292-2361da42619ca5dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_5"></p>
+<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_2.jpg" alt="hashmap_2"></p>
+<p>但是再完美的Hash函数也难免会出现index冲突的情况。比如下面这样。<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_3.jpg" alt="hashmap_3"><br>这时候我们就可以使用<strong>链表</strong>来解决</p>
+<p>HashMap数组的每一个元素不止是一个Entry对象，也是一个链表的头节点。每一个Entry对象通过Next指针指向它的下一个Entry节点。当新来的Entry映射到冲突的数组位置时，只需要插入到对应的链表即可：<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_4.jpg" alt="hashmap_4"><br>需要注意的是，新来的Entry节点插入链表时，使用的是“头插法”。<br>所以一个完整的HashMap样子应该是这样的<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_5.jpg" alt="hashmap_5"></p>
 <h2 id="二、Get方法的原理"><a href="#二、Get方法的原理" class="headerlink" title="二、Get方法的原理"></a>二、Get方法的原理</h2><p>使用Get方法根据Key来查找Value的时候，发生了什么呢？</p>
 <p>首先会把输入的Key做一次Hash映射，得到对应的index：</p>
 <p>index =  Hash（“apple”）</p>
-<p>由于刚才所说的Hash冲突，同一个位置有可能匹配到多个Entry，这时候就需要顺着对应链表的头节点，一个一个向下来查找。假设我们要查找的Key是“apple”：<br><img src="http://upload-images.jianshu.io/upload_images/3962292-500ba5fdf4ea01ad.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_6"><br>第一步，我们查看的是头节点Entry6，Entry6的Key是banana，显然不是我们要找的结果。</p>
+<p>由于刚才所说的Hash冲突，同一个位置有可能匹配到多个Entry，这时候就需要顺着对应链表的头节点，一个一个向下来查找。假设我们要查找的Key是“apple”：<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_6.jpg" alt="hashmap_6"><br>第一步，我们查看的是头节点Entry6，Entry6的Key是banana，显然不是我们要找的结果。</p>
 <p>第二步，我们查看的是Next节点Entry1，Entry1的Key是apple，正是我们要找的结果。</p>
 <p>之所以把Entry6放在头节点，是因为HashMap的发明者认为，<strong>后插入的Entry被查找的可能性更大</strong>。</p>
 <h2 id="三、哈希方法"><a href="#三、哈希方法" class="headerlink" title="三、哈希方法"></a>三、哈希方法</h2><p>如何实现一个尽量均匀分布的Hash函数呢？我们通过利用Key的HashCode值来做某种运算。具体公式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index =  HashCode（Key） &amp;  （Length - 1）</span><br></pre></td></tr></table></figure></p>
@@ -230,7 +230,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;hashmap_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_logo.jpg&quot; alt=&quot;hashmap_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -249,9 +249,9 @@
     <link href="http://catalinali.top/2018/singletonPattern/"/>
     <id>http://catalinali.top/2018/singletonPattern/</id>
     <published>2018-10-11T01:29:06.000Z</published>
-    <updated>2018-11-12T06:51:32.964Z</updated>
+    <updated>2019-08-22T06:51:02.745Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-acac6f7616985e72.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="redis_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/singleton_logo.jpg" alt="singleton_logo"></p>
 <blockquote>
 <p>单例模式可能是后端学习者接触到的第一种设计模式，可是单例模式真的有那么简单吗？在并发模式下会出现什么样的问题？在学习了前面的并发知识后，我们来看看究极版的单例模式应该怎么写。</p>
 </blockquote>
@@ -309,7 +309,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-acac6f7616985e72.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;redis_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/singleton_logo.jpg&quot; alt=&quot;singleton_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;单例模式可能是后端学习者接触到的第一种设计模式，可是单例模式真的有那么简单吗？在并发模式下会出现什么样的问题？在学习了前面的并发知识后，我们来看看究极版的单例模式应该怎么写。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -328,16 +328,16 @@
     <link href="http://catalinali.top/2018/getMVVM/"/>
     <id>http://catalinali.top/2018/getMVVM/</id>
     <published>2018-08-31T03:44:06.000Z</published>
-    <updated>2018-11-12T06:44:56.481Z</updated>
+    <updated>2019-08-22T06:56:58.261Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-2a81793926834d13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="getMVVM_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/getMVVM_logo.jpg" alt="getMVVM_logo"></p>
 <blockquote>
 <p>近年来前端一个明显的开发趋势就是架构从传统的 MVC 模式向 MVVM 模式迁移。在传统的 MVC 下，当前前端和后端发生数据交互后会刷新整个页面，从而导致比较差的用户体验。因此我们通过 Ajax 的方式和网关 REST API 作通讯，异步的刷新页面的某个区块，来优化和提升体验。</p>
 </blockquote>
 <a id="more"></a>
 <hr>
 <h2 id="一、MVP模式"><a href="#一、MVP模式" class="headerlink" title="一、MVP模式"></a>一、MVP模式</h2><p>我们以前使用JQuery操作Dom的模式就是遵循了MVP模式,我们来看一下MVP模式的图示：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3962292-162fe3b8fcc01f81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="getMVVM_1"></p>
+<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/getMVVM_1.jpg" alt="getMVVM_1"></p>
 <ul>
 <li>视图（View）：用户界面。</li>
 <li>控制器（Presenter）：业务逻辑</li>
@@ -352,9 +352,9 @@
 <p>在我们常规的DOM操作中，Model层的数据一般通过AJAX获取，Presenter层通常就是我们的js逻辑而相应的View就是我们用户看到的界面。</p>
 <h2 id="二、MVVM模式"><a href="#二、MVVM模式" class="headerlink" title="二、MVVM模式"></a>二、MVVM模式</h2><p>MVVM是Model-View-ViewModel的简写。它本质上就是MVP的改进版。MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。</p>
 <p>我们先来看一下图示：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3962292-1a409887611e6e65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="getMVVM_2"></p>
+<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/getMVVM_2.jpg" alt="getMVVM_2"></p>
 <p>它与MVP的区别在于它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。Vue.js 正是采用了这种模式：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3962292-dbd01a83b745d32d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="getMVVM_3"><br>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对比较轻量级的JS 库，API 简洁，很容易上手。</p>
+<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/getMVVM_3.jpg" alt="getMVVM_3"><br>Vue.js 可以说是MVVM 架构的最佳实践，专注于 MVVM 中的 ViewModel，不仅做到了数据双向绑定，而且也是一款相对比较轻量级的JS 库，API 简洁，很容易上手。</p>
 <p>小伙伴们，快来试试Vue.js吧！</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html" target="_blank" rel="noopener">MVC，MVP 和 MVVM 的图示</a></p>
 <hr>
@@ -365,7 +365,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-2a81793926834d13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;getMVVM_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/getMVVM_logo.jpg&quot; alt=&quot;getMVVM_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;近年来前端一个明显的开发趋势就是架构从传统的 MVC 模式向 MVVM 模式迁移。在传统的 MVC 下，当前前端和后端发生数据交互后会刷新整个页面，从而导致比较差的用户体验。因此我们通过 Ajax 的方式和网关 REST API 作通讯，异步的刷新页面的某个区块，来优化和提升体验。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -384,9 +384,9 @@
     <link href="http://catalinali.top/2018/proxyPattern/"/>
     <id>http://catalinali.top/2018/proxyPattern/</id>
     <published>2018-08-29T03:22:19.000Z</published>
-    <updated>2019-08-22T06:25:18.544Z</updated>
+    <updated>2019-08-22T07:30:07.076Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-7c035942db875458.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="agent_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/agent_logo.jpg" alt="agent_logo"></p>
 <blockquote>
 <p>设计模式是语言的表达方式，它能让语言轻便而富有内涵、易读却功能强大。代理模式在Java中十分常见，有为扩展某些类的功能而使用静态代理，也有如Spring实现AOP而使用动态代理，更有RPC实现中使用的调用端调用的代理服务。代理模型除了是一种设计模式之外，它更是一种思维，所以探讨并深入理解这种模型是非常有必要的。</p>
 </blockquote>
@@ -465,7 +465,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-7c035942db875458.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;agent_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/agent_logo.jpg&quot; alt=&quot;agent_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;设计模式是语言的表达方式，它能让语言轻便而富有内涵、易读却功能强大。代理模式在Java中十分常见，有为扩展某些类的功能而使用静态代理，也有如Spring实现AOP而使用动态代理，更有RPC实现中使用的调用端调用的代理服务。代理模型除了是一种设计模式之外，它更是一种思维，所以探讨并深入理解这种模型是非常有必要的。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -484,9 +484,9 @@
     <link href="http://catalinali.top/2018/helloThreadLocal/"/>
     <id>http://catalinali.top/2018/helloThreadLocal/</id>
     <published>2018-08-28T01:44:53.000Z</published>
-    <updated>2019-08-22T06:23:52.788Z</updated>
+    <updated>2019-08-22T06:59:29.475Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-9a65cf48d4f39524.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="threadlocal_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/threadlocal_logo.jpg" alt="threadlocal_logo"></p>
 <blockquote>
 <p>我们知道有时候一个对象的共享变量会被多个线程所访问，这时就会有线程安全问题。当然我们可以使用synchorinized 关键字来为此变量加锁，进行同步处理。从而限制只能有一个线程来使用此变量，但是加锁会大大影响程序执行效率，此外我们还可以使用ThreadLocal来解决对某一个变量的访问冲突问题。</p>
 </blockquote>
@@ -516,7 +516,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-9a65cf48d4f39524.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;threadlocal_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/threadlocal_logo.jpg&quot; alt=&quot;threadlocal_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我们知道有时候一个对象的共享变量会被多个线程所访问，这时就会有线程安全问题。当然我们可以使用synchorinized 关键字来为此变量加锁，进行同步处理。从而限制只能有一个线程来使用此变量，但是加锁会大大影响程序执行效率，此外我们还可以使用ThreadLocal来解决对某一个变量的访问冲突问题。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -535,9 +535,9 @@
     <link href="http://catalinali.top/2018/helloCallable/"/>
     <id>http://catalinali.top/2018/helloCallable/</id>
     <published>2018-08-27T02:49:54.000Z</published>
-    <updated>2019-08-22T06:23:19.238Z</updated>
+    <updated>2019-08-22T06:57:11.267Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a886bc10a753b44e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="callable_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/callable_logo.jpg" alt="callable_logo"></p>
 <blockquote>
 <p>众所周知创建线程的方式有两种：1.继承Thread类。2.实现Runnable接口。从jdk1.5开始，提供了另一种创建线程的方式。今天我们就来看看这第三种方式：实现Callable接口</p>
 </blockquote>
@@ -573,7 +573,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-a886bc10a753b44e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;callable_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/callable_logo.jpg&quot; alt=&quot;callable_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;众所周知创建线程的方式有两种：1.继承Thread类。2.实现Runnable接口。从jdk1.5开始，提供了另一种创建线程的方式。今天我们就来看看这第三种方式：实现Callable接口&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -592,9 +592,9 @@
     <link href="http://catalinali.top/2018/helloThreadPool/"/>
     <id>http://catalinali.top/2018/helloThreadPool/</id>
     <published>2018-08-27T02:48:41.000Z</published>
-    <updated>2019-08-22T06:24:00.592Z</updated>
+    <updated>2019-08-22T06:59:42.982Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-32986334ff3bf845.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="threadpool_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/threadpool_logo.jpg" alt="threadpool_logo"></p>
 <blockquote>
 <p>如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。今天我们就来详细讲解一下Java的线程池。</p>
 </blockquote>
@@ -684,7 +684,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-32986334ff3bf845.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;threadpool_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/threadpool_logo.jpg&quot; alt=&quot;threadpool_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。今天我们就来详细讲解一下Java的线程池。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -703,9 +703,9 @@
     <link href="http://catalinali.top/2018/helloLatch/"/>
     <id>http://catalinali.top/2018/helloLatch/</id>
     <published>2018-08-23T11:11:08.000Z</published>
-    <updated>2019-08-22T06:23:40.680Z</updated>
+    <updated>2019-08-22T06:58:57.235Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-a0fa086b5465c2e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="countdownlatch_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/countdownlatch_logo.jpg" alt="countdownlatch_logo"></p>
 <blockquote>
 <p>jdk1.5的concurrent包为我们提供了很多有用的辅助类，今天我们来学习一下</p>
 </blockquote>
@@ -736,7 +736,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-a0fa086b5465c2e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;countdownlatch_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/countdownlatch_logo.jpg&quot; alt=&quot;countdownlatch_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;jdk1.5的concurrent包为我们提供了很多有用的辅助类，今天我们来学习一下&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -755,9 +755,9 @@
     <link href="http://catalinali.top/2018/helloCAS/"/>
     <id>http://catalinali.top/2018/helloCAS/</id>
     <published>2018-08-19T06:09:25.000Z</published>
-    <updated>2019-08-22T06:23:27.361Z</updated>
+    <updated>2019-08-22T06:57:24.674Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-e74f791fa0e5c43f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cas_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/cas_logo.jpg" alt="cas_logo"></p>
 <blockquote>
 <p>也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，所以很多地方也称之为自旋。</p>
 </blockquote>
@@ -783,7 +783,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-e74f791fa0e5c43f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;cas_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/cas_logo.jpg&quot; alt=&quot;cas_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;也许大家已经听说过，锁分两种，一个叫悲观锁，一种称之为乐观锁。Synchronized就是悲观锁的一种，也称之为独占锁，加了synchronized关键字的代码基本上就只能以单线程的形式去执行了，它会导致其他需要该资源的线程挂起，直到前面的线程执行完毕释放所资源。而另外一种乐观锁是一种更高效的机制，它的原理就是每次不加锁去执行某项操作，如果发生冲突则失败并重试，直到成功为止，其实本质上不算锁，所以很多地方也称之为自旋。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -802,14 +802,14 @@
     <link href="http://catalinali.top/2018/helloVolatile/"/>
     <id>http://catalinali.top/2018/helloVolatile/</id>
     <published>2018-08-15T02:11:12.000Z</published>
-    <updated>2018-11-12T06:42:59.851Z</updated>
+    <updated>2019-08-22T07:00:19.671Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-1ee2de3eaca0668e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/volatile_logo.jpg" alt="volatile_logo"></p>
 <blockquote>
 <p>Java中volatile这个热门的关键字，在面试中经常会被提及，在各种技术交流群中也经常被讨论：volatile关键字在java多线程中有着比较重要作用，volatile主要作用是可以保持变量在多线程中是实时可见的,是java中提供的最轻量的同步机制。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、JAVA内存模型概述"><a href="#一、JAVA内存模型概述" class="headerlink" title="一、JAVA内存模型概述"></a>一、JAVA内存模型概述</h2><p>在了解volatile关键字之前，我们先来认识一下Java的内存模型。<br>Java线程之间的通信由Java内存模型（本文简称为JMM）控制，JMM决定一个线程对共享变量的写入何时对另一个线程可见。从抽象的角度来看，JMM定义了线程和主内存之间的抽象关系：线程之间的共享变量存储在主内存（Main Memory）中，每个线程都有一个私有的本地内存（Local Memory），本地内存中存储了该线程以读/写共享变量的副本。本地内存是JMM的一个抽象概念，并不真实存在。它涵盖了缓存、写缓冲区、寄存器以及其他的硬件和编译器优化。Java内存模型的抽象示意如图所示<br><img src="http://upload-images.jianshu.io/upload_images/3962292-cdc87cd855505d31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_1"><br>如果线程A与线程B之间要通信的话，必须要经历下面2个步骤。<br>1）线程A把本地内存A中更新过的共享变量刷新到主内存中去。<br>2）线程B到主内存中去读取线程A之前已更新过的共享变量。<br>这个模型在单线程中没有什么问题，但是在多线程中就会产生一些数据的“脏读”等问题。<br>举个简单的例子：在java中，使用两个线程执行下面这个语句：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">i = i + <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="一、JAVA内存模型概述"><a href="#一、JAVA内存模型概述" class="headerlink" title="一、JAVA内存模型概述"></a>一、JAVA内存模型概述</h2><p>在了解volatile关键字之前，我们先来认识一下Java的内存模型。<br>Java线程之间的通信由Java内存模型（本文简称为JMM）控制，JMM决定一个线程对共享变量的写入何时对另一个线程可见。从抽象的角度来看，JMM定义了线程和主内存之间的抽象关系：线程之间的共享变量存储在主内存（Main Memory）中，每个线程都有一个私有的本地内存（Local Memory），本地内存中存储了该线程以读/写共享变量的副本。本地内存是JMM的一个抽象概念，并不真实存在。它涵盖了缓存、写缓冲区、寄存器以及其他的硬件和编译器优化。Java内存模型的抽象示意如图所示<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/volatile_1.jpg" alt="volatile_1"><br>如果线程A与线程B之间要通信的话，必须要经历下面2个步骤。<br>1）线程A把本地内存A中更新过的共享变量刷新到主内存中去。<br>2）线程B到主内存中去读取线程A之前已更新过的共享变量。<br>这个模型在单线程中没有什么问题，但是在多线程中就会产生一些数据的“脏读”等问题。<br>举个简单的例子：在java中，使用两个线程执行下面这个语句：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">i = i + <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
 <p>我们期望的是在两个线程执行完之后获得i的结果是2，但事实真的会这样的吗？<br>我们反复执行后可以发现：结果可能是2，也可能是1。<br>每条线程执行时需要将i的值从主内存中读取到工作内存中。其中存在这么一种情况：初始时，两个线程分别读取i的值存入各自所在的工作内存当中，然后线程1进行加1操作，然后把i的最新值1写入到内存。此时线程2的工作内存当中i的值还是0，进行加1操作之后，i的值为1，然后线程2把i的值写入内存。当出现这种情况后返回的结果就成了1了。<br>这就是缓存一致性的问题，在解决这个问题前我们要先了解一下并发编程的三个概念：原子性，有序性，可见性。</p>
 <h2 id="二、并发编程中的三个概念"><a href="#二、并发编程中的三个概念" class="headerlink" title="二、并发编程中的三个概念"></a>二、并发编程中的三个概念</h2><h3 id="1-原子性"><a href="#1-原子性" class="headerlink" title="1.原子性"></a>1.原子性</h3><p>定义：原子操作意 为“不可被中断的一个或一系列操作。<br>比如 a=0；（a非long和double类型） 这个操作是不可分割的，那么我们说这个操作是原子操作。再比如：a++； 这个操作实际是a = a + 1；是可分割的，所以他不是一个原子操作。非原子操作都会存在线程安全问题，需要我们使用同步技术（sychronized）来让它变成一个原子操作。如果一个操作是原子操作，那么我们称它具有原子性。java的concurrent包下提供了一些原子类，我们可以通过阅读API来了解这些原子类的用法。比如：AtomicInteger、AtomicLong、AtomicReference等。<br>如果要实现更大范围操作的原子性，可以通过<strong>锁</strong>和<strong>CAS算法</strong>来实现。</p>
 <h3 id="2-可见性"><a href="#2-可见性" class="headerlink" title="2.可见性"></a>2.可见性</h3><p>定义：可见性是指当一个线程修改一个共享变量时，另外一个线程能读到这个修改的值。<br>举个简单的例子，看下面这段代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//线程1执行的代码</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">i = <span class="number">10</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//线程2执行的代码</span></span><br><span class="line">j = i;</span><br></pre></td></tr></table></figure></p>
@@ -818,7 +818,7 @@
 <p>这就是可见性问题，线程1对变量i修改了之后，线程2没有立即看到线程1修改的值。</p>
 <h3 id="3-有序性"><a href="#3-有序性" class="headerlink" title="3.有序性"></a>3.有序性</h3><p>定义：即程序执行的顺序按照代码的先后顺序执行。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;              </span><br><span class="line"><span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">i = <span class="number">1</span>;                <span class="comment">//语句1  </span></span><br><span class="line">flag = <span class="keyword">true</span>;          <span class="comment">//语句2</span></span><br></pre></td></tr></table></figure></p>
 <p>上面代码定义了一个int型变量，定义了一个boolean类型变量，然后分别对两个变量进行赋值操作。从代码顺序上看，语句1是在语句2前面的，那么JVM在真正执行这段代码的时候会保证语句1一定会在语句2前面执行吗？不一定，为什么呢？这里可能会发生指令重排序（Instruction Reorder）。<br>下面解释一下什么是指令重排序，一般来说，处理器为了提高程序运行效率，可能会对输入代码进行优化，它不保证程序中各个语句的执行先后顺序同代码中的顺序一致，但是它会保证程序最终执行结果和代码顺序执行的结果是一致的。<br>比如上面的代码中，语句1和语句2谁先执行对最终的程序结果并没有影响，那么就有可能在执行过程中，语句2先执行而语句1后执行。<br>但是要注意，虽然处理器会对指令进行重排序，但是它会保证程序最终结果会和代码顺序执行结果相同，那么它靠什么保证的呢？再看下面一个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;    <span class="comment">//语句1</span></span><br><span class="line"><span class="keyword">int</span> r = <span class="number">2</span>;    <span class="comment">//语句2</span></span><br><span class="line">a = a + <span class="number">3</span>;    <span class="comment">//语句3</span></span><br><span class="line">r = a*a;     <span class="comment">//语句4</span></span><br></pre></td></tr></table></figure></p>
-<p>这段代码有4个语句，那么可能的一个执行顺序是：<br><img src="http://upload-images.jianshu.io/upload_images/3962292-09441fc193e78b39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="volatile_2"><br>不可能，因为处理器在进行重排序时是会考虑指令之间的数据依赖性，如果一个指令Instruction 2必须用到Instruction 1的结果，那么处理器会保证Instruction 1会在Instruction 2之前执行。</p>
+<p>这段代码有4个语句，那么可能的一个执行顺序是：<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/volatile_2.jpg" alt="volatile_2"><br>不可能，因为处理器在进行重排序时是会考虑指令之间的数据依赖性，如果一个指令Instruction 2必须用到Instruction 1的结果，那么处理器会保证Instruction 1会在Instruction 2之前执行。</p>
 <p>虽然重排序不会影响单个线程内程序执行的结果，但是多线程呢？下面看一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//线程1:</span><br><span class="line"></span><br><span class="line">context = loadContext();   //语句1</span><br><span class="line">inited = true;             //语句2</span><br><span class="line"></span><br><span class="line"> //线程2:</span><br><span class="line">while(!inited )&#123;</span><br><span class="line">   sleep()</span><br><span class="line">&#125;</span><br><span class="line">doSomethingwithconfig(context);</span><br></pre></td></tr></table></figure></p>
 <p>上面代码中，由于语句1和语句2没有数据依赖性，因此可能会被重排序。假如发生了重排序，在线程1执行过程中先执行语句2，而此是线程2会以为初始化工作已经完成，那么就会跳出while循环，去执行doSomethingwithconfig(context)方法，而此时context并没有被初始化，就会导致程序出错。<br>从上面可以看出，指令重排序不会影响单个线程的执行，但是会影响到线程并发执行的正确性。<br>也就是说，要想并发程序正确地执行，必须要保证原子性、可见性以及有序性。只要有一个没有被保证，就有可能会导致程序运行不正确。</p>
 <h2 id="三、深入理解volatile关键字"><a href="#三、深入理解volatile关键字" class="headerlink" title="三、深入理解volatile关键字"></a>三、深入理解volatile关键字</h2><p>　在多线程并发编程中synchronized和volatile都扮演着重要的角色，volatile是轻量级的 synchronized。如果volatile变量修饰符使用恰当 的话，它比synchronized的使用和执行成本更低，因为它不会引起线程上下文的切换和调度。</p>
@@ -845,7 +845,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-1ee2de3eaca0668e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/volatile_logo.jpg&quot; alt=&quot;volatile_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Java中volatile这个热门的关键字，在面试中经常会被提及，在各种技术交流群中也经常被讨论：volatile关键字在java多线程中有着比较重要作用，volatile主要作用是可以保持变量在多线程中是实时可见的,是java中提供的最轻量的同步机制。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -864,21 +864,21 @@
     <link href="http://catalinali.top/2018/startHystrix/"/>
     <id>http://catalinali.top/2018/startHystrix/</id>
     <published>2018-08-06T01:40:58.000Z</published>
-    <updated>2018-11-12T06:38:19.496Z</updated>
+    <updated>2019-08-22T07:50:37.686Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-ae286ea5393ce055.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hystrix_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hystrix_logo.jpg" alt="hystrix_logo"></p>
 <blockquote>
 <p>在微服务架构中，我们将系统拆分为很多个服务，各个服务之间通过注册与订阅的方式相互依赖，由于各个服务都是在各自的进程中运行，就有可能由于网络原因或者服务自身的问题导致调用故障或延迟，随着服务的积压，可能会导致服务崩溃。为了解决这一系列的问题，断路器等一系列服务保护机制出现了。<br><a id="more"></a></p>
 </blockquote>
-<h2 id="一、Hystrix简介"><a href="#一、Hystrix简介" class="headerlink" title="一、Hystrix简介"></a>一、Hystrix简介</h2><p>Netflix提供了一个叫Hystrix的类库，它实现了断路器模式。在微服务架构中，通常一个微服务会调用多个其他的微服务。一个相对低层级的服务失败可能造成上层应用的级联失败，服务访问量越大失败率越高。当断路打开的时候，这个调用就被终止了。打开的断路可以阻止级联失败。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-0663026043bf85a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hystrix_1"><br>较底层的服务如果出现故障，会导致连锁故障。当对特定的服务的调用的不可用达到一个阀值（Hystric 是5秒20次） 断路器将会被打开。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-c4a8b1078ee2dbbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hystrix_2"></p>
+<h2 id="一、Hystrix简介"><a href="#一、Hystrix简介" class="headerlink" title="一、Hystrix简介"></a>一、Hystrix简介</h2><p>Netflix提供了一个叫Hystrix的类库，它实现了断路器模式。在微服务架构中，通常一个微服务会调用多个其他的微服务。一个相对低层级的服务失败可能造成上层应用的级联失败，服务访问量越大失败率越高。当断路打开的时候，这个调用就被终止了。打开的断路可以阻止级联失败。<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/Hystrix_1.jpg" alt="Hystrix_1"><br>较底层的服务如果出现故障，会导致连锁故障。当对特定的服务的调用的不可用达到一个阀值（Hystric 是5秒20次） 断路器将会被打开。<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/Hystrix_2.jpg" alt="Hystrix_2"></p>
 <h2 id="二、Hystrix使用"><a href="#二、Hystrix使用" class="headerlink" title="二、Hystrix使用"></a>二、Hystrix使用</h2><p>这里我们使用之前的Client项目进行演示。<br><strong>1.在服务调用方添加pom</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-hystrix&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>2.添加@EnableCircuitBreaker注解</strong><br>这个注解只需要在springboot工程的启动application类上就好了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableFeignClients</span></span><br><span class="line"><span class="meta">@EnableCircuitBreaker</span></span><br><span class="line"><span class="comment">//@SpringCloudApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ClientApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这时我们发现我们的启动类上添加了很多的注解，所以Spring Cloud将这些注解封装了一下，提供了一个@SpringCloudApplication的注解：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Target(&#123;ElementType.TYPE&#125;)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">@Documented</span><br><span class="line">@Inherited</span><br><span class="line">@SpringBootApplication</span><br><span class="line">@EnableDiscoveryClient</span><br><span class="line">@EnableCircuitBreaker</span><br><span class="line">public @interface SpringCloudApplication &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>3.对要服务进行降级</strong><br>之前的例子里我们有一个<em>restHello</em>的接口,这个接口调用的Discovery的<em>hello</em>接口。<br>我们现在在他上面添加一个@HystrixCommand注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@HystrixCommand</span>(fallbackMethod  = <span class="string">"helloFallback"</span>)</span><br><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/restHello"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">CliHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> restTemplate.getForObject(<span class="string">"http://discovery/hello"</span>,String.class);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>我们使用fallbackMethod属性指定一个fallback方法，在需要降级的时候调用这个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">helloFallback</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"哎呀，服务器开小差了！请稍后再试。"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这时候我们将服务端和客户端都启动进行访问<br><img src="http://upload-images.jianshu.io/upload_images/3962292-eac6f600a0451dce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hystrix_3"><br>这时候我们将服务端Discover关掉然后再访问这个地址，他就会去访问降级的地址<br><img src="http://upload-images.jianshu.io/upload_images/3962292-921e057f06b161a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hystrix_4"><br>这样我们就实现了服务降级。但是这样需要没一个接口都添加这个注解，有没有更快一点的方法呢？</p>
+<p>这时候我们将服务端和客户端都启动进行访问<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/Hystrix_3.jpg" alt="Hystrix_3"><br>这时候我们将服务端Discover关掉然后再访问这个地址，他就会去访问降级的地址<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/Hystrix_4.jpg" alt="Hystrix_4"><br>这样我们就实现了服务降级。但是这样需要没一个接口都添加这个注解，有没有更快一点的方法呢？</p>
 <p><strong>4.配置默认服务降级注解</strong><br>在类上添加@DefaultProperties注解配置默认的降级方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RefreshScope</span></span><br><span class="line"><span class="meta">@DefaultProperties</span>(defaultFallback = <span class="string">"helloFallback"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientController</span> </span>&#123;</span><br><span class="line">        <span class="comment">//@HystrixCommand(fallbackMethod  = "helloFallback")</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/restHello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">CliHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> restTemplate.getForObject(<span class="string">"http://discovery/hello"</span>,String.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">helloFallback</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"哎呀，服务器开小差了！请稍后再试。"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样我们再进行刚才的操作，可以发现是同样的效果^_^<br><img src="http://upload-images.jianshu.io/upload_images/3962292-34621cd535b6d54a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Hystrix_4"></p>
+<p>这样我们再进行刚才的操作，可以发现是同样的效果^_^<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/Hystrix_4.jpg" alt="Hystrix_4"></p>
 <hr>
 <blockquote>
 <p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/startHystrix/">http://catalinali.top/2018/startHystrix/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
@@ -887,7 +887,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-ae286ea5393ce055.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;hystrix_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/hystrix_logo.jpg&quot; alt=&quot;hystrix_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在微服务架构中，我们将系统拆分为很多个服务，各个服务之间通过注册与订阅的方式相互依赖，由于各个服务都是在各自的进程中运行，就有可能由于网络原因或者服务自身的问题导致调用故障或延迟，随着服务的积压，可能会导致服务崩溃。为了解决这一系列的问题，断路器等一系列服务保护机制出现了。&lt;br&gt;
     
@@ -905,9 +905,9 @@
     <link href="http://catalinali.top/2018/startZuul/"/>
     <id>http://catalinali.top/2018/startZuul/</id>
     <published>2018-07-10T10:15:28.000Z</published>
-    <updated>2018-11-12T06:50:37.663Z</updated>
+    <updated>2019-08-22T07:53:38.329Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-0196ff9f46197af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="zuul_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/zuul_logo.jpg" alt="zuul_logo"></p>
 <blockquote>
 <p>在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。</p>
 </blockquote>
@@ -924,8 +924,8 @@
 <li>多区域弹性：跨域AWS Region进行请求路由，旨在实现ELB(ElasticLoad Balancing)使用多样化</li>
 </ul>
 <p>Spring Cloud对Zuul进行了整合和增强。目前，Zuul使用的默认是Apache的HTTP Client，也可以使用Rest Client，可以设置ribbon.restclient.enabled=true.。</p>
-<h2 id="二、创建一个api-gateway工程"><a href="#二、创建一个api-gateway工程" class="headerlink" title="二、创建一个api-gateway工程"></a>二、创建一个api-gateway工程</h2><p>这里我们使用IntelliJ IDEA进行展示。<br><strong>1.首先创建一个Zuul项目</strong><br>使用IDEA创建一个项目<br><img src="http://upload-images.jianshu.io/upload_images/3962292-b79c552c2c709087.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_2"><br>中间有一步我们选择Zuul选项和SpringBoot版本，如图<br><img src="http://upload-images.jianshu.io/upload_images/3962292-bddeee8a3e4e947c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_2"><br>然后下一步就可以创建好了<br><strong>2.添加@EnableZuulProxy注解</strong><br>这个注解只需要在springboot工程的启动application类上就好了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableZuulProxy</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiGetwayApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ApiGetwayApplication.class, args);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后在配置文件中添加config的配置，具体可以见<a href="http://catalinali.top/2018/startconfig/">小白学SpringCloud(三)：统一配置中心(config)</a>。然后就可以使用Zuul工程的路由了，依次运行Eureka、Config、Client客户端、Zuul。<br>我们先来随便访问一下client端的env接口<br><img src="http://upload-images.jianshu.io/upload_images/3962292-647dd90de5e26676.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="zuul_2"><br>然后我们通过<em>zuul服务的端口+项目名/接口名</em>这种方式来访问一下这个接口<br><img src="http://upload-images.jianshu.io/upload_images/3962292-40ab3d967fd21088.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="zuul_3"><br>可以看到,同样访问到了结果。<br>另外，我们也可以在配置文件中更加细粒度控制路由路径：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 表示只要HTTP请求是 /client1开始的，就会转发到服务id为client1的服务上面</span></span><br><span class="line"><span class="attr">zuul:</span></span><br><span class="line"><span class="attr">  routes:</span></span><br><span class="line"><span class="attr">    client1:</span></span><br><span class="line"><span class="attr">      path:</span><span class="string">/client1/**</span>  <span class="string">//</span> <span class="string">路由路径</span></span><br><span class="line"><span class="attr">      serviceId:</span> <span class="string">client1</span> <span class="string">//</span> <span class="string">服务id</span></span><br><span class="line"><span class="attr">    client2:</span></span><br><span class="line"><span class="attr">      path:</span><span class="string">/client2/**</span>  <span class="string">//</span> <span class="string">路由路径</span></span><br><span class="line"><span class="attr">      serviceId:</span> <span class="string">client2</span> <span class="string">//</span> <span class="string">服务id</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="二、创建一个api-gateway工程"><a href="#二、创建一个api-gateway工程" class="headerlink" title="二、创建一个api-gateway工程"></a>二、创建一个api-gateway工程</h2><p>这里我们使用IntelliJ IDEA进行展示。<br><strong>1.首先创建一个Zuul项目</strong><br>使用IDEA创建一个项目<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/zuul_0.jpg" alt="zuul_0"><br>中间有一步我们选择Zuul选项和SpringBoot版本，如图<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/zuul_1.jpg" alt="zuul_1"><br>然后下一步就可以创建好了<br><strong>2.添加@EnableZuulProxy注解</strong><br>这个注解只需要在springboot工程的启动application类上就好了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableZuulProxy</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiGetwayApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ApiGetwayApplication.class, args);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后在配置文件中添加config的配置，具体可以见<a href="http://catalinali.top/2018/startconfig/">小白学SpringCloud(三)：统一配置中心(config)</a>。然后就可以使用Zuul工程的路由了，依次运行Eureka、Config、Client客户端、Zuul。<br>我们先来随便访问一下client端的env接口<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/zuul_2.jpg" alt="zuul_2"><br>然后我们通过<em>zuul服务的端口+项目名/接口名</em>这种方式来访问一下这个接口<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/zuul_3.jpg" alt="zuul_3"><br>可以看到,同样访问到了结果。<br>另外，我们也可以在配置文件中更加细粒度控制路由路径：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 表示只要HTTP请求是 /client1开始的，就会转发到服务id为client1的服务上面</span></span><br><span class="line"><span class="attr">zuul:</span></span><br><span class="line"><span class="attr">  routes:</span></span><br><span class="line"><span class="attr">    client1:</span></span><br><span class="line"><span class="attr">      path:</span><span class="string">/client1/**</span>  <span class="string">//</span> <span class="string">路由路径</span></span><br><span class="line"><span class="attr">      serviceId:</span> <span class="string">client1</span> <span class="string">//</span> <span class="string">服务id</span></span><br><span class="line"><span class="attr">    client2:</span></span><br><span class="line"><span class="attr">      path:</span><span class="string">/client2/**</span>  <span class="string">//</span> <span class="string">路由路径</span></span><br><span class="line"><span class="attr">      serviceId:</span> <span class="string">client2</span> <span class="string">//</span> <span class="string">服务id</span></span><br></pre></td></tr></table></figure></p>
 <p>需要注意的是，使用Zuul默认不会将Cookie的信息带入服务端，所以我们需要在配置文件中进行配置,将敏感头设置为空即可：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">zuul:</span></span><br><span class="line"><span class="attr">  sensitiveHeaders:</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="二、服务过滤"><a href="#二、服务过滤" class="headerlink" title="二、服务过滤"></a>二、服务过滤</h2><p>zuul不仅只是路由，并且还能过滤，做一些安全验证。我们来新建一个Filter并且继承ZuulFilter<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_DECORATION_FILTER_ORDER;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_TYPE;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: lllx</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: Created on 17:54 2018/7/10</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Modefied</span> by:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFilter</span> <span class="keyword">extends</span> <span class="title">ZuulFilter</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*返回一个字符串代表过滤器的类型</span></span><br><span class="line"><span class="comment">    pre：路由之前</span></span><br><span class="line"><span class="comment">    routing：路由之时</span></span><br><span class="line"><span class="comment">    post： 路由之后</span></span><br><span class="line"><span class="comment">    error：发送错误调用</span></span><br><span class="line"><span class="comment">    我们可以通过导入FilterConstants这个常量类中的属性来返回</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">filterType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> PRE_TYPE;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//过滤的顺序，Zuul中也自定义了很多过滤器，调用的顺序即通过这个方法返回的大小，越小越靠前。我们可以通过FilterConstants这个常量类中定义好的过滤器-1来返回</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">filterOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> PRE_DECORATION_FILTER_ORDER -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这里可以写逻辑判断，是否要过滤，本文true,永远过滤。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">shouldFilter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//过滤器的具体逻辑。可用很复杂，包括查sql，nosql去判断该请求到底有没有权限访问。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">run</span><span class="params">()</span> <span class="keyword">throws</span> ZuulException </span>&#123;</span><br><span class="line">        RequestContext requestContext = RequestContext.getCurrentContext();</span><br><span class="line">        HttpServletRequest request = requestContext.getRequest();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//从url参数获取如果没有token这个参数就不允许请求</span></span><br><span class="line">        String token = request.getParameter(<span class="string">"token"</span>);</span><br><span class="line">        <span class="keyword">if</span>(StringUtils.isEmpty(token))&#123;</span><br><span class="line">            requestContext.setSendZuulResponse(<span class="keyword">false</span>);</span><br><span class="line">            requestContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>我们可以通过这样的方式去自定义一个个的过滤器。</p>
@@ -937,7 +937,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-0196ff9f46197af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;zuul_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/zuul_logo.jpg&quot; alt=&quot;zuul_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在微服务的架构下，各个服务一般会有各自的网络地址，在这样的情况下外部客户端的调用可能会形成杂乱无章的局面。这时候我们就可以使用微服务网关Zuul这个组件，我们让所有的客户端请求全部请求Zuul，再由Zuul统一的去请求各个服务。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -957,18 +957,18 @@
     <link href="http://catalinali.top/2018/startbus/"/>
     <id>http://catalinali.top/2018/startbus/</id>
     <published>2018-07-02T06:33:08.000Z</published>
-    <updated>2018-11-12T06:39:27.185Z</updated>
+    <updated>2019-08-22T07:32:11.331Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-1bdafcb6a0c162eb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="bus_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/bus_logo.jpg" alt="bus_logo"></p>
 <blockquote>
 <p>Spring Cloud Bus 将分布式的节点用轻量的消息代理连接起来。它可以用于广播配置文件的更改或者服务之间的通讯，也可以用于监控。上篇我们有说到Spring Cloud为我们提供了在不重启项目的情况下切换配置的功能，就要用到它，让我们来看看怎么实现的吧。</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="一、安装MQ"><a href="#一、安装MQ" class="headerlink" title="一、安装MQ"></a>一、安装MQ</h2><p>Spring Cloud Bus支持常见的Rabbitmq、kafka、Activemq等。我们这里使用Rabbitmq来作为演示。Rabbitmq的安装这里就不作演示了，大家可以使用docker来安装使用，很方便。给大家一个度娘的<a href="https://www.baidu.com/s?wd=docker%E5%AE%89%E8%A3%85activemq&amp;rsv_spt=1&amp;rsv_iqid=0xf5578fe4000354b9&amp;issp=1&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rqlang=cn&amp;tn=baiduhome_pg&amp;rsv_enter=0&amp;oq=docker%2520%25E5%25AE%2589%25E8%25A3%2585activemq&amp;inputT=1021&amp;rsv_t=11e21%2FaLzaFQGzuvMvLtKuHmxzuLUWS0TB6d8t9pETvwOEs%2B0fjRN9KsfhoNwJv1cAky&amp;rsv_pq=ef4e2567000322af&amp;sug=activemq&amp;rsv_sug3=21&amp;rsv_sug1=17&amp;rsv_sug7=100&amp;rsv_sug2=0&amp;rsv_sug4=1751" target="_blank" rel="noopener">传送门</a>。</p>
-<h2 id="二、Config-Server配置"><a href="#二、Config-Server配置" class="headerlink" title="二、Config Server配置"></a>二、Config Server配置</h2><p>这里我们还是以廖师兄的图为例，先来看看自动更新配置的原理(图中product、order均为客户端)。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-611760fc9abe2a81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="bus_1"><br>当我们在远端Git修改了配置之后，如果我们访问Config Server的<code>/bus-refresh</code>接口，Config Server就会把更改的配置发送给MQ，之后MQ就会把要改变的配置推送给各个客户端，这样就实现了自动更换配置的功能，现在我们来试一试吧。记住在这之前要先启动Rabbitmq。<br><strong>1.</strong>添加pom引用<br>老规矩，先来添加pom引用，要注意的是Config的Server和Client端都要添加。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、Config-Server配置"><a href="#二、Config-Server配置" class="headerlink" title="二、Config Server配置"></a>二、Config Server配置</h2><p>这里我们还是以廖师兄的图为例，先来看看自动更新配置的原理(图中product、order均为客户端)。<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/bus_1.jpg" alt="bus_1"><br>当我们在远端Git修改了配置之后，如果我们访问Config Server的<code>/bus-refresh</code>接口，Config Server就会把更改的配置发送给MQ，之后MQ就会把要改变的配置推送给各个客户端，这样就实现了自动更换配置的功能，现在我们来试一试吧。记住在这之前要先启动Rabbitmq。<br><strong>1.</strong>添加pom引用<br>老规矩，先来添加pom引用，要注意的是Config的Server和Client端都要添加。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>2.</strong>修改配置文件<br>首先我们要先添加rabbitmq的配置，我们可以直接配置在远程git上面，这样服务端和客户端就都有这份配置了。<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  rabbitmq:</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">guest</span></span><br><span class="line"><span class="attr">    password:</span> <span class="string">guest</span></span><br><span class="line"><span class="attr">    host:</span> <span class="number">192.168</span><span class="string">.xxx.xxx</span></span><br><span class="line"><span class="attr">    port:</span> <span class="number">5672</span></span><br></pre></td></tr></table></figure></p>
 <p>然后我们也要显示的使我们的服务暴漏<code>/bus-refresh</code>接口。在Spring2.0中把这个接口都移动到了<em>actuator</em>下面。这个只需要在Config端进行配置就好了。<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">management:</span></span><br><span class="line"><span class="attr">  endpoints:</span></span><br><span class="line"><span class="attr">    web:</span></span><br><span class="line"><span class="attr">      exposure:</span></span><br><span class="line"><span class="attr">        include:</span> <span class="string">bus-refresh</span> <span class="comment">#也可以改为"*"来暴露所有接口</span></span><br></pre></td></tr></table></figure></p>
-<p>现在我们逐一启动我们的Eureka、Config和Client项目，同时在启动Config Server的时候可以看到我们对外暴露的接口<br><img src="http://upload-images.jianshu.io/upload_images/3962292-93427423681e0aa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="bus_2"><br>这样我们就完成配置了，现在我们修改一下远端配置中的<code>env</code>的值，然后访问一下这个接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST http://localhost:8764/actuator/bus-refresh</span><br></pre></td></tr></table></figure></p>
+<p>现在我们逐一启动我们的Eureka、Config和Client项目，同时在启动Config Server的时候可以看到我们对外暴露的接口<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/bus_2.jpg" alt="bus_2"><br>这样我们就完成配置了，现在我们修改一下远端配置中的<code>env</code>的值，然后访问一下这个接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST http://localhost:8764/actuator/bus-refresh</span><br></pre></td></tr></table></figure></p>
 <p>这时候我们发现在不重启项目的情况下，我们的配置已经修改了。<br><strong>3.</strong>配置Webhook<br>刚才我们已经实现了自动替换项目配置，但是我们每次更改配置都要手动访问<code>/bus-refresh</code>接口，有没有简单的方式呢?答案当然是有的。现在大部分远端Git都提供了webhook功能，即我们每更改一次配置，就自动向某一接口发送一次请求。这不就是我们想要的吗？</p>
 <hr>
 <blockquote>
@@ -978,7 +978,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-1bdafcb6a0c162eb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;bus_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/bus_logo.jpg&quot; alt=&quot;bus_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Spring Cloud Bus 将分布式的节点用轻量的消息代理连接起来。它可以用于广播配置文件的更改或者服务之间的通讯，也可以用于监控。上篇我们有说到Spring Cloud为我们提供了在不重启项目的情况下切换配置的功能，就要用到它，让我们来看看怎么实现的吧。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -997,18 +997,18 @@
     <link href="http://catalinali.top/2018/startconfig/"/>
     <id>http://catalinali.top/2018/startconfig/</id>
     <published>2018-06-15T07:45:19.000Z</published>
-    <updated>2018-11-12T06:39:13.030Z</updated>
+    <updated>2019-08-22T07:32:53.570Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-62ca605cfc26e971.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="config_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/config_logo.jpg" alt="config_logo"></p>
 <blockquote>
 <p>在分布式系统中，每一个功能模块都能拆分成一个独立的服务，一次请求的完成，可能会调用很多个服务协调来完成。如果我们每个服务都有一个独立的配置的话，这样很不方便我们维护。Spring Cloud中为我们提供了一个config组件为我们解决了这个问题，并且更改了配置并不需要我们重启。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、Config概述"><a href="#一、Config概述" class="headerlink" title="一、Config概述"></a>一、Config概述</h2><p>同Eureka一样，config也分为server端和client端，我们先来看看server端的原理。这里引用一张廖师兄的图（注：图中的order、product都是客户端）<br><img src="http://upload-images.jianshu.io/upload_images/3962292-b00594da29c8fa54.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="config_1"><br>从这张图我们可以看出，Config Server是以远端Git作为依托（SVN也可以,这里使用Github作为演示），从远端Git仓库中拉取配置并同步到本地Git上。当客户端需要配置的时候就可以从Server端进行配置的拉取。</p>
-<h2 id="二、Config-Server配置"><a href="#二、Config-Server配置" class="headerlink" title="二、Config Server配置"></a>二、Config Server配置</h2><p><strong>1.</strong>创建Config工程<br>跟前文一样，我们使用IDEA的Spring Initializr创建我们的Config工程，如图:除了图中圈起来的config Server要勾上，Eureka Discover也要勾上。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-452ae02135db574d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="config_2"></p>
-<p><strong>2.</strong>创建远程仓库<br>首先我们先创建一个远程Git仓库，这里以Github为例，这里我已经创建好了一个公开仓库<a href="https://github.com/catalinaLi/config_repo" target="_blank" rel="noopener">https://github.com/catalinaLi/config_repo</a><br>然后在里面先添加一份配置<br><img src="http://upload-images.jianshu.io/upload_images/3962292-dca270a81063ad0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="config_3"><br><strong>3.</strong>配置Config工程<br>将我们的Config工程注册到Eureka注册中心：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    serviceUrl:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span> <span class="comment">#服务端地址</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8764</span> <span class="comment">#客户端端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">config</span></span><br><span class="line"><span class="attr">  cloud:</span></span><br><span class="line"><span class="attr">    config:</span></span><br><span class="line"><span class="attr">      server:</span></span><br><span class="line"><span class="attr">        git:</span></span><br><span class="line"><span class="attr">          uri:</span> <span class="attr">https://github.com/catalinaLi/config_repo</span> <span class="comment">#config_Server仓库地址</span></span><br><span class="line">          <span class="comment">#如果我们配置的是私有仓库，则还需要远程仓库的账号和密码</span></span><br><span class="line">          <span class="comment">#username: yourusername  </span></span><br><span class="line">          <span class="comment">#password: yourpassword</span></span><br><span class="line"><span class="attr">env:</span></span><br><span class="line">  <span class="string">dev</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="一、Config概述"><a href="#一、Config概述" class="headerlink" title="一、Config概述"></a>一、Config概述</h2><p>同Eureka一样，config也分为server端和client端，我们先来看看server端的原理。这里引用一张廖师兄的图（注：图中的order、product都是客户端）<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/config_1.jpg" alt="config_1"><br>从这张图我们可以看出，Config Server是以远端Git作为依托（SVN也可以,这里使用Github作为演示），从远端Git仓库中拉取配置并同步到本地Git上。当客户端需要配置的时候就可以从Server端进行配置的拉取。</p>
+<h2 id="二、Config-Server配置"><a href="#二、Config-Server配置" class="headerlink" title="二、Config Server配置"></a>二、Config Server配置</h2><p><strong>1.</strong>创建Config工程<br>跟前文一样，我们使用IDEA的Spring Initializr创建我们的Config工程，如图:除了图中圈起来的config Server要勾上，Eureka Discover也要勾上。<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/config_2.jpg" alt="config_2"></p>
+<p><strong>2.</strong>创建远程仓库<br>首先我们先创建一个远程Git仓库，这里以Github为例，这里我已经创建好了一个公开仓库<a href="https://github.com/catalinaLi/config_repo" target="_blank" rel="noopener">https://github.com/catalinaLi/config_repo</a><br>然后在里面先添加一份配置<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/config_3.jpg" alt="config_3"><br><strong>3.</strong>配置Config工程<br>将我们的Config工程注册到Eureka注册中心：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    serviceUrl:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span> <span class="comment">#服务端地址</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8764</span> <span class="comment">#客户端端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">config</span></span><br><span class="line"><span class="attr">  cloud:</span></span><br><span class="line"><span class="attr">    config:</span></span><br><span class="line"><span class="attr">      server:</span></span><br><span class="line"><span class="attr">        git:</span></span><br><span class="line"><span class="attr">          uri:</span> <span class="attr">https://github.com/catalinaLi/config_repo</span> <span class="comment">#config_Server仓库地址</span></span><br><span class="line">          <span class="comment">#如果我们配置的是私有仓库，则还需要远程仓库的账号和密码</span></span><br><span class="line">          <span class="comment">#username: yourusername  </span></span><br><span class="line">          <span class="comment">#password: yourpassword</span></span><br><span class="line"><span class="attr">env:</span></span><br><span class="line">  <span class="string">dev</span></span><br></pre></td></tr></table></figure></p>
 <p>然后在启动类上添加注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableConfigServer</span> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ConfigApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>4.</strong> Config Server配置<br>接下来就可以通过网络来访问我们的配置了，首先启动注册中心Eureka，然后启动我们的Config。这时候我们通过浏览器访问<a href="http://localhost:8764/client-dev.yml" target="_blank" rel="noopener">http://localhost:8764/client-dev.yml</a>就可以看到我们的配置了。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-84f14530c33c9004.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="config_5"><br>这里是Spring Cloud对配置请求的路径做了映射,通常为：</p>
+<p><strong>4.</strong> Config Server配置<br>接下来就可以通过网络来访问我们的配置了，首先启动注册中心Eureka，然后启动我们的Config。这时候我们通过浏览器访问<a href="http://localhost:8764/client-dev.yml" target="_blank" rel="noopener">http://localhost:8764/client-dev.yml</a>就可以看到我们的配置了。<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/config_5.jpg" alt="config_5"><br>这里是Spring Cloud对配置请求的路径做了映射,通常为：</p>
 <ul>
 <li>/{name}-{profiles}.yml</li>
 <li>/{label}/{name}-{profiles}.yml</li>
@@ -1028,7 +1028,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-62ca605cfc26e971.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;config_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/config_logo.jpg&quot; alt=&quot;config_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在分布式系统中，每一个功能模块都能拆分成一个独立的服务，一次请求的完成，可能会调用很多个服务协调来完成。如果我们每个服务都有一个独立的配置的话，这样很不方便我们维护。Spring Cloud中为我们提供了一个config组件为我们解决了这个问题，并且更改了配置并不需要我们重启。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1047,9 +1047,9 @@
     <link href="http://catalinali.top/2018/startfeignRest/"/>
     <id>http://catalinali.top/2018/startfeignRest/</id>
     <published>2018-06-05T02:07:05.000Z</published>
-    <updated>2018-11-12T06:38:37.540Z</updated>
+    <updated>2019-08-22T07:48:42.047Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-cb3a0601d6b8becc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="feign&amp;Rest_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/feign&amp;Rest_logo.jpg" alt="feign&amp;Rest_logo"></p>
 <blockquote>
 <p>SpringCloud服务间的调用有两种方式：RestTemplate和FeignClient。不管是什么方式，他都是通过REST接口调用服务的http接口，参数和结果默认都是通过jackson序列化和反序列化。</p>
 </blockquote>
@@ -1061,15 +1061,15 @@
 <p>这是官网对Ribbon的简介，简单的说Ribbon是一个负载均衡客户端，SpringCloud的两种服务间调用方式背后都用了Ribbon。</p>
 <h2 id="二、使用RestTemplate进行服务调用"><a href="#二、使用RestTemplate进行服务调用" class="headerlink" title="二、使用RestTemplate进行服务调用"></a>二、使用RestTemplate进行服务调用</h2><p>代码Demo接上篇<a href="http://catalinali.top/2018/startEureka/">SpringCloud(一)：服务的注册与发现（Eureka）</a><br><strong>1.</strong>我们首先启动端口为8761的eureka工程，把SpringCloud的服务注册中心启动。</p>
 <p><strong>2.</strong>打开我们的Discovery工程。这时候Discovery工程相当于服务端，我们来为它写一个提供服务的方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;server.port&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String port;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello! 我是"</span> + port;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后将配置文件中的端口改为8762和8763分别启动。<br>如果你使用的是IDEA的话，只需要去掉下图中红框框住的部分就可以将同一工程启动多个实例<br><img src="http://upload-images.jianshu.io/upload_images/3962292-9c024f444feabe8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Rest_1"><br>这时，我们就拥有了端口为8762和8763的两个Discovery集群，Eureka中可以看到<br><img src="http://upload-images.jianshu.io/upload_images/3962292-b110811fc70ff1fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="feign&amp;Rest_2"><br><strong>3.</strong>我们再新建一个Eureka-Discovery工程（可以参照上一篇文章），首先为他配置好Eureka-Client的配置。在配置文件中为它指定端口为8764：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    serviceUrl:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span> <span class="comment">#服务端地址</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8764</span> <span class="comment">#客户端端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">client</span> <span class="comment">#客户端名称</span></span><br></pre></td></tr></table></figure></p>
+<p>然后将配置文件中的端口改为8762和8763分别启动。<br>如果你使用的是IDEA的话，只需要去掉下图中红框框住的部分就可以将同一工程启动多个实例<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/Rest_1.jpg" alt="Rest_1"><br>这时，我们就拥有了端口为8762和8763的两个Discovery集群，Eureka中可以看到<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/feign&amp;Rest_2.jpg" alt="feign&amp;Rest_2"><br><strong>3.</strong>我们再新建一个Eureka-Discovery工程（可以参照上一篇文章），首先为他配置好Eureka-Client的配置。在配置文件中为它指定端口为8764：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    serviceUrl:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span> <span class="comment">#服务端地址</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8764</span> <span class="comment">#客户端端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">client</span> <span class="comment">#客户端名称</span></span><br></pre></td></tr></table></figure></p>
 <p>然后我们为它添加一个RestTemplate的配置Bean，可以参照如下代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@LoadBalanced</span></span><br><span class="line">    <span class="function">RestTemplate <span class="title">restTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>之后我们就可以在需要调用的地方用如下方式进行调用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/cliHello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">CliHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//第一个参数为：服务端的应用名称/调用接口的Mapping</span></span><br><span class="line">        <span class="comment">//第二个参数为返回的类型</span></span><br><span class="line">        <span class="keyword">return</span> restTemplate.getForObject(<span class="string">"http://discovery/hello"</span>,String.class);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>结果如图：<br><img src="http://upload-images.jianshu.io/upload_images/3962292-d32b6de8827e0976.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="feign&amp;Rest_3"><br>这里因为Ribbon的默认负载均衡方式为轮询，所以我们可以看到端口8762和8763依次出现。如果有想改变负载均衡方式的小伙伴可以下去自行研究一下，这里就不过多赘述了。</p>
+<p>结果如图：<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/feign&amp;Rest_3.jpg" alt="feign&amp;Rest_3"><br>这里因为Ribbon的默认负载均衡方式为轮询，所以我们可以看到端口8762和8763依次出现。如果有想改变负载均衡方式的小伙伴可以下去自行研究一下，这里就不过多赘述了。</p>
 <h2 id="三、使用Feign进行服务调用"><a href="#三、使用Feign进行服务调用" class="headerlink" title="三、使用Feign进行服务调用"></a>三、使用Feign进行服务调用</h2><p><strong>1.添加Feign的pom引用</strong><br>在FeignClient的pom文件中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
 <p>需要注意的是版本一定要跟我的一致，否则添加的依赖有可能会不一样<br><strong>2.为启动类添加注解</strong><br>这一步很简单，只需要在在启动类上添加<code>@EnableFeignClients</code>注解：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication</span><br><span class="line">@EnableDiscoveryClient</span><br><span class="line">@EnableFeignClients</span><br><span class="line">public class ClientApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(ClientApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>3.定义一个Feign接口</strong><br>代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//name是服务端的名称</span></span><br><span class="line"><span class="meta">@FeignClient</span>(name = <span class="string">"discovery"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">HelloClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//url是调用服务的url值</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function">String <span class="title">hello</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>4.调用</strong><br>在配置了Feign接口后，我们就可以直接进行注入调用了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> HelloClient helloClient;</span><br><span class="line"></span><br><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/feignHello"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">feignHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> helloClient.hello();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>调用的结果跟RestTemplate也相同<br><img src="http://upload-images.jianshu.io/upload_images/3962292-b24f4d1c3624f57f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="feign&amp;Rest_3_1"><br>从这里我们可以看到，使用Feign是伪分布式的调用方式。</p>
+<p>调用的结果跟RestTemplate也相同<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/feign&amp;Rest_3_1.jpg" alt="feign&amp;Rest_3_1"><br>从这里我们可以看到，使用Feign是伪分布式的调用方式。</p>
 <hr>
 <blockquote>
 <p>本文作者： catalinaLi<br>本文链接： <a href="http://catalinali.top/2018/startfeign&amp;Rest/">http://catalinali.top/2018/startfeign&amp;Rest/</a><br>版权声明： 原创文章，有问题请评论中留言。非商业转载请注明作者及出处。</p>
@@ -1078,7 +1078,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-cb3a0601d6b8becc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;feign&amp;amp;Rest_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/feign&amp;amp;Rest_logo.jpg&quot; alt=&quot;feign&amp;amp;Rest_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;SpringCloud服务间的调用有两种方式：RestTemplate和FeignClient。不管是什么方式，他都是通过REST接口调用服务的http接口，参数和结果默认都是通过jackson序列化和反序列化。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1097,9 +1097,9 @@
     <link href="http://catalinali.top/2018/startEureka/"/>
     <id>http://catalinali.top/2018/startEureka/</id>
     <published>2018-05-31T10:19:58.000Z</published>
-    <updated>2018-11-12T06:49:48.420Z</updated>
+    <updated>2019-08-22T07:40:31.837Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-ab00c7411900a8c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/eureka_logo.jpg" alt="eureka_logo"></p>
 <hr>
 <a id="more"></a>
 <h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>首先我们先引用Dubbo官网的一段话</p>
@@ -1110,21 +1110,21 @@
 <li>流动计算架构<br>当服务越来越多，容量的评估，小服务资源的浪费等问题逐渐显现，此时需增加一个调度中心基于访问压力实时管理集群容量，提高集群利用率。此时，用于提高机器利用率的资源调度和治理中心(SOA) 是关键。</li>
 </ul>
 <p>结合现在大火的微服务，SpringCloud成了炙手可热的微服务架构方案，这里我们介绍一个他的核心组件：Eureka ,eureka是一个服务注册和发现模块。类似于Dubbo的管控台。它分为两个模块:客户端和服务端</p>
-<h2 id="二、创建一个Eureka-Server"><a href="#二、创建一个Eureka-Server" class="headerlink" title="二、创建一个Eureka Server"></a>二、创建一个Eureka Server</h2><p>这里我们使用IntelliJ IDEA进行展示。<br><strong>1.首先创建一个Eureka Server</strong><br>使用IDEA创建一个项目。这里SpringBoot我们统一使用2.0.2版本，SpringCloud使用Finchley.RELEASE版本<br><img src="http://upload-images.jianshu.io/upload_images/3962292-040720dc5c9e1cb6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_2"><br>中间有一步我们选择Eureka Server选项和SpringBoot版本，如图<br><img src="http://upload-images.jianshu.io/upload_images/3962292-a5ce7d923985a2fb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_2"><br>然后下一步就可以创建好了<br><strong>2.添加@EnableEurekaServer注解</strong><br>这个注解只需要在springboot工程的启动application类上就好了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(EurekaApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、创建一个Eureka-Server"><a href="#二、创建一个Eureka-Server" class="headerlink" title="二、创建一个Eureka Server"></a>二、创建一个Eureka Server</h2><p>这里我们使用IntelliJ IDEA进行展示。<br><strong>1.首先创建一个Eureka Server</strong><br>使用IDEA创建一个项目。这里SpringBoot我们统一使用2.0.2版本，SpringCloud使用Finchley.RELEASE版本<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/eureka_1.jpg" alt="eureka_1"><br>中间有一步我们选择Eureka Server选项和SpringBoot版本，如图<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/eureka_2.jpg" alt="eureka_2"><br>然后下一步就可以创建好了<br><strong>2.添加@EnableEurekaServer注解</strong><br>这个注解只需要在springboot工程的启动application类上就好了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(EurekaApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这时候我们就可以启动了，运行EurekaApplication，然后就输入<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a>就可以看到我们Eureka的页面了。但这时候我们观察console可以发现一直在报错，这是因为默认情况下Eureka Server也是一个Client,我们需要通过配置来解决这个问题<br><strong>3.添加配置</strong><br>eureka是一个高可用的组件，它没有后端缓存，每一个实例注册之后需要向注册中心发送心跳（因此可以在内存中完成），在默认情况下erureka server也是一个eureka client ,必须要指定一个server。eureka server的配置文件appication.yml<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">eureka</span> <span class="comment">#应用的名称</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8761</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  instance:</span></span><br><span class="line"><span class="attr">    hostname:</span> <span class="string">localhost</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span></span><br><span class="line">    <span class="comment"># 通过添加配置我们这里忽略自己</span></span><br><span class="line"><span class="attr">    register-with-eureka:</span> <span class="literal">false</span> <span class="comment">#表示是否注册自身到eureka服务器</span></span><br><span class="line"><span class="attr">    fetch-registry:</span> <span class="literal">false</span> <span class="comment">#表示是否从eureka服务器获取注册信息</span></span><br></pre></td></tr></table></figure></p>
-<p>这时候再启动应用，就大功告成了<br><img src="http://upload-images.jianshu.io/upload_images/3962292-2794ae9cf1a788e8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_4"></p>
-<h2 id="三、创建一个Eureka-Client"><a href="#三、创建一个Eureka-Client" class="headerlink" title="三、创建一个Eureka Client"></a>三、创建一个Eureka Client</h2><p><strong>1.运行Eureka Server</strong><br>这里我们可以使用命令行在Eureka Server的目录位置使用<code>mvn clean package</code>来进行打包<br>然后使用<code>java -jar target/eureka-0.0.1-SNAPSHOT.jar</code>命令来进行启动jar包<br>也可以使用<code>nohup java -jar target/eureka-0.0.1-SNAPSHOT.jar &amp;</code>来后台启动这个jar。<br>最后刷新Eureka Server来判断是否启动成功<br><strong>2.创建一个Eureka Client</strong><br>这一步跟创建Server端的步骤是一样的，不同的是模板选择Discovery<br><img src="http://upload-images.jianshu.io/upload_images/3962292-1c39334b0a04fc1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_5"><br><strong>3.添加@EnableEurekaServer注解和服务端地址</strong><br>基本和服务端的做法一样，首先我们在DicoveryApplication.java的代码上添加@EnableDiscoveryClient注解。然后在application.yml上添加配置：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DicoveryApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DicoveryApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这时候再启动应用，就大功告成了<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/eureka_4.jpg" alt="eureka_4"></p>
+<h2 id="三、创建一个Eureka-Client"><a href="#三、创建一个Eureka-Client" class="headerlink" title="三、创建一个Eureka Client"></a>三、创建一个Eureka Client</h2><p><strong>1.运行Eureka Server</strong><br>这里我们可以使用命令行在Eureka Server的目录位置使用<code>mvn clean package</code>来进行打包<br>然后使用<code>java -jar target/eureka-0.0.1-SNAPSHOT.jar</code>命令来进行启动jar包<br>也可以使用<code>nohup java -jar target/eureka-0.0.1-SNAPSHOT.jar &amp;</code>来后台启动这个jar。<br>最后刷新Eureka Server来判断是否启动成功<br><strong>2.创建一个Eureka Client</strong><br>这一步跟创建Server端的步骤是一样的，不同的是模板选择Discovery<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/eureka_5.jpg" alt="eureka_5"><br><strong>3.添加@EnableEurekaServer注解和服务端地址</strong><br>基本和服务端的做法一样，首先我们在DicoveryApplication.java的代码上添加@EnableDiscoveryClient注解。然后在application.yml上添加配置：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DicoveryApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DicoveryApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    serviceUrl:</span></span><br><span class="line"><span class="attr">      defaultZone:</span> <span class="attr">http://localhost:8761/eureka/</span> <span class="comment">#服务端地址</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8762</span> <span class="comment">#客户端端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">client</span> <span class="comment">#客户端名称</span></span><br></pre></td></tr></table></figure>
-<p>注意了，这个版本我们需要在pom文件中添加<code>spring-boot-starter-web</code>的依赖，<br>这时候我们就可以启动我们的服务了，然后就可以在eureka的页面上看到我们刚才的Client了<br><img src="http://upload-images.jianshu.io/upload_images/3962292-0b366efb0d3611c3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_6"></p>
+<p>注意了，这个版本我们需要在pom文件中添加<code>spring-boot-starter-web</code>的依赖，<br>这时候我们就可以启动我们的服务了，然后就可以在eureka的页面上看到我们刚才的Client了<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/eureka_6.jpg" alt="eureka_6"></p>
 <h2 id="三、Eureka-Server的高可用"><a href="#三、Eureka-Server的高可用" class="headerlink" title="三、Eureka Server的高可用"></a>三、Eureka Server的高可用</h2><p>简单的说，实现Eureka Server的高可用就是让Eureka Server的实例互相注册。<br>让我们来看一下如何实现：<br>首先我们配置文件中这样写<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  application:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">discovery-cluster</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  profiles:</span> <span class="string">discovery1</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8761</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  instance:</span></span><br><span class="line"><span class="attr">    hostname:</span> <span class="string">discovery1</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      default-zone:</span> <span class="attr">http://discovery2:8762/eureka</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  profiles:</span> <span class="string">discovery2</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line"><span class="attr">  port:</span> <span class="number">8762</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">  instance:</span></span><br><span class="line"><span class="attr">    hostname:</span> <span class="string">discovery2</span></span><br><span class="line"><span class="attr">  client:</span></span><br><span class="line"><span class="attr">    service-url:</span></span><br><span class="line"><span class="attr">      default-zone:</span> <span class="attr">http://discovery1:8761/eureka</span></span><br></pre></td></tr></table></figure></p>
 <p>配置文件是通过两个Eureka Server互相注册，这里有三段配置，第一段配置为公共配置，配置了应用名称，第二段为名discovery1的配置，第三段为discovery2的配置。在项目启动可以通过–spring.profiles.active={配置名称} 来启动不同的配置。<br>下面我们来进行测试：<br>1）在discovery-cluster目录下，使用<code>mvn clean package</code>打包项目<br>2）使用下面命令启动两个Eureka Server节点<br><code>java -jar discovery-cluster-0.0.1-SNAPSHOT.jar --spring.profiles.active=discovery1</code></p>
-<p><code>java -jar discovery-cluster-0.0.1-SNAPSHOT.jar --spring.profiles.active=discovery2</code><br>3）在浏览器上分别输入<a href="http://localhost:8761和http://localhost:8762查看注册的服务。" target="_blank" rel="noopener">http://localhost:8761和http://localhost:8762查看注册的服务。</a><br>这时候我们可以发现两个网址都可以访问Eueka页面<br><img src="http://upload-images.jianshu.io/upload_images/3962292-6120ab29a7912677.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="eureka_7"><br>这样我们就大功告成了，如我们我们的实例有3个，那就在配置文件中都写入<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">   client:</span></span><br><span class="line"><span class="attr">      service-url:</span></span><br><span class="line"><span class="attr">          default-zone:</span><span class="attr">http://discovery1:8761/eureka,http://discovery2:8762/eureka</span></span><br></pre></td></tr></table></figure></p>
+<p><code>java -jar discovery-cluster-0.0.1-SNAPSHOT.jar --spring.profiles.active=discovery2</code><br>3）在浏览器上分别输入<a href="http://localhost:8761和http://localhost:8762查看注册的服务。" target="_blank" rel="noopener">http://localhost:8761和http://localhost:8762查看注册的服务。</a><br>这时候我们可以发现两个网址都可以访问Eueka页面<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/eureka_7.jpg" alt="eureka_7"><br>这样我们就大功告成了，如我们我们的实例有3个，那就在配置文件中都写入<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line"><span class="attr">   client:</span></span><br><span class="line"><span class="attr">      service-url:</span></span><br><span class="line"><span class="attr">          default-zone:</span><span class="attr">http://discovery1:8761/eureka,http://discovery2:8762/eureka</span></span><br></pre></td></tr></table></figure></p>
 <p>以上，就是Eureka的基本用法了！</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-ab00c7411900a8c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;eureka_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/eureka_logo.jpg&quot; alt=&quot;eureka_logo&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
     
     </summary>
@@ -1141,9 +1141,9 @@
     <link href="http://catalinali.top/2018/noteGithubGitlab/"/>
     <id>http://catalinali.top/2018/noteGithubGitlab/</id>
     <published>2018-04-27T01:50:24.000Z</published>
-    <updated>2018-11-12T06:41:24.768Z</updated>
+    <updated>2019-08-22T07:29:47.284Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/3962292-049428adcf025967.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="gitlabgithub_logo"></p>
+    <content type="html"><![CDATA[<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/gitlabgithub_logo.jpg" alt="gitlabgithub_logo"></p>
 <blockquote>
 <p>换了工作后使用的是gitlab，这样对github的使用会有影响。为了解决这个问题，搜了很多资料后完美解决。现在把它记录下来。</p>
 </blockquote>
@@ -1179,7 +1179,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/3962292-049428adcf025967.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;gitlabgithub_logo&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://catalinali.oss-cn-beijing.aliyuncs.com/gitlabgithub_logo.jpg&quot; alt=&quot;gitlabgithub_logo&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;换了工作后使用的是gitlab，这样对github的使用会有影响。为了解决这个问题，搜了很多资料后完美解决。现在把它记录下来。&lt;/p&gt;
 &lt;/blockquote&gt;

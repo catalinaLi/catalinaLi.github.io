@@ -103,18 +103,18 @@
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
 <meta property="og:description" content="HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-9586406d9946c776.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-51863fe255a6985b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-7cada083ed007cca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-4509c3909ad70d4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-2361da42619ca5dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-500ba5fdf4ea01ad.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-22T06:24:42.292Z">
+<meta property="og:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_logo.jpg">
+<meta property="og:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_1.jpg">
+<meta property="og:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_2.jpg">
+<meta property="og:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_3.jpg">
+<meta property="og:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_4.jpg">
+<meta property="og:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_5.jpg">
+<meta property="og:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_6.jpg">
+<meta property="og:updated_time" content="2019-08-22T06:46:57.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解HashMap">
 <meta name="twitter:description" content="HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_logo.jpg">
 
 
 
@@ -423,24 +423,24 @@
       
 
       
-        <p><img src="http://upload-images.jianshu.io/upload_images/3962292-12e9899d89e68f47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_logo"></p>
+        <p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_logo.jpg" alt="hashmap_logo"></p>
 <blockquote>
 <p>HashMap是我们使用非常多的Collection,它是基于哈希表的 Map 接口的实现,以key-value的形式存在。今天我们来深入了解一下这个集合的底层原理。</p>
 </blockquote>
 <a id="more"></a>
 <hr>
 <p>众所周知，HashMap是一个用于存储Key-Value键值对的集合，每一个键值对也叫做Entry。这些个键值对（Entry）分散存储在一个数组当中，这个数组就是HashMap的主干。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3962292-9586406d9946c776.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_logo"></p>
+<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_1.jpg" alt="hashmap_logo"></p>
 <p>这个数组在首次使用时进行初始化，每一个元素的初始值都是Null。<br>为了了解它，我们从Put方法个Get方法来进行阐述。</p>
 <h2 id="一、Put方法的原理"><a href="#一、Put方法的原理" class="headerlink" title="一、Put方法的原理"></a>一、Put方法的原理</h2><p>HashMap在调用put方法时会先根据Key值来进行哈希运算来得到结果，即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index =  Hash（“Key”）</span><br></pre></td></tr></table></figure></p>
 <p>假如计算出的index是2，那么就会将它放入index为2的位置，如图：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3962292-51863fe255a6985b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_2"></p>
-<p>但是再完美的Hash函数也难免会出现index冲突的情况。比如下面这样。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-7cada083ed007cca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_3"><br>这时候我们就可以使用<strong>链表</strong>来解决</p>
-<p>HashMap数组的每一个元素不止是一个Entry对象，也是一个链表的头节点。每一个Entry对象通过Next指针指向它的下一个Entry节点。当新来的Entry映射到冲突的数组位置时，只需要插入到对应的链表即可：<br><img src="http://upload-images.jianshu.io/upload_images/3962292-4509c3909ad70d4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_4"><br>需要注意的是，新来的Entry节点插入链表时，使用的是“头插法”。<br>所以一个完整的HashMap样子应该是这样的<br><img src="http://upload-images.jianshu.io/upload_images/3962292-2361da42619ca5dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_5"></p>
+<p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_2.jpg" alt="hashmap_2"></p>
+<p>但是再完美的Hash函数也难免会出现index冲突的情况。比如下面这样。<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_3.jpg" alt="hashmap_3"><br>这时候我们就可以使用<strong>链表</strong>来解决</p>
+<p>HashMap数组的每一个元素不止是一个Entry对象，也是一个链表的头节点。每一个Entry对象通过Next指针指向它的下一个Entry节点。当新来的Entry映射到冲突的数组位置时，只需要插入到对应的链表即可：<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_4.jpg" alt="hashmap_4"><br>需要注意的是，新来的Entry节点插入链表时，使用的是“头插法”。<br>所以一个完整的HashMap样子应该是这样的<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_5.jpg" alt="hashmap_5"></p>
 <h2 id="二、Get方法的原理"><a href="#二、Get方法的原理" class="headerlink" title="二、Get方法的原理"></a>二、Get方法的原理</h2><p>使用Get方法根据Key来查找Value的时候，发生了什么呢？</p>
 <p>首先会把输入的Key做一次Hash映射，得到对应的index：</p>
 <p>index =  Hash（“apple”）</p>
-<p>由于刚才所说的Hash冲突，同一个位置有可能匹配到多个Entry，这时候就需要顺着对应链表的头节点，一个一个向下来查找。假设我们要查找的Key是“apple”：<br><img src="http://upload-images.jianshu.io/upload_images/3962292-500ba5fdf4ea01ad.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hashmap_6"><br>第一步，我们查看的是头节点Entry6，Entry6的Key是banana，显然不是我们要找的结果。</p>
+<p>由于刚才所说的Hash冲突，同一个位置有可能匹配到多个Entry，这时候就需要顺着对应链表的头节点，一个一个向下来查找。假设我们要查找的Key是“apple”：<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/hashmap_6.jpg" alt="hashmap_6"><br>第一步，我们查看的是头节点Entry6，Entry6的Key是banana，显然不是我们要找的结果。</p>
 <p>第二步，我们查看的是Next节点Entry1，Entry1的Key是apple，正是我们要找的结果。</p>
 <p>之所以把Entry6放在头节点，是因为HashMap的发明者认为，<strong>后插入的Entry被查找的可能性更大</strong>。</p>
 <h2 id="三、哈希方法"><a href="#三、哈希方法" class="headerlink" title="三、哈希方法"></a>三、哈希方法</h2><p>如何实现一个尽量均匀分布的Hash函数呢？我们通过利用Key的HashCode值来做某种运算。具体公式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index =  HashCode（Key） &amp;  （Length - 1）</span><br></pre></td></tr></table></figure></p>

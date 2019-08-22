@@ -103,13 +103,13 @@
 <meta property="og:site_name" content="catalinaLi&#39;s Notes">
 <meta property="og:description" content="在学习淘淘商城的过程中接触到了nginx,今天就把使用它的过程记录下来,作为留存。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-5474845afdc1f410.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3962292-cf04749534c7c769.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-06-20T01:53:42.180Z">
+<meta property="og:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/nginx_logo.jpg">
+<meta property="og:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/nginx_1.jpg">
+<meta property="og:updated_time" content="2019-08-22T06:59:23.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx初探究：安装与简单使用">
 <meta name="twitter:description" content="在学习淘淘商城的过程中接触到了nginx,今天就把使用它的过程记录下来,作为留存。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3962292-5474845afdc1f410.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://catalinali.oss-cn-beijing.aliyuncs.com/nginx_logo.jpg">
 
 
 
@@ -418,7 +418,7 @@
       
 
       
-        <p><img src="http://upload-images.jianshu.io/upload_images/3962292-5474845afdc1f410.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nginx_logo"></p>
+        <p><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/nginx_logo.jpg" alt="nginx_logo"></p>
 <blockquote>
 <p>在学习淘淘商城的过程中接触到了nginx,今天就把使用它的过程记录下来,作为留存。</p>
 </blockquote>
@@ -439,7 +439,7 @@
 <p>③OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。nginx不仅支持http协议，还支持https（即在ssl协议上传输http）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure></p>
 <h3 id="3-正式安装"><a href="#3-正式安装" class="headerlink" title="3.正式安装"></a>3.正式安装</h3><p>第一步：把nginx的源码包上传到linux系统<br>第二步：解压缩<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxf nginx-1.8.0.tar.gz</span><br></pre></td></tr></table></figure></p>
 <p>第三步：使用configure命令创建一makeFile文件。<br>./configure \<br>–prefix=/usr/local/nginx \<br>–pid-path=/var/run/nginx/nginx.pid \<br>–lock-path=/var/lock/nginx.lock \<br>–error-log-path=/var/log/nginx/error.log \<br>–http-log-path=/var/log/nginx/access.log \<br>–with-http_gzip_static_module \<br>–http-client-body-temp-path=/var/temp/nginx/client \<br>–http-proxy-temp-path=/var/temp/nginx/proxy \<br>–http-fastcgi-temp-path=/var/temp/nginx/fastcgi \<br>–http-uwsgi-temp-path=/var/temp/nginx/uwsgi \<br>–http-scgi-temp-path=/var/temp/nginx/scgi<br>注意：以上都是一些安装时配置nginx的一些参数,具体含义可以自行百度。另外在启动nginx之前，上边将临时文件目录指定为/var/temp/nginx，需要在/var下创建temp及nginx目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/temp/nginx/client -p</span><br></pre></td></tr></table></figure></p>
-<p>第四步：编译,运行<code>make</code>命令<br>第五步：安装运行<code>make install</code>命令<br>第六步：测试<br>进入安装目录下的<strong>sbin</strong>文件,运行<code>./nginx</code>后，打开浏览器访问主机ip。<br>注意：①默认是80端口。②是否关闭防火墙。<br><img src="http://upload-images.jianshu.io/upload_images/3962292-cf04749534c7c769.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nginx_1"><br>如果出现上图，恭喜你，nginx安装成功。<br>相关命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s stop ##关闭nginx</span><br><span class="line">./nginx -s quit ##关闭nginx(推荐使用)</span><br><span class="line">./nginx -s reload ##重启nginx</span><br></pre></td></tr></table></figure></p>
+<p>第四步：编译,运行<code>make</code>命令<br>第五步：安装运行<code>make install</code>命令<br>第六步：测试<br>进入安装目录下的<strong>sbin</strong>文件,运行<code>./nginx</code>后，打开浏览器访问主机ip。<br>注意：①默认是80端口。②是否关闭防火墙。<br><img src="https://catalinali.oss-cn-beijing.aliyuncs.com/nginx_1.jpg" alt="nginx_1"><br>如果出现上图，恭喜你，nginx安装成功。<br>相关命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s stop ##关闭nginx</span><br><span class="line">./nginx -s quit ##关闭nginx(推荐使用)</span><br><span class="line">./nginx -s reload ##重启nginx</span><br></pre></td></tr></table></figure></p>
 <h2 id="三、配置虚拟主机"><a href="#三、配置虚拟主机" class="headerlink" title="三、配置虚拟主机"></a>三、配置虚拟主机</h2><h3 id="1-通过端口号区分虚拟主机"><a href="#1-通过端口号区分虚拟主机" class="headerlink" title="1.通过端口号区分虚拟主机"></a>1.通过端口号区分虚拟主机</h3><p>打开nginx的配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure></p>
 <p>可以看到一个server节点,这个就是我们配置虚拟主机的关键,每一个此节点代表一台主机。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;    ##端口号</span><br><span class="line">    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line"></span><br><span class="line">    #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        root   html;    ##nginx安装目录下的html目录</span><br><span class="line">        index  index.html index.htm; ##每台主机对应的页面</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>当我们配置了多个server，就相当于配置了多个虚拟主机。这时我们就可以通过不同的端口号来进行访问。</p>

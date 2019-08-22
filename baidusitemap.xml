@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://catalinali.top/2018/wechatOAuth/</loc>
-    <lastmod>2019-08-22T06:25:47.391Z</lastmod>
+    <lastmod>2019-08-22T07:56:26.525Z</lastmod>
     <data>
         <display>
         <title>微信开发之微信网页授权获取openid</title>
@@ -24,219 +24,19 @@
 
     
   <url>
-    <loc>http://catalinali.top/2019/solveConcurrency/</loc>
-    <lastmod>2019-08-22T06:25:32.523Z</lastmod>
+    <loc>http://catalinali.top/2017/useMQ/</loc>
+    <lastmod>2019-08-22T07:55:41.340Z</lastmod>
     <data>
         <display>
-        <title>应对大并发</title>
-        <pubTime>2019-04-02T02:36:32.000Z</pubTime>
+        <title>ActiveMQ从入门到实践</title>
+        <pubTime>2017-12-22T01:48:26.000Z</pubTime>
         
-        <tag>concurrency</tag>
+        <tag>mq</tag>
          
          
            
              
-              <breadCrumb title="concurrency" url="http://catalinali.top/categories/concurrency/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/proxyPattern/</loc>
-    <lastmod>2019-08-22T06:25:18.544Z</lastmod>
-    <data>
-        <display>
-        <title>（转载）Java设计模式之代理模式</title>
-        <pubTime>2018-08-29T03:22:19.000Z</pubTime>
-        
-        <tag>design-patterns</tag>
-         
-         
-           
-             
-              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/knowHashMap/</loc>
-    <lastmod>2019-08-22T06:24:42.292Z</lastmod>
-    <data>
-        <display>
-        <title>深入理解HashMap</title>
-        <pubTime>2018-10-19T01:46:26.000Z</pubTime>
-        
-        <tag>HashMap</tag>
-         
-         
-           
-             
-              <breadCrumb title="HashMap" url="http://catalinali.top/categories/HashMap/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2019/knowCOWList/</loc>
-    <lastmod>2019-08-22T06:24:36.328Z</lastmod>
-    <data>
-        <display>
-        <title>（转载）JAVA并发编程(八)：并发容器（CopyOnWriteArrayList）</title>
-        <pubTime>2019-01-09T03:02:15.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/knowConHashMap/</loc>
-    <lastmod>2019-08-22T06:24:20.266Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(七)：并发容器（ConcurrentHashMap）</title>
-        <pubTime>2018-10-23T02:27:00.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloThreadPool/</loc>
-    <lastmod>2019-08-22T06:24:00.592Z</lastmod>
-    <data>
-        <display>
-        <title>（转载）JAVA并发编程(四)：线程池的使用</title>
-        <pubTime>2018-08-27T02:48:41.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
-    <lastmod>2019-08-22T06:23:52.788Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(六)：线程本地变量ThreadLocal与TransmittableThreadLocal</title>
-        <pubTime>2018-08-28T01:44:53.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloLatch/</loc>
-    <lastmod>2019-08-22T06:23:40.680Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(三)：同步的辅助类之闭锁（CountDownLatch）与循环屏障（CyclicBarrier）</title>
-        <pubTime>2018-08-23T11:11:08.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloCAS/</loc>
-    <lastmod>2019-08-22T06:23:27.361Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(二)：理解CAS机制</title>
-        <pubTime>2018-08-19T06:09:25.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloCallable/</loc>
-    <lastmod>2019-08-22T06:23:19.238Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(五)：创建线程的第三种方式：实现Callable接口</title>
-        <pubTime>2018-08-27T02:49:54.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/helloNginx/</loc>
-    <lastmod>2019-06-20T01:53:42.180Z</lastmod>
-    <data>
-        <display>
-        <title>Nginx初探究：安装与简单使用</title>
-        <pubTime>2017-10-31T08:30:13.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="nginx" url="http://catalinali.top/categories/nginx/"/>
+              <breadCrumb title="mq" url="http://catalinali.top/categories/mq/"/>
           
         </display>
     </data>
@@ -245,7 +45,7 @@
     
   <url>
     <loc>http://catalinali.top/2018/useJSONP/</loc>
-    <lastmod>2019-06-20T01:48:43.519Z</lastmod>
+    <lastmod>2019-08-22T07:55:01.018Z</lastmod>
     <data>
         <display>
         <title>使用JSONP解决ajax跨域</title>
@@ -264,476 +64,8 @@
 
     
   <url>
-    <loc>http://catalinali.top/2018/singletonPattern/</loc>
-    <lastmod>2018-11-12T06:51:32.964Z</lastmod>
-    <data>
-        <display>
-        <title>Java设计模式之单例模式的究极版写法</title>
-        <pubTime>2018-10-11T01:29:06.000Z</pubTime>
-        
-        <tag>design-patterns</tag>
-         
-         
-           
-             
-              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/startZuul/</loc>
-    <lastmod>2018-11-12T06:50:37.663Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(五)：路由网关（Zuul）</title>
-        <pubTime>2018-07-10T10:15:28.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/startEureka/</loc>
-    <lastmod>2018-11-12T06:49:48.420Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(一)：服务的注册与发现（Eureka）</title>
-        <pubTime>2018-05-31T10:19:58.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/installVue/</loc>
-    <lastmod>2018-11-12T06:48:47.093Z</lastmod>
-    <data>
-        <display>
-        <title>Vue.js小白入门，搭建开发环境</title>
-        <pubTime>2017-11-27T08:39:32.000Z</pubTime>
-        
-        <tag>vue.js</tag>
-         
-         
-           
-             
-              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/firstBuildHexo/</loc>
-    <lastmod>2018-11-12T06:48:15.196Z</lastmod>
-    <data>
-        <display>
-        <title>手把手教你使用hexo搭建属于你的个人博客</title>
-        <pubTime>2017-08-06T06:15:15.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/buildredis/</loc>
-    <lastmod>2018-11-12T06:45:52.095Z</lastmod>
-    <data>
-        <display>
-        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
-        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
-        
-        <tag>Redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
-    <lastmod>2018-11-12T06:45:23.818Z</lastmod>
-    <data>
-        <display>
-        <title>小白从头到脚搭建zookeeper集群的过程</title>
-        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
-        
-        <tag>zookeeper</tag>
-         
-         
-           
-             
-              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/getMVVM/</loc>
-    <lastmod>2018-11-12T06:44:56.481Z</lastmod>
-    <data>
-        <display>
-        <title>解析Vue.js的MVVM模式</title>
-        <pubTime>2018-08-31T03:44:06.000Z</pubTime>
-        
-        <tag>vue.js</tag>
-         
-         
-           
-             
-              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/helloDubbo/</loc>
-    <lastmod>2018-11-12T06:44:20.385Z</lastmod>
-    <data>
-        <display>
-        <title>Dubbo初体验:远程服务调用和管控台的搭建</title>
-        <pubTime>2017-09-06T07:42:56.000Z</pubTime>
-        
-        <tag>Dubbo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/helloVolatile/</loc>
-    <lastmod>2018-11-12T06:42:59.851Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA并发编程(一)：理解volatile关键字</title>
-        <pubTime>2018-08-15T02:11:12.000Z</pubTime>
-        
-        <tag>juc</tag>
-         
-         
-           
-             
-              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/IDEABuildSSM/</loc>
-    <lastmod>2018-11-12T06:42:45.175Z</lastmod>
-    <data>
-        <display>
-        <title>记录：使用IDEA搭建Maven+SSM的过程</title>
-        <pubTime>2017-08-15T07:51:18.000Z</pubTime>
-        
-        <tag>SSM</tag>
-         
-        <tag>IDEA</tag>
-         
-         
-           
-             
-              <breadCrumb title="SSM" url="http://catalinali.top/categories/SSM/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/installjira/</loc>
-    <lastmod>2018-11-12T06:42:32.742Z</lastmod>
-    <data>
-        <display>
-        <title>centos7下破解安装JIRA 7.2</title>
-        <pubTime>2017-08-16T03:41:50.000Z</pubTime>
-        
-        <tag>jira</tag>
-         
-         
-           
-             
-              <breadCrumb title="jira" url="http://catalinali.top/categories/jira/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/noteGithubGitlab/</loc>
-    <lastmod>2018-11-12T06:41:24.768Z</lastmod>
-    <data>
-        <display>
-        <title>如何在同一台电脑上使用github和gitlab</title>
-        <pubTime>2018-04-27T01:50:24.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>github</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://catalinali.top/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/noteHexoBak/</loc>
-    <lastmod>2018-11-12T06:41:08.446Z</lastmod>
-    <data>
-        <display>
-        <title>笔记：使用hexo，如果换了电脑怎么更新博客</title>
-        <pubTime>2018-04-26T08:02:00.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>note</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/recordsql/</loc>
-    <lastmod>2018-11-12T06:40:35.271Z</lastmod>
-    <data>
-        <display>
-        <title>记录：mysql中的case when|on duplicate key update|重复插入返回主键的用法</title>
-        <pubTime>2017-09-27T08:17:44.000Z</pubTime>
-        
-        <tag>mysql</tag>
-         
-         
-           
-             
-              <breadCrumb title="mysql" url="http://catalinali.top/categories/mysql/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
-    <lastmod>2018-11-12T06:40:17.399Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</title>
-        <pubTime>2017-08-10T08:12:56.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/startbus/</loc>
-    <lastmod>2018-11-12T06:39:27.185Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(四)：消息总线（Spring Cloud Bus）</title>
-        <pubTime>2018-07-02T06:33:08.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/startconfig/</loc>
-    <lastmod>2018-11-12T06:39:13.030Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(三)：统一配置中心(config)</title>
-        <pubTime>2018-06-15T07:45:19.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/startfeignRest/</loc>
-    <lastmod>2018-11-12T06:38:37.540Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(二)：服务间的调用</title>
-        <pubTime>2018-06-05T02:07:05.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/startHystrix/</loc>
-    <lastmod>2018-11-12T06:38:19.496Z</lastmod>
-    <data>
-        <display>
-        <title>小白学SpringCloud(六)：服务降级（Hystrix）</title>
-        <pubTime>2018-08-06T01:40:58.000Z</pubTime>
-        
-        <tag>SpringCloud</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
-    <lastmod>2018-11-12T06:38:02.319Z</lastmod>
-    <data>
-        <display>
-        <title>使用IDEA搭建第一个SpringBoot程序</title>
-        <pubTime>2018-01-27T09:25:26.000Z</pubTime>
-        
-        <tag>IDEA</tag>
-         
-        <tag>SpringBoot</tag>
-         
-         
-           
-             
-              <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/strategyPattern/</loc>
-    <lastmod>2018-11-12T06:37:09.351Z</lastmod>
-    <data>
-        <display>
-        <title>Java设计模式之策略模式</title>
-        <pubTime>2017-12-18T06:55:26.000Z</pubTime>
-        
-        <tag>design-patterns</tag>
-         
-         
-           
-             
-              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
-    <lastmod>2018-11-12T06:36:49.011Z</lastmod>
-    <data>
-        <display>
-        <title>Spring中的ApplicationContextAware接口的使用</title>
-        <pubTime>2017-08-23T06:45:57.000Z</pubTime>
-        
-        <tag>Spring</tag>
-         
-         
-           
-             
-              <breadCrumb title="Spring" url="http://catalinali.top/categories/Spring/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://catalinali.top/2017/useJDBC/</loc>
-    <lastmod>2018-11-12T06:36:23.319Z</lastmod>
+    <lastmod>2019-08-22T07:54:52.897Z</lastmod>
     <data>
         <display>
         <title>详解jdbcTemplate和namedParameterJdbcTemplate</title>
@@ -754,19 +86,687 @@
 
     
   <url>
-    <loc>http://catalinali.top/2017/useMQ/</loc>
-    <lastmod>2018-11-12T06:35:05.543Z</lastmod>
+    <loc>http://catalinali.top/2017/UseApplicationContextAware/</loc>
+    <lastmod>2019-08-22T07:54:16.725Z</lastmod>
     <data>
         <display>
-        <title>ActiveMQ从入门到实践</title>
-        <pubTime>2017-12-22T01:48:26.000Z</pubTime>
+        <title>Spring中的ApplicationContextAware接口的使用</title>
+        <pubTime>2017-08-23T06:45:57.000Z</pubTime>
         
-        <tag>mq</tag>
+        <tag>Spring</tag>
          
          
            
              
-              <breadCrumb title="mq" url="http://catalinali.top/categories/mq/"/>
+              <breadCrumb title="Spring" url="http://catalinali.top/categories/Spring/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/strategyPattern/</loc>
+    <lastmod>2019-08-22T07:54:01.043Z</lastmod>
+    <data>
+        <display>
+        <title>Java设计模式之策略模式</title>
+        <pubTime>2017-12-18T06:55:26.000Z</pubTime>
+        
+        <tag>design-patterns</tag>
+         
+         
+           
+             
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startZuul/</loc>
+    <lastmod>2019-08-22T07:53:38.329Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(五)：路由网关（Zuul）</title>
+        <pubTime>2018-07-10T10:15:28.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startSpringBoot/</loc>
+    <lastmod>2019-08-22T07:51:24.177Z</lastmod>
+    <data>
+        <display>
+        <title>使用IDEA搭建第一个SpringBoot程序</title>
+        <pubTime>2018-01-27T09:25:26.000Z</pubTime>
+        
+        <tag>SpringBoot</tag>
+         
+        <tag>IDEA</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringBoot" url="http://catalinali.top/categories/SpringBoot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startHystrix/</loc>
+    <lastmod>2019-08-22T07:50:37.686Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(六)：服务降级（Hystrix）</title>
+        <pubTime>2018-08-06T01:40:58.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startfeignRest/</loc>
+    <lastmod>2019-08-22T07:48:42.047Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(二)：服务间的调用</title>
+        <pubTime>2018-06-05T02:07:05.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startEureka/</loc>
+    <lastmod>2019-08-22T07:40:31.837Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(一)：服务的注册与发现（Eureka）</title>
+        <pubTime>2018-05-31T10:19:58.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startconfig/</loc>
+    <lastmod>2019-08-22T07:32:53.570Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(三)：统一配置中心(config)</title>
+        <pubTime>2018-06-15T07:45:19.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/startbus/</loc>
+    <lastmod>2019-08-22T07:32:11.331Z</lastmod>
+    <data>
+        <display>
+        <title>小白学SpringCloud(四)：消息总线（Spring Cloud Bus）</title>
+        <pubTime>2018-07-02T06:33:08.000Z</pubTime>
+        
+        <tag>SpringCloud</tag>
+         
+         
+           
+             
+              <breadCrumb title="SpringCloud" url="http://catalinali.top/categories/SpringCloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/secondBuildHexo/</loc>
+    <lastmod>2019-08-22T07:31:31.777Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo骚操作：主题配置|搜索|评论|SEO|统计|图床</title>
+        <pubTime>2017-08-10T08:12:56.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/recordsql/</loc>
+    <lastmod>2019-08-22T07:30:22.961Z</lastmod>
+    <data>
+        <display>
+        <title>记录：mysql中的case when|on duplicate key update|重复插入返回主键的用法</title>
+        <pubTime>2017-09-27T08:17:44.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://catalinali.top/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/proxyPattern/</loc>
+    <lastmod>2019-08-22T07:30:07.076Z</lastmod>
+    <data>
+        <display>
+        <title>（转载）Java设计模式之代理模式</title>
+        <pubTime>2018-08-29T03:22:19.000Z</pubTime>
+        
+        <tag>design-patterns</tag>
+         
+         
+           
+             
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/noteHexoBak/</loc>
+    <lastmod>2019-08-22T07:29:57.621Z</lastmod>
+    <data>
+        <display>
+        <title>笔记：使用hexo，如果换了电脑怎么更新博客</title>
+        <pubTime>2018-04-26T08:02:00.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>note</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/noteGithubGitlab/</loc>
+    <lastmod>2019-08-22T07:29:47.284Z</lastmod>
+    <data>
+        <display>
+        <title>如何在同一台电脑上使用github和gitlab</title>
+        <pubTime>2018-04-27T01:50:24.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://catalinali.top/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/installVue/</loc>
+    <lastmod>2019-08-22T07:29:15.293Z</lastmod>
+    <data>
+        <display>
+        <title>Vue.js小白入门，搭建开发环境</title>
+        <pubTime>2017-11-27T08:39:32.000Z</pubTime>
+        
+        <tag>vue.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/installjira/</loc>
+    <lastmod>2019-08-22T07:28:18.097Z</lastmod>
+    <data>
+        <display>
+        <title>centos7下破解安装JIRA 7.2</title>
+        <pubTime>2017-08-16T03:41:50.000Z</pubTime>
+        
+        <tag>jira</tag>
+         
+         
+           
+             
+              <breadCrumb title="jira" url="http://catalinali.top/categories/jira/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/IDEABuildSSM/</loc>
+    <lastmod>2019-08-22T07:01:45.508Z</lastmod>
+    <data>
+        <display>
+        <title>记录：使用IDEA搭建Maven+SSM的过程</title>
+        <pubTime>2017-08-15T07:51:18.000Z</pubTime>
+        
+        <tag>IDEA</tag>
+         
+        <tag>SSM</tag>
+         
+         
+           
+             
+              <breadCrumb title="SSM" url="http://catalinali.top/categories/SSM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloVolatile/</loc>
+    <lastmod>2019-08-22T07:00:19.671Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(一)：理解volatile关键字</title>
+        <pubTime>2018-08-15T02:11:12.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloThreadPool/</loc>
+    <lastmod>2019-08-22T06:59:42.982Z</lastmod>
+    <data>
+        <display>
+        <title>（转载）JAVA并发编程(四)：线程池的使用</title>
+        <pubTime>2018-08-27T02:48:41.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloThreadLocal/</loc>
+    <lastmod>2019-08-22T06:59:29.475Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(六)：线程本地变量ThreadLocal与TransmittableThreadLocal</title>
+        <pubTime>2018-08-28T01:44:53.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/helloNginx/</loc>
+    <lastmod>2019-08-22T06:59:23.075Z</lastmod>
+    <data>
+        <display>
+        <title>Nginx初探究：安装与简单使用</title>
+        <pubTime>2017-10-31T08:30:13.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="nginx" url="http://catalinali.top/categories/nginx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloLatch/</loc>
+    <lastmod>2019-08-22T06:58:57.235Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(三)：同步的辅助类之闭锁（CountDownLatch）与循环屏障（CyclicBarrier）</title>
+        <pubTime>2018-08-23T11:11:08.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/helloDubbo/</loc>
+    <lastmod>2019-08-22T06:58:44.613Z</lastmod>
+    <data>
+        <display>
+        <title>Dubbo初体验:远程服务调用和管控台的搭建</title>
+        <pubTime>2017-09-06T07:42:56.000Z</pubTime>
+        
+        <tag>Dubbo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Dubbo" url="http://catalinali.top/categories/Dubbo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloCAS/</loc>
+    <lastmod>2019-08-22T06:57:24.674Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(二)：理解CAS机制</title>
+        <pubTime>2018-08-19T06:09:25.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/helloCallable/</loc>
+    <lastmod>2019-08-22T06:57:11.267Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(五)：创建线程的第三种方式：实现Callable接口</title>
+        <pubTime>2018-08-27T02:49:54.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/getMVVM/</loc>
+    <lastmod>2019-08-22T06:56:58.261Z</lastmod>
+    <data>
+        <display>
+        <title>解析Vue.js的MVVM模式</title>
+        <pubTime>2018-08-31T03:44:06.000Z</pubTime>
+        
+        <tag>vue.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="vue.js" url="http://catalinali.top/categories/vue-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/firstBuildHexo/</loc>
+    <lastmod>2019-08-22T06:55:27.167Z</lastmod>
+    <data>
+        <display>
+        <title>手把手教你使用hexo搭建属于你的个人博客</title>
+        <pubTime>2017-08-06T06:15:15.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://catalinali.top/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/buildzookeeper/</loc>
+    <lastmod>2019-08-22T06:53:50.344Z</lastmod>
+    <data>
+        <display>
+        <title>小白从头到脚搭建zookeeper集群的过程</title>
+        <pubTime>2017-09-04T07:59:30.000Z</pubTime>
+        
+        <tag>zookeeper</tag>
+         
+         
+           
+             
+              <breadCrumb title="zookeeper" url="http://catalinali.top/categories/zookeeper/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2017/buildredis/</loc>
+    <lastmod>2019-08-22T06:52:18.025Z</lastmod>
+    <data>
+        <display>
+        <title>走进Redis：Redis的安装、使用以及集群的搭建</title>
+        <pubTime>2017-11-06T09:48:16.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Redis" url="http://catalinali.top/categories/Redis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/singletonPattern/</loc>
+    <lastmod>2019-08-22T06:51:02.745Z</lastmod>
+    <data>
+        <display>
+        <title>Java设计模式之单例模式的究极版写法</title>
+        <pubTime>2018-10-11T01:29:06.000Z</pubTime>
+        
+        <tag>design-patterns</tag>
+         
+         
+           
+             
+              <breadCrumb title="design-patterns" url="http://catalinali.top/categories/design-patterns/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/knowHashMap/</loc>
+    <lastmod>2019-08-22T06:46:57.583Z</lastmod>
+    <data>
+        <display>
+        <title>深入理解HashMap</title>
+        <pubTime>2018-10-19T01:46:26.000Z</pubTime>
+        
+        <tag>HashMap</tag>
+         
+         
+           
+             
+              <breadCrumb title="HashMap" url="http://catalinali.top/categories/HashMap/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2018/knowConHashMap/</loc>
+    <lastmod>2019-08-22T06:41:56.623Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA并发编程(七)：并发容器（ConcurrentHashMap）</title>
+        <pubTime>2018-10-23T02:27:00.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2019/knowCOWList/</loc>
+    <lastmod>2019-08-22T06:40:40.692Z</lastmod>
+    <data>
+        <display>
+        <title>（转载）JAVA并发编程(八)：并发容器（CopyOnWriteArrayList）</title>
+        <pubTime>2019-01-09T03:02:15.000Z</pubTime>
+        
+        <tag>juc</tag>
+         
+         
+           
+             
+              <breadCrumb title="juc" url="http://catalinali.top/categories/juc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://catalinali.top/2019/solveConcurrency/</loc>
+    <lastmod>2019-08-22T06:39:50.664Z</lastmod>
+    <data>
+        <display>
+        <title>应对大并发</title>
+        <pubTime>2019-04-02T02:36:32.000Z</pubTime>
+        
+        <tag>concurrency</tag>
+         
+         
+           
+             
+              <breadCrumb title="concurrency" url="http://catalinali.top/categories/concurrency/"/>
           
         </display>
     </data>
